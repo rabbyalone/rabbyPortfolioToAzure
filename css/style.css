@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Timmana';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Timmana'), url(http://fonts.gstatic.com/s/timmana/v1/tEAfDctfJT20r9KY6hrGew.woff2) format('woff2'), url(http://fonts.gstatic.com/s/timmana/v1/UfJ_dNFklDWbOsVWljJvYQ.woff) format('woff');
+}
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+body {
+    font-family: Timmana !important;
+    width: 100%;
+    color: #fff !important;
+    position: relative;
+}
+
+p {
+    font-family: 'Roboto';
+}
+
+nav ul {
+    width:65%;
+}
+button {
+    background-color: #272B37;
+    padding-top: 12px !important;
+    color: #ccc !important;
+}
+
+button:hover {
+    color: #fff !important;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li >a {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+.part_one {
+    color:#808080;
+    height:100%;
+}
+
+img {
+    height:50% !important;
+}
+
+.text {
+    padding-top:12%;
+    line-height:35px;
+
+}

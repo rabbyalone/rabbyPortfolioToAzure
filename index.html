@@ -1,103 +1,98 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Rabby's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
+   
     </script>
 
 </head>
 
 <body>
-    <div class="row" id="home">
-        <div class="col-md-12 col-centered">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skill">Skills</a></li>
-                        <li><a href="#work">Work</a></li>
-                        <li><a href="#work">Education</a></li>          
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-    </div>
-    <section id="about">
-    <div class="row part_one">
-        <div class="container">
-            <div class="col-md-12">
-                <h2 id="abText">About Me</h2>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MoblileMenu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-            <div class="col-md-6 text">
-                <h2>Md Rabby Hasan</h2>
-                <h4>Full Stack Developer from Dhaka, Bangladesh</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, aliquid, itaque quod repellendus maxime sapiente ipsam similique dicta esse doloribus placeat amet molestias perspiciatis dolorum atque doloremque fugiat, quidem, obcaecati.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, qui. Ut ab assumenda, eum asperiores voluptatibus consequatur perferendis consequuntur porro.</p>
-                <button class="btn button-default">Download Printable Resume</button>
-            </div>
-            <div class="col-md-6 col-centered">
-                <img src="IMG_6386.jpg" alt="" class="img-responsive">
-            </div>
-        </div>
-    </div>
-</section>
-    <div class="row part_two" id="skill">
-    	<div class="container">
-    		<div class="col-md-12">
-    			<h2 id="abText">Technical Skills</h2>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    		<div class="col-md-3">
-    			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-    		</div>
-    	</div>
-    </div>
+            
+            <div class="collapse navbar-collapse" id="MoblileMenu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Discover</a></li>
+                    <li><a href="#">Contact</a></li>
+                    
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 
-    <div class="row part_three">
-    	
-    </div>
+    <section id="about">
+        <div class="row part_one">
+            <div class="container">
+                <div class="col-md-6 col-centered">
+                    <img src="img/ProfilePic.png" alt="" class="img-responsive">
+                </div>
+                <div class="col-md-6 text">
+                    <h2>Md Rabby Hasan</h2>
+                    <h4>Full Stack Developer from Dhaka, Bangladesh</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, aliquid, itaque quod repellendus maxime sapiente ipsam similique dicta esse doloribus placeat amet molestias perspiciatis dolorum atque doloremque fugiat, quidem, obcaecati.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, qui. Ut ab assumenda, eum asperiores voluptatibus consequatur perferendis consequuntur porro.</p>
+                    <button class="btn button-default">Download Printable Resume</button>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+        <div class="row part_two" id="skill">
+            <div class="container">
+                <div class="col-md-12">
+                    <h2 id="abText">Technical Skills</h2>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row part_three">
+
+        </div>
 </body>
 
 </html>
