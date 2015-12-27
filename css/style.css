@@ -42,8 +42,8 @@ button:hover {
     height:100%;
 }
 
-img {
-    height:50% !important;
+.profileImage{
+    height: 300px;
 }
 
 .text {
