@@ -6,8 +6,13 @@
     <title>Rabby's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+    <link href="css/owl.carousel.css" rel="stylesheet" />
+    <link href="css/owl.theme.css" rel="stylesheet" />
+    <link href="css/owl.transitions.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/owl.carousel.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
 
@@ -40,31 +45,37 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-    <section id="about">
-        <div class="row part_one">
+    <div id="about">        
             <div class="container">
-                <div class="col-md-6 col-centered">
-                    <img src="./img/ProfilePic.png" class="img-responsive img-circle profileImage" width="400px" >
+                <div class="row">                   
+                    <div class="col-md-6 text-center">
+                        <div class="vertical_align">
+                            <h2 class="animated bounceIn text-capitalize text-info">Md Rabby Hasan</h2>
+                            <hr class="hrLinebig" />
+                            <h4 class="animated fadeInDownBig text-success page-header">Full Stack Developer from Dhaka, Bangladesh</h4>
+                          
+                        </div>                        
+                    </div>
+                    <div class="col-md-6 col-centered">
+                        <div class="vertical_align">
+                            <p>
+                                When I have started ASP.NET Programming, Its really fascinated me. Because I got a platform where I can think out of the box and prove my ability.
+                                Years ago I was Front End Developer,  Who was only know HTML, CSS, there was lot of Problem with Managing Data. I got chances to learn
+                                ASP.NET Diploma as Scholarship.
+                            </p>
+                            <h5>Where I am Best</h5>
+                            <p>
+                                ASP.NET 4.5, ASP.NET MVC, HTML5, JavaScript, JQuery
+                            </p>
+                            <button class="btn button-default">Download Printable Resume</button>
+                        </div>                        
+                    </div>
+                    
                 </div>
-                <div class="col-md-6 text-centered">
-                    <h2>Md Rabby Hasan</h2>
-                    <h4>Full Stack Developer from Dhaka, Bangladesh</h4>
-                    <p>
-                      When I have started ASP.NET Programming, Its really fascinated me. Because I got a platform where I can think out of the box and prove my ability.
-                       Years ago I was Front End Developer,  Who was only know HTML, CSS, there was lot of Problem with Managing Data. I got chances to learn
-                       ASP.NET Diploma as Scholarship.
-                    </p>
-                      <h5>Where I am Best</h5>
-                      <p>
-                      ASP.NET 4.5, ASP.NET MVC, HTML5, JavaScript, JQuery
-                    </p>
-                    <button class="btn button-default">Download Printable Resume</button>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
 
-        <div class="row part_two" id="skill">
+        <!--<div class="row part_two" id="skill">
             <div class="container">
                 <div class="col-md-12">
                     <h2 id="abText">Technical Skills</h2>
@@ -99,7 +110,7 @@
 
         <div class="row part_three">
 
-        </div>
+        </div>-->
 </body>
 
 </html>

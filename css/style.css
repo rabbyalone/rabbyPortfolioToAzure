@@ -16,10 +16,13 @@ body {
 p {
     font-family: 'Roboto';
 }
-
-nav ul {
-    width:65%;
+.hrLinebig {
+    width:140px;
+    border:3px solid #000;
 }
+/*nav ul {
+    width:65%;
+}*/
 button {
     background-color: #272B37;
     padding-top: 12px !important;
@@ -36,18 +39,39 @@ button:hover {
         padding-bottom: 25px;
     }
 }
-
-.part_one {
-    color:#808080;
-    height:100%;
+.navbar {
+    margin-bottom:0 !important;
 }
 
-.profileImage{
-    height: 300px;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    border-bottom:3px solid #22b2aa;
 }
 
 .text {
     padding-top:12%;
     line-height:35px;
 
+}
+
+#about {
+    background-image: url('../img/rabbyddd.jpg');
+    background-size:cover;
+    height:100vh;
+    vertical-align:middle;
+
+}
+
+    #about:before {
+        content:"";
+        position:absolute;
+        top:52px;
+        bottom:0;
+        width:100%;
+        height:92%;
+        background-color:rgba(231, 231, 231 , 0.8);
+    }
+
+.vertical_align {
+    vertical-align:middle;
+    margin-top:20%;
 }
