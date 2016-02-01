@@ -9,7 +9,7 @@
 body {
     font-family: Timmana !important;
     width: 100%;
-    color: #808080 !important;
+    color: #272B37 !important;
     position: relative;
 }
 
@@ -33,19 +33,25 @@ button:hover {
     color: #fff !important;
 }
 
-@media (min-width: 768px) {
-    .navbar-nav > li >a {
-        padding-top: 25px;
-        padding-bottom: 25px;
-    }
+.navbar-default {
+    background:none !important;
+    border:none !important;
 }
 .navbar {
     margin-bottom:0 !important;
 }
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    border-bottom:3px solid #22b2aa;
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+background:none !important;
 }
+.navbar-nav > li > a {
+     line-height: 60px;
+    font-size: 22px;
+}
+   
+
+/*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    border-bottom:3px solid #22b2aa;
+}*/
 
 .text {
     padding-top:12%;
@@ -57,21 +63,41 @@ button:hover {
     background-image: url('../img/rabbyddd.jpg');
     background-size:cover;
     height:100vh;
-    vertical-align:middle;
+    position:relative;
 
 }
 
     #about:before {
         content:"";
         position:absolute;
-        top:52px;
+        top:0;
         bottom:0;
         width:100%;
-        height:92%;
+        height:100%;
         background-color:rgba(231, 231, 231 , 0.8);
     }
 
 .vertical_align {
     vertical-align:middle;
-    margin-top:20%;
+    margin-top:40%;
+}
+
+
+.text-xxl {
+    font-size:80px;
+    line-height:45px;
+}
+.text-xl {
+    font-size:50px;
+}
+.text-m {
+    font-size:35px;
+}
+.text-sm {
+    font-size:25px;
+}
+
+.content-padding {
+    padding-top:80px;
+    padding-bottom:80px;
 }
