@@ -18,20 +18,19 @@
     <script>
         $(function () {
             var animate = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-           
+
             $("#navButton").on('click', function () {
                 $("#navigation").toggle();
             })
-        })
+        });
     </script>
 
 </head>
 
 <body>
-    
 
-    <div id="about">
-        
+
+    <div id="about" style="height:100%">
         <nav class="navbar navbar-default" id="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -55,36 +54,50 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        
+
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-12 col-lg-6">
-                    <div class="vertical_align pull-left">
+                <div class="col-md-6 col-sm-12">
+                    <div class="vertical_align">
                         <h2 class="animated bounceIn text-xxl">Md Rabby Hasan</h2>
-                        
                         <h4 class="animated fadeInDownBig text-success text-sm">Full Stack Developer from Dhaka, Bangladesh</h4>
-
-                    </div>
-                </div>
-               
-                <div class="col-md-6 col-sm-12 col-lg-6">
-                    <div class="vertical_align text-right">
-                        <h2 class="text-right page-header animated bounceInUp">Featured Skills</h2>
-                        <div class="col-md-4">                           
-                            <h3><i class="ion-social-buffer animated fadeIn"></i> ASP.NET</h3>
-                            <h3><i class="ion-social-buffer animated fadeIn"></i> ASP.NET MVC</h3>
-                        </div>
-                        <div class="col-md-4">
-                            <h3><i class="ion-social-buffer animated fadeIn"></i> C Sharp</h3>
-                            <h3><i class="ion-social-buffer animated fadeIn"></i> JavaScript</h3>
-                        </div>
-                        <div class="col-md-4">
-                            <h3><i class="ion-social-buffer animated fadeIn"></i> HTML5</h3>
-                            <h3><i class="ion-social-buffer animated fadeIn"></i> CSS3</h3>
-                        </div>
                     </div>
                 </div>
 
+                <div class="col-md-6 col-sm-12 ">
+                    <div class="row vertical_align_right text-right animated bounceIn">
+                        <h3 class="text-right page-header animated bounceInUp">Featured Skills</h3>
+                        <div class="col-md-3">
+                            <h4><i class="ion-social-buffer animated fadeIn"></i> ASP.NET</h4>
+                            <h4><i class="ion-social-buffer animated fadeIn"></i> ASP.NET MVC</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4><i class="ion-ionic animated fadeIn"></i> C Sharp</h4>
+                            <h4><i class="ion-social-javascript animated fadeIn"></i> JavaScript</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4><i class="ion-social-html5 animated fadeIn"></i> HTML5</h4>
+                            <h4><i class="ion-social-css3 animated fadeIn"></i> CSS3</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4><i class="ion-social-angular animated fadeIn"></i> Angular JS</h4>
+                            <h4><i class="ion-android-done-all animated fadeIn"></i> Web API</h4>
+                        </div>
+                    </div>
+                    <div class=" row text-right">
+                      <h3 class="page-header">Be Social</h3>
+                      <a href="#"><i class="ion-social-facebook socialStyle"></i></a>
+                      <a href="#"><i class="ion-social-github-outline socialStyle"></i></a>
+                      <a href="#"><i class="ion-social-twitter socialStyle"></i></a>
+                      <a href="#"><i class="ion-social-linkedin socialStyle"></i></a>
+                    </div>
+                    <h4 class="text-right">rabbyalone@hotmail.com <i class="ion-email"></i></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center scrollhere">
+                    <h1 class="ion-chevron-down animated bounce"></h1>
+                </div>
             </div>
         </div>
     </div>
