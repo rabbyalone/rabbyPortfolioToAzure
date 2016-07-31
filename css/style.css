@@ -96,6 +96,27 @@ background:none !important;
     margin-top:33%;
 }
 
+.middle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    /* flex-direction: column; */
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    /* justify-content: center; */
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 1em;
+    /* text-align: center; */
+}
 .vertical_align_right {
     vertical-align:middle;
     margin-top:15%;
