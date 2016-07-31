@@ -75,9 +75,25 @@ background:none !important;
     background-image: url('../img/rabbyddd.jpg');
     background-size:cover !important;
     background-position:50% 50% !important;
-    height:100% !important;
-    position:relative;
-    overflow:hidden;
+   position: absolute;
+    top: 0;
+    left: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    /* flex-direction: column; */
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    /* justify-content: center; */
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 1em;
+    /* text-align: center; */
 
 }
 
@@ -105,17 +121,17 @@ background:none !important;
     display: flex;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    /* flex-direction: column; */
+    flex-direction: column; 
     -webkit-justify-content: center;
     -ms-flex-pack: center;
-    /* justify-content: center; */
+    justify-content: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
     padding: 1em;
-    /* text-align: center; */
+    text-align: center;
 }
 .vertical_align_right {
     vertical-align:middle;
