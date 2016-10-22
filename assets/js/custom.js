@@ -16,7 +16,7 @@
 		/* ---------------------------------------------- */
 
 		$('a[href*=#]').bind("click", function(e){
-           
+
 			var anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $(anchor.attr('href')).offset().top
@@ -45,31 +45,41 @@
 			offset: 70
 		})
 
-        
+
         /* ---------------------------------------------- /*
 		 * Skills
-        /* ---------------------------------------------- */    
+        /* ---------------------------------------------- */
         //var color = $('#home').css('backgroundColor');
 
-        $('.skills').waypoint(function(){
-            $('.chart').each(function(){
-            $(this).easyPieChart({
-                    size:140,
-                    animate: 2000,
-                    lineCap:'butt',
-                    scaleColor: false,
-                    barColor: '#FF5252',
-                    trackColor: 'transparent',
-                    lineWidth: 10
-                });
-            });
-        },{offset:'80%'});
-        
-        
+        // $('.skills').waypoint(function(){
+        //     $('.chart').each(function(){
+        //     $(this).easyPieChart({
+        //             size:140,
+        //             animate: 2000,
+        //             lineCap:'butt',
+        //             scaleColor: false,
+        //             barColor: '#FF5252',
+        //             trackColor: 'transparent',
+        //             lineWidth: 10
+        //         });
+        //     });
+        // },{offset:'80%'});
+
+					 // 
+					//  $('.js-skill-set').waypoint(function (){
+					 //
+					// 				 $(".progress-bar").each(function () {
+					// 						 $(this).animate({
+					// 								 width: $(this).attr('aria-valuenow') + '%'
+					// 						 }, 200);
+					// 				 });
+					// 			 },{offset:'50%'});
+
+
         /* ---------------------------------------------- /*
 		 * Quote Rotator
 		/* ---------------------------------------------- */
-       
+
 			$( function() {
 				/*
 				- how to call the plugin:
@@ -90,8 +100,8 @@
 				$( '#cbp-qtrotator' ).cbpQTRotator();
 
 			} );
-		
-        
+
+
 		/* ---------------------------------------------- /*
 		 * Home BG
 		/* ---------------------------------------------- */
@@ -140,7 +150,7 @@
 			var c_email = $('#c_email').val();
 			var c_message = $('#c_message ').val();
 			var response = $('#contact-form .ajax-response');
-			
+
 			var formData = {
 				'name'       : c_name,
 				'email'      : c_email,
@@ -164,7 +174,7 @@
 											response.html(ret.message).fadeIn(500);
 							}
 						});
-				}           
+				}
             	return false;
 			});
 
