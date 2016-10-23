@@ -1278,3 +1278,20 @@ figure.effect-bubba:hover p {
   margin-bottom: 24px;
   overflow: hidden;
 }
+
+/*Filter*/
+
+/* Filter controls */
+.simplefilter li, .multifilter li, .sortandshuffle li {
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+}
+.simplefilter li {
+    background-color: #585858;
+}
+.simplefilter li.active {
+    background-color: #212121;
+}
