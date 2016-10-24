@@ -476,7 +476,7 @@ textarea.form-control {
 #footer span{
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
-    color: #ff5252;
+    color: #11958b;
 }
 
 .social-links {
@@ -803,7 +803,7 @@ textarea.form-control {
 /*---------------*/
 
 figure.effect-bubba {
-	background: #9e5406;
+	background: #11958b6;
 }
 
 figure.effect-bubba img {
@@ -922,7 +922,7 @@ figure.effect-bubba:hover p {
 
 .cbp-qtprogress {
 	position: absolute;
-	background: #FF5252;
+	background:#11958b;
 	height: 1px;
 	width: 0%;
 	top: 0;
@@ -1296,7 +1296,7 @@ figure.effect-bubba:hover p {
     background-color: #212121;
 }
 
-/*Tesssssssssst*/
+/*MixItUp Portfolio Section Modification*/
  .mix,
  .gap{
   display: inline-block; 
@@ -1314,4 +1314,11 @@ figure.effect-bubba:hover p {
 .mix:before{
   content: '';
   display: inline-block;
+}
+
+/*New Button Styles*/
+
+.btn-new {
+    color: #fff;
+    background-color: #11958b;
 }
