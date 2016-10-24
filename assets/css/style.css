@@ -1295,3 +1295,23 @@ figure.effect-bubba:hover p {
 .simplefilter li.active {
     background-color: #212121;
 }
+
+/*Tesssssssssst*/
+ .mix,
+ .gap{
+  display: inline-block; 
+}
+
+.mix{
+  display: none;
+}
+
+.mix:after{
+  content: attr(data-myorder);
+  display: inline-block;
+}
+
+.mix:before{
+  content: '';
+  display: inline-block;
+}
