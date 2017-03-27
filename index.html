@@ -17,6 +17,7 @@
     <!-- Custom styles CSS -->
     <link href="assets/css/style.css" rel="stylesheet" media="screen">
     <script src="assets/js/modernizr.custom.js"></script>
+    
 </head>
 <body>
 
@@ -926,6 +927,53 @@
                         <p class="text-muted">Software Development</p>
                     </div>
                 </div>
+                <div id="hiddenContent">
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
+                        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/File_manager-thumbnail.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Document Management</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
+                        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/File_manager-thumbnail.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Document Management</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
+                        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/File_manager-thumbnail.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Document Management</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button class="filter btn btn-new" id="toggleButton">See More</button>
+                </div>
             </div>
         </div>
         <!-- .contaier -->
@@ -1336,7 +1384,15 @@ Payroll, and Employee Profile for multi company.</p>
                 offset: '50%'
             });
             $('#Container').mixItUp();
+            
+       //hide
+            $('#hiddenContent').hide();
         });
+
+        $("#toggleButton").on('click', function () {
+            $("#hiddenContent").toggle();
+        });
+   
     </script>
     <script>
         (function (i, s, o, g, r, a, m) {
