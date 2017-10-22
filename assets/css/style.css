@@ -92,14 +92,14 @@ textarea.form-control{padding:15px;max-width:100%;min-width:100%;}
 .percent{display:inline-block;font-size:25px;font-weight:300;line-height:140px;z-index:2;}
 .percent:after{content:"%";font-size:50%;margin-left:0.1em;}
 .ajax-response{text-align:center;}
-#footer{background:#222;text-align:center;padding:40px 0;color:#FFF;}
+#footer{background:#222;padding:40px 0;color:#FFF;}
 .copyright{margin:0;}
 .copyright a{border-bottom:1px dotted #fff;}
 #footer span{animation-iteration-count:infinite;-webkit-animation-iteration-count:infinite;color:#11958b;}
-.social-links{list-style:none;padding:0;margin:0 0 20px;}
-.social-links li{display:inline-block;margin:5px;}
-.social-links a{width:36px;height:36px;display:block;line-height:35px;text-align:center;border:1px solid rgba(255, 255, 255, .1);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:14px;color:rgba(255, 255, 255, .2);}
-.social-links a:hover{border:1px solid rgba(255, 255, 255, .5);color:rgba(255, 255, 255, .8);}
+.social-links1{list-style:none;padding:0;margin:0 0 20px;}
+.social-links1 li{float:left;margin:5px;}
+.social-links1 a{width:36px;height:36px;display:block; text-align:center; line-height:35px;border:1px solid rgba(255, 255, 255, .1);-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:14px;color:rgba(255, 255, 255, .2);}
+.social-links1 a:hover{border:1px solid rgba(255, 255, 255, .5);color:rgba(255, 255, 255, .8);}
 .header{border-bottom:1px solid #f5f5f5;position:relative;width:100%;z-index:998;}
 .navbar-custom{border:0;border-radius:0;margin:0;text-transform:uppercase;font-family:Raleway, sans-serif;}
 .navbar-custom,
