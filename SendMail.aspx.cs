@@ -48,4 +48,18 @@ public partial class SendMail : System.Web.UI.Page
         }
 
     }
+
+    [System.Web.Services.WebMethod]
+    public static string FormData(fd obj)
+    {
+
+        return string.Empty;
+    }
+}
+
+public class fd
+{
+    public string  c_name{ get; set; }
+    public string  c_email{ get; set; }
+    public string  c_message{ get; set; }
 }
