@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);@import url(http://fonts.googleapis.com/css?family=Lobster);body{font:300 14px/1.8 'Raleway', sans-serif;color:#666;overflow-x:hidden;}
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);@import url(https://fonts.googleapis.com/css?family=Lobster);body{font:300 14px/1.8 'Raleway', sans-serif;color:#666;overflow-x:hidden;}
 img{max-width:100%;height:auto;}
 a{color:#11958b;}
 a:hover{text-decoration:none;color:#999;}
@@ -79,7 +79,7 @@ textarea.form-control{padding:15px;max-width:100%;min-width:100%;}
 .calltoaction-btn > .btn{background:rgba(255, 255, 255, .8);color:#111;margin-top:5px;margin-bottom:5px;}
 .calltoaction-btn > .btn:hover{background:#fff;}
 .long-down{margin-bottom:40px;}
-#home{background:url(../images/cover.jpg);background-color:#222;background-attachment:fixed;background-repeat:no-repeat;background-position:50% 50%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding:0;}
+#home{background:url(../images/cover3.jpg);background-color:#222;background-attachment:fixed;background-repeat:no-repeat;background-position:50% 50%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding:0;}
 .home-overlay{background-color:rgba(44, 62, 80, 0.3);background-image:url("../images/pattern.png");background-repeat:repeat;height:100%;left:0;position:absolute;top:0;width:100%;z-index:0;}
 .intro{position:absolute;width:100%;top:50%;left:0;text-align:center;-webkit-transform:translate(0%, -50%);-moz-transform:translate(0%, -50%);-ms-transform:translate(0%, -50%);-o-transform:translate(0%, -50%);transform:translate(0%, -50%);padding:0 15px;}
 .intro h1{font-weight:800;}
@@ -184,7 +184,7 @@ figure.effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);trans
 @media screen and (max-width:30.6em){.cbp-qtrotator{font-size:70%;}
 .cbp-qtrotator img{width:80px;}
 }
-//added
+/*added*/
 #portfolio .portfolio-item{margin:0 0 15px;right:0;}
 #portfolio .portfolio-item .portfolio-link{display:block;position:relative;max-width:400px;margin:0 auto;}
 #portfolio .portfolio-item .portfolio-link .portfolio-hover{background:rgba(17,149,139,0.9);position:absolute;width:100%;height:100%;opacity:0;transition:all ease 0.5s;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;}
@@ -219,7 +219,20 @@ figure.effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);trans
 .cv-block__header{color:#11958b;font-weight:bold;margin-bottom:7px;margin-top:6px;position:relative;text-transform:uppercase;}
 .cv-block .dates{color:#8a8a8a;font-family:"Inconsolata",Helvetica,Arial,sans-serif !important;font-size:20px;line-height:24px;margin-bottom:6px;}
 .cv-block{text-align:initial;}
-.cv-block__header::after{background:#ffffff none repeat scroll 0 0;border:3px solid #11958b;border-radius:50%;content:"";height:14px;left:-34px;position:absolute;top:3px;transition:all 0.3s ease 0s;width:14px;z-index:2;}
+.cv-block__header::after {
+    box-shadow: 0 0 0 8px rgba(17, 149, 139, .4);
+    background: #ffffff none repeat scroll 0 0;
+    border: 3px solid #11958b;
+    border-radius: 50%;
+    content: "";
+    height: 14px;
+    left: -34px;
+    position: absolute;
+    top: 3px;
+    transition: all 0.3s ease 0s;
+    width: 14px;
+    z-index: 2;
+}
 .cv-block__header{color:#11958b;font-weight:bold;margin-bottom:7px;margin-top:6px;position:relative;text-transform:uppercase;}
 .cv-block .cv-block__header:after{background:#11958b;}
 .skill-set p{line-height:30px;margin:0;}
