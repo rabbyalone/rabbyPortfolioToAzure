@@ -44,9 +44,10 @@
                     "crossDomain": true,
                     "url": "https://api.sendgrid.com/v3/mail/send",
                     "method": "POST",
-                    "headers": {
-                        "content-type": "application/json",
-                        "Authorization": "Bearer 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"
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer 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");
+                        xhr.setRequestHeader("content-type", "application/json");
+                        
                     },
                     "processData": false,
                     "data": formData
