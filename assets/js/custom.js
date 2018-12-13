@@ -13,62 +13,47 @@
             var response = $('#contact-form .ajax-response');
             debugger;
             var formData = JSON.stringify({
-                    "personalizations": [
-                        {
-                            "recipient": "rabbyofc@gmail.com"
-                        }
-                    ],
-                    "from": {
-                        "fromEmail": "portfolio@pepisandbox.com",
-                        "fromName": c_name
-                    },
-                    "subject": c_email,
-                    "content": c_message
-            });
-
-            var data = JSON.stringify(
-                {
-                    "campaign_id": "postman_inline_both_example",
-                    "recipients": [
-                        {
-                            "address": "rabbyofc@gmail.com"
-                        }
-                    ],
-                    "content": {
-                        "from": {
-                            "email": "support@.sparkpostmail.com",
-                            "name": c_name
-                        },
-
-                        "subject": c_email,
-                        "html": "",
-                        "text": c_message,
-                        }
-                }
-            );
+                "personalizations": [
+                    {
+                        "to": [
+                            {
+                                "email": "rabbyofc@gmail.com"
+                            }
+                        ]
+                    }
+                ],
+                "from": {
+                    "email": "rabby@azurewebsites.net"
+                },
+                "subject": "Hello, World!",
+                "content": [
+                    {
+                        "type": "text/plain",
+                        "value": "Test Email From Web!"
+                    }
+                ]
+            });         
 
 
             if ((c_name === '' || c_email === '' || c_message === '') || (!isValidEmailAddress(c_email))) {
                 response.fadeIn(500); response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
             }
             else {                
-                $.ajax({
-                    type: 'POST',
-                    url: 'https://api.sparkpost.com/api/v1/transmissions?num_rcpt_errors=3',
-                    data: data,
-                    contentType: 'application/json',
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', 'c5f96d08-4bc2-45fd-9b21-bd01c68cbe18');
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://api.sendgrid.com/v3/mail/send",
+                    "method": "POST",
+                    "headers": {
+                        "content-type": "application/json",
+                        "Authorization": "Bearer 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"
                     },
-                    success: function (res) {
-                        debugger;
-                        //var ret = $.parseJSON(JSON.stringify(res));
-                        //response.html(ret.message).fadeIn(500);
-                        response.html("Mail Sent Successfully!! I'll Get Back To You Soon. Thank You!")
-                    },
-                    error: function (err, http, hh) {
-                        console.log(err);
-                    }
+                    "processData": false,
+                    "data": formData
+                }
+
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
                 });
             }
         });
