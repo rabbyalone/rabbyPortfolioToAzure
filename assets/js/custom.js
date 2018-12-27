@@ -39,23 +39,7 @@
                 response.fadeIn(500); response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
             }
             else {                
-                //var settings = {
-                //    "async": true,
-                //    "crossDomain": true,
-                //    "url": "https://api.sendgrid.com/v3/mail/send",
-                //    "method": "POST",
-                //    beforeSend: function (xhr) {
-                //        xhr.setRequestHeader("Authorization", "Bearer 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");
-                //        xhr.setRequestHeader("content-type", "application/json");
-                        
-                //    },
-                //    "processData": false,
-                //    "data": formData
-                //}
-
-                //$.ajax(settings).done(function (response) {
-                //    console.log(response);
-                //});
+                $.ajax({ url: "https://formspree.io/rabbyalone@gmail.com", method: "POST", data: { message: "hello!" }, dataType: "json" });
             }
         });
     });

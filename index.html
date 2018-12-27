@@ -608,26 +608,31 @@
 
                 <div class="col-sm-6 col-sm-offset-3">
 
-                    <form  action="http://formspree.io/rabbyalone@gmail.com" role="form" method="post">
-                        <div class="ajax-hidden">
-                            <div class="form-group wow fadeInUp">
-                                <label class="sr-only" for="c_name">Name</label>
-                                <input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
-                            </div>
+                    <form method="POST" action="https://formspree.io/rabbyalone@gmail.com" role="form">
+        <div class="ajax-hidden">
+            <div class="form-group wow fadeInUp">
+                <label class="sr-only" for="c_name">Name</label>
+                <input type="text" id="c_name" class="form-control" name="name" placeholder="Name">
+            </div>
 
-                            <div class="form-group wow fadeInUp" data-wow-delay=".1s">
-                                <label class="sr-only" for="c_email">Email</label>
-                                <input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
-                            </div>
+            <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                <label class="sr-only" for="c_email">Email</label>
+                <input type="email" id="c_email" class="form-control" name="email" placeholder="E-mail">
+            </div>
 
-                            <div class="form-group wow fadeInUp" data-wow-delay=".2s">
-                                <textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
-                            </div>
+            <div class="form-group wow fadeInUp" data-wow-delay=".2s">
+                <textarea class="form-control" id="c_message" name="message" rows="7" placeholder="Message"></textarea>
+            </div>
 
-                            <input type="submit" class="btn btn-lg btn-block wow fadeInUp" value="Send Message">
-                        </div>
-                        <div class="ajax-response"></div>
-                    </form>
+            <button type="submit" class="btn btn-lg btn-block wow fadeInUp" > Send Message</button>
+        </div>
+        <div class="ajax-response"></div>
+    </form>
+                    <!--<form method="POST" action="https://formspree.io/rabbyalone@gmail.com">
+                        <input type="email" name="email" placeholder="Your email">
+                        <textarea name="message" placeholder="Test Message"></textarea>
+                        <button type="submit">Send Test</button>
+                    </form>-->
                 </div>
                 <!--<div class="col-sm-12">
 
