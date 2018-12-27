@@ -609,23 +609,24 @@
                 <div class="col-sm-6 col-sm-offset-3">
 
                     <form method="POST" action="https://formspree.io/rabbyalone@gmail.com" role="form">
-        <div class="ajax-hidden">
-            <div class="form-group wow fadeInUp">
-                <label class="sr-only" for="c_name">Name</label>
-                <input type="text" id="c_name" class="form-control" name="name" placeholder="Name">
-            </div>
+                        <div class="ajax-hidden">
+                            <div class="form-group wow fadeInUp">
+                                <label class="sr-only" for="c_name">Name</label>
+                                <input type="text" id="c_name" class="form-control" name="name" placeholder="Name">
+                            </div>
 
-            <div class="form-group wow fadeInUp" data-wow-delay=".1s">
-                <label class="sr-only" for="c_email">Email</label>
-                <input type="email" id="c_email" class="form-control" name="email" placeholder="E-mail">
-            </div>
+                            <div class="form-group wow fadeInUp" data-wow-delay=".1s">
+                                <label class="sr-only" for="c_email">Email</label>
+                                <input type="email" id="c_email" class="form-control" name="email" placeholder="E-mail">
+                            </div>
 
-            <div class="form-group wow fadeInUp" data-wow-delay=".2s">
-                <textarea class="form-control" id="c_message" name="message" rows="7" placeholder="Message"></textarea>
-            </div>
+                            <div class="form-group wow fadeInUp" data-wow-delay=".2s">
+                                <textarea class="form-control" id="c_message" name="message" rows="7" placeholder="Message"></textarea>
+                            </div>
+                            <input type="hidden" name="_next"/>
 
-            <button type="submit" class="btn btn-lg btn-block wow fadeInUp" > Send Message</button>
-        </div>
+                            <button type="submit" class="btn btn-lg btn-block wow fadeInUp"> Send Message</button>
+                        </div>
         <div class="ajax-response"></div>
     </form>
                     <!--<form method="POST" action="https://formspree.io/rabbyalone@gmail.com">
@@ -1014,6 +1015,7 @@
 
             //hide
             $('#hiddenContent').hide();
+            $("input[name*='_next']").attr("value", window.location.origin);
         });
 
         $("#toggleButton").on('click', function () {
