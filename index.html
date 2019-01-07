@@ -371,7 +371,7 @@
             </div>
             <div id="Container" class="row wow bounce">
 
-                <div id="port2" class="col-md-4 col-sm-6 portfolio-item mix category-1">
+                <div class="col-md-4 col-sm-6 portfolio-item mix category-1">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -457,48 +457,55 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
-                    <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
+                <div class="row" id="hiddenContent">
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
+                        <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
                             </div>
+                            <img src="img/portfolio/webDev_thumb.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Web Development</h4>
+                            <p class="text-muted">IndexedDB, JavaScript, HTML5,CSS3</p>
                         </div>
-                        <img src="img/portfolio/webDev_thumb.png" class="img-responsive" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Web Development</h4>
-                        <p class="text-muted">IndexedDB, JavaScript, HTML5,CSS3</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
+                        <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/xmlwork_thumb.jpg" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>XML Site</h4>
+                            <p class="text-muted">XML, XSDT, XSLT, CSS, JAVASCRIPT </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
+                        <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Commercial Management</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
-                    <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/xmlwork_thumb.jpg" class="img-responsive" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>XML Site</h4>
-                        <p class="text-muted">XML, XSDT, XSLT, CSS, JAVASCRIPT </p>
+                <center>
+                    <div class="col-md-offset-4 col-md-4">
+                        <button class="btn btn-block" id="btnShowMore">Show More</button>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
-                    <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Commercial Management</h4>
-                        <p class="text-muted">Software Development</p>
-                    </div>
-                </div>
+                </center>
             </div>
             <!--<div class="col-md-4">
                 <button class="filter btn btn-new" id="toggleButton">Show More/Hide</button>
@@ -1020,8 +1027,15 @@
             $("input[name*='_next']").attr("value", window.location.origin);
         });
 
-        $("#toggleButton").on('click', function () {
+        $("#btnShowMore").on('click', function () {
             $("#hiddenContent").toggle();
+            debugger;
+            if ($("#btnShowMore").text() == "Show More") {
+                $("#btnShowMore").text("Show Less");
+            }
+            else {
+                $("#btnShowMore").text("Show More");
+            }
         });
 
     </script>
