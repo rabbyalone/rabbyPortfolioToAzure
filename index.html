@@ -18,14 +18,7 @@
     <!-- Custom styles CSS -->
     <link href="assets/css/style.css" rel="stylesheet" media="screen">
     <script src="assets/js/modernizr.custom.js"></script>
-    <script>
-        function show()
-        {
-            alert("M S S");
-        }
-
-    </script>
-    
+       
 </head>
 <body>
 
@@ -1024,7 +1017,7 @@
 
             //hide
             $('#hiddenContent').hide();
-            $("input[name*='_next']").attr("value", window.location.origin);
+            $("input[name*='_next']").attr("value", window.location.origin+"#contact");
         });
 
         $("#btnShowMore").on('click', function () {
