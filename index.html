@@ -53,31 +53,29 @@
     <!-- Navigation start -->
 
     <header class="header">
-
-        <nav class="navbar navbar-custom" role="navigation">
+        <nav class="navbar navbar-expand-lg navbar-custom" role="navigation">
 
             <div class="container">
 
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" href="index.html">RABBY HASAN</a>
                 </div>
 
-                <div class="collapse navbar-collapse" id="custom-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">About Me</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#portfolio">Works</a></li>
+                <div class="collapse navbar-collapse flex-grow-0" id="custom-collapse">
+                    <ul class="nav navbar-nav text-right">
+                        <li><a class="nav-link" href="#home">Home</a></li>
+                        <li><a class="nav-link" href="#services">About Me</a></li>
+                        <li><a class="nav-link" href="#skills">Skills</a></li>
+                        <li><a class="nav-link" href="#portfolio">Works</a></li>
 
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="blog.html" target="_blank">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                        <li><a class="nav-link" href="blog.html" target="_blank">Blog</a></li>
+                        <li><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -110,7 +108,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="jobs-info col-xs-5 col-sm-offset-1 col-xs-offset-1 wow fadeInUp">
+                <div class="jobs-info col-md-6  justify-content-md-center wow fadeInUp">
                     <h3 class="resume-subheader text-left"><i class="fa fa-hand-o-down" aria-hidden="true"></i>
                         Employment</h3>
                     <div class="cv-block">
@@ -190,7 +188,7 @@
                     </div> -->
                 </div>
 
-                <div class="jobs-info col-xs-5 col-sm-offset-1 wow fadeInUp">
+                <div class="jobs-info col-md-6 wow fadeInUp">
                     <h3 class="resume-subheader resume-subheader--jobs"><i class="fa fa-graduation-cap"
                             aria-hidden="true"></i> Education</h3>
                     <div class="cv-block">
@@ -230,14 +228,14 @@
                         <h4 class="cv-block__header">National University</h4>
                         <p class="dates">
                             2010 - 2011
-                        </p>                        
+                        </p>
                         <p>Master Of Science in Chemistry</p>
                     </div>
                     <div class="cv-block">
                         <h4 class="cv-block__header">National University</h4>
                         <p class="dates">
                             2007 - 2010
-                        </p>                        
+                        </p>
                         <p>Bachelor of Science in Chemistry</p>
                     </div>
                     <div class="cv-block">
@@ -257,8 +255,8 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col-md-12 col-md-offset-5  center">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8">
                     <a class="btn btn-new" href="doc\DotNet_2_JU_RabbyHasan.pdf">Download Resume</a>
                 </div>
             </div>
@@ -276,7 +274,7 @@
             <div class="row"
                 style="font-size: 14px; line-height: 1.42857143;color: #333; font-weight:300;font-family: 'Merriweather', serif;">
 
-                <div class="col-sm-8 col-sm-offset-2">
+                <div class="col-sm-12">
 
                     <div class="pfblock-header wow fadeInUp">
                         <h2 class="pfblock-title">My Skills</h2>
@@ -288,8 +286,8 @@
                         </div>
                     </div>
                 </div>
-
-
+            </div>
+            <div class="row">
                 <div class="col-md-4">
                     <ul class="list-group wow bounceIn" style="visibility: visible; animation-name: bounceIn;">
                         <li class="list-group-item"><i class="fa fa-terminal fa-2x"></i> C#</li>
@@ -362,9 +360,10 @@
     <!-- Portfolio start -->
 
     <section id="portfolio" class="pfblock pfblock-gray">
+        <div class="row">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+            
+                <div class="col-sm-12">
 
                     <div class="pfblock-header wow fadeInUp">
                         <h2 class="pfblock-title">My works</h2>
@@ -374,17 +373,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+    
             <!-- .row -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="button-group filters-button-group">
-                        <button class="filter btn btn-new" data-filter="*">show all</button>
-                        <button class="filter btn btn-new" data-filter=".asp">ASP.NET</button>
-                    </div>
-                </div>
-
-
+   
                 <div class="col-md-12">
                     <button class="filter btn btn-new" data-filter="all">All</button>
                     <button class="filter btn btn-new" data-filter=".category-1">Asp.Net</button>
@@ -393,150 +384,148 @@
                     <button class="filter btn btn-new" data-filter=".category-4">Web Development</button>
                 </div>
 
-            </div>
-            <div id="Container" class="row wow bounce grid">
-
-                <div class="col-md-4 col-sm-6 portfolio-item mix asp" data-category="asp">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/ERP_thubnail.jpg" class="img-responsive" alt="Erp_thubnail" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>ERP Software</h4>
-                        <p class="text-muted">Software Development</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item mix asp">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/SCM_Thumbnail.jpg" class="img-responsive" alt="" />
-                        <!--<img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">-->
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Supply Chain Management</h4>
-                        <p class="text-muted">Software Development</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item mix asp">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dms_thubnail-1.png" class="img-responsive" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>DMS(Distribution Management System)</h4>
-                        <p class="text-muted">Software Development</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item mix category-1">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/Accounting_thumbnail.png" class="img-responsive" alt="Accounting" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Accounting Software</h4>
-                        <p class="text-muted">Software Development</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item mix category-2">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/HRM_thumbnail.png" class="img-responsive" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>HRM(Human Resource Management)</h4>
-                        <p class="text-muted">Software Development</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/File_manager-thumbnail.png" class="img-responsive" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Document Management</h4>
-                        <p class="text-muted">Software Development</p>
-                    </div>
-                </div>
-
-                <div class="row" id="hiddenContent">
-                    <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
-                        <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
+  
+           
+                <div id="Container" class="row wow bounce">
+                    <div class="col-md-4 col-sm-6 portfolio-item mix asp" data-category="asp">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/webDev_thumb.png" class="img-responsive" alt="" />
+                            <img src="img/portfolio/ERP_thubnail.jpg" class="img-responsive" alt="Erp_thubnail" />
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Web Development</h4>
-                            <p class="text-muted">IndexedDB, JavaScript, HTML5,CSS3</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
-                        <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="img/portfolio/xmlwork_thumb.jpg" class="img-responsive" alt="" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>XML Site</h4>
-                            <p class="text-muted">XML, XSDT, XSLT, CSS, JAVASCRIPT </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
-                        <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>Commercial Management</h4>
+                            <h4>ERP Software</h4>
                             <p class="text-muted">Software Development</p>
                         </div>
                     </div>
-                </div>
-                <center>
-                    <div class="col-md-offset-4 col-md-4">
-                        <button class="btn btn-block" id="btnShowMore">Show More</button>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix asp">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/SCM_Thumbnail.jpg" class="img-responsive" alt="" />
+                            <!--<img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">-->
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Supply Chain Management</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
                     </div>
-                </center>
-            </div>
-            <!--<div class="col-md-4">
-                <button class="filter btn btn-new" id="toggleButton">Show More/Hide</button>
-            </div>-->
+                    <div class="col-md-4 col-sm-6 portfolio-item mix asp">
+                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/dms_thubnail-1.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>DMS(Distribution Management System)</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-1">
+                        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/Accounting_thumbnail.png" class="img-responsive" alt="Accounting" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Accounting Software</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-2">
+                        <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/HRM_thumbnail.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>HRM(Human Resource Management)</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
+                        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/File_manager-thumbnail.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Document Management</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="hiddenContent">
+                        <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
+                            <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/webDev_thumb.png" class="img-responsive" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Web Development</h4>
+                                <p class="text-muted">IndexedDB, JavaScript, HTML5,CSS3</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
+                            <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/xmlwork_thumb.jpg" class="img-responsive" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>XML Site</h4>
+                                <p class="text-muted">XML, XSDT, XSLT, CSS, JAVASCRIPT </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
+                            <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Commercial Management</h4>
+                                <p class="text-muted">Software Development</p>
+                            </div>
+                        </div>
+                    </div>
+                    <center>
+                        <div class="col-md-offset-4 col-md-4">
+                            <button class="btn btn-block" id="btnShowMore">Show More</button>
+                        </div>
+                    </center>
+                </div>
+           
         </div>
-        </div>
+    </div>
         <!-- .contaier -->
     </section>
 
@@ -573,7 +562,7 @@
 
             <div class="row">
 
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-12">
 
                     <div class="pfblock-header wow fadeInUp">
                         <h2 class="pfblock-title">What my clients say</h2>
@@ -628,7 +617,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-12">
 
                     <div class="pfblock-header">
                         <h2 class="pfblock-title">Drop me a line</h2>
@@ -642,9 +631,9 @@
             </div>
             <!-- .row -->
 
-            <div class="row">
+            <div class="row justify-content-md-center">
 
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-6">
 
                     <form method="POST" action="https://formspree.io/rabbyalone@gmail.com" role="form">
                         <div class="ajax-hidden">
@@ -1049,9 +1038,9 @@
 
     <!-- Javascript files -->
 
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.parallax-1.1.3.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
     <script src="assets/js/imagesloaded.pkgd.js"></script>
     <script src="assets/js/jquery.sticky.js"></script>
     <script src="assets/js/smoothscroll.js"></script>
@@ -1065,41 +1054,41 @@
     <script>
         $(document).ready(function () {
             var $grid = $('.grid').isotope({
-  itemSelector: '.portfolio-item mix ',
-  layoutMode: 'fitRows'
-});
+                itemSelector: '.portfolio-item mix ',
+                layoutMode: 'fitRows'
+            });
 
-// external js: isotope.pkgd.js
+            // external js: isotope.pkgd.js
 
 
-// filter functions
-var filterFns = {
-  // show if number is greater than 50
-  numberGreaterThan50: function() {
-    var number = $(this).find('.number').text();
-    return parseInt( number, 10 ) > 50;
-  },
-  // show if name ends with -ium
-  ium: function() {
-    var name = $(this).find('.name').text();
-    return name.match( /ium$/ );
-  }
-};
-// bind filter button click
-$('.filters-button-group').on( 'click', 'button', function() {
-  var filterValue = $( this ).attr('data-filter');
-  // use filterFn if matches value
-  filterValue = filterFns[ filterValue ] || filterValue;
-  $grid.isotope({ filter: filterValue });
-});
-// change is-checked class on buttons
-$('.button-group').each( function( i, buttonGroup ) {
-  var $buttonGroup = $( buttonGroup );
-  $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
-  });
-});
+            // filter functions
+            var filterFns = {
+                // show if number is greater than 50
+                numberGreaterThan50: function () {
+                    var number = $(this).find('.number').text();
+                    return parseInt(number, 10) > 50;
+                },
+                // show if name ends with -ium
+                ium: function () {
+                    var name = $(this).find('.name').text();
+                    return name.match(/ium$/);
+                }
+            };
+            // bind filter button click
+            $('.filters-button-group').on('click', 'button', function () {
+                var filterValue = $(this).attr('data-filter');
+                // use filterFn if matches value
+                filterValue = filterFns[filterValue] || filterValue;
+                $grid.isotope({ filter: filterValue });
+            });
+            // change is-checked class on buttons
+            $('.button-group').each(function (i, buttonGroup) {
+                var $buttonGroup = $(buttonGroup);
+                $buttonGroup.on('click', 'button', function () {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $(this).addClass('is-checked');
+                });
+            });
 
 
             $('.js-skill-set').waypoint({
