@@ -10,267 +10,255 @@
     <title>Rabby Hasan's Portfolio</title>
 
     <!-- CSS -->
+    
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+ 
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
     <link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
     <link href="assets/css/animate.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-
+ 
     <!-- Custom styles CSS -->
     <link href="assets/css/style.css" rel="stylesheet" media="screen">
+
     <script src="assets/js/modernizr.custom.js"></script>
     <style>
-  body {
-	 color: #768390;
-	 background: #fff;
-	 font-family: "Effra", Helvetica, sans-serif;
-	 padding: 0;
-	 -webkit-font-smoothing: antialiased;
+
+.container-fluid .row {
+    padding: 0 0 4em 0;
 }
- h1, h2, h3, h4, h5, h6 {
-	 color: #3d4351;
-	 margin-top: 0;
+.container-fluid .row:nth-child(even) {
+    background: #f1f4f5;
 }
- a {
-	 color: #ff6b6b;
+.example-title {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 3em 0;
+    border-bottom: 1px solid #e4eaec;
 }
- a:hover {
-	 color: #ff9a9a;
-	 text-decoration: none;
-}
- .example-header {
-	 background: #3d4351;
-	 color: #fff;
-	 font-weight: 300;
-	 padding: 3em 1em;
-	 text-align: center;
-}
- .example-header h1 {
-	 color: #fff;
-	 font-weight: 300;
-	 margin-bottom: 20px;
-}
- .example-header p {
-	 font-size: 12px;
-	 text-transform: uppercase;
-	 letter-spacing: 3px;
-	 font-weight: 700;
-}
- .container-fluid .row {
-	 padding: 0 0 4em 0;
-}
- .container-fluid .row:nth-child(even) {
-	 background: #f1f4f5;
-}
- .example-title {
-	 text-align: center;
-	 margin-bottom: 60px;
-	 padding: 3em 0;
-	 border-bottom: 1px solid #e4eaec;
-}
- .example-title p {
-	 margin: 0 auto;
-	 font-size: 16px;
-	 max-width: 400px;
+.example-title p {
+    margin: 0 auto;
+    font-size: 16px;
+    max-width: 400px;
 }
 /*================================== TIMELINE ==================================*/
 /*-- GENERAL STYLES ------------------------------*/
- .timeline {
-	 line-height: 1.4em;
-	 list-style: none;
-	 margin: 0;
-	 padding: 0;
-	 width: 100%;
+.timeline {
+    line-height: 1.4em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
- .timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
-	 line-height: inherit;
+.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
+    line-height: inherit;
 }
 /*----- TIMELINE ITEM -----*/
- .timeline-item {
-	 padding-left: 40px;
-	 position: relative;
+.timeline-item {
+    padding-left: 40px;
+    position: relative;
 }
- .timeline-item:last-child {
-	 padding-bottom: 0;
+.timeline-item:last-child {
+    padding-bottom: 0;
 }
 /*----- TIMELINE INFO -----*/
- .timeline-info {
-	 font-size: 12px;
-	 font-weight: 700;
-	 letter-spacing: 3px;
-	 margin: 0 0 0.5em 0;
-	 text-transform: uppercase;
-	 white-space: nowrap;
+.timeline-info {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 0 0.5em 0;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 /*----- TIMELINE MARKER -----*/
- .timeline-marker {
-	 position: absolute;
-	 top: 0;
-	 bottom: 0;
-	 left: 0;
-	 width: 15px;
+.timeline-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15px;
 }
- .timeline-marker:before {
-	 background: #ff6b6b;
-	 border: 3px solid transparent;
-	 border-radius: 100%;
-	 content: "";
-	 display: block;
-	 height: 15px;
-	 position: absolute;
-	 top: 4px;
-	 left: 0;
-	 width: 15px;
-	 transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+.timeline-marker:before {
+    background: #000;
+    border: 3px solid transparent;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 15px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 15px;
+    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
 }
- .timeline-marker:after {
-	 content: "";
-	 width: 3px;
-	 background: #ccd5db;
-	 display: block;
-	 position: absolute;
-	 top: 24px;
-	 bottom: 0;
-	 left: 6px;
+.timeline-marker:after {
+    content: "";
+    width: 3px;
+    background: #ccd5db;
+    display: block;
+    position: absolute;
+    top: 24px;
+    bottom: 0;
+    left: 6px;
 }
- .timeline-item:last-child .timeline-marker:after {
-	 content: none;
+.timeline-item:last-child .timeline-marker:after {
+    content: none;
 }
- .timeline-item:not(.period):hover .timeline-marker:before {
-	 background: transparent;
-	 border: 3px solid #ff6b6b;
+.timeline-item:not(.period):hover .timeline-marker:before {
+    background: transparent;
+    border: 3px solid #000;
 }
 /*----- TIMELINE CONTENT -----*/
- .timeline-content {
-	 padding-bottom: 40px;
+.timeline-content {
+    padding-bottom: 40px;
 }
- .timeline-content p:last-child {
-	 margin-bottom: 0;
+.timeline-content p:last-child {
+    margin-bottom: 0;
 }
 /*----- TIMELINE PERIOD -----*/
- .period {
-	 padding: 0;
+.period {
+    padding: 0;
 }
- .period .timeline-info {
-	 display: none;
+.period .timeline-info {
+    display: none;
 }
- .period .timeline-marker:before {
-	 background: transparent;
-	 content: "";
-	 width: 15px;
-	 height: auto;
-	 border: none;
-	 border-radius: 0;
-	 top: 0;
-	 bottom: 30px;
-	 position: absolute;
-	 border-top: 3px solid #ccd5db;
-	 border-bottom: 3px solid #ccd5db;
+.period .timeline-marker:before {
+    background: transparent;
+    content: "";
+    width: 15px;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 30px;
+    position: absolute;
+    border-top: 3px solid #ccd5db;
+    border-bottom: 3px solid #ccd5db;
 }
- .period .timeline-marker:after {
-	 content: "";
-	 height: 32px;
-	 top: auto;
+.period .timeline-marker:after {
+    content: "";
+    height: 32px;
+    top: auto;
 }
- .period .timeline-content {
-	 padding: 40px 0 70px;
+.period .timeline-content {
+    padding: 40px 0 70px;
 }
- .period .timeline-title {
-	 margin: 0;
+.period .timeline-title {
+    margin: 0;
 }
 /*---------------------------------------------- MOD: TIMELINE SPLIT ----------------------------------------------*/
- @media (min-width: 768px) {
-	 .timeline-split .timeline, .timeline-centered .timeline {
-		 display: table;
-	}
-	 .timeline-split .timeline-item, .timeline-centered .timeline-item {
-		 display: table-row;
-		 padding: 0;
-	}
-	 .timeline-split .timeline-info, .timeline-centered .timeline-info, .timeline-split .timeline-marker, .timeline-centered .timeline-marker, .timeline-split .timeline-content, .timeline-centered .timeline-content, .timeline-split .period .timeline-info, .timeline-centered .period .timeline-info {
-		 display: table-cell;
-		 vertical-align: top;
-	}
-	 .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
-		 position: relative;
-	}
-	 .timeline-split .timeline-content, .timeline-centered .timeline-content {
-		 padding-left: 30px;
-	}
-	 .timeline-split .timeline-info, .timeline-centered .timeline-info {
-		 padding-right: 30px;
-	}
-	 .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
-		 position: relative;
-		 left: -45px;
-	}
+@media (min-width: 768px) {
+    .timeline-split .timeline, .timeline-centered .timeline {
+        display: table;
+   }
+    .timeline-split .timeline-item, .timeline-centered .timeline-item {
+        display: table-row;
+        padding: 0;
+   }
+    .timeline-split .timeline-info, .timeline-centered .timeline-info, .timeline-split .timeline-marker, .timeline-centered .timeline-marker, .timeline-split .timeline-content, .timeline-centered .timeline-content, .timeline-split .period .timeline-info, .timeline-centered .period .timeline-info {
+        display: table-cell;
+        vertical-align: top;
+   }
+    .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
+        position: relative;
+   }
+    .timeline-split .timeline-content, .timeline-centered .timeline-content {
+        padding-left: 30px;
+   }
+    .timeline-split .timeline-info, .timeline-centered .timeline-info {
+        padding-right: 30px;
+   }
+    .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
+        position: relative;
+        left: -45px;
+   }
 }
 /*---------------------------------------------- MOD: TIMELINE CENTERED ----------------------------------------------*/
- @media (min-width: 992px) {
-	 .timeline-centered, .timeline-centered .timeline-item, .timeline-centered .timeline-info, .timeline-centered .timeline-marker, .timeline-centered .timeline-content {
-		 display: block;
-		 margin: 0;
-		 padding: 0;
-	}
-	 .timeline-centered .timeline-item {
-		 padding-bottom: 40px;
-		 overflow: hidden;
-	}
-	 .timeline-centered .timeline-marker {
-		 position: absolute;
-		 left: 50%;
-		 margin-left: -7.5px;
-	}
-	 .timeline-centered .timeline-info, .timeline-centered .timeline-content {
-		 width: 50%;
-	}
-	 .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
-		 float: left;
-		 text-align: right;
-		 padding-right: 30px;
-	}
-	 .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
-		 float: right;
-		 text-align: left;
-		 padding-left: 30px;
-	}
-	 .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
-		 float: right;
-		 text-align: left;
-		 padding-left: 30px;
-	}
-	 .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
-		 float: left;
-		 text-align: right;
-		 padding-right: 30px;
-	}
-	 .timeline-centered > .timeline-item.period .timeline-content {
-		 float: none;
-		 padding: 0;
-		 width: 100%;
-		 text-align: center;
-	}
-	 .timeline-centered .timeline-item.period {
-		 padding: 50px 0 90px;
-	}
-	 .timeline-centered .period .timeline-marker:after {
-		 height: 30px;
-		 bottom: 0;
-		 top: auto;
-	}
-	 .timeline-centered .period .timeline-title {
-		 left: auto;
-	}
+@media (min-width: 992px) {
+    .timeline-centered, .timeline-centered .timeline-item, .timeline-centered .timeline-info, .timeline-centered .timeline-marker, .timeline-centered .timeline-content {
+        display: block;
+        margin: 0;
+        padding: 0;
+   }
+    .timeline-centered .timeline-item {
+        padding-bottom: 40px;
+        overflow: hidden;
+   }
+    .timeline-centered .timeline-marker {
+        position: absolute;
+        left: 50%;
+        margin-left: -7.5px;
+   }
+    .timeline-centered .timeline-info, .timeline-centered .timeline-content {
+        width: 50%;
+   }
+    .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
+        float: left;
+        text-align: right;
+        padding-right: 30px;
+   }
+    .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
+        float: right;
+        text-align: left;
+        padding-left: 30px;
+   }
+    .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
+        float: right;
+        text-align: left;
+        padding-left: 30px;
+   }
+    .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
+        float: left;
+        text-align: right;
+        padding-right: 30px;
+   }
+    .timeline-centered > .timeline-item.period .timeline-content {
+        float: none;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+   }
+    .timeline-centered .timeline-item.period {
+        padding: 50px 0 90px;
+   }
+    .timeline-centered .period .timeline-marker:after {
+        height: 30px;
+        bottom: 0;
+        top: auto;
+   }
+    .timeline-centered .period .timeline-title {
+        left: auto;
+   }
 }
 /*---------------------------------------------- MOD: MARKER OUTLINE ----------------------------------------------*/
- .marker-outline .timeline-marker:before {
-	 background: transparent;
-	 border-color: #ff6b6b;
+.marker-outline .timeline-marker:before {
+    background: transparent;
+    border-color: #ff6b6b;
 }
- .marker-outline .timeline-item:hover .timeline-marker:before {
-	 background: #ff6b6b;
+.marker-outline .timeline-item:hover .timeline-marker:before {
+    background: #ff6b6b;
 }
- 
+.timeline-event-thumbnail {
+ -moz-transition: box-shadow 0.5s ease-in 0.1s;
+ -o-transition: box-shadow 0.5s ease-in 0.1s;
+ -webkit-transition: box-shadow 0.5s ease-in;
+ -webkit-transition-delay: 0.1s;
+ transition: box-shadow 0.5s ease-in 0.1s;
+ color: white;
+ font-size: 0.75em;
+ background-color: black;
+ -moz-box-shadow: inset 0 0 0 0em #ef795a;
+ -webkit-box-shadow: inset 0 0 0 0em #ef795a;
+ box-shadow: inset 0 0 0 0em #ef795a;
+ display: inline-block;
+ margin-bottom: 1.2em;
+ padding: 0.25em 1em 0.2em 1em;
+}
+.timeline-item:hover .timeline-event-thumbnail {
+ -moz-box-shadow: inset 40em 0 0 0 #a83279;
+ -webkit-box-shadow: inset 40em 0 0 0 #a83279;
+ box-shadow: inset 40em 0 0 0 #a83279;
+}
     </style>
 
 </head>
@@ -361,64 +349,187 @@
                 </div>
             </div>
 <!-- New TimeLine -->
-                <div class="row example-centered">
-        <div class="col-md-12 example-title">
-            <h2>Centered Timeline</h2>
-            <p>Medium devices (desktops, 992px and up).</p>
-        </div>
-        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                <div class="row my-auto">       
+        <div class="col-xs-10">
             <ul class="timeline timeline-centered">
+                    <li class="timeline-item period">
+                            <div class="timeline-info"></div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h2 class="timeline-title">Experience</h2>
+                            </div>
+                        </li>
                 <li class="timeline-item">
                     <div class="timeline-info">
-                        <span>March 12, 2016</span>
+                        <span>February, 2018 - Present</span> 
                     </div>
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Event Title</h3>
+                        <h3 class="timeline-title">BRAINSTATION-23 LTD.</h3>
+                        <p>Software Engineer</p>
                         <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
                             eu pede mollis pretium. Pellentesque ut neque.</p>
                     </div>
                 </li>
                 <li class="timeline-item">
                     <div class="timeline-info">
-                        <span>March 23, 2016</span>
+                        <span>September, 2017 - January, 2018</span>
                     </div>
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Event Title</h3>
-                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                            eu pede mollis pretium. Pellentesque ut neque. </p>
+                        <h3 class="timeline-title">Ha-Meem
+                                Group</h3>
+                                <p>Software Engineer</p>
+          
+                                <ul>
+                                    <li>Worked on Thread Management Application for Garments production</li>
+                                    <li>Developed Land Management (CS, RS, BS records)</li>
+                                    <li>Worked on Commercial Management for Garments Industry</li>
+        
+                                </ul>
                     </div>
                 </li>
+
+                <li class="timeline-item">
+                        <div class="timeline-info">
+                            <span>March, 2016 - September, 2017</span>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title"><a href="http://www.uslbd.com/" target="_blank">Unisoft Systems
+                                Ltd.</a></h3>
+                                    <p>Software Engineer</p>
+                                    <ul>
+                                            <li>Worked as an efficient development team member of Enterprise Resource Planning (ERP)
+                                                solution.
+                                                Where my role is to develop sales module which includes POS System, large Nubmer of Item
+                                                Management with independent Discount and Offer/Promotion module. </li>
+                                            <!--<li>Developed Sales Module for ERP solution.</li>
+                                            <li>Worked in POS System, Discount Module, Offer Module, Product Module for Sales Module in partnership with business analysts and technical architects.</li>
+                                            <li>Quickly produce well-organized, optimized, and documented source code.</li>
+                                            <li>Meet Client Requirements For Sales Module</li>-->
+                                        </ul>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span>October, 2015 - March, 2016</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title"><a href="http://www.systechunimax.com/" target="_blank">Systech
+                                    Unimax Ltd</a></h3>
+                                        <p>Jr. Software Engineer</p>
+                  
+                                        <ul>
+                                                <li>Developed Supply Chain Management For One of the largest group of companies in
+                                                    Bangladesh.</li>
+                                                <li>Implemented robust code to maintain large amount of product serial number.</li>
+                                                <li>Integrated SCM to CRM using SFTP to maintain product activation status and product
+                                                    movement on SCM</li>
+                                                <li>Implemented business logic for Human Resource Management System. Managed
+                                                    Attendance,Payroll, and Employee Profile for multi company.</li>
+                                                <li>Workeed on sophisticated financial management System.</li>
+                                            </ul>
+                            </div>
+                        </li>
+
                 <li class="timeline-item period">
                     <div class="timeline-info"></div>
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h2 class="timeline-title">April 2016</h2>
+                        <h2 class="timeline-title">Education</h2>
                     </div>
                 </li>
                 <li class="timeline-item">
                     <div class="timeline-info">
-                        <span>April 02, 2016</span>
+                        <span>2017 - 2018</span>
                     </div>
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Event Title</h3>
-                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                            eu pede mollis pretium. Pellentesque ut neque. </p>
+                        <h3 class="timeline-title">Master of Science in Computer Science</h3>
+                        <p>Jahangirnagar University</p>
+                        <p><strong>Courses Included</strong></p>
+                        <p>
+                            Data Structure, Software Engineering, Object Oriented Programming with JAVA, Data
+                            Communication, Industrial Automation, Embedded Systems, Digital Image Processing,
+                            Computer Networks, Network Security, Information Theory and Coding systems, Advanced
+                            Database Management System, Software Project Management and Quality Assurance.
+                        </p>
                     </div>
                 </li>
                 <li class="timeline-item">
                     <div class="timeline-info">
-                        <span>April 28, 2016</span>
+                        <span>2014 - 2015</span>
                     </div>
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Event Title</h3>
-                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
-                            eu pede mollis pretium. Pellentesque ut neque. </p>
+                        <h3 class="timeline-title">Enterprise System Analysis & Design Using C#</h3>
+                        <p>
+                                Daffodil Institute of IT (DIIT)(IDB-BISEW)
+                            </p>
+                            <p><strong>Courses Included</strong></p>
+                            <p>
+                                Introduction to programming with C#, Microsoft SQL Server 2012 Programming,
+                                Object-Oriented System Analysis and design using UML, Programming HTML5 with JavaScript and
+                                CSS3, Introducing the XML,
+                                Introduction to ASP.NET, Developing ASP.NET MVC 4 Web Applications, Developing Windows Azure
+                                & Web Services.
+                            </p>
                     </div>
                 </li>
+                <li class="timeline-item">
+                        <div class="timeline-info">
+                            <span> 2010 - 2011</span>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Master Of Science in Chemistry</h3>
+                            <p>
+                                    National University
+                                </p>
+                               
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span> 2007 - 2010</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Bachelor of Science in Chemistry</h3>
+                                <p>
+                                        National University
+                                    </p>
+                                   
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                                <div class="timeline-info">
+                                    <span> 2003 - 2005</span>
+                                </div>
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="timeline-title">Higher Secondary Certificate</h3>
+                                    <p>
+                                            Brahmanbaria Govt. College, Brahmanbaria
+                                        </p>
+                                       
+                                </div>
+                            </li>
+                            <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <span>1995 - 2003</span>
+                                    </div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h3 class="timeline-title">Secondary School Certificate</h3>
+                                        <p>
+                                                Annada Govt. High School, Brahmanbaria
+                                            </p>
+                                           
+                                    </div>
+                                </li>
             </ul>
         </div>
     </div>
@@ -426,7 +537,7 @@
 
 
 
-            <div class="row">
+            <div class="row" style="display: none;">
                 <div class="jobs-info col-md-6  justify-content-md-center wow fadeInUp">
                     <h3 class="resume-subheader text-left"><i class="fa fa-hand-o-down" aria-hidden="true"></i>
                         Employment</h3>
@@ -516,7 +627,7 @@
                             2017 - 2018
                         </p>
                         <p>
-                            Jahangirnagar University
+                                Jahangirnagar University
                         </p>
                         <p><strong>Courses Included</strong></p>
                         <p>
@@ -575,7 +686,7 @@
 
             </div>
             <div class="row justify-content-md-center">
-                <div class="col-md-8">
+                <div class="col-md-6 text-center">
                     <a class="btn btn-new" href="doc\DotNet_2_JU_RabbyHasan.pdf">Download Resume</a>
                 </div>
             </div>
