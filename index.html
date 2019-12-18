@@ -22,244 +22,7 @@
     <link href="assets/css/style.css" rel="stylesheet" media="screen">
 
     <script src="assets/js/modernizr.custom.js"></script>
-    <style>
-
-.container-fluid .row {
-    padding: 0 0 4em 0;
-}
-.container-fluid .row:nth-child(even) {
-    background: #f1f4f5;
-}
-.example-title {
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 3em 0;
-    border-bottom: 1px solid #e4eaec;
-}
-.example-title p {
-    margin: 0 auto;
-    font-size: 16px;
-    max-width: 400px;
-}
-/*================================== TIMELINE ==================================*/
-/*-- GENERAL STYLES ------------------------------*/
-.timeline {
-    line-height: 1.4em;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
-    line-height: inherit;
-}
-/*----- TIMELINE ITEM -----*/
-.timeline-item {
-    padding-left: 40px;
-    position: relative;
-}
-.timeline-item:last-child {
-    padding-bottom: 0;
-}
-/*----- TIMELINE INFO -----*/
-.timeline-info {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin: 0 0 0.5em 0;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-/*----- TIMELINE MARKER -----*/
-.timeline-marker {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 15px;
-}
-.timeline-marker:before {
-    background: #000;
-    border: 3px solid transparent;
-    border-radius: 100%;
-    content: "";
-    display: block;
-    height: 15px;
-    position: absolute;
-    top: 4px;
-    left: 0;
-    width: 15px;
-    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
-}
-.timeline-marker:after {
-    content: "";
-    width: 3px;
-    background: #ccd5db;
-    display: block;
-    position: absolute;
-    top: 24px;
-    bottom: 0;
-    left: 6px;
-}
-.timeline-item:last-child .timeline-marker:after {
-    content: none;
-}
-.timeline-item:not(.period):hover .timeline-marker:before {
-    background: transparent;
-    border: 3px solid #000;
-}
-/*----- TIMELINE CONTENT -----*/
-.timeline-content {
-    padding-bottom: 40px;
-}
-.timeline-content p:last-child {
-    margin-bottom: 0;
-}
-/*----- TIMELINE PERIOD -----*/
-.period {
-    padding: 0;
-}
-.period .timeline-info {
-    display: none;
-}
-.period .timeline-marker:before {
-    background: transparent;
-    content: "";
-    width: 15px;
-    height: auto;
-    border: none;
-    border-radius: 0;
-    top: 0;
-    bottom: 30px;
-    position: absolute;
-    border-top: 3px solid #ccd5db;
-    border-bottom: 3px solid #ccd5db;
-}
-.period .timeline-marker:after {
-    content: "";
-    height: 32px;
-    top: auto;
-}
-.period .timeline-content {
-    padding: 40px 0 70px;
-}
-.period .timeline-title {
-    margin: 0;
-}
-/*---------------------------------------------- MOD: TIMELINE SPLIT ----------------------------------------------*/
-@media (min-width: 768px) {
-    .timeline-split .timeline, .timeline-centered .timeline {
-        display: table;
-   }
-    .timeline-split .timeline-item, .timeline-centered .timeline-item {
-        display: table-row;
-        padding: 0;
-   }
-    .timeline-split .timeline-info, .timeline-centered .timeline-info, .timeline-split .timeline-marker, .timeline-centered .timeline-marker, .timeline-split .timeline-content, .timeline-centered .timeline-content, .timeline-split .period .timeline-info, .timeline-centered .period .timeline-info {
-        display: table-cell;
-        vertical-align: top;
-   }
-    .timeline-split .timeline-marker, .timeline-centered .timeline-marker {
-        position: relative;
-   }
-    .timeline-split .timeline-content, .timeline-centered .timeline-content {
-        padding-left: 30px;
-   }
-    .timeline-split .timeline-info, .timeline-centered .timeline-info {
-        padding-right: 30px;
-   }
-    .timeline-split .period .timeline-title, .timeline-centered .period .timeline-title {
-        position: relative;
-        left: -45px;
-   }
-}
-/*---------------------------------------------- MOD: TIMELINE CENTERED ----------------------------------------------*/
-@media (min-width: 992px) {
-    .timeline-centered, .timeline-centered .timeline-item, .timeline-centered .timeline-info, .timeline-centered .timeline-marker, .timeline-centered .timeline-content {
-        display: block;
-        margin: 0;
-        padding: 0;
-   }
-    .timeline-centered .timeline-item {
-        padding-bottom: 40px;
-        overflow: hidden;
-   }
-    .timeline-centered .timeline-marker {
-        position: absolute;
-        left: 50%;
-        margin-left: -7.5px;
-   }
-    .timeline-centered .timeline-info, .timeline-centered .timeline-content {
-        width: 50%;
-   }
-    .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
-        float: left;
-        text-align: right;
-        padding-right: 30px;
-   }
-    .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
-        float: right;
-        text-align: left;
-        padding-left: 30px;
-   }
-    .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
-        float: right;
-        text-align: left;
-        padding-left: 30px;
-   }
-    .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
-        float: left;
-        text-align: right;
-        padding-right: 30px;
-   }
-    .timeline-centered > .timeline-item.period .timeline-content {
-        float: none;
-        padding: 0;
-        width: 100%;
-        text-align: center;
-   }
-    .timeline-centered .timeline-item.period {
-        padding: 50px 0 90px;
-   }
-    .timeline-centered .period .timeline-marker:after {
-        height: 30px;
-        bottom: 0;
-        top: auto;
-   }
-    .timeline-centered .period .timeline-title {
-        left: auto;
-   }
-}
-/*---------------------------------------------- MOD: MARKER OUTLINE ----------------------------------------------*/
-.marker-outline .timeline-marker:before {
-    background: transparent;
-    border-color: #ff6b6b;
-}
-.marker-outline .timeline-item:hover .timeline-marker:before {
-    background: #ff6b6b;
-}
-.timeline-event-thumbnail {
- -moz-transition: box-shadow 0.5s ease-in 0.1s;
- -o-transition: box-shadow 0.5s ease-in 0.1s;
- -webkit-transition: box-shadow 0.5s ease-in;
- -webkit-transition-delay: 0.1s;
- transition: box-shadow 0.5s ease-in 0.1s;
- color: white;
- font-size: 0.75em;
- background-color: black;
- -moz-box-shadow: inset 0 0 0 0em #ef795a;
- -webkit-box-shadow: inset 0 0 0 0em #ef795a;
- box-shadow: inset 0 0 0 0em #ef795a;
- display: inline-block;
- margin-bottom: 1.2em;
- padding: 0.25em 1em 0.2em 1em;
-}
-.timeline-item:hover .timeline-event-thumbnail {
- -moz-box-shadow: inset 40em 0 0 0 #a83279;
- -webkit-box-shadow: inset 40em 0 0 0 #a83279;
- box-shadow: inset 40em 0 0 0 #a83279;
-}
-    </style>
+   <link href="css/timeline.css" rel="stylesheet">
 
 </head>
 
@@ -369,7 +132,7 @@
                     <div class="timeline-content">
                         <h3 class="timeline-title">BRAINSTATION-23 LTD.</h3>
                         <p>Software Engineer</p>
-                        <p>Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
+                        <p class="text-justify">Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis
                             eu pede mollis pretium. Pellentesque ut neque.</p>
                     </div>
                 </li>
@@ -401,7 +164,7 @@
                             <h3 class="timeline-title"><a href="http://www.uslbd.com/" target="_blank">Unisoft Systems
                                 Ltd.</a></h3>
                                     <p>Software Engineer</p>
-                                    <ul>
+                                    <ul class="text-justify">
                                             <li>Worked as an efficient development team member of Enterprise Resource Planning (ERP)
                                                 solution.
                                                 Where my role is to develop sales module which includes POS System, large Nubmer of Item
@@ -452,7 +215,7 @@
                         <h3 class="timeline-title">Master of Science in Computer Science</h3>
                         <p>Jahangirnagar University</p>
                         <p><strong>Courses Included</strong></p>
-                        <p>
+                        <p class="text-justify">
                             Data Structure, Software Engineering, Object Oriented Programming with JAVA, Data
                             Communication, Industrial Automation, Embedded Systems, Digital Image Processing,
                             Computer Networks, Network Security, Information Theory and Coding systems, Advanced
@@ -471,7 +234,7 @@
                                 Daffodil Institute of IT (DIIT)(IDB-BISEW)
                             </p>
                             <p><strong>Courses Included</strong></p>
-                            <p>
+                            <p class="text-justify">
                                 Introduction to programming with C#, Microsoft SQL Server 2012 Programming,
                                 Object-Oriented System Analysis and design using UML, Programming HTML5 with JavaScript and
                                 CSS3, Introducing the XML,
@@ -536,157 +299,6 @@
         </div>
     </div>
             <!-- End New TimeLine -->
-
-
-
-            <div class="row" style="display: none;">
-                <div class="jobs-info col-md-6  justify-content-md-center wow fadeInUp">
-                    <h3 class="resume-subheader text-left"><i class="fa fa-hand-o-down" aria-hidden="true"></i>
-                        Employment</h3>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header"><a href="http://www.brainstation-23.com/"
-                                target="_blank">Brainstation-23 Ltd.</a></h4>
-                        <p class="dates">
-                            2018 - Present
-                        </p>
-                        <p>Software Engineer</p>
-                        <!--<p><strong>Responsibilites: </strong></p>
-                        <ul>
-                            <li>Currently Developing UniERP Sales Module.</li>
-                            <li>Developing sales module in partnership with business analysts and technical architects.</li>
-                            <li>Quickly produce well-organized, optimized, and documented source code.</li>
-                            <li>Meet Client Requirements For Sales Module</li>
-                        </ul>-->
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header"> <a href="http://www.hameemgroup.net/" target="_blank">Ha-Meem
-                                Group</a></h4>
-                        <p class="dates">
-                            2017 - 2017
-                        </p>
-                        <p>Software Engineer</p>
-                        <p><strong>Responsibilites: </strong></p>
-                        <ul>
-                            <li>Worked on Thread Management Application for Garments production</li>
-                            <li>Developed Land Management (CS, RS, BS records)</li>
-                            <li>Worked on Commercial Management for Garments Industry</li>
-
-                        </ul>
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header"><a href="http://www.uslbd.com/" target="_blank">Unisoft Systems
-                                Ltd.</a></h4>
-                        <p class="dates">
-                            2016 - 2017
-                        </p>
-                        <p>Software Engineer</p>
-                        <p><strong>Responsibilites: </strong></p>
-                        <ul>
-                            <li>Worked as an efficient development team member of Enterprise Resource Planning (ERP)
-                                solution.
-                                Where my role is to develop sales module which includes POS System, large Nubmer of Item
-                                Management with independent Discount and Offer/Promotion module. </li>
-                            <!--<li>Developed Sales Module for ERP solution.</li>
-                            <li>Worked in POS System, Discount Module, Offer Module, Product Module for Sales Module in partnership with business analysts and technical architects.</li>
-                            <li>Quickly produce well-organized, optimized, and documented source code.</li>
-                            <li>Meet Client Requirements For Sales Module</li>-->
-                        </ul>
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header"><a href="http://www.systechunimax.com/" target="_blank">Systech
-                                Unimax Ltd</a></h4>
-                        <p class="dates">
-                            2015 - 2016
-                        </p>
-                        <p>Jr. Software Engineer</p>
-                        <p><strong>Responsibilites: </strong></p>
-                        <ul>
-                            <li>Developed Supply Chain Management For One of the largest group of companies in
-                                Bangladesh.</li>
-                            <li>Implemented robust code to maintain large amount of product serial number.</li>
-                            <li>Integrated SCM to CRM using SFTP to maintain product activation status and product
-                                movement on SCM</li>
-                            <li>Implemented business logic for Human Resource Management System. Managed
-                                Attendance,Payroll, and Employee Profile for multi company.</li>
-                            <li>Workeed on sophisticated financial management System.</li>
-                        </ul>
-                    </div>
-                    <!-- <div class="cv-block">
-                      <h4 class="cv-block__header">First company</h4>
-                      <p class="dates">
-                          2006 - 2010
-                      </p>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div> -->
-                </div>
-
-                <div class="jobs-info col-md-6 wow fadeInUp">
-                    <h3 class="resume-subheader resume-subheader--jobs"><i class="fa fa-graduation-cap"
-                            aria-hidden="true"></i> Education</h3>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header">Master of Science in Computer Science</h4>
-                        <p class="dates">
-                            2017 - 2018
-                        </p>
-                        <p>
-                                Jahangirnagar University
-                        </p>
-                        <p><strong>Courses Included</strong></p>
-                        <p>
-                            Data Structure, Software Engineering, Object Oriented Programming with JAVA, Data
-                            Communication, Industrial Automation, Embedded Systems, Digital Image Processing,
-                            Computer Networks, Network Security, Information Theory and Coding systems, Advanced
-                            Database Management System, Software Project Management and Quality Assurance.
-                        </p>
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header">Enterprise System Analysis & Design Using C#</h4>
-                        <p class="dates">
-                            2014 - 2015
-                        </p>
-                        <p>
-                            Daffodil Institute of IT (DIIT)(IDB-BISEW)
-                        </p>
-                        <p><strong>Courses Included</strong></p>
-                        <p>
-                            Introduction to programming with C#, Microsoft SQL Server 2012 Programming,
-                            Object-Oriented System Analysis and design using UML, Programming HTML5 with JavaScript and
-                            CSS3, Introducing the XML,
-                            Introduction to ASP.NET, Developing ASP.NET MVC 4 Web Applications, Developing Windows Azure
-                            & Web Services.
-                        </p>
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header">National University</h4>
-                        <p class="dates">
-                            2010 - 2011
-                        </p>
-                        <p>Master Of Science in Chemistry</p>
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header">National University</h4>
-                        <p class="dates">
-                            2007 - 2010
-                        </p>
-                        <p>Bachelor of Science in Chemistry</p>
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header">Higher Secondary Certificate</h4>
-                        <p class="dates">
-                            2003 - 2005
-                        </p>
-                        <p>Brahmanbaria Govt. College, Brahmanbaria</p>
-                    </div>
-                    <div class="cv-block">
-                        <h4 class="cv-block__header">Secondary School Certificate</h4>
-                        <p class="dates">
-                            1995 - 2003
-                        </p>
-                        <p>Annada Govt. High School, Brahmanbaria</p>
-                    </div>
-                </div>
-
-            </div>
             <div class="row justify-content-md-center">
                 <div class="col-md-6 text-center">
                     <a class="btn btn-new" href="doc\DotNet_2_JU_RabbyHasan.pdf">Download Resume</a>
