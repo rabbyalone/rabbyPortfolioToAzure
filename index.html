@@ -270,11 +270,13 @@
     <div id="preloader">
         <div id="status"></div>
     </div>
-
+<!-- Particle JS -->
+<div ></div>
     <!-- Home start -->
 
+
     <section id="home" class="pfblock-image screen-height">
-        <div class="home-overlay"></div>
+        <div class="home-overlay" id="particles-js"></div>
         <div class="intro">
             <div class="start">Hello, my name is<strong> Md Rabby Hasan</strong> and I am</div>
             <h1>Full Stack Software Developer</h1>
@@ -1482,16 +1484,24 @@
     <script src="assets/js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
     <script src="https://use.typekit.net/bkt6ydm.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+try{Typekit.load({ async: true });}catch(e){}
+</script>
     <script>
         $(document).ready(function () {
+
+
             var $grid = $('.grid').isotope({
                 itemSelector: '.portfolio-item mix ',
                 layoutMode: 'fitRows'
             });
 
             // external js: isotope.pkgd.js
-
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'js/part.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 
             // filter functions
             var filterFns = {
