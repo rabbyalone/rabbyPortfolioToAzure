@@ -10,20 +10,83 @@
     <title>Rabby Hasan's Portfolio</title>
 
     <!-- CSS -->
-    
+
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
- 
+
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
     <link href="assets/css/simple-line-icons.css" rel="stylesheet" media="screen">
     <link href="assets/css/animate.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
- 
+
     <!-- Custom styles CSS -->
     <link href="assets/css/style.css" rel="stylesheet" media="screen">
 
     <script src="assets/js/modernizr.custom.js"></script>
-   <link href="css/timeline.css" rel="stylesheet">
+    <link href="css/timeline.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial;
+        }
 
+        a:focus {
+            outline: none;
+        }
+
+        .portfolioFilter {
+            padding: 15px 0;
+        }
+
+        .portfolioFilter a {
+            margin-right: 6px;
+            color: #666;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            padding: 4px 15px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .portfolioFilter a.current {
+            background: #1e1e1e;
+            border: 1px solid #1e1e1e;
+            color: #f9f9f9;
+        }
+
+        
+
+        .isotope-item {
+            z-index: 2;
+        }
+
+        .isotope-hidden.isotope-item {
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .isotope,
+        .isotope .isotope-item {
+            /* change duration value to whatever you like */
+            -webkit-transition-duration: 0.8s;
+            -moz-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+        }
+
+        .isotope {
+            -webkit-transition-property: height, width;
+            -moz-transition-property: height, width;
+            transition-property: height, width;
+        }
+
+        .isotope .isotope-item {
+            -webkit-transition-property: -webkit-transform, opacity;
+            -moz-transition-property: -moz-transform, opacity;
+            transition-property: transform, opacity;
+        }
+
+        .portfolio-link > img {
+            width:100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,8 +96,8 @@
     <div id="preloader">
         <div id="status"></div>
     </div>
-<!-- Particle JS -->
-<div ></div>
+    <!-- Particle JS -->
+    <div></div>
     <!-- Home start -->
 
 
@@ -113,154 +176,162 @@
                     </div>
                 </div>
             </div>
-<!-- New TimeLine -->
-                <div class="row my-auto">       
-        <div class="col-xs-10">
-            <ul class="timeline timeline-centered">
-                    <li class="timeline-item period">
+            <!-- New TimeLine -->
+            <div class="row my-auto">
+                <div class="col-xs-10">
+                    <ul class="timeline timeline-centered">
+                        <li class="timeline-item period">
                             <div class="timeline-info"></div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <h2 class="timeline-title">Experience</h2>
                             </div>
                         </li>
-                <li class="timeline-item">
-                    <div class="timeline-info">
-                        <span>February, 2018 - Present</span> 
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                            <h3 class="timeline-title"><a href="https://brainstation-23.com/" target="_blank">BRAINSTATION-23 LTD.</a></h3>
-                      
-                        <p>Software Engineer</p>
-                        <ul class="text-justify">
-                            <li>Developed enormous amount of softwares for various busniness stack.</li>
-                            <li>Maintain world class software design and development procedures.</li>
-                            <li>Robust code with excellect solution with best user experience.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                    <div class="timeline-info">
-                        <span>September, 2017 - January, 2018</span>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Ha-Meem
-                                Group</h3>
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span>February, 2018 - Present</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title"><a href="https://brainstation-23.com/"
+                                        target="_blank">BRAINSTATION-23 LTD.</a></h3>
+
                                 <p>Software Engineer</p>
-          
+                                <ul class="text-justify">
+                                    <li>Developed enormous amount of softwares for various busniness stack.</li>
+                                    <li>Maintain world class software design and development procedures.</li>
+                                    <li>Robust code with excellect solution with best user experience.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span>September, 2017 - January, 2018</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Ha-Meem
+                                    Group</h3>
+                                <p>Software Engineer</p>
+
                                 <ul>
                                     <li>Worked on Thread Management Application for Garments production</li>
                                     <li>Developed Land Management (CS, RS, BS records)</li>
                                     <li>Worked on Commercial Management for Garments Industry</li>
-        
-                                </ul>
-                    </div>
-                </li>
 
-                <li class="timeline-item">
-                        <div class="timeline-info">
-                            <span>March, 2016 - September, 2017</span>
-                        </div>
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title"><a href="http://www.uslbd.com/" target="_blank">Unisoft Systems
-                                Ltd.</a></h3>
-                                    <p>Software Engineer</p>
-                                    <ul class="text-justify">
-                                            <li>Worked as an efficient development team member of Enterprise Resource Planning (ERP)
-                                                solution.
-                                                Where my role is to develop sales module which includes POS System, large Nubmer of Item
-                                                Management with independent Discount and Offer/Promotion module. </li>
-                                            <!--<li>Developed Sales Module for ERP solution.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span>March, 2016 - September, 2017</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title"><a href="http://www.uslbd.com/" target="_blank">Unisoft
+                                        Systems
+                                        Ltd.</a></h3>
+                                <p>Software Engineer</p>
+                                <ul class="text-justify">
+                                    <li>Worked as an efficient development team member of Enterprise Resource Planning
+                                        (ERP)
+                                        solution.
+                                        Where my role is to develop sales module which includes POS System, large Nubmer
+                                        of Item
+                                        Management with independent Discount and Offer/Promotion module. </li>
+                                    <!--<li>Developed Sales Module for ERP solution.</li>
                                             <li>Worked in POS System, Discount Module, Offer Module, Product Module for Sales Module in partnership with business analysts and technical architects.</li>
                                             <li>Quickly produce well-organized, optimized, and documented source code.</li>
                                             <li>Meet Client Requirements For Sales Module</li>-->
-                                        </ul>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
                             <div class="timeline-info">
                                 <span>October, 2015 - March, 2016</span>
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title"><a href="http://www.systechunimax.com/" target="_blank">Systech
-                                    Unimax Ltd</a></h3>
-                                        <p>Jr. Software Engineer</p>
-                  
-                                        <ul>
-                                                <li>Developed Supply Chain Management For One of the largest group of companies in
-                                                    Bangladesh.</li>
-                                                <li>Implemented robust code to maintain large amount of product serial number.</li>
-                                                <li>Integrated SCM to CRM using SFTP to maintain product activation status and product
-                                                    movement on SCM</li>
-                                                <li>Implemented business logic for Human Resource Management System. Managed
-                                                    Attendance,Payroll, and Employee Profile for multi company.</li>
-                                                <li>Workeed on sophisticated financial management System.</li>
-                                            </ul>
+                                <h3 class="timeline-title"><a href="http://www.systechunimax.com/"
+                                        target="_blank">Systech
+                                        Unimax Ltd</a></h3>
+                                <p>Jr. Software Engineer</p>
+
+                                <ul>
+                                    <li>Developed Supply Chain Management For One of the largest group of companies in
+                                        Bangladesh.</li>
+                                    <li>Implemented robust code to maintain large amount of product serial number.</li>
+                                    <li>Integrated SCM to CRM using SFTP to maintain product activation status and
+                                        product
+                                        movement on SCM</li>
+                                    <li>Implemented business logic for Human Resource Management System. Managed
+                                        Attendance,Payroll, and Employee Profile for multi company.</li>
+                                    <li>Workeed on sophisticated financial management System.</li>
+                                </ul>
                             </div>
                         </li>
 
-                <li class="timeline-item period">
-                    <div class="timeline-info"></div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h2 class="timeline-title">Education</h2>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                    <div class="timeline-info">
-                        <span>2017 - 2018</span>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Master of Science in Computer Science</h3>
-                        <p>Jahangirnagar University</p>
-                        <p><strong>Courses Included</strong></p>
-                        <p class="text-justify">
-                            Data Structure, Software Engineering, Object Oriented Programming with JAVA, Data
-                            Communication, Industrial Automation, Embedded Systems, Digital Image Processing,
-                            Computer Networks, Network Security, Information Theory and Coding systems, Advanced
-                            Database Management System, Software Project Management and Quality Assurance.
-                        </p>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                    <div class="timeline-info">
-                        <span>2014 - 2015</span>
-                    </div>
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Enterprise System Analysis & Design Using C#</h3>
-                        <p>
-                                Daffodil Institute of IT (DIIT)(IDB-BISEW)
-                            </p>
-                            <p><strong>Courses Included</strong></p>
-                            <p class="text-justify">
-                                Introduction to programming with C#, Microsoft SQL Server 2012 Programming,
-                                Object-Oriented System Analysis and design using UML, Programming HTML5 with JavaScript and
-                                CSS3, Introducing the XML,
-                                Introduction to ASP.NET, Developing ASP.NET MVC 4 Web Applications, Developing Windows Azure
-                                & Web Services.
-                            </p>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                        <div class="timeline-info">
-                            <span> 2010 - 2011</span>
-                        </div>
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Master Of Science in Chemistry</h3>
-                            <p>
+                        <li class="timeline-item period">
+                            <div class="timeline-info"></div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h2 class="timeline-title">Education</h2>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span>2017 - 2018</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Master of Science in Computer Science</h3>
+                                <p>Jahangirnagar University</p>
+                                <p><strong>Courses Included</strong></p>
+                                <p class="text-justify">
+                                    Data Structure, Software Engineering, Object Oriented Programming with JAVA, Data
+                                    Communication, Industrial Automation, Embedded Systems, Digital Image Processing,
+                                    Computer Networks, Network Security, Information Theory and Coding systems, Advanced
+                                    Database Management System, Software Project Management and Quality Assurance.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span>2014 - 2015</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Enterprise System Analysis & Design Using C#</h3>
+                                <p>
+                                    Daffodil Institute of IT (DIIT)(IDB-BISEW)
+                                </p>
+                                <p><strong>Courses Included</strong></p>
+                                <p class="text-justify">
+                                    Introduction to programming with C#, Microsoft SQL Server 2012 Programming,
+                                    Object-Oriented System Analysis and design using UML, Programming HTML5 with
+                                    JavaScript and
+                                    CSS3, Introducing the XML,
+                                    Introduction to ASP.NET, Developing ASP.NET MVC 4 Web Applications, Developing
+                                    Windows Azure
+                                    & Web Services.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span> 2010 - 2011</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Master Of Science in Chemistry</h3>
+                                <p>
                                     National University
                                 </p>
-                               
-                        </div>
-                    </li>
-                    <li class="timeline-item">
+
+                            </div>
+                        </li>
+                        <li class="timeline-item">
                             <div class="timeline-info">
                                 <span> 2007 - 2010</span>
                             </div>
@@ -268,40 +339,40 @@
                             <div class="timeline-content">
                                 <h3 class="timeline-title">Bachelor of Science in Chemistry</h3>
                                 <p>
-                                        National University
-                                    </p>
-                                   
+                                    National University
+                                </p>
+
                             </div>
                         </li>
                         <li class="timeline-item">
-                                <div class="timeline-info">
-                                    <span> 2003 - 2005</span>
-                                </div>
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h3 class="timeline-title">Higher Secondary Certificate</h3>
-                                    <p>
-                                            Brahmanbaria Govt. College, Brahmanbaria
-                                        </p>
-                                       
-                                </div>
-                            </li>
-                            <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <span>1995 - 2003</span>
-                                    </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        <h3 class="timeline-title">Secondary School Certificate</h3>
-                                        <p>
-                                                Annada Govt. High School, Brahmanbaria
-                                            </p>
-                                           
-                                    </div>
-                                </li>
-            </ul>
-        </div>
-    </div>
+                            <div class="timeline-info">
+                                <span> 2003 - 2005</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Higher Secondary Certificate</h3>
+                                <p>
+                                    Brahmanbaria Govt. College, Brahmanbaria
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span>1995 - 2003</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">Secondary School Certificate</h3>
+                                <p>
+                                    Annada Govt. High School, Brahmanbaria
+                                </p>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <!-- End New TimeLine -->
             <div class="row justify-content-md-center">
                 <div class="col-md-6 text-center">
@@ -406,11 +477,11 @@
 
     <!-- Skills end -->
     <!-- Portfolio start -->
-
+    <!--    -->
     <section id="portfolio" class="pfblock pfblock-gray">
-        <div class="row">
         <div class="container">
-            
+            <div class="row">
+
                 <div class="col-sm-12">
 
                     <div class="pfblock-header wow fadeInUp">
@@ -421,21 +492,36 @@
                         </div>
                     </div>
                 </div>
-    
-            <!-- .row -->
-   
-                <div class="col-md-12">
-                    <button class="filter btn btn-new" data-filter="all">All</button>
-                    <button class="filter btn btn-new" data-filter=".category-1">Asp.Net</button>
-                    <button class="filter btn btn-new" data-filter=".category-2">Asp.Net MVC</button>
-                    <button class="filter btn btn-new" data-filter=".category-3">Other Projects</button>
-                    <button class="filter btn btn-new" data-filter=".category-4">Web Development</button>
-                </div>
 
-  
-           
-                <div id="Container" class="row wow bounce">
-                    <div class="col-md-4 col-sm-6 portfolio-item mix asp" data-category="asp">
+                <!-- .row -->
+
+
+                <div class="col-lg-12">
+                    <div class="portfolioFilter clearfix">
+                        <a href="#" data-filter="*" class="current">All Categories</a>
+                        <a href="#" data-filter=".aspcore">Asp.NET Core</a>
+                        <a href="#" data-filter=".asp">ASP.NET MVC</a>                      
+                        <a href="#" data-filter=".webDev">Website Development</a>
+                        <a href="#" data-filter=".other">Others</a>
+                    </div>
+                    
+                <div class="portfolioContainer">
+                    <div class="col-md-4 portfolio-item aspcore objects">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/ERP_thubnail.jpg" class="img-responsive" alt="Erp_thubnail" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Sanofi iBoost</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 portfolio-item asp objects">
                         <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
@@ -449,7 +535,8 @@
                             <p class="text-muted">Software Development</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item mix asp">
+                    
+                    <div class="col-md-4 col-sm-6 portfolio-item objects asp">
                         <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
@@ -464,7 +551,7 @@
                             <p class="text-muted">Software Development</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item mix asp">
+                    <div class="col-md-4 col-sm-6 portfolio-item objects asp">
                         <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
@@ -478,7 +565,7 @@
                             <p class="text-muted">Software Development</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item mix category-1">
+                    <div class="col-md-4 col-sm-6 portfolio-item objects asp">
                         <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
@@ -492,7 +579,7 @@
                             <p class="text-muted">Software Development</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item mix category-2">
+                    <div class="col-md-4 col-sm-6 portfolio-item objects asp">
                         <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
@@ -506,7 +593,7 @@
                             <p class="text-muted">Software Development</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
+                    <div class="col-md-4 col-sm-6 portfolio-item objects other">
                         <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
@@ -520,60 +607,54 @@
                             <p class="text-muted">Software Development</p>
                         </div>
                     </div>
-
-                    <div class="row" id="hiddenContent">
-                        <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
-                            <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item objects webDev">
+                        <a href="#portfolioModal7" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
                                 </div>
-                                <img src="img/portfolio/webDev_thumb.png" class="img-responsive" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Web Development</h4>
-                                <p class="text-muted">IndexedDB, JavaScript, HTML5,CSS3</p>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item mix category-4">
-                            <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/xmlwork_thumb.jpg" class="img-responsive" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>XML Site</h4>
-                                <p class="text-muted">XML, XSDT, XSLT, CSS, JAVASCRIPT </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item mix category-3">
-                            <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Commercial Management</h4>
-                                <p class="text-muted">Software Development</p>
-                            </div>
+                            <img src="img/portfolio/webDev_thumb.png" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Web Development</h4>
+                            <p class="text-muted">IndexedDB, JavaScript, HTML5,CSS3</p>
                         </div>
                     </div>
-                    <center>
-                        <div class="col-md-offset-4 col-md-4">
-                            <button class="btn btn-block" id="btnShowMore">Show More</button>
+                    <div class="col-md-4 col-sm-6 portfolio-item objects other">
+                        <a href="#portfolioModal8" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/xmlwork_thumb.jpg" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>XML Site</h4>
+                            <p class="text-muted">XML, XSDT, XSLT, CSS, JAVASCRIPT </p>
                         </div>
-                    </center>
+                    </div>
+                    <div class="col-md-4 col-sm-6 portfolio-item asp objects">
+                        <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Commercial Management</h4>
+                            <p class="text-muted">Software Development</p>
+                        </div>
+                    </div>
                 </div>
-           
+                </div>
+                </div>
+
+            </div>
         </div>
-    </div>
         <!-- .contaier -->
     </section>
 
@@ -758,7 +839,7 @@
 
     <!-- Scroll to top end-->
     <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right: 0px;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -771,11 +852,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="modal-body">
-                                <div class="col-md-7">
+                                
                                     <img class="img-responsive img-centered" src="img/portfolio/port_big1.png" alt="">
                                     <img class="img-responsive img-centered" src="img/portfolio/port_big11-1.PNG" />
-                                </div>
-                                <div class="col-md-5">
+                               
+                              
                                     <!-- Project Details Go Here -->
                                     <h2>ENTERPRISE RESOURCE PLANNING (ERP) SOFTWARE</h2>
                                     <p class="item-intro text-muted"></p>
@@ -794,7 +875,7 @@
                                         <button type="button" class="btn btn-primary" data-dismiss="modal"><i
                                                 class="fa fa-times"></i>Close Project</button>
 
-                                </div>
+                               
 
                             </div>
                         </div>
@@ -818,11 +899,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="modal-body">
-                                <div class="col-md-7">
+                                
                                     <img class="img-responsive img-centered" src="img/portfolio/SCM_big1.gif"
                                         alt="SCM" />
-                                </div>
-                                <div class="col-md-5">
+                              
                                     <h2>Supply Chain Management</h2>
                                     <p class="item-intro text-muted">Project is Live and working perfectly.</p>
 
@@ -841,7 +921,7 @@
                                     </p>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i
                                             class="fa fa-times"></i>Close Project</button>
-                                </div>
+                                
 
                             </div>
                         </div>
@@ -865,20 +945,19 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="modal-body">
-                                <div class="col-md-5">
+                                
                                     <!-- Project Details Go Here -->
                                     <h2>Distribution Management System</h2>
                                     <p class="item-intro text-muted">Project implemented successfully</p>
 
                                     <p>Developed distribution management system for one of the pioneer mobile device
                                         company of Bangladesh as well as worlds biggest company.</p>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i
-                                            class="fa fa-times"></i>Close Project</button>
-                                </div>
-                                <div class="col-md-7">
+                                    
+                               
                                     <img class="img-responsive img-centered" src="img/portfolio/DMS_big1.gif" alt="" />
-                                </div>
-
+                               
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i>Close Project</button>
                             </div>
                         </div>
                     </div>
@@ -901,11 +980,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="modal-body">
-                                <div class="col-md-7">
+                                
                                     <img class="img-responsive img-centered" src="img/portfolio/Accounting_big.jpg"
                                         alt="" />
-                                </div>
-                                <div class="col-md-5">
+                                
                                     <!-- Project Details Go Here -->
                                     <h2>Financial Management System</h2>
                                     <p class="item-intro text-muted">Core Accounting</p>
@@ -916,7 +994,7 @@
                                         Trial Balance, Balance Sheet, Day Book, Journal.</p>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i
                                             class="fa fa-times"></i>Close Project</button>
-                                </div>
+                              
 
                             </div>
                         </div>
@@ -940,7 +1018,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="modal-body">
-                                <div class="col-md-5">
+                              
                                     <!-- Project Details Go Here -->
                                     <h2>Human Resource Management System</h2>
                                     <p class="item-intro text-muted">Implemented Successfully</p>
@@ -951,12 +1029,11 @@
                                         Payroll, and Employee Profile for multi company.
                                     </p>
 
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i
-                                            class="fa fa-times"></i>Close Project</button>
-                                </div>
-                                <div class="col-md-7">
+                                   
+                                
                                     <img class="img-responsive img-centered" src="img/portfolio/HRMS_big1.PNG" alt="" />
-                                </div>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i>Close Project</button>
 
                             </div>
                         </div>
@@ -1101,44 +1178,48 @@
     <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
     <script src="https://use.typekit.net/bkt6ydm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-try{Typekit.load({ async: true });}catch(e){}
-</script>
     <script>
+        try { Typekit.load({ async: true }); } catch (e) { }
+    </script>
+    <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+    <script>
+
         $(document).ready(function () {
 
+            var $container = $('.portfolioContainer');
+            $container.isotope({
+                filter: '*',
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
 
-            var $grid = $('.grid').isotope({
-                itemSelector: '.portfolio-item mix ',
-                layoutMode: 'fitRows'
+            $('.portfolioFilter a').click(function () {
+                $('.portfolioFilter .current').removeClass('current');
+                $(this).addClass('current');
+
+                var selector = $(this).attr('data-filter');
+                $container.isotope({
+                    filter: selector,
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false
+                    }
+                });
+                return false;
             });
 
             // external js: isotope.pkgd.js
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', 'js/part.json', function() {
-  console.log('callback - particles.js config loaded');
-});
+            /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+            particlesJS.load('particles-js', 'js/part.json', function () {
+                console.log('callback - particles.js config loaded');
+            });
 
             // filter functions
-            var filterFns = {
-                // show if number is greater than 50
-                numberGreaterThan50: function () {
-                    var number = $(this).find('.number').text();
-                    return parseInt(number, 10) > 50;
-                },
-                // show if name ends with -ium
-                ium: function () {
-                    var name = $(this).find('.name').text();
-                    return name.match(/ium$/);
-                }
-            };
-            // bind filter button click
-            $('.filters-button-group').on('click', 'button', function () {
-                var filterValue = $(this).attr('data-filter');
-                // use filterFn if matches value
-                filterValue = filterFns[filterValue] || filterValue;
-                $grid.isotope({ filter: filterValue });
-            });
+
             // change is-checked class on buttons
             $('.button-group').each(function (i, buttonGroup) {
                 var $buttonGroup = $(buttonGroup);
@@ -1149,20 +1230,6 @@ particlesJS.load('particles-js', 'js/part.json', function() {
             });
 
 
-            $('.js-skill-set').waypoint({
-                handler: function () {
-                    $(".progress-bar").each(function () {
-                        $(this).animate({
-                            width: $(this).attr('aria-valuenow') + '%'
-                        }, 200);
-                    });
-                    this.destroy();
-                },
-                offset: '50%'
-            });
-            $('#Container').mixItUp();
-
-            //hide
             $('#hiddenContent').hide();
             $("input[name*='_next']").attr("value", window.location.origin + "#contact");
         });

@@ -223,7 +223,7 @@ figure.effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);trans
 #portfolio *{z-index:2;}
 @media (min-width:767px){#portfolio .portfolio-item{margin:0 0 30px;}
 }
-.portfolio-modal .modal-dialog{margin:0;height:100%;width:auto;}
+.portfolio-modal .modal-dialog{margin:0;height:100%;max-width: 100% !important;}
 .portfolio-modal .modal-content{border-radius:0;background-clip:border-box;-webkit-box-shadow:none;box-shadow:none;border:none;min-height:100%;padding:100px 0;text-align:center;}
 .portfolio-modal .modal-content h2{margin-bottom:15px;font-size:3em;}
 .portfolio-modal .modal-content p{margin-bottom:30px;}
