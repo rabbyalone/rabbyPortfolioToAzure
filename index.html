@@ -23,70 +23,6 @@
 
     <script src="assets/js/modernizr.custom.js"></script>
     <link href="css/timeline.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial;
-        }
-
-        a:focus {
-            outline: none;
-        }
-
-        .portfolioFilter {
-            padding: 15px 0;
-        }
-
-        .portfolioFilter a {
-            margin-right: 6px;
-            color: #666;
-            text-decoration: none;
-            border: 1px solid #ccc;
-            padding: 4px 15px;
-            border-radius: 50px;
-            display: inline-block;
-        }
-
-        .portfolioFilter a.current {
-            background: #1e1e1e;
-            border: 1px solid #1e1e1e;
-            color: #f9f9f9;
-        }
-
-        
-
-        .isotope-item {
-            z-index: 2;
-        }
-
-        .isotope-hidden.isotope-item {
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .isotope,
-        .isotope .isotope-item {
-            /* change duration value to whatever you like */
-            -webkit-transition-duration: 0.8s;
-            -moz-transition-duration: 0.8s;
-            transition-duration: 0.8s;
-        }
-
-        .isotope {
-            -webkit-transition-property: height, width;
-            -moz-transition-property: height, width;
-            transition-property: height, width;
-        }
-
-        .isotope .isotope-item {
-            -webkit-transition-property: -webkit-transform, opacity;
-            -moz-transition-property: -moz-transform, opacity;
-            transition-property: transform, opacity;
-        }
-
-        .portfolio-link > img {
-            width:100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -507,7 +443,7 @@
                     
                 <div class="portfolioContainer">
                     <div class="col-md-4 portfolio-item aspcore objects">
-                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <a href="#portfolioModal10" class="portfolio-link" data-toggle="modal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
@@ -1073,6 +1009,8 @@
     </div>
 
 
+
+
     <!-- Portfolio Modal 6 -->
     <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -1157,6 +1095,54 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 10 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+               <!-- Page Content -->
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">Page Heading
+      <small>Secondary Text</small>
+    </h1>
+  
+    <!-- Portfolio Item Row -->
+    <div class="row">
+  
+      <div class="col-md-8">
+        <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+      </div>
+  
+      <div class="col-md-4 text-left">
+        <h3 class="my-3">Project Description</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+        <h3 class="my-3">Project Details</h3>
+        <ul>
+          <li>Lorem Ipsum</li>
+          <li>Dolor Sit Amet</li>
+          <li>Consectetur</li>
+          <li>Adipiscing Elit</li>
+        </ul>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+            class="fa fa-times"></i>Close Project</button>
+      </div>
+  
+    </div>
+    <!-- /.row -->
+  
+    
+  </div>
+  <!-- /.container -->
             </div>
         </div>
     </div>
