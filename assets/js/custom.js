@@ -73,7 +73,7 @@
                     $('.spinner').hide()
                     c_name.val('')
                     c_email.val('')
-                    c_message('')
+                    c_message.val('')
 
                 }).fail(function(jqXHR, textStatus) {
                     $("#alertwarning").css("display", "block")
