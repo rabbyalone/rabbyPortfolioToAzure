@@ -806,7 +806,7 @@
                             </div>
                             <input type="hidden" name="_next" />
 
-                            <button type="submit" class="btn btn-lg btn-block wow fadeInUp"> Send Message</button>
+                            <button type="submit" class="btn btn-lg btn-block wow fadeInUp"> Send Message <span class="spinner"><i class="fa fa-circle-o-notch fa-spin fa-1x fa-fw"></i></button>
                         </div>
                         <div class="ajax-response"></div>
                         <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;" id="alertwarning">
@@ -1682,7 +1682,7 @@
     <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
     <script>
         $(document).ready(function() {
-
+            $('.spinner').hide()
             var $container = $('.portfolioContainer');
             $container.isotope({
                 filter: '*',

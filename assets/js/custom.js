@@ -72,7 +72,7 @@
                 response.fadeIn(500);
                 response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
             } else {
-                debugger
+                $('.spinner').show()
                 $.ajax({
                     url: 'https://emailsenderapi.azurewebsites.net/api/email/send',
                     method: 'POST',
@@ -81,10 +81,12 @@
                 }).done(function(data) {
                     $("#alertsuccess").css("display", "block")
                     response.html('<i class="fa fa-check"></i> ' + data.msg);
+                    $('.spinner').hide()
+
                 }).fail(function(jqXHR, textStatus) {
                     $("#alertwarning").css("display", "block")
-                    response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
-
+                    response.html('<i class="fa fa-warning"></i> Something went wrong! Please email at <b>rabbyalone@gmail.com</b>');
+                    $('.spinner').hide()
                 });
             }
         });
