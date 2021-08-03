@@ -51,22 +51,6 @@
             var c_email = $('#c_email').val();
             var c_message = $('#c_message ').val();
             var response = $('#contact-form .ajax-response');
-            debugger;
-            var formData = JSON.stringify({
-                personalizations: [{
-                    to: [{
-                        email: 'rabbyofc@gmail.com'
-                    }]
-                }],
-                from: {
-                    email: 'rabby@azurewebsites.net'
-                },
-                subject: 'Hello, World!',
-                content: [{
-                    type: 'text/plain',
-                    value: 'Test Email From Web!'
-                }]
-            });
 
             if (c_name === '' || c_email === '' || c_message === '' || !isValidEmailAddress(c_email)) {
                 response.fadeIn(500);
@@ -76,12 +60,20 @@
                 $.ajax({
                     url: 'https://emailsenderapi.azurewebsites.net/api/email/send',
                     method: 'POST',
-                    data: { ToEmail: 'rabbyalone@gmail.com', Subject: c_name + ',' + c_email, Body: c_message },
+                    data: {
+                        ToEmail: 'rabbyalone@gmail.com',
+                        Subject: c_name,
+                        Body: 'Email From: ' +
+                            c_email + 'Message: ' + c_message
+                    },
                     dataType: 'json'
                 }).done(function(data) {
                     $("#alertsuccess").css("display", "block")
                     response.html('<i class="fa fa-check"></i> ' + data.msg);
                     $('.spinner').hide()
+                    c_name.val('')
+                    c_email.val('')
+                    c_message('')
 
                 }).fail(function(jqXHR, textStatus) {
                     $("#alertwarning").css("display", "block")
