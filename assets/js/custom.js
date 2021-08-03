@@ -80,10 +80,10 @@
                     dataType: 'json'
                 }).done(function(data) {
                     $("#alertsuccess").css("display", "block")
-                    $("#successMsg").val(data.msg)
+                    response.html('<i class="fa fa-check"></i> ' + data.msg);
                 }).fail(function(jqXHR, textStatus) {
                     $("#alertwarning").css("display", "block")
-                    $("#errormsg").val(textStatus)
+                    response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
 
                 });
             }

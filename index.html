@@ -579,6 +579,20 @@
                                 <p class="text-muted">Software Development</p>
                             </div>
                         </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item asp objects">
+                            <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Commercial Management</h4>
+                                <p class="text-muted">Garments Industry</p>
+                            </div>
+                        </div>
                         <div class="col-md-4 col-sm-6 portfolio-item objects asp" style="display: none;">
                             <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                                 <div class="portfolio-hover">
@@ -661,20 +675,6 @@
                             <div class="portfolio-caption">
                                 <h4>XML Site</h4>
                                 <p class="text-muted">XML, XSDT, XSLT, CSS, JAVASCRIPT </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item asp objects">
-                            <a href="#portfolioModal9" class="portfolio-link" data-toggle="modal">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img src="img/portfolio/com_thumb.jpg" class="img-responsive" alt="" />
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Commercial Management</h4>
-                                <p class="text-muted">Garments Industry</p>
                             </div>
                         </div>
                     </div>
@@ -809,7 +809,7 @@
                             <button type="submit" class="btn btn-lg btn-block wow fadeInUp"> Send Message</button>
                         </div>
                         <div class="ajax-response"></div>
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;" id="alertwarning">
+                        <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;" id="alertwarning">
                             <strong>Error!</strong>
                             <p id="errormsg"></p>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -822,7 +822,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
+                        </div> -->
                     </form>
                     <!--<form method="POST" action="https://formspree.io/rabbyalone@gmail.com">
                         <input type="email" name="email" placeholder="Your email">
@@ -877,7 +877,8 @@
 
     <!-- Scroll to top end-->
     <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right: 0px;">
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -886,41 +887,48 @@
                         </div>
                     </div>
                 </div>
+                <!-- Page Content -->
                 <div class="container">
+                    <!-- Portfolio Item Heading -->
+                    <h1 class="my-4">ENTERPRISE RESOURCE PLANNING
+                        <small>ERP</small>
+                    </h1>
+                    <!-- Portfolio Item Row -->
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="modal-body">
-
-                                <img class="img-responsive img-centered" src="img/portfolio/port_big1.png" alt="">
-                                <img class="img-responsive img-centered" src="img/portfolio/port_big11-1.PNG" />
-
-
-                                <!-- Project Details Go Here -->
-                                <h2>ENTERPRISE RESOURCE PLANNING (ERP) SOFTWARE</h2>
-                                <p class="item-intro text-muted"></p>
-
-                                <p>Responsible for implementing exclusive business into the solution. Making perfection by adjusting any strong business logic for the POS and Sales Module.
-                                    <p>
-                                        <strong>Meet Clients requirements and </strong>.
-                                    </p>
-                                    <ul class="list-inline">
-                                        <li>Date: July 2016</li>
-                                        <li>Client: Disclose upon request. (One of the Largest Group of Companies)
-                                        </li>
-                                        <li>Category: Software Development</li>
-                                    </ul>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i
-                                                class="fa fa-times"></i>Close Project</button>
-
-
-
-                            </div>
+                        <div class="col-md-8">
+                            <img class="img-fluid" src="img/portfolio/erp.PNG" alt="">
                         </div>
+
+                        <div class="col-md-4 text-left">
+                            <h3 class="my-3">Project Description</h3>
+                            <p>
+                                In house ERP for corporate clients.
+                                <a href="http://www.uslbd.com/Solution?name=UniPOS%E2%84%A2%20Retail%20ERP*18" target="_blank">Know More about products</a>
+                            </p>
+                            <h3 class="my-3">Role</h3>
+                            <p>
+                                Developer
+                            </p>
+                            <h3 class="my-3">Technologies</h3>
+                            <ul>
+                                <li>ASP.NET WebForms </li>
+                                <li>MSSQL</li>
+                                <li>Javascript, jQuery</li>
+
+                            </ul>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                class="fa fa-times"></i>Close Project</button>
+                        </div>
+
                     </div>
+                    <!-- /.row -->
+
                 </div>
+                <!-- /.container -->
             </div>
         </div>
     </div>
+
 
     <!-- Portfolio Modal 2 -->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -932,29 +940,46 @@
                         </div>
                     </div>
                 </div>
+                <!-- Page Content -->
                 <div class="container">
+                    <!-- Portfolio Item Heading -->
+                    <h1 class="my-4">Supply Chain Management
+                        <small>SCM</small>
+                    </h1>
+                    <!-- Portfolio Item Row -->
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="modal-body">
-
-                                <img class="img-responsive img-centered" src="img/portfolio/SCM_big1.gif" alt="SCM" />
-
-                                <h2>Supply Chain Management</h2>
-                                <p class="item-intro text-muted">Project is Live and working perfectly.</p>
-
-                                <p>
-                                    Developed Supply Chain Management system for one of the largest group in Bangladesh. The application provides activation status of products from CRM which is integrated by WCF and stores millions of data for scratch card and other products. It also provides
-                                    stock movement or serial movement from warehouse to warehouse, warehouse to dealer, dealer to end user. Responsible for designing and developing the core business intelligence required for managing serial number without
-                                    affecting performance.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
-                                            class="fa fa-times"></i>Close Project</button>
-
-
-                            </div>
+                        <div class="col-md-8">
+                            <img class="img-fluid" src="img/portfolio/SCM_big1.gif" alt="">
                         </div>
+
+                        <div class="col-md-4 text-left">
+                            <h3 class="my-3">Project Description</h3>
+                            <p>
+                                Developed Supply Chain Management system for one of the largest group in Bangladesh. The application provides activation status of products from CRM which is integrated by WCF and stores millions of data for scratch card and other products. It also provides
+                                stock movement or serial movement from warehouse to warehouse, warehouse to dealer, dealer to end user. Responsible for designing and developing the core business intelligence required for managing serial number without
+                                affecting performance.
+                                <a href="https://www.systechunimax.com/Products/Detail/1.html" target="_blank">Learn More</a>
+                            </p>
+                            <h3 class="my-3">Role</h3>
+                            <p>
+                                Developer
+                            </p>
+                            <h3 class="my-3">Technologies</h3>
+                            <ul>
+                                <li>ASP.NET MVC </li>
+                                <li>MSSQL</li>
+                                <li>Javascript, jQuery</li>
+
+                            </ul>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                class="fa fa-times"></i>Close Project</button>
+                        </div>
+
                     </div>
+                    <!-- /.row -->
+
                 </div>
+                <!-- /.container -->
             </div>
         </div>
     </div>
@@ -993,6 +1018,8 @@
         </div>
     </div>
 
+
+
     <!-- Portfolio Modal 4 -->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -1003,27 +1030,44 @@
                         </div>
                     </div>
                 </div>
+                <!-- Page Content -->
                 <div class="container">
+                    <!-- Portfolio Item Heading -->
+                    <h1 class="my-4">Financial Management System
+                        <small>Core Accounting System</small>
+                    </h1>
+                    <!-- Portfolio Item Row -->
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="modal-body">
-
-                                <img class="img-responsive img-centered" src="img/portfolio/Accounting_big.jpg" alt="" />
-
-                                <!-- Project Details Go Here -->
-                                <h2>Financial Management System</h2>
-                                <p class="item-intro text-muted">Core Accounting</p>
-
-                                <p>Developed sophisticated accounting system, Which supports trading and non trading business exclusively. Multi level chart of account creation, Cash Flow Management, Profit and Loss Statement, Fixed Asset Management, WBR,
-                                    Ledger, Trial Balance, Balance Sheet, Day Book, Journal.</p>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i
-                                            class="fa fa-times"></i>Close Project</button>
-
-
-                            </div>
+                        <div class="col-md-8">
+                            <img class="img-fluid" src="img/portfolio/Accounting_big.jpg" alt="">
                         </div>
+
+                        <div class="col-md-4 text-left">
+                            <h3 class="my-3">Project Description</h3>
+                            <p>
+                                Developed sophisticated accounting system, Which supports trading and non trading business exclusively. Multi level chart of account creation, Cash Flow Management, Profit and Loss Statement, Fixed Asset Management, WBR, Ledger, Trial Balance, Balance
+                                Sheet, Day Book, Journal.
+                            </p>
+                            <h3 class="my-3">Role</h3>
+                            <p>
+                                Developer
+                            </p>
+                            <h3 class="my-3">Technologies</h3>
+                            <ul>
+                                <li>ASP.NET MVC </li>
+                                <li>MSSQL</li>
+                                <li>Javascript, jQuery</li>
+
+                            </ul>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                class="fa fa-times"></i>Close Project</button>
+                        </div>
+
                     </div>
+                    <!-- /.row -->
+
                 </div>
+                <!-- /.container -->
             </div>
         </div>
     </div>
@@ -1175,7 +1219,7 @@
                     <!-- Portfolio Item Row -->
                     <div class="row">
                         <div class="col-md-8">
-                            <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                            <img class="img-fluid" src="img/portfolio/com.jpg" alt="">
                         </div>
 
                         <div class="col-md-4 text-left">
