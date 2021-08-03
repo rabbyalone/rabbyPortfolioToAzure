@@ -789,7 +789,7 @@
 
                 <div class="col-sm-6">
 
-                    <form method="POST" action="https://formspree.io/rabbyalone@gmail.com" role="form">
+                    <form method="POST" role="form" id="contact-form">
                         <div class="ajax-hidden">
                             <div class="form-group wow fadeInUp">
                                 <label class="sr-only" for="c_name">Name</label>
@@ -809,6 +809,20 @@
                             <button type="submit" class="btn btn-lg btn-block wow fadeInUp"> Send Message</button>
                         </div>
                         <div class="ajax-response"></div>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;" id="alertwarning">
+                            <strong>Error!</strong>
+                            <p id="errormsg"></p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;" id="alertsuccess">
+                            <strong>Success!</strong>
+                            <p id="successMsg"></p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </form>
                     <!--<form method="POST" action="https://formspree.io/rabbyalone@gmail.com">
                         <input type="email" name="email" placeholder="Your email">
