@@ -1,1 +1,0 @@
-alert("Entry point started");
