@@ -279,6 +279,7 @@ figure.effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);trans
 .mix:after{content:attr(data-myorder);display:inline-block;}
 .mix:before{content:'';display:inline-block;}
 .btn-new{color:#fff;background-color:#222;}
+.btn-new-white{color:#222;background-color:#fff;}
 
 
 a:focus {
