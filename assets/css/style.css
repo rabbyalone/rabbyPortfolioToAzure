@@ -127,7 +127,7 @@ textarea.form-control{padding:15px;max-width:100%;min-width:100%;}
 .header{border-bottom:1px solid #f5f5f5;position:relative;width:100%;z-index:998 !important;}
 .navbar-custom{border:0;border-radius:0;margin:0;text-transform:uppercase;font-family:Raleway, sans-serif;}
 .navbar-custom,
-.navbar-custom .dropdown-menu{background:#fff;padding:0;}
+.navbar-custom .dropdown-menu{background:#fff;padding:0;font-weight: 800;}
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a,
 .navbar-custom .navbar-nav .dropdown-menu > li > a{font-size:11px;letter-spacing:3px;color:#222;}
@@ -135,7 +135,7 @@ textarea.form-control{padding:15px;max-width:100%;min-width:100%;}
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus,
 .navbar-custom .navbar-nav > li.active a{background:none;outline:0;font-weight:bolder;color:#222;}
-.navbar-custom .navbar-brand{font-weight:700;font-size:22px;font-family:Lobster, cursive;}
+.navbar-custom .navbar-brand{font-weight:700;font-size:22px;font-family:auto, serif;}
 .navbar-custom .dropdown-menu{border:0;border-top:2px solid #11958b;border-radius:0;}
 .navbar-custom .dropdown-menu > li > a{padding:10px 20px;}
 .navbar-custom .nav .open > a,
@@ -278,8 +278,8 @@ figure.effect-bubba:hover p{opacity:1;-webkit-transform:translate3d(0,0,0);trans
 .mix{display:none;}
 .mix:after{content:attr(data-myorder);display:inline-block;}
 .mix:before{content:'';display:inline-block;}
-.btn-new{color:#fff;background-color:#222;}
-.btn-new-white{color:#222;background-color:#fff;}
+.btn-new{color:#fff;background-color:#222; font-weight: 700;}
+.btn-new-white{color:#222;background-color:#fff; font-weight: 700;}
 
 
 a:focus {
