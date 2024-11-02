@@ -35,6 +35,8 @@
     <link href="css/timeline.css" rel="stylesheet">
     <script async src="https://analytics.eu.umami.is/script.js"
         data-website-id="4e17935b-af1d-49e9-bdff-71b04724a21f"></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+
 </head>
 
 <body>
@@ -52,9 +54,11 @@
     <section id="home" class="pfblock-image screen-height">
         <div class="home-overlay" id="particles-js"></div>
         <div class="intro">
-            <div class="start">Hello, my name is<strong> Md Rabby Hasan</strong> and I am</div>
-            <h1>Lead Full Stack Engineer</h1>
-            <div class="start">creating modern and responsive Web and Desktop Based Application/software</div>
+            <div class="start">Hello, I'm<strong class="text-info font-weight-bold"> MD RABBY HASAN</strong></div>
+            <h1 id="hero"></h1>
+            <div class="start">creating<strong class="font-weight-bold"> modern and responsive web based
+                    application/software</div>
+            <a class="btn btn-new-white" href="#services">About Me</a>
             <a class="btn btn-new-white" href="https://blog.rabbyhasan.com.bd/">See Latest Blogs</a>
             <a class="btn btn-new-white" href="./doc/rabby_hasan_8_years_dot_net_full_stack_dev.pdf">See Resume</a>
         </div>
@@ -2031,6 +2035,12 @@
             });
 
             $("input[name*='_next']").attr("value", window.location.origin + "#contact");
+
+            new TypeIt("#hero", {
+                strings: "Senior Full Stack Software Engineer",
+                speed: 50,
+                waitUntilVisible: true,
+            }).go();
         });
 
 
