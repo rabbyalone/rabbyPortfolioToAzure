@@ -1,9 +1,46 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Download, Terminal } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Download, Terminal, Sparkles } from 'lucide-react';
 import { developerData } from '../data/portfolioData';
 
 export default function Hero({ theme, onOpenTerminal }) {
+  const serviceFocuses = [
+    'AI Spec-Driven Development (SDD)',
+    'Distributed Microservices Architecture',
+    'Enterprise Cloud & Azure DevOps',
+    'High-Concurrency Database Optimization'
+  ];
+
+  const [currentFocusIdx, setCurrentFocusIdx] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const fullText = serviceFocuses[currentFocusIdx];
+    let timer;
+
+    if (!isDeleting) {
+      if (displayText.length < fullText.length) {
+        timer = setTimeout(() => {
+          setDisplayText(fullText.slice(0, displayText.length + 1));
+        }, 45);
+      } else {
+        timer = setTimeout(() => setIsDeleting(true), 2500);
+      }
+    } else {
+      if (displayText.length > 0) {
+        timer = setTimeout(() => {
+          setDisplayText(fullText.slice(0, displayText.length - 1));
+        }, 25);
+      } else {
+        setIsDeleting(false);
+        setCurrentFocusIdx((prev) => (prev + 1) % serviceFocuses.length);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, currentFocusIdx]);
+
   return (
     <section id="home" className="relative min-h-[92vh] flex flex-col justify-center items-center pt-36 pb-24 px-6 sm:px-8 text-center overflow-hidden">
       {/* Ambient Glow */}
@@ -36,7 +73,7 @@ export default function Hero({ theme, onOpenTerminal }) {
           <span>Lead Software Engineer & Systems Architect</span>
         </motion.div>
 
-        {/* Executive Headline */}
+        {/* Executive Name & Typewriter Service Switcher */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,6 +85,20 @@ export default function Hero({ theme, onOpenTerminal }) {
           }`}>
             MD RABBY <span className="gold-gradient-text">HASAN</span>
           </h1>
+
+          {/* Bespoke Executive Typewriter Bar */}
+          <div className="h-10 flex items-center justify-center">
+            <div className={`inline-flex items-center gap-2 font-mono text-sm sm:text-lg font-semibold tracking-wide ${
+              theme === 'dark' ? 'text-[#dfc898]' : 'text-[#854d0e]'
+            }`}>
+              <Sparkles className="w-4 h-4 shrink-0 animate-pulse text-[#dfc898]" />
+              <span>Specializing in: </span>
+              <span className="gold-gradient-text border-b border-[#dfc898]/40 pb-0.5">
+                {displayText}
+              </span>
+              <span className="animate-ping font-extrabold text-[#dfc898]">|</span>
+            </div>
+          </div>
 
           <p className={`text-base sm:text-xl max-w-3xl mx-auto font-normal leading-relaxed pt-2 ${
             theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
