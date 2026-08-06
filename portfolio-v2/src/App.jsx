@@ -6,6 +6,7 @@ import About from './components/About';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import SkillsRadar from './components/SkillsRadar';
 import Projects from './components/Projects';
+import Articles from './components/Articles';
 import Education from './components/Education';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
@@ -57,6 +58,7 @@ export default function App() {
         <SkillsRadar theme={theme} />
         <ExperienceTimeline theme={theme} />
         <Projects theme={theme} onSelectProject={setSelectedProject} />
+        <Articles theme={theme} />
         <Education theme={theme} />
         <Testimonials theme={theme} />
         <Contact theme={theme} />

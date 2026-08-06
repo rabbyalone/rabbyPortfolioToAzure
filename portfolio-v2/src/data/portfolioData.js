@@ -183,6 +183,36 @@ export const architecturalCapabilities = [
   }
 ];
 
+export const articlesData = [
+  {
+    id: "ai-spec-driven-dev",
+    title: "Pioneering AI Spec-Driven Development (SDD) in Enterprise Systems",
+    summary: "How writing formal technical specification contracts before code generation eliminates LLM hallucination and cuts feature delivery time by 60%.",
+    category: "AI Engineering",
+    readTime: "6 min read",
+    url: "https://blog.rabbyhasan.com.bd/",
+    tags: ["AI Spec-Driven (SDD)", "Prompt Engineering", "Software Architecture"]
+  },
+  {
+    id: "dotnet-8-microservices",
+    title: "Architecting High-Throughput .NET 8 Microservices on AWS & Azure",
+    summary: "Best practices for converting legacy monolithic C# backends into decoupled, high-resiliency microservices with sub-50ms response times.",
+    category: "Cloud Architecture",
+    readTime: "8 min read",
+    url: "https://blog.rabbyhasan.com.bd/",
+    tags: [".NET 8", "AWS Cloud", "Microservices", "CQRS"]
+  },
+  {
+    id: "database-query-optimization",
+    title: "Sub-50ms Query Tuning & Redis Caching Strategies for High Concurrency",
+    summary: "Deep dive into LINQ query optimization, SQL index tuning, and distributed Redis caching to eliminate database bottlenecks.",
+    category: "Performance Tuning",
+    readTime: "7 min read",
+    url: "https://blog.rabbyhasan.com.bd/",
+    tags: ["MS SQL Server", "Redis Cache", "Entity Framework 8", "LINQ Optimization"]
+  }
+];
+
 export const projectsData = [
   {
     id: "ethos-risk-management",

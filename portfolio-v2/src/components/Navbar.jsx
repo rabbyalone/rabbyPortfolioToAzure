@@ -11,7 +11,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = ['home', 'about', 'architecture', 'experience', 'case-studies', 'education', 'contact'];
+      const sections = ['home', 'about', 'architecture', 'experience', 'case-studies', 'articles', 'education', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
@@ -37,6 +37,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
     { name: 'Architecture', href: '#architecture', id: 'architecture' },
     { name: 'Experience', href: '#experience', id: 'experience' },
     { name: 'Case Studies', href: '#case-studies', id: 'case-studies' },
+    { name: 'Articles', href: '#articles', id: 'articles' },
     { name: 'Education', href: '#education', id: 'education' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
@@ -91,7 +92,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
                   isActive
                     ? theme === 'dark'
                       ? 'bg-[#dfc898]/15 text-[#dfc898] border border-[#dfc898]/30 font-semibold'
-                      : 'bg-[#b89b5e]/15 text-[#856322] border border-[#b89b5e]/40 font-bold'
+                      : 'bg-[#b89b5e]/15 text-[#854d0e] border border-[#b89b5e]/40 font-bold'
                     : theme === 'dark'
                     ? 'text-slate-300 hover:text-white hover:bg-slate-800/40'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -184,7 +185,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
                 activeSection === link.id
                   ? theme === 'dark'
                     ? 'bg-[#dfc898]/10 text-[#dfc898] border border-[#dfc898]/30'
-                    : 'bg-[#b89b5e]/10 text-[#856322] border border-[#b89b5e]/30'
+                    : 'bg-[#b89b5e]/10 text-[#854d0e] border border-[#b89b5e]/30'
                   : theme === 'dark'
                   ? 'text-slate-300'
                   : 'text-slate-700'
