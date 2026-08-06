@@ -38,10 +38,10 @@ export const experiences = [
     current: true,
     highlights: [
       "Pioneering AI Spec-Driven Development (SDD) and AI-driven engineering workflows to accelerate system architecture, feature implementation, and code generation.",
-      "Building and running personal AI automation pipelines and AI agent workflows to automate repetitive development, testing, and documentation tasks.",
-      "Engineered and maintained business-critical systems across distributed .NET environments, ensuring high reliability and zero system outages.",
-      "Modernized legacy core components into scalable .NET microservices, reducing production downtime by 90%.",
-      "Optimized backend queries and caching strategies, improving application throughput by 20% while leading peer code reviews and CI/CD pipelines."
+      "Awarded 2nd Prize in company-wide internal AI Hackathon for engineering autonomous AI agent workflows and task automation engines.",
+      "Engineered and maintained business-critical risk management systems across distributed .NET environments, ensuring high reliability and zero outages.",
+      "Modernized legacy core components into scalable .NET 8 microservices, reducing production downtime by 90%.",
+      "Optimized backend queries and caching strategies across the entire application stack, improving throughput by 20% while leading code reviews and CI/CD pipelines."
     ],
     tech: ["AI Spec-Driven Dev (SDD)", "AI Automations", ".NET 8", "C#", "Microservices", "Azure DevOps", "SQL Server", "Redis", "Docker"]
   },
@@ -185,6 +185,24 @@ export const architecturalCapabilities = [
 ];
 
 export const projectsData = [
+  {
+    id: "ethos-risk-management",
+    title: "Enterprise Risk Management & AI Architecture",
+    client: "Ethos Risk Services (USA)",
+    category: "AI & Microservices",
+    catSlug: "microservices",
+    thumbnail: "./img/portfolio/insurance.jpg",
+    fullImage: "./img/portfolio/insurance.jpg",
+    summary: "AI Spec-Driven Development, legacy monolith modernization & high-performance application optimization.",
+    description: "Senior Software Developer leading the modernization and performance optimization of Ethos Risk Services' core risk management platforms. Pioneered AI Spec-Driven Development (SDD) to accelerate software architecture and test coverage, modernized legacy monolith components into decoupled .NET 8 microservices (cutting downtime by 90%), and won 2nd Prize in the company's internal organizational AI Hackathon.",
+    tech: [".NET 8", "AI Spec-Driven Dev (SDD)", "C#", "Microservices", "Azure Cloud", "SQL Server", "Redis", "AI Agent Automations", "Docker"],
+    keyFeatures: [
+      "Pioneered AI Spec-Driven Development (SDD) to accelerate feature architecture, specification contracts, and code generation.",
+      "Modernized legacy core components into scalable .NET 8 microservices, reducing production downtime by 90%.",
+      "Executed high-performance database query tuning and Redis caching across the entire application stack.",
+      "Awarded 2nd Prize in Ethos Risk Services' internal organizational AI Hackathon for building autonomous workflow agents."
+    ]
+  },
   {
     id: "ey-taxation",
     title: "Client & Engagement (Taxation)",
