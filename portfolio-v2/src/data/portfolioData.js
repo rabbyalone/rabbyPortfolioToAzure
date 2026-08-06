@@ -37,13 +37,13 @@ export const experiences = [
     period: "March 2024 - Present",
     current: true,
     highlights: [
-      "Pioneering AI Spec-Driven Development (SDD) and AI-driven engineering workflows to accelerate system architecture, feature implementation, and code generation.",
+      "Pioneering AI Spec-Driven Development (SDD), Prompt Engineering, and AI agentic workflows to accelerate system architecture, feature implementation, and code generation.",
       "Awarded 2nd Prize in company-wide internal AI Hackathon for engineering autonomous AI agent workflows and task automation engines.",
-      "Engineered and maintained business-critical risk management systems across distributed .NET environments, ensuring high reliability and zero outages.",
+      "Engineered and maintained business-critical risk management systems across distributed .NET 8 and AWS/Azure cloud environments, ensuring high reliability and zero outages.",
       "Modernized legacy core components into scalable .NET 8 microservices, reducing production downtime by 90%.",
       "Optimized backend queries and caching strategies across the entire application stack, improving throughput by 20% while leading code reviews and CI/CD pipelines."
     ],
-    tech: ["AI Spec-Driven Dev (SDD)", "AI Automations", ".NET 8", "C#", "Microservices", "Azure DevOps", "SQL Server", "Redis", "Docker"]
+    tech: [".NET 8", "AWS & Azure Multi-Cloud", "AI Spec-Driven Dev (SDD)", "Prompt Engineering", "C#", "Microservices", "Azure DevOps", "SQL Server", "Redis", "Docker"]
   },
   {
     company: "Self Employed & Freelance",
@@ -139,12 +139,12 @@ export const architecturalCapabilities = [
   {
     domain: "AI Engineering & Spec-Driven Dev",
     icon: "Cpu",
-    description: "Pioneering Spec-Driven Development (SDD) & custom AI automations.",
+    description: "Pioneering Spec-Driven Development (SDD), Prompt Engineering & AI automations.",
     technologies: [
       { name: "AI Spec-Driven Dev (SDD)", detail: "Spec-First Agentic Workflows" },
+      { name: "Prompt Engineering & SDLC", detail: "Advanced LLM Prompt Crafting" },
       { name: "AI Automations & Agents", detail: "Automated Personal & CI Pipelines" },
-      { name: "Prompt Engineering & SDLC", detail: "AI Code Generation & Refactoring" },
-      { name: "AI Tool Integration", detail: "LLM Agentic Coding Workflows" }
+      { name: "AI Tool Integration", detail: "Agentic Coding & Refactoring" }
     ]
   },
   {
@@ -152,22 +152,22 @@ export const architecturalCapabilities = [
     icon: "Server",
     description: "Designing high-throughput, resilient microservices & Web APIs.",
     technologies: [
-      { name: "C# / .NET 8 & .NET 6", detail: "Core Language & Runtime" },
-      { name: "Microservices Architecture", detail: "Decoupled Domain Services" },
+      { name: "C# / .NET 8 & .NET Core", detail: "Latest Core Language & Runtime" },
+      { name: "Microservices & CQRS", detail: "Decoupled Domain Architecture" },
       { name: "RESTful & gRPC APIs", detail: "High-Speed Service Communication" },
       { name: "ASP.NET MVC & Razor", detail: "Enterprise Web Applications" },
       { name: "Generics & Design Patterns", detail: "SOLID Architectural Principles" }
     ]
   },
   {
-    domain: "Cloud Native & DevOps",
+    domain: "Cloud Native & Multi-Cloud DevOps",
     icon: "Cloud",
-    description: "Automated CI/CD pipelines, containerization & cloud services.",
+    description: "AWS & Azure cloud infrastructure, CI/CD pipelines & containerization.",
     technologies: [
+      { name: "AWS Cloud Infrastructure", detail: "Lambda, ECS, S3, RDS, CloudWatch" },
       { name: "Azure DevOps & CI/CD", detail: "Automated Deployment Pipelines" },
       { name: "Docker Containerization", detail: "Isolated Microservice Builds" },
-      { name: "Kubernetes (AKS)", detail: "Container Orchestration" },
-      { name: "Azure Services", detail: "Functions, Service Bus, KeyVault" }
+      { name: "Kubernetes (AKS)", detail: "Container Orchestration" }
     ]
   },
   {
@@ -176,10 +176,9 @@ export const architecturalCapabilities = [
     description: "Relational & NoSQL database architecture & query optimization.",
     technologies: [
       { name: "MS SQL Server / Azure SQL", detail: "High-Concurrency Relational DB" },
-      { name: "Entity Framework Core", detail: "ORM & Data Access Layer" },
+      { name: "Entity Framework Core 8", detail: "ORM & Data Access Layer" },
       { name: "LINQ Query Optimization", detail: "Sub-50ms Response Tuning" },
-      { name: "Cosmos DB (NoSQL)", detail: "Global Spatial & Document Storage" },
-      { name: "Redis Cache Strategies", detail: "In-Memory Data Acceleration" }
+      { name: "Cosmos DB & Redis Cache", detail: "In-Memory Acceleration & NoSQL" }
     ]
   }
 ];
@@ -193,14 +192,14 @@ export const projectsData = [
     catSlug: "microservices",
     thumbnail: "./img/portfolio/insurance.jpg",
     fullImage: "./img/portfolio/insurance.jpg",
-    summary: "AI Spec-Driven Development, legacy monolith modernization & high-performance application optimization.",
-    description: "Senior Software Developer leading the modernization and performance optimization of Ethos Risk Services' core risk management platforms. Pioneered AI Spec-Driven Development (SDD) to accelerate software architecture and test coverage, modernized legacy monolith components into decoupled .NET 8 microservices (cutting downtime by 90%), and won 2nd Prize in the company's internal organizational AI Hackathon.",
-    tech: [".NET 8", "AI Spec-Driven Dev (SDD)", "C#", "Microservices", "Azure Cloud", "SQL Server", "Redis", "AI Agent Automations", "Docker"],
+    summary: "AI Spec-Driven Development, Prompt Engineering, .NET 8 microservices & AWS/Azure multi-cloud optimization.",
+    description: "Senior Software Developer leading the modernization and performance optimization of Ethos Risk Services' core risk management platforms. Pioneered AI Spec-Driven Development (SDD) and Prompt Engineering to accelerate system design, modernized legacy monolith components into decoupled .NET 8 microservices (cutting downtime by 90%), integrated AWS/Azure cloud infrastructure, and won 2nd Prize in the company's internal organizational AI Hackathon.",
+    tech: [".NET 8", "AWS & Azure Multi-Cloud", "AI Spec-Driven Dev (SDD)", "Prompt Engineering", "C#", "Microservices", "CQRS / MediatR", "SQL Server", "Redis", "AI Agent Automations", "Docker"],
     keyFeatures: [
-      "Pioneered AI Spec-Driven Development (SDD) to accelerate feature architecture, specification contracts, and code generation.",
-      "Modernized legacy core components into scalable .NET 8 microservices, reducing production downtime by 90%.",
-      "Executed high-performance database query tuning and Redis caching across the entire application stack.",
-      "Awarded 2nd Prize in Ethos Risk Services' internal organizational AI Hackathon for building autonomous workflow agents."
+      "Pioneered AI Spec-Driven Development (SDD) and Prompt Engineering to accelerate feature contracts, automated code generation, and test suites.",
+      "Modernized legacy core components into scalable .NET 8 microservices across AWS & Azure, reducing production downtime by 90%.",
+      "Executed high-performance database query tuning, LINQ optimization, and Redis caching across the entire application stack.",
+      "Awarded 2nd Prize in Ethos Risk Services' internal organizational AI Hackathon for engineering autonomous workflow agents."
     ]
   },
   {
@@ -212,12 +211,12 @@ export const projectsData = [
     thumbnail: "./img/portfolio/EY-768x432.jpg",
     fullImage: "./img/portfolio/EY-768x432.jpg",
     summary: "Taxation CEM Module within Ernst & Young's global application suite.",
-    description: "Part of Ernst & Young's Raptors software engineering program, specifically building and maintaining the CEM taxation module for international clients. Implemented microservice communication, Azure KeyVault secret management, SignalR real-time notifications, and high-speed data pipelines.",
-    tech: [".NET 6", "Angular 14", "Microservices", "Azure Functions", "Azure Service Bus", "Azure Key Vault", "SignalR", "Docker"],
+    description: "Part of Ernst & Young's Raptors software engineering program, specifically building and maintaining the CEM taxation module for international clients using .NET 8 / .NET 6 microservices, AWS/Azure services, SignalR real-time notifications, and high-speed gRPC data pipelines.",
+    tech: [".NET 8 / .NET 6", "AWS & Azure Cloud", "Angular 14", "Microservices", "gRPC", "Azure Functions", "Azure Service Bus", "SignalR", "Docker"],
     keyFeatures: [
-      "Architected clean, efficient, and maintainable .NET 6 Web APIs for corporate taxation.",
-      "Optimized query response times and refactored core backend processes.",
-      "Integrated Azure Service Bus, Azure Functions, and DevOps auto-deployment.",
+      "Architected clean, efficient, and maintainable .NET Web APIs for corporate taxation.",
+      "Optimized sub-50ms query response times and refactored core backend processes.",
+      "Integrated AWS/Azure Service Bus, Serverless Functions, and DevOps auto-deployment.",
       "Maintained comprehensive infosec compliance and internal wiki documentation."
     ]
   },
@@ -230,12 +229,12 @@ export const projectsData = [
     thumbnail: "./img/portfolio/oil-rig-thumb.jpg",
     fullImage: "./img/portfolio/geologiq.jpg",
     summary: "Real-time oil rig geospatial mapping & sensor telemetry management.",
-    description: "Senior backend developer for one of Norway's largest offshore oil rig telemetry microservice systems. Handled high-throughput sensor stream ingestion, background worker services, Kubernetes cluster deployment, and Cosmos DB spatial data storage.",
-    tech: [".NET 6", "Angular", "Microservices", "Cosmos DB", "Kubernetes", "Docker", "Azure Service Bus"],
+    description: "Senior backend developer for one of Norway's largest offshore oil rig telemetry microservice systems. Handled high-throughput sensor stream ingestion using .NET 8, AWS ECS / Kubernetes cluster deployment, and Cosmos DB spatial data storage.",
+    tech: [".NET 8", "AWS ECS / AKS", "Angular", "Microservices", "Cosmos DB", "Kubernetes", "Docker", "Azure Service Bus"],
     keyFeatures: [
       "Collaborated with lead solution architects to engineer high-resiliency background workers.",
       "Managed massive spatial sensor data telemetry for North Sea offshore rigs.",
-      "Orchestrated containerized microservices across Azure Kubernetes Service (AKS)."
+      "Orchestrated containerized microservices across AWS ECS and Azure Kubernetes Service (AKS)."
     ]
   },
   {
@@ -247,8 +246,8 @@ export const projectsData = [
     thumbnail: "./img/portfolio/piql_thumb.jpg",
     fullImage: "./img/portfolio/piql.jpg",
     summary: "1,000-year vault data archival portal for Svalbard Arctic Vault.",
-    description: "Built key components of Piql Connect, allowing global organizations to preserve mission-critical digital assets for 1,000 years in the ultra-secure Arctic World Archive in Svalbard, Norway.",
-    tech: [".NET 5", "Vue 2 / Vue 3", "Microservices", "Cosmos DB", "Docker", "Azure DevOps"],
+    description: "Built key components of Piql Connect using .NET 8 and AWS S3 deep archival storage, allowing global organizations to preserve mission-critical digital assets for 1,000 years in the ultra-secure Arctic World Archive in Svalbard, Norway.",
+    tech: [".NET 8", "AWS S3 Archival", "Vue 3", "Microservices", "Cosmos DB", "Docker", "Azure DevOps"],
     keyFeatures: [
       "Developed secure client upload pipeline for deep archival data transformation.",
       "Engineered multi-tenant management backend with Vue 3 frontend components.",
@@ -264,11 +263,11 @@ export const projectsData = [
     thumbnail: "./img/portfolio/expiry_thumb.jpg",
     fullImage: "./img/portfolio/expiry.jpg",
     summary: "Short-expiry inventory consumption algorithm for pharma distribution.",
-    description: "Designed an automated short-expiry control engine for a major pharmaceutical enterprise to prevent stock waste by intelligently allocating near-expiry medicine batches first.",
-    tech: [".NET Core", "Razor Pages", "ASP.NET Identity", "MS SQL", "Docker", "Azure DevOps"],
+    description: "Designed an automated short-expiry control engine using .NET 8 and AWS RDS / MSSQL for a major pharmaceutical enterprise to prevent stock waste by intelligently allocating near-expiry medicine batches first.",
+    tech: [".NET 8", "AWS RDS / MSSQL", "Razor Pages", "ASP.NET Identity", "Docker", "Azure DevOps"],
     keyFeatures: [
       "Algorithmic batch dispatch matching based on expiry thresholds.",
-      "Containerized deployment via Docker and Azure CI/CD pipelines."
+      "Containerized deployment via Docker and AWS CI/CD pipelines."
     ]
   },
   {
@@ -280,8 +279,8 @@ export const projectsData = [
     thumbnail: "./img/portfolio/mobility_thumb.jpg",
     fullImage: "./img/portfolio/mobility.jpg",
     summary: "SAP OData real-time field workforce automation portal.",
-    description: "Built the high-speed middleware bridging corporate SAP ERP data with field mobile applications, enabling real-time staff scheduling, task automation, and reporting.",
-    tech: [".NET Core", "Angular", "OData API", "SAP Integration", "Worker Services", "MS SQL"],
+    description: "Built the high-speed middleware using .NET 8 and AWS API Gateway bridging corporate SAP ERP data with field mobile applications, enabling real-time staff scheduling, task automation, and reporting.",
+    tech: [".NET 8", "AWS API Gateway", "Angular 16", "OData API", "SAP Integration", "Worker Services", "MSSQL"],
     keyFeatures: [
       "Real-time bidirectional SAP data synchronization via OData.",
       "Automated background worker services for location telemetry and sync logs."
@@ -296,8 +295,8 @@ export const projectsData = [
     thumbnail: "./img/portfolio/bcps_thumb.jpg",
     fullImage: "./img/portfolio/bcps.jpg",
     summary: "High-load examination registration & result portal for medical doctors.",
-    description: "Served as Development Lead for Bangladesh's primary post-MBBS medical fellowship registration, automated seat plan generation, and instantaneous result publishing platform.",
-    tech: ["ASP.NET MVC", "MSSQL", "AWS Infrastructure", "Razor Views", "jQuery"],
+    description: "Served as Development Lead for Bangladesh's primary post-MBBS medical fellowship registration, automated seat plan generation, and instantaneous result publishing platform deployed on AWS EC2 infrastructure.",
+    tech: ["ASP.NET Core", "AWS EC2 / S3", "MSSQL", "AWS Infrastructure", "Razor Views", "jQuery"],
     keyFeatures: [
       "Handled tens of thousands of concurrent doctor exam registrations without downtime.",
       "Automated hall ticket seat planning algorithm and SMS gateway integration."
