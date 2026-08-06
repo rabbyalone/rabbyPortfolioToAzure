@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  .dark body {
+    background-color: #07090e;
+    color: #cbd5e1;
+  }
+
+  .light body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b89b5e;
+}
+
+/* Luxury Glass Cards */
+.dark .luxury-card {
+  background: rgba(13, 16, 23, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  color: #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .luxury-card:hover {
+  background: rgba(18, 22, 32, 0.95);
+  border-color: rgba(223, 200, 152, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85), 0 0 30px -5px rgba(223, 200, 152, 0.15);
+  transform: translateY(-4px);
+}
+
+.light .luxury-card {
+  background: #ffffff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  color: #0f172a;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.light .luxury-card:hover {
+  background: #ffffff;
+  border-color: #b89b5e;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.14), 0 0 20px -5px rgba(184, 155, 94, 0.2);
+  transform: translateY(-4px);
+}
+
+/* High Contrast Gradient Text Utilities */
+.dark .gold-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #dfc898 50%, #b89b5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light .gold-gradient-text {
+  background: linear-gradient(135deg, #0f172a 0%, #856322 60%, #b89b5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Light mode text contrast overrides */
+.light p, .light span, .light div {
+  color: inherit;
+}
+
+.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.light .text-white {
+  color: #0f172a !important;
+}
+
+.light .text-\[\#dfc898\] {
+  color: #854d0e !important;
+}
+
+.light .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+.light .bg-slate-900 {
+  background-color: #f1f5f9 !important;
+}
+
+.light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+.light .bg-\[\#07090e\] {
+  background-color: #ffffff !important;
+}
+
+.light .bg-\[\#0d1017\] {
+  background-color: #ffffff !important;
+}
+
+.light .bg-\[\#04060d\] {
+  background-color: #f1f5f9 !important;
+}
