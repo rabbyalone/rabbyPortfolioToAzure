@@ -34,7 +34,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
   const navLinks = [
     { name: 'Overview', href: '#home', id: 'home' },
     { name: 'About', href: '#about', id: 'about' },
-    { name: 'Architecture', href: '#architecture', id: 'architecture' },
+    { name: 'Stack', href: '#architecture', id: 'architecture' },
     { name: 'Experience', href: '#experience', id: 'experience' },
     { name: 'Case Studies', href: '#case-studies', id: 'case-studies' },
     { name: 'Articles', href: '#articles', id: 'articles' },
