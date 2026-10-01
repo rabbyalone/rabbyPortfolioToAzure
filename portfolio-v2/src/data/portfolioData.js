@@ -1,9 +1,9 @@
 export const developerData = {
   name: "Md Rabby Hasan",
   title: "Lead Software Engineer & Systems Architect",
-  tagline: "Architecting high-concurrency microservices, AI spec-driven development, and enterprise cloud platforms.",
+  tagline: "Designing resilient distributed systems, enterprise .NET microservices, high-throughput cloud infrastructure, and modern engineering workflows.",
   experienceYears: "10+",
-  location: "Bangladesh / USA (Remote)",
+  location: "Dhaka, Bangladesh / USA (Remote)",
   email: "rabbyalone@gmail.com",
   secondaryEmail: "hasan@rabbyhasan.com.bd",
   phone: "+880-1767478013",
@@ -17,15 +17,15 @@ export const developerData = {
     email: "mailto:rabbyalone@gmail.com"
   },
   stats: [
-    { label: "Engineering Leadership", value: "10+ YOE", detail: "Lead & Senior Roles" },
-    { label: "AI Spec-Driven Dev", value: "AI + SDD", detail: "Agentic Engineering" },
-    { label: "Downtime Reduction", value: "90%", detail: "Refactored Resiliency" },
-    { label: "Data Archival Scope", value: "1,000 Yrs", detail: "Arctic World Vault" }
+    { label: "Engineering Track Record", value: "10+ YOE", detail: "Lead & Systems Architect Roles" },
+    { label: "Production Downtime Drop", value: "90%", detail: "Decoupled Microservice Resiliency" },
+    { label: "Mission-Critical Archival", value: "1,000 Yrs", detail: "Arctic World Archive (Piql Norway)" },
+    { label: "Hackathon Recognition", value: "2nd Prize", detail: "Ethos Risk Autonomous Agent Engine" }
   ],
   bioParagraphs: [
-    "Hello, I'm Md Rabby Hasan. I am a Lead Software Engineer and Systems Architect specializing in high-availability distributed systems, AI Spec-Driven Development (SDD), and automated cloud pipelines.",
-    "Currently at Ethos Risk Services (USA), I engineer business-critical systems while pioneering AI-driven development workflows, Spec-Driven Development (SDD), and personal AI automation pipelines to accelerate high-quality software delivery.",
-    "Over my 10+ years in enterprise software, I have led architecture across US Risk Services, Global Taxation (Ernst & Young), Arctic Long-Term Data Archival (Piql Norway), Offshore Oil Rig Telemetry (GeologiQ Norway), and large-scale ERP platforms."
+    "I am Md Rabby Hasan, a Lead Software Engineer and Systems Architect with over a decade of hands-on experience designing and delivering mission-critical enterprise platforms and high-throughput distributed backends.",
+    "Currently at Ethos Risk Services (USA, Remote), I lead the modernization of core insurance risk platforms into decoupled .NET 8 microservices, implement high-performance caching and query optimizations, and integrate modern AI-assisted engineering workflows to accelerate system delivery.",
+    "Over my career, I have architected systems across international domains: global corporate taxation for Ernst & Young (EY), 1,000-year deep data archival in the Svalbard Arctic World Archive (Piql Norway), offshore North Sea oil rig telemetry (GeologiQ Norway), SAP OData field mobility (Berger Paints), and industrial ERPs."
   ]
 };
 
@@ -37,26 +37,27 @@ export const experiences = [
     period: "March 2024 - Present",
     current: true,
     highlights: [
-      "Pioneering AI Spec-Driven Development (SDD), Prompt Engineering, and AI agentic workflows to accelerate system architecture, feature implementation, and code generation.",
-      "Awarded 2nd Prize in company-wide internal AI Hackathon for engineering autonomous AI agent workflows and task automation engines.",
-      "Engineered and maintained business-critical risk management systems across distributed .NET 8 and AWS/Azure cloud environments, ensuring high reliability and zero outages.",
-      "Modernized legacy core components into scalable .NET 8 microservices, reducing production downtime by 90%.",
-      "Optimized backend queries and caching strategies across the entire application stack, improving throughput by 20% while leading code reviews and CI/CD pipelines."
+      "Architect and maintain core enterprise risk management systems across distributed .NET 8 backends and cloud environments.",
+      "Modernized legacy monolithic services into decoupled .NET 8 microservices, reducing production downtime by 90% and improving overall maintainability.",
+      "Engineered backend query optimizations and Redis caching strategies, improving application throughput by 20%.",
+      "Awarded 2nd Prize in company-wide internal AI Hackathon for designing autonomous task automation engines and developer agent workflows.",
+      "Streamlined CI/CD deployment pipelines in collaboration with DevOps and QA, reducing deployment cycle times by 20% while leading code reviews."
     ],
-    tech: [".NET 8", "AWS & Azure Multi-Cloud", "AI Spec-Driven Dev (SDD)", "Prompt Engineering", "C#", "Microservices", "Azure DevOps", "SQL Server", "Redis", "Docker"]
+    tech: [".NET 8", "C#", "Microservices", "CQRS / MediatR", "SQL Server", "Redis", "Azure DevOps", "Docker", "AI Agent Automations"]
   },
   {
-    company: "Self Employed & Freelance",
+    company: "Self Employed & Independent Consultant",
     role: "Lead Full Stack .NET Engineer",
     location: "Remote",
     period: "May 2023 - February 2024",
     current: false,
     highlights: [
-      "Led full-lifecycle software design and architecture for a pioneer veterinary application platform in Bangladesh.",
-      "Architected clean Node.js hotel management backend services and refactored React blogs into API-driven Headless CMS platforms.",
-      "Facilitated technical discovery, user story backlog grooming, milestone delivery, and client consultations."
+      "Led full-lifecycle software architecture and development for a pioneer veterinary telemedicine platform in Bangladesh.",
+      "Designed and delivered clean Node.js backend services for hotel management and reservation workflows.",
+      "Refactored a React blog into an API-driven headless CMS with custom Markdown processing and dynamic caching.",
+      "Conducted technical discovery, backlog grooming, milestone planning, and direct client delivery consultations."
     ],
-    tech: [".NET Core", "React", "Node.js", "TypeScript", "RESTful APIs", "Markdown Engine"]
+    tech: [".NET Core", "React", "Node.js", "TypeScript", "RESTful APIs", "Markdown Engine", "PostgreSQL"]
   },
   {
     company: "Softensity Inc, USA",
@@ -65,11 +66,11 @@ export const experiences = [
     period: "August 2022 - June 2023",
     current: false,
     highlights: [
-      "Spearheaded microservices design using .NET 6, Angular 14, MS SQL Server, and TDD methodologies.",
-      "Guided sprint retrospectives, backlog refinement, and mentored mid-level software engineers on clean architecture.",
-      "Optimized backend database schemas and sub-50ms API endpoint response times for high-volume transactions."
+      "Engineered enterprise microservices using .NET 6, Angular 14, and MS SQL Server following strict Test-Driven Development (TDD) practices.",
+      "Participated in Agile Scrum ceremonies (sprint planning, backlog refinement, retrospectives) and mentored mid-level engineers.",
+      "Enforced Information Security standards and conducted technical code reviews to maintain high maintainability across distributed endpoints."
     ],
-    tech: [".NET 6", "Angular 14", "Microservices", "TDD", "MS SQL Server", "Azure"]
+    tech: [".NET 6", "Angular 14", "Microservices", "TDD", "MS SQL Server", "Azure", "Docker"]
   },
   {
     company: "BRAINSTATION-23 LTD.",
@@ -78,11 +79,11 @@ export const experiences = [
     period: "January 2020 - August 2022",
     current: false,
     highlights: [
-      "Led technical architecture for international enterprise clients including Ernst & Young (EY) CEM Taxation and Piql Connect (Norway 1,000-Yr Vault).",
-      "Managed CI/CD deployment pipelines, code validation, and high-frequency database transaction queries.",
-      "Architected real-time background worker services for offshore oil rig telemetry mapping in GeologiQ (Norway)."
+      "Architected backend microservices and Web APIs for global enterprise clients, including Ernst & Young (EY CEM Taxation) and Piql Connect (Norway).",
+      "Engineered real-time background worker services for offshore North Sea oil rig telemetry mapping in GeologiQ (Norway).",
+      "Integrated Azure Service Bus event messaging, Cosmos DB spatial telemetry storage, and automated CI/CD deployment pipelines."
     ],
-    tech: [".NET Core", "Vue.js", "Angular", "Docker", "Cosmos DB", "Azure Service Bus"]
+    tech: [".NET Core", "Vue 3", "Angular", "Docker", "Cosmos DB", "Azure Service Bus", "Azure DevOps"]
   },
   {
     company: "BRAINSTATION-23 LTD.",
@@ -91,11 +92,11 @@ export const experiences = [
     period: "February 2018 - December 2019",
     current: false,
     highlights: [
-      "Engineered high-capacity modules across diverse enterprise business stacks maintaining clean software design standards.",
-      "Developed custom RESTful APIs, Entity Framework ORM data access layers, and identity auth workflows.",
-      "Collaborated with cross-functional product managers and QA leads to enforce high test coverage."
+      "Developed enterprise web applications and RESTful APIs across diverse business stacks including pharmaceuticals and banking.",
+      "Implemented Entity Framework Core data access layers, secure token-based authentication, and automated integration tests.",
+      "Collaborated closely with technical leads, solution architects, and product managers to meet strict performance SLAs."
     ],
-    tech: ["ASP.NET MVC", "C#", "SQL Server", "JavaScript", "REST APIs", "EF Core"]
+    tech: ["ASP.NET MVC", "C#", "SQL Server", "EF Core", "REST APIs", "JavaScript"]
   },
   {
     company: "Ha-Meem Group",
@@ -104,10 +105,10 @@ export const experiences = [
     period: "September 2017 - January 2018",
     current: false,
     highlights: [
-      "Developed real-time Garment Thread Management ERP modules for industrial textile production.",
-      "Engineered Land Management government record indexing systems with secure audit logs and fast search queries."
+      "Developed real-time Thread Management ERP modules for industrial garments and textile manufacturing.",
+      "Engineered land management government record indexing systems (CS, RS, BS records) with fast search and audit logging."
     ],
-    tech: ["ASP.NET", "C#", "SQL Server", "ERP", "Crystal Reports"]
+    tech: ["ASP.NET", "C#", "SQL Server", "ERP Architecture", "Crystal Reports"]
   },
   {
     company: "Unisoft Systems Ltd.",
@@ -116,20 +117,20 @@ export const experiences = [
     period: "March 2016 - September 2017",
     current: false,
     highlights: [
-      "Engineered POS checkout, inventory management, and promotion/discount engines for corporate Retail ERPs.",
-      "Optimized complex SQL stored procedures, indexes, and daily data reconciliation scripts."
+      "Engineered the Sales & Distribution ERP module featuring high-volume POS checkout, item catalog management, and rule-based discount engines.",
+      "Optimized complex SQL stored procedures, relational table schemas, and automated end-of-day financial reconciliation scripts."
     ],
-    tech: ["ASP.NET WebForms", "MSSQL", "jQuery", "POS Systems", "Stored Procedures"]
+    tech: ["ASP.NET WebForms", "MSSQL", "jQuery", "POS Architecture", "Stored Procedures"]
   },
   {
     company: "Systech Unimax Ltd",
     role: "Jr. Software Engineer",
     location: "Dhaka, Bangladesh",
-    period: "January 2016 - March 2016",
+    period: "October 2015 - March 2016",
     current: false,
     highlights: [
-      "Built Supply Chain Management (SCM) handling millions of card serial numbers with direct SFTP/WCF sync to CRM.",
-      "Implemented automated file parsing background jobs and transactional error recovery mechanisms."
+      "Developed Supply Chain Management (SCM) modules tracking millions of product serial numbers for major telecommunications and retail distributors.",
+      "Built automated SFTP synchronization between SCM and CRM systems for real-time warranty activation and shipment status."
     ],
     tech: ["ASP.NET MVC", "WCF", "MSSQL", "SCM", "SFTP Sync"]
   }
@@ -137,48 +138,60 @@ export const experiences = [
 
 export const architecturalCapabilities = [
   {
-    domain: "AI Engineering & Spec-Driven Dev",
-    icon: "Cpu",
-    description: "Pioneering Spec-Driven Development (SDD), Prompt Engineering & AI automations.",
-    technologies: [
-      { name: "AI Spec-Driven Dev (SDD)", detail: "Spec-First Agentic Workflows" },
-      { name: "Prompt Engineering & SDLC", detail: "Advanced LLM Prompt Crafting" },
-      { name: "AI Automations & Agents", detail: "Automated Personal & CI Pipelines" },
-      { name: "AI Tool Integration", detail: "Agentic Coding & Refactoring" }
-    ]
-  },
-  {
-    domain: "Distributed Systems & Backend",
+    domain: "Distributed Core & Backend Architecture",
     icon: "Server",
-    description: "Designing high-throughput, resilient microservices & Web APIs.",
+    description: "Designing decoupled, resilient microservices, domain models, and high-throughput Web APIs.",
     technologies: [
-      { name: "C# / .NET 8 & .NET Core", detail: "Latest Core Language & Runtime" },
-      { name: "Microservices & CQRS", detail: "Decoupled Domain Architecture" },
-      { name: "RESTful & gRPC APIs", detail: "High-Speed Service Communication" },
-      { name: "ASP.NET MVC & Razor", detail: "Enterprise Web Applications" },
-      { name: "Generics & Design Patterns", detail: "SOLID Architectural Principles" }
+      { name: "C# / .NET 8 & .NET Core", scope: "Primary Stack • 10+ Yrs", detail: "Clean architecture, asynchronous runtimes & memory efficiency" },
+      { name: "Microservices & CQRS", scope: "Production Architecture", detail: "Decoupled domain handlers, MediatR & event-driven contracts" },
+      { name: "RESTful & gRPC Web APIs", scope: "High-Throughput", detail: "Contract-first APIs, protobuf serialization & HTTP/2 streaming" },
+      { name: "ASP.NET MVC & Razor", scope: "Enterprise Standard", detail: "Enterprise portals, server-rendered views & secure auth" },
+      { name: "SOLID & Design Patterns", scope: "Core Discipline", detail: "Repository patterns, dependency injection & extensible domain code" }
     ]
   },
   {
-    domain: "Cloud Native & Multi-Cloud DevOps",
+    domain: "Cloud Native & Distributed DevOps",
     icon: "Cloud",
-    description: "AWS & Azure cloud infrastructure, CI/CD pipelines & containerization.",
+    description: "Multi-cloud architecture across Azure and AWS, containerization, and zero-downtime pipelines.",
     technologies: [
-      { name: "AWS Cloud Infrastructure", detail: "Lambda, ECS, S3, RDS, CloudWatch" },
-      { name: "Azure DevOps & CI/CD", detail: "Automated Deployment Pipelines" },
-      { name: "Docker Containerization", detail: "Isolated Microservice Builds" },
-      { name: "Kubernetes (AKS)", detail: "Container Orchestration" }
+      { name: "Azure Cloud Infrastructure", scope: "Primary Cloud", detail: "App Services, Functions, Key Vault, Virtual Networks" },
+      { name: "Azure Service Bus & Queues", scope: "Event Messaging", detail: "Asynchronous pub/sub, dead-lettering & reliable event distribution" },
+      { name: "Docker & Containerization", scope: "Standard Workflow", detail: "Multi-stage Dockerfiles, minimal base images & local orchestration" },
+      { name: "Kubernetes (AKS / ECS)", scope: "Production Deployment", detail: "Container orchestration, rolling deployments & autoscaling" },
+      { name: "CI/CD & DevOps Automation", scope: "Pipeline Engineering", detail: "GitHub Actions & Azure DevOps automated test/build/deploy" }
     ]
   },
   {
-    domain: "Databases & Data Engineering",
+    domain: "Databases & High-Concurrency Data",
     icon: "Database",
-    description: "Relational & NoSQL database architecture & query optimization.",
+    description: "Relational modeling, indexing strategies, distributed caching, and NoSQL stores.",
     technologies: [
-      { name: "MS SQL Server / Azure SQL", detail: "High-Concurrency Relational DB" },
-      { name: "Entity Framework Core 8", detail: "ORM & Data Access Layer" },
-      { name: "LINQ Query Optimization", detail: "Sub-50ms Response Tuning" },
-      { name: "Cosmos DB & Redis Cache", detail: "In-Memory Acceleration & NoSQL" }
+      { name: "MS SQL Server & T-SQL", scope: "Core Relational DB", detail: "Query execution plan analysis, index tuning & stored procedures" },
+      { name: "Entity Framework Core 8", scope: "ORM & Data Access", detail: "Optimized LINQ expressions, compiled queries & migrations" },
+      { name: "Redis In-Memory Caching", scope: "Distributed Caching", detail: "Cache-aside patterns, session replication & latency reduction" },
+      { name: "Azure Cosmos DB", scope: "NoSQL Telemetry", detail: "Partition keys, spatial geo-indexing & high-write throughput" },
+      { name: "PostgreSQL & Oracle DB", scope: "Enterprise Data", detail: "ACID compliance, schema migration & transactional integrity" }
+    ]
+  },
+  {
+    domain: "Enterprise Integrations & Frontend",
+    icon: "Layout",
+    description: "Modern web user interfaces, ERP middleware, and cross-system data synchronization.",
+    technologies: [
+      { name: "Angular (v8 - v16)", scope: "Enterprise UI", detail: "TypeScript, RxJS reactive state, modular feature routing" },
+      { name: "React & TypeScript", scope: "Modern Web", detail: "Functional components, custom hooks, performant state handling" },
+      { name: "SAP OData Integration", scope: "Middleware Sync", detail: "Bidirectional enterprise ERP data exchange & worker sync" },
+      { name: "Vue.js & Next.js / Vite", scope: "Component Systems", detail: "Modern reactive dashboards & optimized build pipelines" }
+    ]
+  },
+  {
+    domain: "Modern AI & Engineering Workflows",
+    icon: "Cpu",
+    description: "Practical AI-assisted engineering tools, spec-driven design, and developer automation.",
+    technologies: [
+      { name: "AI-Assisted Spec-Driven Dev", scope: "Workflow Innovation", detail: "Contract-first specifications, prompt engineering & scaffold validation" },
+      { name: "Autonomous Agent Engineering", scope: "Hackathon 2nd Prize", detail: "Multi-step automated developer workflows & task execution engines" },
+      { name: "Automated Code Review & QA", scope: "Quality Automation", detail: "Automated static analysis, edge-case generation & test scaffolding" }
     ]
   }
 ];
@@ -187,149 +200,184 @@ export const articlesData = [
   {
     id: "engineering-journal",
     title: "Software Engineering & Enterprise Architecture Journal",
-    summary: "Case studies and software notes for production-minded engineering teams covering delivery, architecture, and enterprise software.",
+    summary: "Production case studies and technical notes covering distributed architecture, resilient microservices, and software delivery.",
     category: "Engineering Journal",
     readTime: "Live Blog",
     url: "https://blog.rabbyhasan.com.bd/",
-    tags: ["Engineering Journal", "Software Architecture", "Enterprise Delivery"]
+    tags: ["Engineering Journal", "Software Architecture", "Enterprise Systems"]
   },
   {
     id: "blog-catalog",
     title: "Technical Articles & Systems Design Notes",
-    summary: "Explore recent technical publications, systems design notes, and software engineering insights on my live engineering blog.",
+    summary: "In-depth explorations of .NET 8 runtime internals, distributed event streaming, and cloud infrastructure patterns on my live engineering blog.",
     category: "Technical Publications",
     readTime: "Recent Posts",
     url: "https://blog.rabbyhasan.com.bd/blog",
-    tags: [".NET 8", "Distributed Microservices", "Cloud Infrastructure"]
+    tags: [".NET 8", "Distributed Microservices", "Cloud Architecture"]
   },
   {
     id: "topics-tags",
-    title: "Architecture, AWS Cloud & AI Spec-Driven Dev Topics",
-    summary: "Deep dives into .NET microservices, AWS/Azure cloud resiliency, LINQ query tuning, and AI spec-driven development workflows.",
+    title: "Architecture, Database Tuning & Modern Workflows",
+    summary: "Curated technical articles on LINQ query optimization, Redis cache strategies, Azure cloud services, and developer automation.",
     category: "Topics & Tags",
     readTime: "Topic Index",
     url: "https://blog.rabbyhasan.com.bd/tags",
-    tags: ["AI Spec-Driven (SDD)", "AWS Cloud", "Database Tuning"]
+    tags: ["Database Tuning", "Azure Cloud", "Modern Workflows"]
   }
 ];
 
 export const projectsData = [
   {
     id: "ethos-risk-management",
-    title: "Enterprise Risk Management & AI Architecture",
+    title: "Enterprise Risk Management & Modernization",
     client: "Ethos Risk Services (USA)",
-    category: "AI & Microservices",
+    category: "Microservices & Cloud",
     catSlug: "microservices",
     thumbnail: "./img/portfolio/insurance.jpg",
     fullImage: "./img/portfolio/insurance.jpg",
-    summary: "AI Spec-Driven Development, Prompt Engineering, .NET 8 microservices & AWS/Azure multi-cloud optimization.",
-    description: "Senior Software Developer leading the modernization and performance optimization of Ethos Risk Services' core risk management platforms. Pioneered AI Spec-Driven Development (SDD) and Prompt Engineering to accelerate system design, modernized legacy monolith components into decoupled .NET 8 microservices (cutting downtime by 90%), integrated AWS/Azure cloud infrastructure, and won 2nd Prize in the company's internal organizational AI Hackathon.",
-    tech: [".NET 8", "AWS & Azure Multi-Cloud", "AI Spec-Driven Dev (SDD)", "Prompt Engineering", "C#", "Microservices", "CQRS / MediatR", "SQL Server", "Redis", "AI Agent Automations", "Docker"],
+    summary: "Modernizing core insurance risk assessment platforms into decoupled .NET 8 microservices with 90% reduced downtime.",
+    description: "Leading the modernization and architectural optimization of Ethos Risk Services' core platforms. Decomposed legacy monolithic components into scalable, decoupled .NET 8 microservices, implemented Redis distributed caching and SQL query tuning to improve throughput by 20%, and integrated modern AI-assisted engineering workflows. Awarded 2nd Prize in the company-wide internal AI Hackathon for designing autonomous workflow automation engines.",
+    tech: [".NET 8", "C#", "Microservices", "CQRS / MediatR", "SQL Server", "Redis", "Docker", "Azure DevOps"],
     keyFeatures: [
-      "Pioneered AI Spec-Driven Development (SDD) and Prompt Engineering to accelerate feature contracts, automated code generation, and test suites.",
-      "Modernized legacy core components into scalable .NET 8 microservices across AWS & Azure, reducing production downtime by 90%.",
-      "Executed high-performance database query tuning, LINQ optimization, and Redis caching across the entire application stack.",
-      "Awarded 2nd Prize in Ethos Risk Services' internal organizational AI Hackathon for engineering autonomous workflow agents."
+      "Modernized legacy core components into decoupled .NET 8 microservices, achieving a 90% drop in production downtime.",
+      "Optimized relational database queries, index execution plans, and caching layers, elevating system throughput by 20%.",
+      "Awarded 2nd Prize in Ethos Risk Services' internal organizational AI Hackathon for engineering autonomous task automation agents.",
+      "Streamlined CI/CD deployment pipelines, cutting deployment cycle times by 20% in close partnership with DevOps."
     ]
   },
   {
     id: "ey-taxation",
-    title: "Client & Engagement (Taxation)",
+    title: "Client & Engagement (Taxation CEM)",
     client: "Ernst & Young (EY)",
     category: "Microservices & Cloud",
     catSlug: "microservices",
     thumbnail: "./img/portfolio/EY-768x432.jpg",
     fullImage: "./img/portfolio/EY-768x432.jpg",
-    summary: "Taxation CEM Module within Ernst & Young's global application suite.",
-    description: "Part of Ernst & Young's Raptors software engineering program, specifically building and maintaining the CEM taxation module for international clients using .NET 8 / .NET 6 microservices, AWS/Azure services, SignalR real-time notifications, and high-speed gRPC data pipelines.",
-    tech: [".NET 8 / .NET 6", "AWS & Azure Cloud", "Angular 14", "Microservices", "gRPC", "Azure Functions", "Azure Service Bus", "SignalR", "Docker"],
+    summary: "Global corporate taxation CEM module within Ernst & Young's enterprise application ecosystem.",
+    description: "Engineered critical components of the Client & Engagement Management (CEM) corporate taxation platform for Ernst & Young. Developed clean, high-throughput .NET Web APIs, gRPC internal service communication, and Azure Service Bus messaging for cross-service event choreography while maintaining strict international enterprise compliance.",
+    tech: [".NET Core", "Angular 14", "Microservices", "gRPC", "Azure Functions", "Azure Service Bus", "Docker"],
     keyFeatures: [
-      "Architected clean, efficient, and maintainable .NET Web APIs for corporate taxation.",
-      "Optimized sub-50ms query response times and refactored core backend processes.",
-      "Integrated AWS/Azure Service Bus, Serverless Functions, and DevOps auto-deployment.",
-      "Maintained comprehensive infosec compliance and internal wiki documentation."
+      "Engineered maintainable, secure .NET Web APIs handling corporate taxation calculation workflows.",
+      "Optimized data querying pipelines and refactored core backend processes for high reliability.",
+      "Integrated Azure Service Bus and Serverless Functions to handle asynchronous document and tax event flows.",
+      "Maintained strict information security compliance and comprehensive system architecture documentation."
     ]
   },
   {
     id: "geologiq-oil-rig",
-    title: "Oil Rig Mapper & Management",
-    client: "Informatiq (Norway)",
+    title: "Oil Rig Mapper & Telemetry Management",
+    client: "Informatiq / GeologiQ (Norway)",
     category: "Microservices & Cloud",
     catSlug: "microservices",
     thumbnail: "./img/portfolio/oil-rig-thumb.jpg",
     fullImage: "./img/portfolio/geologiq.jpg",
-    summary: "Real-time oil rig geospatial mapping & sensor telemetry management.",
-    description: "Senior backend developer for one of Norway's largest offshore oil rig telemetry microservice systems. Handled high-throughput sensor stream ingestion using .NET 8, AWS ECS / Kubernetes cluster deployment, and Cosmos DB spatial data storage.",
-    tech: [".NET 8", "AWS ECS / AKS", "Angular", "Microservices", "Cosmos DB", "Kubernetes", "Docker", "Azure Service Bus"],
+    summary: "Real-time North Sea offshore oil rig geospatial mapping and sensor telemetry ingestion.",
+    description: "Backend engineer for one of Norway's premier offshore drilling telemetry systems. Handled high-throughput spatial sensor ingestion streams using .NET Core worker services, containerized microservices deployed on Azure Kubernetes Service (AKS), and Cosmos DB for geo-spatial telemetry queries.",
+    tech: [".NET Core", "Azure Kubernetes (AKS)", "Angular", "Microservices", "Cosmos DB", "Docker", "Azure Service Bus"],
     keyFeatures: [
-      "Collaborated with lead solution architects to engineer high-resiliency background workers.",
-      "Managed massive spatial sensor data telemetry for North Sea offshore rigs.",
-      "Orchestrated containerized microservices across AWS ECS and Azure Kubernetes Service (AKS)."
+      "Engineered high-resiliency background worker services ingesting high-frequency drilling telemetry.",
+      "Managed geo-spatial coordinate indexing in Cosmos DB for real-time map visualization across North Sea rigs.",
+      "Orchestrated containerized microservices across Kubernetes clusters with automated health probes and failover."
     ]
   },
   {
     id: "piql-connect",
-    title: "Piql Connect (Long-Term Data Archival)",
-    client: "Arctic World Archive (Norway)",
+    title: "Piql Connect (1,000-Year Data Archival)",
+    client: "Arctic World Archive (Piql Norway)",
     category: "Microservices & Cloud",
     catSlug: "microservices",
     thumbnail: "./img/portfolio/piql_thumb.jpg",
     fullImage: "./img/portfolio/piql.jpg",
-    summary: "1,000-year vault data archival portal for Svalbard Arctic Vault.",
-    description: "Built key components of Piql Connect using .NET 8 and AWS S3 deep archival storage, allowing global organizations to preserve mission-critical digital assets for 1,000 years in the ultra-secure Arctic World Archive in Svalbard, Norway.",
-    tech: [".NET 8", "AWS S3 Archival", "Vue 3", "Microservices", "Cosmos DB", "Docker", "Azure DevOps"],
+    summary: "Digital preservation client and admin portal for the 1,000-year vault in Svalbard, Norway.",
+    description: "Developed key client and management components of Piql Connect, enabling international governments, cultural institutions, and corporations to securely ingest, verify, and preserve mission-critical digital assets for 1,000 years in the Arctic World Archive in Svalbard, Norway.",
+    tech: [".NET Core", "Vue 3", "AWS S3 Archival", "Microservices", "Cosmos DB", "Docker", "Azure DevOps"],
     keyFeatures: [
-      "Developed secure client upload pipeline for deep archival data transformation.",
-      "Engineered multi-tenant management backend with Vue 3 frontend components.",
-      "Ensured zero-data-loss verification protocols for Arctic storage media."
+      "Engineered secure multi-part client upload pipelines with cryptographic checksum verification for deep archival.",
+      "Developed multi-tenant administrative management interfaces using Vue 3 and .NET Core APIs.",
+      "Implemented strict zero-data-loss validation protocols before committing assets to physical Arctic photosensitive film."
     ]
   },
   {
     id: "expiry-control",
-    title: "Expiry Control System",
+    title: "Automated Expiry Control System",
     client: "Pharmaceutical Industry",
     category: "Enterprise Systems",
     catSlug: "aspcore",
     thumbnail: "./img/portfolio/expiry_thumb.jpg",
     fullImage: "./img/portfolio/expiry.jpg",
-    summary: "Short-expiry inventory consumption algorithm for pharma distribution.",
-    description: "Designed an automated short-expiry control engine using .NET 8 and AWS RDS / MSSQL for a major pharmaceutical enterprise to prevent stock waste by intelligently allocating near-expiry medicine batches first.",
-    tech: [".NET 8", "AWS RDS / MSSQL", "Razor Pages", "ASP.NET Identity", "Docker", "Azure DevOps"],
+    summary: "Intelligent inventory batch allocation algorithm preventing pharmaceutical stock wastage.",
+    description: "Designed and implemented an automated short-expiry control engine using ASP.NET Core and Microsoft SQL Server for a major pharmaceutical enterprise. The algorithm intelligently dispatches near-expiry drug batches first across distribution networks, minimizing expiration loss and enforcing regulatory safety.",
+    tech: ["ASP.NET Core", "MSSQL", "Razor Pages", "Entity Framework Core", "Docker"],
     keyFeatures: [
-      "Algorithmic batch dispatch matching based on expiry thresholds.",
-      "Containerized deployment via Docker and AWS CI/CD pipelines."
+      "Engineered algorithmic batch dispatch matching based on dynamic threshold days and regulatory guidelines.",
+      "Optimized inventory transaction throughput across national pharmaceutical depot networks.",
+      "Containerized deployment using Docker with automated database migration and audit logging."
     ]
   },
   {
     id: "employee-mobility",
-    title: "Employee Mobility System",
-    client: "Global Color & Chemical Group",
+    title: "Employee Mobility System (SAP Integration)",
+    client: "Global Color & Chemical Group (Berger Paints)",
     category: "Enterprise Systems",
     catSlug: "aspcore",
     thumbnail: "./img/portfolio/mobility_thumb.jpg",
     fullImage: "./img/portfolio/mobility.jpg",
-    summary: "SAP OData real-time field workforce automation portal.",
-    description: "Built the high-speed middleware using .NET 8 and AWS API Gateway bridging corporate SAP ERP data with field mobile applications, enabling real-time staff scheduling, task automation, and reporting.",
-    tech: [".NET 8", "AWS API Gateway", "Angular 16", "OData API", "SAP Integration", "Worker Services", "MSSQL"],
+    summary: "Real-time field workforce automation portal integrated with SAP ERP via OData.",
+    description: "Built the high-speed integration middleware using ASP.NET Core bridging corporate SAP ERP data with field workforce mobile applications. Enabled real-time sales team scheduling, attendance geofencing, order placement, and daily route performance analytics.",
+    tech: ["ASP.NET Core", "SAP OData API", "Angular", "Worker Services", "MSSQL", "Azure Web Apps"],
     keyFeatures: [
-      "Real-time bidirectional SAP data synchronization via OData.",
-      "Automated background worker services for location telemetry and sync logs."
+      "Built bidirectional SAP data synchronization via OData protocol with resilient retry queues.",
+      "Implemented automated background worker services for location telemetry, order processing, and audit trails.",
+      "Reduced field order processing latency from overnight batch jobs to near real-time synchronization."
     ]
   },
   {
     id: "bcps-registration",
-    title: "BCPS Online Registration & Results",
+    title: "BCPS Online Registration & Examination System",
     client: "Bangladesh College of Physicians & Surgeons",
     category: "Enterprise Systems",
     catSlug: "asp",
     thumbnail: "./img/portfolio/bcps_thumb.jpg",
     fullImage: "./img/portfolio/bcps.jpg",
-    summary: "High-load examination registration & result portal for medical doctors.",
-    description: "Served as Development Lead for Bangladesh's primary post-MBBS medical fellowship registration, automated seat plan generation, and instantaneous result publishing platform deployed on AWS EC2 infrastructure.",
-    tech: ["ASP.NET Core", "AWS EC2 / S3", "MSSQL", "AWS Infrastructure", "Razor Views", "jQuery"],
+    summary: "High-concurrency medical fellowship examination registration and instant result processing.",
+    description: "Served as Development Lead for Bangladesh's apex medical fellowship institution (BCPS). Handled nationwide post-MBBS doctor fellowship registrations, automated seat planning algorithm, online fee verification, and instantaneous examination result publishing under heavy concurrent traffic.",
+    tech: ["ASP.NET Core", "MSSQL", "Razor Views", "Payment Gateway Integration", "SMS Gateway"],
     keyFeatures: [
-      "Handled tens of thousands of concurrent doctor exam registrations without downtime.",
-      "Automated hall ticket seat planning algorithm and SMS gateway integration."
+      "Successfully processed tens of thousands of concurrent doctor fellowship registrations without downtime.",
+      "Developed automated algorithmic exam hall seat planning preventing institutional conflicts.",
+      "Integrated instant SMS notification delivery and secure digital admit card generation."
+    ]
+  },
+  {
+    id: "posm-distribution",
+    title: "POSM Distribution & Tracking System",
+    client: "British American Tobacco",
+    category: "Enterprise Systems",
+    catSlug: "aspcore",
+    thumbnail: "./img/portfolio/posm_thumb.jpg",
+    fullImage: "./img/portfolio/posm.jpg",
+    summary: "Nationwide point-of-sale material inventory allocation, shipment tracking, and field auditing.",
+    description: "Architected the Point-of-Sale Material (POSM) distribution platform managing complex inventory allocations, warehouse logistics, and field installation verification across thousands of retail outlets nationwide.",
+    tech: ["ASP.NET Core", "MSSQL", "RESTful APIs", "jQuery", "Crystal Reports"],
+    keyFeatures: [
+      "Centralized distribution and shipment tracking across regional warehouses and field distribution agents.",
+      "Implemented strict inventory reconciliation and photo-verification auditing for field merchandising."
+    ]
+  },
+  {
+    id: "idim-security",
+    title: "IDIM (Identity & Document Information Management)",
+    client: "Security Force Headquarters",
+    category: "Enterprise Systems",
+    catSlug: "asp",
+    thumbnail: "./img/portfolio/idim_thumb.jpg",
+    fullImage: "./img/portfolio/idim.jpg",
+    summary: "Secure personnel records, access credentials, and document management platform.",
+    description: "Developed enterprise personnel record tracking and credential management system for headquarters security operations, featuring role-based access control (RBAC), biometric document verification, and tamper-proof audit trails.",
+    tech: ["ASP.NET MVC", "MSSQL", "Entity Framework", "Role-Based Access Control", "Security Auditing"],
+    keyFeatures: [
+      "Implemented granular role-based security access matrices and cryptographic audit logging.",
+      "Structured fast search indexing across extensive personnel service histories and deployment records."
     ]
   }
 ];
@@ -339,25 +387,25 @@ export const educationData = [
     degree: "Master of Science in Computer Science (M.Sc CS)",
     institution: "Jahangirnagar University",
     period: "2017 - 2018",
-    details: "Advanced study in Software Engineering, Distributed Systems, Object-Oriented Java, Data Structures, Computer Networks, and Software Project Management."
+    details: "Advanced study in Software Engineering, Distributed Systems, Object-Oriented Java, Data Structures, Computer Networks, Network Security, Advanced DBMS, and Software Project Management."
   },
   {
     degree: "Enterprise System Analysis & Design Using C#",
     institution: "Daffodil Institute of IT (DIIT / IDB-BISEW)",
     period: "2014 - 2015",
-    details: "Industrial software engineering diploma covering C#, SQL Server, UML Analysis, ASP.NET MVC, WCF Services, and Azure Web Applications."
+    details: "Intensive 1-year professional software engineering diploma covering C#, Microsoft SQL Server, UML Object-Oriented Analysis, ASP.NET MVC, WCF Services, and Windows Azure Web Applications."
   },
   {
     degree: "Master of Science in Chemistry (M.Sc)",
     institution: "National University",
     period: "2010 - 2011",
-    details: "Postgraduate degree focusing on analytical logic, quantitative empirical methodology, and problem-solving techniques."
+    details: "Postgraduate degree focusing on analytical methodology, quantitative research logic, and systematic empirical problem-solving."
   },
   {
     degree: "Bachelor of Science in Chemistry (B.Sc)",
     institution: "National University",
     period: "2007 - 2010",
-    details: "Undergraduate degree focusing on physical methodology and mathematical formulation."
+    details: "Undergraduate degree building strong foundations in mathematics, physical logic, and quantitative analysis."
   }
 ];
 
@@ -369,9 +417,9 @@ export const testimonialsData = [
     avatar: "HD"
   },
   {
-    quote: "Mr Hasan did an amazing job on a custom javascript calculator we needed. He beat the timeline we set and created complex logic which tested out perfectly through our QA process. Extremely happy with his work.",
+    quote: "Mr Hasan did an amazing job on a custom javascript calculator we needed. He beat the timeline we set and created the complex logic which tested out perfectly when we put the code through our QA process. Extremely happy with his work and very pleasant in communication.",
     author: "Tony",
-    role: "Project Manager / Director",
+    role: "Project Director",
     avatar: "TO"
   },
   {

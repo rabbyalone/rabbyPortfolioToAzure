@@ -62,7 +62,7 @@ export default function App() {
           name="MD RABBY"
           surname="HASAN"
           tagline="Lead Software Engineer & Systems Architect"
-          summary="Architecting high-concurrency microservices, AI spec-driven workflows, resilient cloud platforms, and enterprise data pipelines with 10+ years of engineering leadership."
+          summary="Lead Software Engineer and Systems Architect with 10+ years architecting resilient distributed systems, enterprise .NET microservices, high-throughput cloud platforms, and modern engineering workflows."
           resumeUrl="./doc/rabby_hasan_9_years_full_stack_dot_net_dev.pdf"
           onOpenTerminal={() => setTerminalOpen(true)}
         />

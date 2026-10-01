@@ -92,18 +92,18 @@ export default function Contact({ theme }) {
               : 'bg-white border-[#b89b5e]/40 text-[#854d0e] shadow-sm'
           }`}>
             <Mail className="w-3.5 h-3.5" />
-            <span>EXECUTIVE DISCOVERY</span>
+            <span>DIRECT CONTACT</span>
           </div>
           <h2 className={`text-3xl sm:text-5xl font-extrabold tracking-tight font-heading ${
             theme === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Direct <span className="gold-gradient-text">Correspondence</span>
+            Start a <span className="gold-gradient-text">Conversation</span>
           </h2>
           <div className="w-16 h-1 bg-[#dfc898] mx-auto rounded-full" />
           <p className={`text-sm sm:text-base max-w-xl mx-auto font-normal leading-relaxed ${
             theme === 'dark' ? 'text-slate-400' : 'text-slate-600'
           }`}>
-            Available for technical architecture consulting, executive engineering leadership roles, or freelance assignments.
+            Available for systems architecture consulting, enterprise full-stack development, and high-performance backend engineering.
           </p>
         </motion.div>
 
@@ -145,7 +145,7 @@ export default function Contact({ theme }) {
                     <div>
                       <div className={`text-[10px] font-mono uppercase tracking-wider ${
                         theme === 'dark' ? 'text-slate-400' : 'text-slate-500'
-                      }`}>Executive Inquiries</div>
+                      }`}>Professional Email</div>
                       <div className={`text-xs font-semibold group-hover:underline ${
                         theme === 'dark' ? 'text-white group-hover:text-[#dfc898]' : 'text-slate-900 group-hover:text-[#854d0e]'
                       }`}>
@@ -173,7 +173,7 @@ export default function Contact({ theme }) {
                     <div>
                       <div className={`text-[10px] font-mono uppercase tracking-wider ${
                         theme === 'dark' ? 'text-slate-400' : 'text-slate-500'
-                      }`}>Direct Correspondence</div>
+                      }`}>Personal Email</div>
                       <div className={`text-xs font-semibold group-hover:underline ${
                         theme === 'dark' ? 'text-white group-hover:text-[#dfc898]' : 'text-slate-900 group-hover:text-[#854d0e]'
                       }`}>

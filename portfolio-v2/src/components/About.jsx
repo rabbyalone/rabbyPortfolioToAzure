@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, Cpu, Layers, Bot, Sparkles, Quote, Zap, Code2, Pin, Move } from 'lucide-react';
 import { developerData } from '../data/portfolioData';
 
-// Ultra-Smooth Sticky Note Component with Top Edge Pushpin & Hardware Acceleration
-function StickyNoteCard({ note, isFocused, isAnyFocused, onFocus, onBlur, theme }) {
+// Interactive Architect Memo Card Component
+function ArchitectMemoCard({ note, isFocused, isAnyFocused, onFocus, onBlur, theme }) {
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
   const Icon = note.icon;
 
@@ -15,7 +15,7 @@ function StickyNoteCard({ note, isFocused, isAnyFocused, onFocus, onBlur, theme 
 
   return (
     <div className="relative pt-4">
-      {/* 3D Overlapping Metallic Pushpin at Top Center */}
+      {/* Metallic Accent Pin at Top Center */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
         <div className="w-8 h-8 rounded-full shadow-lg border border-amber-300/60 bg-gradient-to-tr from-amber-500 via-[#dfc898] to-amber-200 flex items-center justify-center text-slate-950 font-extrabold shadow-amber-500/20">
           <Pin className="w-4 h-4 fill-slate-950 text-slate-950" />
@@ -146,72 +146,72 @@ function StickyNoteCard({ note, isFocused, isAnyFocused, onFocus, onBlur, theme 
 export default function About({ theme = 'dark' }) {
   const [focusedNoteId, setFocusedNoteId] = useState(null);
 
-  const stickyNotes = [
+  const architectMemos = [
     {
-      id: 'note-leadership',
-      title: 'Executive Leadership',
-      badge: '10+ YOE Leadership',
+      id: 'memo-systems-architecture',
+      title: 'Systems Architecture',
+      badge: '10+ Years Track Record',
       rotation: -2.5,
       icon: ShieldCheck,
-      metric: '10+ Years Management',
+      metric: 'Distributed .NET & Microservices',
       quote:
-        'Combining 10+ years of deep enterprise software engineering with cutting-edge AI Spec-Driven Development (SDD) to deliver resilient systems at scale.',
+        'Designing mission-critical enterprise systems and resilient microservices with clean domain architecture, asynchronous event handling, and high availability.',
       highlight:
-        'Led full-lifecycle engineering across US Risk Services (Ethos Risk), Global Taxation (Ernst & Young), Arctic Data Vault (Piql Norway), and Offshore Telemetry (GeologiQ).',
+        'Led architecture and full-lifecycle engineering across US Risk Management (Ethos Risk), Global Taxation (Ernst & Young), Arctic Data Archival (Piql Norway), and Offshore Telemetry (GeologiQ).',
       tags: ['Ethos Risk (USA)', 'Ernst & Young', 'Piql Norway', 'GeologiQ Rig Telemetry']
     },
     {
-      id: 'note-ai-sdd',
-      title: 'AI Spec-Driven Dev',
-      badge: '2nd Place AI Hackathon',
+      id: 'memo-modern-workflows',
+      title: 'Engineering Automation',
+      badge: 'Hackathon 2nd Prize',
       rotation: 1.5,
       icon: Bot,
-      metric: 'Agentic Engineering',
+      metric: 'Autonomous Task Engines',
       quote:
-        'Awarded 2nd Prize in company-wide AI Hackathon for building autonomous AI agent workflows and developer task automation engines.',
+        'Awarded 2nd Prize in company-wide internal AI Hackathon for designing autonomous task automation engines and developer agent workflows.',
       highlight:
-        'Pioneering AI Spec-Driven Development (SDD), prompt engineering, and autonomous LLM agent pipelines to accelerate feature delivery with zero hallucination.',
-      tags: ['Spec-Driven (SDD)', 'AI Agentic Workflows', 'Prompt Engineering', 'Automated QA Pipelines']
+        'Integrating modern AI-assisted engineering tools, spec-driven design, and developer automation pipelines to accelerate architecture, refactoring, and code quality.',
+      tags: ['Spec-Driven Design', 'Autonomous Workflows', 'Prompt Engineering', 'Quality Pipelines']
     },
     {
-      id: 'note-architecture',
-      title: 'High-Scale Architecture',
+      id: 'memo-performance-resiliency',
+      title: 'Performance & Resiliency',
       badge: '90% Downtime Drop',
       rotation: -1.5,
       icon: Cpu,
-      metric: 'Sub-50ms Queries',
+      metric: '20% Throughput Boost',
       quote:
-        'Architecting business-critical distributed backends, CQRS event streaming, and high-concurrency database optimizations.',
+        'Decomposing legacy monolithic backends into decoupled .NET 8 microservices, achieving high query efficiency and fault-tolerant event streaming.',
       highlight:
-        'Modernized legacy monoliths into decoupled .NET 8 microservices, achieving sub-50ms query tuning, Redis distributed caching, and 1,000-year cold vault storage.',
-      tags: ['.NET 8', 'CQRS Architecture', 'Redis Caching', '1,000-Yr Cold Vault']
+        'Modernized legacy core components, tuned SQL query execution plans and Redis caching, cutting production downtime by 90% and improving throughput by 20%.',
+      tags: ['.NET 8 Microservices', 'CQRS Architecture', 'Redis Caching', 'Query Optimization']
     }
   ];
 
   const engineeringPillars = [
     {
       number: '01',
-      title: 'AI Spec-Driven Development & Automations',
-      icon: Bot,
+      title: 'Distributed Systems & Microservices',
+      icon: Layers,
       summary:
-        'Pioneering Spec-Driven Development (SDD) using AI agentic workflows, prompt engineering, and custom automation pipelines to accelerate architecture, refactoring, and quality engineering.',
-      tags: ['AI Spec-Driven (SDD)', 'AI Automations', 'LLM Workflows', 'Agentic Engineering']
+        'Modernizing legacy monolithic backends into decoupled, maintainable .NET 8 microservices. Enforcing clean architecture, CQRS patterns via MediatR, and clear domain boundaries.',
+      tags: ['.NET 8', 'Microservices', 'CQRS', 'Clean Architecture']
     },
     {
       number: '02',
-      title: 'Distributed Resiliency & Performance',
+      title: 'Resiliency, Caching & Performance',
       icon: Cpu,
       summary:
-        'Modernizing legacy monolithic backends into decoupled .NET microservices. Specializing in high-frequency database query optimization, Redis caching strategies, and cutting production downtime by up to 90%.',
-      tags: ['.NET 8', 'Redis', 'Microservices', 'Query Tuning']
+        'Analyzing query execution plans, tuning SQL Server indexes, and implementing distributed Redis caching strategies to maximize throughput and achieve a 90% reduction in production downtime.',
+      tags: ['SQL Query Tuning', 'Redis Cache', 'Throughput Boost', 'Zero-Downtime']
     },
     {
       number: '03',
-      title: 'Mission-Critical Global Systems',
-      icon: Layers,
+      title: 'Mission-Critical Global Applications',
+      icon: ShieldCheck,
       summary:
-        'Architecting high-security platforms across international domains—from Ernst & Young taxation modules and Arctic 1,000-year long-term data archival to real-time North Sea oil rig telemetry.',
-      tags: ['Azure Cloud', 'Cosmos DB', 'Docker / AKS', 'InfoSec']
+        'Architecting high-security platforms across demanding international domains—from Ernst & Young taxation modules and Arctic 1,000-year deep data archival to real-time North Sea oil rig telemetry.',
+      tags: ['Azure Cloud', 'Cosmos DB', 'Docker / AKS', 'InfoSec Compliance']
     }
   ];
 
@@ -237,7 +237,7 @@ export default function About({ theme = 'dark' }) {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-[#dfc898]/30 text-[#dfc898] text-xs font-mono">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>EXECUTIVE BIOGRAPHY</span>
+            <span>ARCHITECTURAL PROFILE</span>
           </div>
           <h2
             className={`text-3xl sm:text-5xl font-extrabold tracking-tight font-heading ${
@@ -247,15 +247,15 @@ export default function About({ theme = 'dark' }) {
             Engineering <span className="gold-gradient-text">Philosophy & Track Record</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 font-mono">
-            Interactive Executive Desk Memos • Click, hover, or drag cards to inspect architectural impact
+            Key Architectural Milestones • Click, hover, or drag cards to inspect engineering impact
           </p>
           <div className="w-16 h-1 bg-[#dfc898] mx-auto rounded-full" />
         </motion.div>
 
-        {/* Interactive Stacked Sticky Notes Collage */}
+        {/* Interactive Stacked Memos Collage */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch pt-4">
-          {stickyNotes.map((note) => (
-            <StickyNoteCard
+          {architectMemos.map((note) => (
+            <ArchitectMemoCard
               key={note.id}
               note={note}
               theme={theme}
@@ -267,7 +267,7 @@ export default function About({ theme = 'dark' }) {
           ))}
         </div>
 
-        {/* 3 Executive Pillars Grid */}
+        {/* 3 Core Pillars Grid */}
         <div className="pt-12 border-t border-slate-800/60 max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-2">
             <h3
@@ -278,7 +278,7 @@ export default function About({ theme = 'dark' }) {
               Core Engineering Pillars
             </h3>
             <p className="text-xs text-slate-400 font-mono">
-              Architectural principles honed over a decade of production systems
+              Systems architecture principles honed over a decade of production platforms
             </p>
           </div>
 

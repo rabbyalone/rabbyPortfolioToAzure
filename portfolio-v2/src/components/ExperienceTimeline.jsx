@@ -3,7 +3,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp, Sparkles, Trophy } from 'lucide-react';
 import { experiences } from '../data/portfolioData';
 
-export default function ExperienceTimeline({ theme }) {
+export default function ExperienceTimeline({ theme = 'dark' }) {
   const [expanded, setExpanded] = useState(false);
   const containerRef = useRef(null);
 
@@ -25,7 +25,7 @@ export default function ExperienceTimeline({ theme }) {
     if (expanded) {
       setExpanded(false);
       setTimeout(() => {
-        const el = document.getElementById('case-studies');
+        const el = document.getElementById('experience');
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
         }
@@ -57,13 +57,13 @@ export default function ExperienceTimeline({ theme }) {
           <h2 className={`text-3xl sm:text-5xl font-extrabold tracking-tight font-heading ${
             theme === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Engineering <span className="gold-gradient-text">Leadership</span>
+            Career <span className="gold-gradient-text">Trajectory & Milestones</span>
           </h2>
           <div className="w-16 h-1 bg-[#dfc898] mx-auto rounded-full" />
           <p className={`text-sm sm:text-base max-w-xl mx-auto font-normal leading-relaxed ${
             theme === 'dark' ? 'text-slate-400' : 'text-slate-600'
           }`}>
-            Proven record of architecting distributed systems, AI Spec-Driven Development, and high-concurrency cloud infrastructure.
+            Proven engineering track record architecting enterprise microservices, resilient distributed backends, and cloud platforms.
           </p>
         </motion.div>
 
@@ -90,7 +90,7 @@ export default function ExperienceTimeline({ theme }) {
               initial={{ opacity: 0, x: -25 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              transition={{ duration: 0.6, delay: idx * 0.08 }}
               className="relative group"
             >
               {/* Timeline Node Pulsing Marker Dot */}
@@ -113,9 +113,15 @@ export default function ExperienceTimeline({ theme }) {
               </div>
 
               {/* Experience Card */}
-              <div className="luxury-card p-6 sm:p-8 space-y-6">
+              <div className={`luxury-card p-6 sm:p-8 space-y-6 rounded-3xl border transition-all ${
+                theme === 'dark'
+                  ? 'bg-slate-900/85 border-slate-800/90 shadow-xl'
+                  : 'bg-white/95 border-slate-200/90 shadow-lg'
+              }`}>
                 {/* Role & Company Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4 border-slate-800/80">
+                <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-4 ${
+                  theme === 'dark' ? 'border-slate-800/80' : 'border-slate-200'
+                }`}>
                   <div>
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className={`text-xl font-bold font-heading ${
@@ -196,7 +202,7 @@ export default function ExperienceTimeline({ theme }) {
         >
           <button
             onClick={toggleExpand}
-            className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-mono text-xs uppercase tracking-wider font-semibold border transition-all shadow-md ${
+            className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-mono text-xs uppercase tracking-wider font-semibold border transition-all shadow-md ${
               theme === 'dark'
                 ? 'bg-slate-900 border-[#dfc898]/30 text-[#dfc898] hover:bg-slate-800 hover:border-[#dfc898]'
                 : 'bg-white border-[#b89b5e]/40 text-[#854d0e] hover:bg-slate-50 shadow-sm'

@@ -19,10 +19,10 @@ export interface PortfolioPrismaHeroProps {
 }
 
 const defaultTypewriterPhrases = [
-  "AI Spec-Driven Development (SDD)",
-  "Distributed Cloud Architecture & Microservices",
-  "Sub-50ms Low-Latency Data Pipelines",
-  "High-Availability Enterprise Resiliency"
+  "Distributed .NET 8 & Microservices",
+  "High-Throughput Enterprise Architecture",
+  "Cloud Resilience & Event-Driven Systems",
+  "Modern AI-Assisted Engineering Workflows"
 ];
 
 /* ---------------- Dynamic Typewriter Component ---------------- */
@@ -122,7 +122,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
   surname = "HASAN",
   tagline = "Lead Software Engineer & Systems Architect",
   typewriterPhrases = defaultTypewriterPhrases,
-  summary = "Architecting high-concurrency microservices, AI spec-driven workflows, resilient cloud platforms, and enterprise data pipelines with 10+ years of engineering leadership.",
+  summary = "Lead Software Engineer and Systems Architect with 10+ years architecting resilient distributed systems, enterprise .NET microservices, high-throughput cloud platforms, and modern engineering workflows.",
   ctaText = "Explore Architectural Case Studies",
   ctaAction,
   onOpenTerminal,
