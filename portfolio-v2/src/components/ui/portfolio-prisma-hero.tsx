@@ -25,7 +25,7 @@ const defaultTypewriterPhrases = [
   "Modern AI-Assisted Engineering Workflows"
 ];
 
-/* ---------------- Dynamic Typewriter Component ---------------- */
+/* ---------------- Minimal & Tactile Architectural Typewriter ---------------- */
 function Typewriter({
   phrases = defaultTypewriterPhrases,
   theme = "dark"
@@ -36,25 +36,37 @@ function Typewriter({
   const [currentIdx, setCurrentIdx] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(70);
+  const [typingSpeed, setTypingSpeed] = useState(55);
+  const [cursorVisible, setCursorVisible] = useState(true);
+
+  // Smooth periodic blinking cursor
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setCursorVisible((prev) => !prev);
+    }, 530);
+    return () => clearInterval(cursorInterval);
+  }, []);
 
   useEffect(() => {
     const fullText = phrases[currentIdx % phrases.length];
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        // Typing forward
+        // Typing forward with organic character cadence
+        const nextChar = fullText.charAt(currentText.length);
         setCurrentText(fullText.substring(0, currentText.length + 1));
-        setTypingSpeed(65);
+        
+        // Natural micro-pause after spaces
+        setTypingSpeed(nextChar === " " ? 90 : 50);
 
         if (currentText === fullText) {
-          // Pause at completed word
-          setTimeout(() => setIsDeleting(true), 2000);
+          // Pause at completed phrase to give viewer time to read
+          setTimeout(() => setIsDeleting(true), 2600);
         }
       } else {
-        // Erasing
+        // Snappy backspacing
         setCurrentText(fullText.substring(0, currentText.length - 1));
-        setTypingSpeed(30);
+        setTypingSpeed(22);
 
         if (currentText === "") {
           setIsDeleting(false);
@@ -69,48 +81,73 @@ function Typewriter({
   const isDark = theme === "dark";
 
   return (
-    <div className="flex items-center flex-wrap gap-2 text-xs sm:text-sm md:text-base lg:text-lg font-mono">
+    <div className="flex items-center flex-wrap gap-3 pt-1">
       <div
-        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] sm:text-xs uppercase tracking-wider font-semibold border backdrop-blur-md shadow-sm transition-colors ${
+        className={`inline-flex items-center gap-3 px-4 py-2 rounded-full border backdrop-blur-xl transition-all duration-300 shadow-xl ${
           isDark
-            ? "bg-[#dfc898]/10 border-[#dfc898]/25 text-[#dfc898]"
-            : "bg-white/90 border-[#b89b5e]/40 text-[#854d0e]"
+            ? "bg-black/55 border-[#dfc898]/20 shadow-black/40 hover:border-[#dfc898]/40"
+            : "bg-white/95 border-[#b89b5e]/30 shadow-slate-200/80 hover:border-[#b89b5e]/60"
         }`}
       >
-        <span
-          className={`w-1.5 h-1.5 rounded-full animate-ping ${
-            isDark ? "bg-[#dfc898]" : "bg-[#854d0e]"
-          }`}
-        />
-        <span>Specializing in</span>
-      </div>
-      
-      <div
-        className={`inline-flex items-center px-3 py-1 rounded-full border backdrop-blur-md transition-colors ${
-          isDark
-            ? "bg-black/40 border-white/10"
-            : "bg-white/85 border-slate-200/90 shadow-sm"
-        }`}
-      >
-        <span className={`mr-1.5 font-bold ${isDark ? "text-[#dfc898]" : "text-[#854d0e]"}`}>
-          ❯
-        </span>
-        <span
-          className={`font-semibold ${
+        {/* Architectural Index Counter Badge */}
+        <div
+          className={`flex items-center gap-1 px-2 py-0.5 rounded-full border text-[10px] font-mono font-bold tracking-wider ${
             isDark
-              ? "bg-gradient-to-r from-white via-[#dfc898] to-[#b89b5e] bg-clip-text text-transparent"
-              : "bg-gradient-to-r from-slate-950 via-[#854d0e] to-[#b89b5e] bg-clip-text text-transparent"
+              ? "bg-slate-900 border-slate-800 text-[#dfc898]"
+              : "bg-amber-50 border-amber-200 text-[#854d0e]"
           }`}
         >
-          {currentText}
-        </span>
+          <span>0{currentIdx + 1}</span>
+          <span className="text-slate-500">/</span>
+          <span className="text-slate-500">0{phrases.length}</span>
+        </div>
+
+        {/* Minimal Terminal Prompt Symbol */}
         <span
-          className={`inline-block w-0.5 h-[1.1em] ml-1 animate-pulse ${
-            isDark
-              ? "bg-[#dfc898] shadow-[0_0_8px_#dfc898]"
-              : "bg-[#854d0e] shadow-[0_0_6px_#854d0e]"
+          className={`text-xs font-mono font-bold select-none ${
+            isDark ? "text-[#dfc898]" : "text-[#854d0e]"
           }`}
-        />
+        >
+          ❯
+        </span>
+
+        {/* Dynamic Typed Phrase with Stable Fixed Min-Width (Zero Jitter) */}
+        <div className="flex items-center min-w-[230px] sm:min-w-[340px] md:min-w-[410px]">
+          <span
+            className={`text-xs sm:text-sm md:text-base font-mono font-semibold tracking-tight ${
+              isDark ? "text-slate-100" : "text-slate-950 font-bold"
+            }`}
+          >
+            {currentText}
+          </span>
+
+          {/* Champagne Glowing Vertical Cursor */}
+          <span
+            className={`inline-block w-[2px] h-[1.2em] ml-1 rounded-full transition-opacity duration-150 ${
+              isDark
+                ? "bg-[#dfc898] shadow-[0_0_10px_#dfc898]"
+                : "bg-[#854d0e] shadow-[0_0_8px_#854d0e]"
+            } ${cursorVisible ? "opacity-100" : "opacity-0"}`}
+          />
+        </div>
+
+        {/* Micro Phase Dots Indicator */}
+        <div className="hidden sm:flex items-center gap-1.5 pl-2.5 border-l border-white/10 dark:border-slate-800">
+          {phrases.map((_, i) => (
+            <span
+              key={i}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                i === currentIdx
+                  ? isDark
+                    ? "bg-[#dfc898] shadow-[0_0_6px_#dfc898] scale-125"
+                    : "bg-[#854d0e] shadow-[0_0_4px_#854d0e] scale-125"
+                  : isDark
+                  ? "bg-slate-800"
+                  : "bg-slate-300"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
