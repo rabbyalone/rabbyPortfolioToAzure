@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ParticleBackground from './components/ParticleBackground';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import { PortfolioPrismaHero } from './components/ui/portfolio-prisma-hero';
 import About from './components/About';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import SkillsRadar from './components/SkillsRadar';
@@ -41,10 +42,13 @@ export default function App() {
     <div className={`relative min-h-screen transition-colors duration-500 ${
       theme === 'dark' ? 'bg-[#07090e] text-slate-100' : 'bg-[#f8fafc] text-slate-800'
     }`}>
-      {/* Ambient Spotlight Mesh Background */}
+      {/* Luxury Modern Preloader (Eliminates all loading/asset flashes) */}
+      <Preloader theme={theme} />
+
+      {/* Ambient Spotlight & Constellation Mesh Background */}
       <ParticleBackground theme={theme} />
 
-      {/* Navbar with Theme Toggle */}
+      {/* Transparent Floating Island Navbar */}
       <Navbar
         theme={theme}
         onToggleTheme={toggleTheme}
@@ -52,8 +56,16 @@ export default function App() {
       />
 
       {/* Main Sections */}
-      <main className="space-y-8">
-        <Hero theme={theme} onOpenTerminal={() => setTerminalOpen(true)} />
+      <main className="space-y-16">
+        <PortfolioPrismaHero
+          theme={theme}
+          name="MD RABBY"
+          surname="HASAN"
+          tagline="Lead Software Engineer & Systems Architect"
+          summary="Architecting high-concurrency microservices, AI spec-driven workflows, resilient cloud platforms, and enterprise data pipelines with 10+ years of engineering leadership."
+          resumeUrl="./doc/rabby_hasan_9_years_full_stack_dot_net_dev.pdf"
+          onOpenTerminal={() => setTerminalOpen(true)}
+        />
         <About theme={theme} />
         <SkillsRadar theme={theme} />
         <ExperienceTimeline theme={theme} />
@@ -67,13 +79,13 @@ export default function App() {
       {/* Footer */}
       <Footer theme={theme} />
 
-      {/* Developer CLI Terminal */}
+      {/* Developer CLI Terminal Modal */}
       <TerminalModal
         isOpen={terminalOpen}
         onClose={() => setTerminalOpen(false)}
       />
 
-      {/* Project Specs Modal - Rendered at App Root to prevent z-index stacking trapping */}
+      {/* Project Specs Modal */}
       {selectedProject && (
         <ProjectModal
           project={selectedProject}

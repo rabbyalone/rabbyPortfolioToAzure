@@ -22,6 +22,10 @@ export default {
           400: '#d0b378',
           500: '#b89b5e',
           600: '#92773e'
+        },
+        primary: {
+          DEFAULT: '#E1E0CC',
+          foreground: '#07090e'
         }
       },
       fontFamily: {
