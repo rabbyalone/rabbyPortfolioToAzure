@@ -22,8 +22,14 @@ export const developerData = {
     { label: "Mission-Critical Archival", value: "1,000 Yrs", detail: "Arctic World Archive (Piql Norway)" },
     { label: "Hackathon Recognition", value: "2nd Prize", detail: "Ethos Risk Autonomous Agent Engine" }
   ],
+  heroTags: [
+    "AI-Native Engineering",
+    "AI Automation",
+    ".NET 8 Microservices",
+    "Distributed Cloud Platforms"
+  ],
   bioParagraphs: [
-    "I am Md Rabby Hasan, a Lead Software Engineer and Systems Architect with over a decade of hands-on experience designing and delivering mission-critical enterprise platforms and high-throughput distributed backends.",
+    "I’m a Lead Software Engineer and Systems Architect with 10+ years of experience building .NET applications, distributed systems, and cloud-based platforms. I enjoy solving complex engineering problems, improving existing systems, and using modern AI tools to make the way we build software faster, smarter, and more reliable.",
     "Currently at Ethos Risk Services (USA, Remote), I lead the modernization of core insurance risk platforms into decoupled .NET 8 microservices, implement high-performance caching and query optimizations, and integrate modern AI-assisted engineering workflows to accelerate system delivery.",
     "Over my career, I have architected systems across international domains: global corporate taxation for Ernst & Young (EY), 1,000-year deep data archival in the Svalbard Arctic World Archive (Piql Norway), offshore North Sea oil rig telemetry (GeologiQ Norway), SAP OData field mobility (Berger Paints), and industrial ERPs."
   ]

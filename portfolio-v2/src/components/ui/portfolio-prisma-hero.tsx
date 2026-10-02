@@ -19,10 +19,11 @@ export interface PortfolioPrismaHeroProps {
 }
 
 const defaultTypewriterPhrases = [
-  "Distributed .NET 8 & Microservices",
-  "High-Throughput Enterprise Architecture",
-  "Cloud Resilience & Event-Driven Systems",
-  "Modern AI-Assisted Engineering Workflows"
+  "AI-Native Engineering",
+  "AI Automation",
+  ".NET 8 Microservices",
+  "Distributed Systems",
+  "Cloud Architecture"
 ];
 
 /* ---------------- Minimal & Tactile Architectural Typewriter ---------------- */
@@ -159,7 +160,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
   surname = "HASAN",
   tagline = "Lead Software Engineer & Systems Architect",
   typewriterPhrases = defaultTypewriterPhrases,
-  summary = "Lead Software Engineer and Systems Architect with 10+ years architecting resilient distributed systems, enterprise .NET microservices, high-throughput cloud platforms, and modern engineering workflows.",
+  summary = "I’m a Lead Software Engineer and Systems Architect with 10+ years of experience building .NET applications, distributed systems, and cloud-based platforms. I enjoy solving complex engineering problems, improving existing systems, and using modern AI tools to make the way we build software faster, smarter, and more reliable.",
   ctaText = "Explore Architectural Case Studies",
   ctaAction,
   onOpenTerminal,
@@ -307,7 +308,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className={`text-xs sm:text-sm md:text-base font-sans leading-relaxed border-l-2 pl-4 py-2.5 rounded-r-2xl backdrop-blur-xl transition-colors shadow-xl ${
+              className={`text-xs sm:text-sm md:text-base font-sans leading-relaxed border-l-2 pl-4 py-3 rounded-r-2xl backdrop-blur-xl transition-colors shadow-xl ${
                 isDark
                   ? "text-slate-200 border-[#dfc898]/50 bg-black/60 shadow-black/50"
                   : "text-slate-800 border-[#b89b5e] bg-white/90 shadow-slate-200/80 font-medium"
