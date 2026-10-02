@@ -62,12 +62,12 @@ export default function App() {
           name="MD RABBY"
           surname="HASAN"
           tagline="Lead Software Engineer & Systems Architect"
-          summary="I’m a Lead Software Engineer and Systems Architect with 10+ years of experience building .NET applications, distributed systems, and cloud-based platforms. I enjoy solving complex engineering problems, improving existing systems, and using modern AI tools to make the way we build software faster, smarter, and more reliable."
+          summary="I'm a Lead Software Engineer and Systems Architect with 10+ years of experience designing distributed .NET microservices, high-throughput cloud platforms, and AI-native engineering workflows. I specialize in modernizing complex legacy architectures, sub-second performance optimization, and building resilient distributed systems."
           typewriterPhrases={[
-            ".NET-Based Microservices",
-            "AI Spec-Driven Development",
-            "Performance Optimization",
-            "Legacy to Modern Conversion"
+            "Distributed .NET Microservices",
+            "AI-Native Engineering & Agents",
+            "High-Throughput Performance Tuning",
+            "Legacy Monolith Modernization"
           ]}
           resumeUrl="./doc/rabby_hasan_9_years_full_stack_dot_net_dev.pdf"
           onOpenTerminal={() => setTerminalOpen(true)}

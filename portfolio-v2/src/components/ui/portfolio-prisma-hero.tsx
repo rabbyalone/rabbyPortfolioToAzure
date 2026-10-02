@@ -19,10 +19,10 @@ export interface PortfolioPrismaHeroProps {
 }
 
 const defaultTypewriterPhrases = [
-  ".NET-Based Microservices",
-  "AI Spec-Driven Development",
-  "Performance Optimization",
-  "Legacy to Modern Conversion"
+  "Distributed .NET Microservices",
+  "AI-Native Engineering & Agents",
+  "High-Throughput Performance Tuning",
+  "Legacy Monolith Modernization"
 ];
 
 /* ---------------- Minimal & Tactile Architectural Typewriter ---------------- */
@@ -36,7 +36,7 @@ function Typewriter({
   const [currentIdx, setCurrentIdx] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(55);
+  const [isWaiting, setIsWaiting] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
 
   // Smooth periodic blinking cursor
@@ -48,35 +48,40 @@ function Typewriter({
   }, []);
 
   useEffect(() => {
+    if (!phrases || phrases.length === 0) return;
     const fullText = phrases[currentIdx % phrases.length];
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        // Typing forward with organic character cadence
+    if (isWaiting) {
+      const waitTimer = setTimeout(() => {
+        setIsWaiting(false);
+        setIsDeleting(true);
+      }, 2500);
+      return () => clearTimeout(waitTimer);
+    }
+
+    if (!isDeleting) {
+      if (currentText.length < fullText.length) {
         const nextChar = fullText.charAt(currentText.length);
-        setCurrentText(fullText.substring(0, currentText.length + 1));
-        
-        // Natural micro-pause after spaces
-        setTypingSpeed(nextChar === " " ? 90 : 50);
-
-        if (currentText === fullText) {
-          // Pause at completed phrase to give viewer time to read
-          setTimeout(() => setIsDeleting(true), 2600);
-        }
+        const speed = nextChar === " " ? 95 : 45 + Math.random() * 20;
+        const timer = setTimeout(() => {
+          setCurrentText(fullText.substring(0, currentText.length + 1));
+        }, speed);
+        return () => clearTimeout(timer);
       } else {
-        // Snappy backspacing
-        setCurrentText(fullText.substring(0, currentText.length - 1));
-        setTypingSpeed(22);
-
-        if (currentText === "") {
-          setIsDeleting(false);
-          setCurrentIdx((prev) => (prev + 1) % phrases.length);
-        }
+        setIsWaiting(true);
       }
-    }, typingSpeed);
-
-    return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, currentIdx, typingSpeed, phrases]);
+    } else {
+      if (currentText.length > 0) {
+        const timer = setTimeout(() => {
+          setCurrentText(fullText.substring(0, currentText.length - 1));
+        }, 22);
+        return () => clearTimeout(timer);
+      } else {
+        setIsDeleting(false);
+        setCurrentIdx((prev) => (prev + 1) % phrases.length);
+      }
+    }
+  }, [currentText, isDeleting, isWaiting, currentIdx, phrases]);
 
   const isDark = theme === "dark";
 
@@ -97,9 +102,9 @@ function Typewriter({
               : "bg-amber-50 border-amber-200 text-[#854d0e]"
           }`}
         >
-          <span>0{currentIdx + 1}</span>
+          <span>{String(currentIdx + 1).padStart(2, "0")}</span>
           <span className="text-slate-500">/</span>
-          <span className="text-slate-500">0{phrases.length}</span>
+          <span className="text-slate-500">{String(phrases.length).padStart(2, "0")}</span>
         </div>
 
         {/* Minimal Terminal Prompt Symbol */}
@@ -108,7 +113,7 @@ function Typewriter({
             isDark ? "text-[#dfc898]" : "text-[#854d0e]"
           }`}
         >
-          ❯
+          {"\u276F"}
         </span>
 
         {/* Dynamic Typed Phrase with Stable Fixed Min-Width (Zero Jitter) */}
