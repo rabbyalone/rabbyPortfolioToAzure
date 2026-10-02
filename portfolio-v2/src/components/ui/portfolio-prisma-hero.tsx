@@ -19,11 +19,10 @@ export interface PortfolioPrismaHeroProps {
 }
 
 const defaultTypewriterPhrases = [
-  "AI-Native Engineering",
-  "AI Automation",
-  ".NET 8 Microservices",
-  "Distributed Systems",
-  "Cloud Architecture"
+  ".NET-Based Microservices",
+  "AI Spec-Driven Development",
+  "Performance Optimization",
+  "Legacy to Modern Conversion"
 ];
 
 /* ---------------- Minimal & Tactile Architectural Typewriter ---------------- */
