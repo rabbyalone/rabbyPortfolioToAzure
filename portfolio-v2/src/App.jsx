@@ -3,13 +3,10 @@ import ParticleBackground from './components/ParticleBackground';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import { PortfolioPrismaHero } from './components/ui/portfolio-prisma-hero';
-import About from './components/About';
-import ExperienceTimeline from './components/ExperienceTimeline';
-import SkillsRadar from './components/SkillsRadar';
 import Projects from './components/Projects';
+import SkillsRadar from './components/SkillsRadar';
+import ExperienceTimeline from './components/ExperienceTimeline';
 import Articles from './components/Articles';
-import Education from './components/Education';
-import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TerminalModal from './components/TerminalModal';
@@ -55,14 +52,14 @@ export default function App() {
         onOpenTerminal={() => setTerminalOpen(true)}
       />
 
-      {/* Main Sections */}
-      <main className="space-y-16">
+      {/* Main Streamlined Sections (Strict High-Signal, Minimalist Hierarchy) */}
+      <main className="space-y-24 sm:space-y-32">
         <PortfolioPrismaHero
           theme={theme}
           name="MD RABBY"
           surname="HASAN"
           tagline="Lead Software Engineer & Systems Architect"
-          summary="I'm a Lead Software Engineer and Systems Architect with 10+ years of experience designing distributed .NET microservices, high-throughput cloud platforms, and AI-native engineering workflows. I specialize in modernizing complex legacy architectures, sub-second performance optimization, and building resilient distributed systems."
+          summary="I architect resilient distributed systems, high-concurrency .NET microservices, and AI-native engineering pipelines. Over the past decade, I have engineered systems spanning 1,000-year Arctic cold vaults, offshore sensor telemetry, and mission-critical enterprise platforms."
           typewriterPhrases={[
             "Distributed .NET Microservices",
             "AI-Native Engineering & Agents",
@@ -73,13 +70,10 @@ export default function App() {
           onOpenTerminal={() => setTerminalOpen(true)}
           onSelectProject={setSelectedProject}
         />
-        <About theme={theme} />
+        <Projects theme={theme} onSelectProject={setSelectedProject} />
         <SkillsRadar theme={theme} />
         <ExperienceTimeline theme={theme} />
-        <Projects theme={theme} onSelectProject={setSelectedProject} />
         <Articles theme={theme} />
-        <Education theme={theme} />
-        <Testimonials theme={theme} />
         <Contact theme={theme} />
       </main>
 

@@ -11,7 +11,7 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = ['home', 'about', 'architecture', 'experience', 'case-studies', 'articles', 'education', 'contact'];
+      const sections = ['home', 'case-studies', 'architecture', 'experience', 'articles', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
@@ -33,12 +33,10 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
 
   const navLinks = [
     { name: 'Overview', href: '#home', id: 'home' },
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'Stack', href: '#architecture', id: 'architecture' },
-    { name: 'Experience', href: '#experience', id: 'experience' },
     { name: 'Case Studies', href: '#case-studies', id: 'case-studies' },
+    { name: 'Architecture', href: '#architecture', id: 'architecture' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
     { name: 'Articles', href: '#articles', id: 'articles' },
-    { name: 'Education', href: '#education', id: 'education' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
