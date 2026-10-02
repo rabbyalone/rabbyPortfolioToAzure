@@ -71,6 +71,7 @@ export default function App() {
           ]}
           resumeUrl="./doc/rabby_hasan_9_years_full_stack_dot_net_dev.pdf"
           onOpenTerminal={() => setTerminalOpen(true)}
+          onSelectProject={setSelectedProject}
         />
         <About theme={theme} />
         <SkillsRadar theme={theme} />
