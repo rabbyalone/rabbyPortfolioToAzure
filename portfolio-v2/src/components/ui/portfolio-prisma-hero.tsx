@@ -14,9 +14,7 @@ import {
   Workflow,
   Compass,
   Bot,
-  ShieldCheck,
-  Move,
-  Pin
+  ShieldCheck
 } from "lucide-react";
 import { WordsPullUp } from "./prisma-hero";
 
@@ -169,15 +167,15 @@ function Typewriter({
   );
 }
 
-/* ---------------- 4 AI SYSTEMS SERVICE TILES (each backed by one verified proof point) ---------------- */
+/* ---------------- 4 AI SYSTEMS SERVICE TILES (MINIMAL & EFFECTIVE) ---------------- */
 const serviceTiles = [
   {
     id: "ai-strategy",
     icon: Compass,
     category: "01 · Plan",
     title: "AI Strategy",
-    proof: "AI-assisted delivery workflows at Ethos Risk (USA)",
-    tags: ["Use-Case Mapping", "Spec-Driven Dev", "Roadmaps"],
+    proof: "Spec-driven agent architectures & enterprise roadmaps.",
+    tags: ["Roadmaps", "Workflows"],
     glowColor: "from-indigo-300 via-sky-200 to-blue-400",
     borderHover: "hover:border-indigo-400/70",
     targetSection: "architecture"
@@ -187,8 +185,8 @@ const serviceTiles = [
     icon: Workflow,
     category: "02 · Automate",
     title: "Process Automation",
-    proof: "−20% deployment cycle time via automated pipelines",
-    tags: ["Workflow Engines", "CI/CD", "Azure Functions"],
+    proof: "Autonomous CI/CD pipelines & task orchestrators.",
+    tags: ["Pipelines", "Azure DevOps"],
     glowColor: "from-emerald-300 via-teal-200 to-cyan-400",
     borderHover: "hover:border-emerald-400/70",
     targetSection: "architecture"
@@ -198,8 +196,8 @@ const serviceTiles = [
     icon: Bot,
     category: "03 · Build",
     title: "Custom Agents",
-    proof: "2nd Prize · company AI Hackathon for autonomous agents",
-    tags: ["Autonomous Agents", "Task Automation", ".NET 8"],
+    proof: "Domain-specific autonomous agents in .NET & Python.",
+    tags: [".NET 8", "Task Agents"],
     glowColor: "from-purple-300 via-fuchsia-200 to-indigo-400",
     borderHover: "hover:border-purple-400/70",
     targetSection: "case-studies"
@@ -209,58 +207,46 @@ const serviceTiles = [
     icon: Database,
     category: "04 · Measure",
     title: "Data Intelligence",
-    proof: "Real-time North Sea rig telemetry · GeologiQ (Norway)",
-    tags: ["Cosmos DB", "SQL Server", "Redis"],
+    proof: "Real-time North Sea sensor telemetry & streaming.",
+    tags: ["Cosmos DB", "Redis"],
     glowColor: "from-cyan-300 via-sky-200 to-indigo-400",
     borderHover: "hover:border-cyan-400/70",
     targetSection: "case-studies"
   }
 ];
 
-/* ---------------- 3 ARCHITECTURAL PROFILE MILESTONES ---------------- */
+/* ---------------- 3 ARCHITECTURAL PROFILE MILESTONES (MINIMAL & HIGH-SIGNAL) ---------------- */
 const architecturalMilestones = [
   {
-    id: "memo-systems-architecture",
-    title: "Systems Architecture",
-    badge: "10+ Years Track Record",
+    id: "milestone-systems",
+    title: "Enterprise Architecture",
+    badge: "10+ Years",
     icon: ShieldCheck,
-    metric: "Distributed .NET & Microservices",
-    quote:
-      "Designing mission-critical enterprise systems and resilient microservices with clean domain architecture, asynchronous event handling, and high availability.",
-    highlight:
-      "Led architecture and full-lifecycle engineering across US Risk Management (Ethos Risk), Global Taxation (Ernst & Young), Arctic Data Archival (Piql Norway), and Offshore Telemetry (GeologiQ).",
-    tags: ["Ethos Risk (USA)", "Ernst & Young", "Piql Norway", "GeologiQ Rig Telemetry"],
+    proof: "Distributed .NET microservices for Ethos Risk (US), EY & North Sea telemetry.",
+    tags: [".NET 8", "Microservices"],
     targetSection: "case-studies"
   },
   {
-    id: "memo-modern-workflows",
-    title: "Engineering Automation",
-    badge: "Hackathon 2nd Prize Winner",
+    id: "milestone-automation",
+    title: "Autonomous AI Agents",
+    badge: "Hackathon 2nd Prize",
     icon: Bot,
-    metric: "Autonomous Task Engines",
-    quote:
-      "Awarded 2nd Prize in company-wide internal AI Hackathon for designing autonomous task automation engines and developer agent workflows.",
-    highlight:
-      "Integrating modern AI-assisted engineering tools, spec-driven design, and developer automation pipelines to accelerate architecture, refactoring, and code quality.",
-    tags: ["Spec-Driven Design", "Autonomous Workflows", "Prompt Engineering", "Quality Pipelines"],
+    proof: "Autonomous task engines & spec-driven AI agent workflows.",
+    tags: ["Custom Agents", "CI/CD"],
     targetSection: "architecture"
   },
   {
-    id: "memo-performance-resiliency",
-    title: "Performance & Resiliency",
+    id: "milestone-resiliency",
+    title: "Scale & Resiliency",
     badge: "90% Downtime Drop",
     icon: Cpu,
-    metric: "20% Throughput Boost",
-    quote:
-      "Decomposing legacy monolithic backends into decoupled .NET 8 microservices, achieving high query efficiency and fault-tolerant event streaming.",
-    highlight:
-      "Modernized legacy core components, tuned SQL query execution plans and Redis caching, cutting production downtime by 90% and improving throughput by 20%.",
-    tags: [".NET 8 Microservices", "CQRS Architecture", "Redis Caching", "Query Optimization"],
+    proof: "Monolith decomposition, sub-50ms Redis caching & SQL tuning.",
+    tags: ["SQL Tuning", "Zero-Downtime"],
     targetSection: "case-studies"
   }
 ];
 
-/* ---------------- Interactive Geist Milestone Card ---------------- */
+/* ---------------- Sleek & Minimal Geist Milestone Card (Mobile Ready, No Drag) ---------------- */
 function GeistMilestoneCard({
   milestone,
   motionStyle,
@@ -282,132 +268,99 @@ function GeistMilestoneCard({
   };
 
   return (
-    <div className="relative pt-3">
-      {/* Sleek Metallic Titanium Pin */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
-        <div className="w-7 h-7 rounded-full shadow-md border border-white/20 bg-gradient-to-tr from-slate-800 via-slate-600 to-slate-200 flex items-center justify-center text-slate-950 font-extrabold shadow-black/40">
-          <Pin className="w-3.5 h-3.5 fill-slate-950 text-slate-950" />
+    <motion.div
+      style={motionStyle}
+      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onMouseMove={handleMouseMove}
+      onClick={() => onSelect(milestone.targetSection)}
+      className={`group relative p-3.5 sm:p-4.5 rounded-2xl sm:rounded-3xl border text-left cursor-pointer transition-all duration-300 overflow-hidden select-none flex flex-col justify-between ${
+        isDark
+          ? "bg-slate-950/85 hover:bg-slate-900/95 border-white/10 hover:border-white/30 shadow-xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]"
+          : "bg-white/95 hover:bg-white border-slate-200/90 hover:border-slate-400 shadow-md hover:shadow-xl"
+      } min-h-[145px] sm:min-h-[160px]`}
+    >
+      {/* Dynamic Hover Spotlight */}
+      {isHovered && (
+        <div
+          className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-10"
+          style={{
+            background: `radial-gradient(320px circle at ${mousePos.x}px ${mousePos.y}px, ${
+              isDark ? "rgba(226, 232, 240, 0.10)" : "rgba(51, 65, 85, 0.06)"
+            }, transparent 80%)`
+          }}
+        />
+      )}
+
+      {/* Top Header Row: Category Badge + Icon */}
+      <div className="flex items-center justify-between gap-2 relative z-20">
+        <span
+          className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider border ${
+            isDark
+              ? "bg-slate-900 border-white/15 text-slate-300"
+              : "bg-slate-100 border-slate-200 text-slate-800"
+          }`}
+        >
+          {milestone.badge}
+        </span>
+
+        <div
+          className={`w-6 h-6 sm:w-7 sm:h-7 rounded-xl flex items-center justify-center border transition-colors shrink-0 ${
+            isDark
+              ? "bg-slate-900 border-white/10 text-slate-200 group-hover:border-white/30"
+              : "bg-slate-100 border-slate-200 text-slate-800"
+          }`}
+        >
+          <IconComponent className="w-3.5 h-3.5" />
         </div>
       </div>
 
-      <motion.div
-        style={motionStyle}
-        drag
-        dragConstraints={{ left: -25, right: 25, top: -15, bottom: 15 }}
-        dragElastic={0.08}
-        whileDrag={{ scale: 1.03, zIndex: 40, cursor: "grabbing" }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onMouseMove={handleMouseMove}
-        onClick={() => onSelect(milestone.targetSection)}
-        className={`group relative p-6 sm:p-7 rounded-3xl border text-left cursor-grab transition-all duration-300 overflow-hidden transform-gpu select-none flex flex-col justify-between min-h-[350px] sm:min-h-[370px] ${
-          isDark
-            ? "bg-slate-950/85 hover:bg-slate-900/95 border-white/10 hover:border-white/30 shadow-2xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]"
-            : "bg-white/95 hover:bg-white border-slate-200/90 hover:border-slate-400 shadow-xl hover:shadow-2xl"
-        }`}
-      >
-        {/* Dynamic Hover Spotlight */}
-        {isHovered && (
-          <div
-            className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-10"
-            style={{
-              background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, ${
-                isDark ? "rgba(226, 232, 240, 0.12)" : "rgba(51, 65, 85, 0.08)"
-              }, transparent 80%)`
-            }}
-          />
-        )}
+      {/* Minimal Title + 1-Line Impact */}
+      <div className="py-1.5 space-y-1 relative z-20">
+        <h3
+          className={`text-base sm:text-lg font-bold font-heading leading-tight ${
+            isDark ? "text-white" : "text-slate-900"
+          }`}
+        >
+          {milestone.title}
+        </h3>
+        <p
+          className={`text-xs leading-relaxed line-clamp-2 ${
+            isDark ? "text-slate-300" : "text-slate-600"
+          }`}
+        >
+          {milestone.proof}
+        </p>
+      </div>
 
-        {/* Top Header Pill Row */}
-        <div className="flex items-center justify-between gap-3 pb-3 border-b border-white/10 dark:border-white/10 pt-1 relative z-20">
-          <span
-            className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider border ${
-              isDark
-                ? "bg-slate-900 border-white/15 text-slate-200"
-                : "bg-slate-100 border-slate-200 text-slate-800"
-            }`}
-          >
-            {milestone.badge}
-          </span>
-
-          <div className="flex items-center gap-1 text-[10px] font-mono text-slate-400 opacity-60">
-            <Move className="w-3 h-3" />
-            <span className="hidden sm:inline">Drag</span>
-          </div>
-        </div>
-
-        {/* Content Body */}
-        <div className="space-y-3 py-3 relative z-20">
-          <div className="flex items-start justify-between gap-3">
-            <div className="space-y-0.5">
-              <h3
-                className={`text-lg sm:text-xl font-bold font-heading leading-tight ${
-                  isDark ? "text-white" : "text-slate-900"
-                }`}
-              >
-                {milestone.title}
-              </h3>
-              <div className="text-xs font-mono font-bold gold-gradient-text">
-                {milestone.metric}
-              </div>
-            </div>
-
-            <div
-              className={`w-8 h-8 rounded-xl flex items-center justify-center border shrink-0 ${
+      {/* Bottom Tags & Action */}
+      <div className="pt-2 border-t border-white/10 dark:border-white/10 flex items-center justify-between gap-2 relative z-20">
+        <div className="flex flex-wrap gap-1">
+          {milestone.tags.map((tag, tIdx) => (
+            <span
+              key={tIdx}
+              className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
                 isDark
-                  ? "bg-slate-900 border-white/10 text-slate-200"
-                  : "bg-slate-100 border-slate-200 text-slate-800"
+                  ? "bg-slate-900 border-slate-800 text-slate-400"
+                  : "bg-slate-100 border-slate-200 text-slate-600"
               }`}
             >
-              <IconComponent className="w-4 h-4" />
-            </div>
-          </div>
-
-          <p
-            className={`text-xs sm:text-sm font-medium leading-relaxed italic ${
-              isDark ? "text-slate-300" : "text-slate-700"
-            }`}
-          >
-            "{milestone.quote}"
-          </p>
-
-          <p
-            className={`text-xs leading-relaxed ${
-              isDark ? "text-slate-400" : "text-slate-600"
-            }`}
-          >
-            {milestone.highlight}
-          </p>
+              {tag}
+            </span>
+          ))}
         </div>
 
-        {/* Bottom Tags & Action */}
-        <div className="pt-3 border-t border-white/10 dark:border-white/10 space-y-2.5 relative z-20">
-          <div className="flex flex-wrap gap-1">
-            {milestone.tags.map((tag, tIdx) => (
-              <span
-                key={tIdx}
-                className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
-                  isDark
-                    ? "bg-slate-900 border-slate-800 text-slate-300"
-                    : "bg-slate-100 border-slate-200 text-slate-700"
-                }`}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div
-            className={`flex items-center justify-between text-xs font-mono font-bold transition-transform pt-0.5 ${
-              isDark ? "text-slate-300 group-hover:text-white" : "text-slate-700 group-hover:text-slate-900"
-            }`}
-          >
-            <span>Inspect Technical Impact</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 text-slate-300" />
-          </div>
+        <div
+          className={`flex items-center gap-1 text-[11px] font-mono font-bold transition-transform shrink-0 ${
+            isDark ? "text-slate-300 group-hover:text-white" : "text-slate-700 group-hover:text-slate-900"
+          }`}
+        >
+          <span>Explore</span>
+          <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 }
 
@@ -748,7 +701,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
         </motion.div>
 
         {/* ========================================================================= */}
-        {/* STAGE 2: ARCHITECTURAL PROFILE (PURE GEIST TITANIUM MILESTONES)          */}
+        {/* STAGE 2: ARCHITECTURAL PROFILE (MINIMAL, PUNCHY & MOBILE READY)           */}
         {/* ========================================================================= */}
         <motion.div
           style={{
@@ -758,33 +711,33 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
             rotateX: vaultRotateX,
             pointerEvents: vaultPointerEvents
           }}
-          className="absolute inset-x-0 z-30 flex items-center justify-center px-4 sm:px-8 lg:px-12 pointer-events-none"
+          className="absolute inset-x-0 z-30 flex items-center justify-center px-3 sm:px-8 lg:px-12 pointer-events-none"
         >
-          <div className="w-full max-w-[1720px] mx-auto space-y-4 pointer-events-auto">
+          <div className="w-full max-w-[1720px] mx-auto space-y-3 sm:space-y-4 pointer-events-auto max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible py-2 sm:py-0 px-1 sm:px-0">
             
             {/* Header: Pure Minimalist Geist Label */}
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-white/10 dark:border-white/10">
-              <div className="space-y-1.5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono tracking-wider uppercase border bg-white/5 border-white/15 text-slate-200">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 pb-2.5 border-b border-white/10 dark:border-white/10">
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-wider uppercase border bg-white/5 border-white/15 text-slate-300">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>ARCHITECTURAL PROFILE</span>
                 </div>
                 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight font-heading text-white">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight font-heading text-white">
                   Engineering <span className="gold-gradient-text">Philosophy & Track Record</span>
                 </h2>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="text-[11px] font-mono text-slate-400 hidden xl:inline">
-                  Key Architectural Milestones • Click, hover, or drag cards to inspect engineering impact
+              <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
+                <span className="text-[10px] font-mono text-slate-400 hidden xl:inline">
+                  Key Milestones & AI Capabilities
                 </span>
 
                 {/* View Switcher Pill */}
-                <div className="inline-flex items-center p-1 rounded-xl bg-slate-900 border border-white/10 text-[10px] font-mono">
+                <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-900 border border-white/10 text-[10px] font-mono shrink-0">
                   <button
                     onClick={() => setStageView('milestones')}
-                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
                       stageView === 'milestones'
                         ? 'bg-white/15 text-white font-bold shadow-sm'
                         : 'text-slate-400 hover:text-white'
@@ -794,7 +747,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                   </button>
                   <button
                     onClick={() => setStageView('services')}
-                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
                       stageView === 'services'
                         ? 'bg-white/15 text-white font-bold shadow-sm'
                         : 'text-slate-400 hover:text-white'
@@ -808,7 +761,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
 
             {/* Content: 3 Architectural Milestones Cards OR 4 AI Systems Consoles */}
             {stageView === 'milestones' ? (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
                 {architecturalMilestones.map((milestone, idx) => {
                   let cardMotion = {};
                   if (idx === 0) cardMotion = { x: card1X, rotate: card1Rot };
@@ -827,7 +780,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                 })}
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {serviceTiles.map((tile, idx) => {
                   const IconComponent = tile.icon;
 
@@ -841,19 +794,19 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                     <motion.div
                       key={tile.id}
                       style={cardMotion}
-                      whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                      whileHover={{ y: -4, transition: { duration: 0.2 } }}
                       onClick={() => handleScrollToTarget(tile.targetSection)}
-                      className={`group relative rounded-3xl overflow-hidden border p-6 sm:p-7 cursor-pointer select-none flex flex-col justify-between transition-all duration-300 ${
+                      className={`group relative rounded-2xl sm:rounded-3xl overflow-hidden border p-3.5 sm:p-4.5 cursor-pointer select-none flex flex-col justify-between transition-all duration-300 ${
                         isDark
-                          ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${tile.borderHover} shadow-2xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
-                          : `bg-white/95 hover:bg-white border-slate-200/90 ${tile.borderHover} shadow-xl hover:shadow-2xl`
-                      } min-h-[280px] sm:min-h-[310px]`}
+                          ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${tile.borderHover} shadow-xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
+                          : `bg-white/95 hover:bg-white border-slate-200/90 ${tile.borderHover} shadow-md hover:shadow-xl`
+                      } min-h-[145px] sm:min-h-[160px]`}
                     >
-                      {/* Top Pill Row: Icon + Category + Badge */}
+                      {/* Top Pill Row: Icon + Category */}
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
                           <div
-                            className={`w-7 h-7 rounded-xl flex items-center justify-center border transition-colors ${
+                            className={`w-6 h-6 sm:w-7 sm:h-7 rounded-xl flex items-center justify-center border transition-colors shrink-0 ${
                               isDark
                                 ? "bg-slate-900 border-white/10 text-slate-200 group-hover:border-white/30"
                                 : "bg-slate-100 border-slate-200 text-slate-800"
@@ -867,30 +820,30 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                         </div>
                       </div>
 
-                      {/* Service Name (hero text) + One Verified Proof Line */}
-                      <div className="py-5">
+                      {/* Service Title + Single Punchy Proof Line */}
+                      <div className="py-1.5 space-y-1">
                         <div
-                          className={`text-3xl sm:text-4xl font-extrabold font-heading tracking-tight leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r ${tile.glowColor}`}
+                          className={`text-base sm:text-lg font-bold font-heading tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r ${tile.glowColor}`}
                         >
                           {tile.title}
                         </div>
 
-                        <div className="flex items-start gap-1.5 text-[11px] font-mono text-slate-400 mt-3 leading-relaxed">
-                          <CheckCircle2 className="w-3.5 h-3.5 mt-px shrink-0 text-emerald-400" />
+                        <div className="flex items-start gap-1.5 text-xs font-mono text-slate-300 leading-snug line-clamp-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-400" />
                           <span>{tile.proof}</span>
                         </div>
                       </div>
 
                       {/* Bottom Tags & Action */}
-                      <div className="pt-3 border-t border-white/10 dark:border-white/10 space-y-2.5">
+                      <div className="pt-2 border-t border-white/10 dark:border-white/10 flex items-center justify-between gap-2">
                         <div className="flex flex-wrap gap-1">
                           {tile.tags.map((tag, tIdx) => (
                             <span
                               key={tIdx}
                               className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
                                 isDark
-                                  ? "bg-slate-900 border-slate-800 text-slate-300"
-                                  : "bg-slate-100 border-slate-200 text-slate-700"
+                                  ? "bg-slate-900 border-slate-800 text-slate-400"
+                                  : "bg-slate-100 border-slate-200 text-slate-600"
                               }`}
                             >
                               {tag}
@@ -899,12 +852,12 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                         </div>
 
                         <div
-                          className={`flex items-center justify-between text-xs font-mono font-bold transition-transform pt-0.5 ${
+                          className={`flex items-center gap-1 text-[11px] font-mono font-bold transition-transform shrink-0 ${
                             isDark ? "text-slate-300" : "text-slate-700"
                           }`}
                         >
-                          <span>Explore Capabilities</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                          <span>Explore</span>
+                          <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                         </div>
                       </div>
                     </motion.div>
@@ -914,14 +867,14 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
             )}
 
             {/* Bottom Direct CTA Strip to Case Studies Section */}
-            <div className="flex items-center justify-between pt-1">
-              <span className="text-[11px] font-mono text-slate-400">
-                Continue scrolling for complete architectural deep-dives & production case studies
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1 text-center sm:text-left">
+              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400">
+                Scroll down for in-depth production case studies & technical architecture
               </span>
               <a
                 href="#case-studies"
                 onClick={handleScrollToProjects}
-                className={`inline-flex items-center gap-2 text-xs font-mono font-bold px-4 py-1.5 rounded-full border transition-colors cursor-pointer ${
+                className={`inline-flex items-center gap-2 text-xs font-mono font-bold px-3.5 py-1.5 rounded-full border transition-colors cursor-pointer shrink-0 ${
                   isDark
                     ? "bg-slate-900 border-white/15 text-slate-200 hover:border-white/40"
                     : "bg-white border-slate-300 text-slate-800 hover:border-slate-500"
@@ -950,7 +903,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
               isDark ? "text-zinc-400 hover:text-[#dfc898]" : "text-slate-600 hover:text-[#854d0e]"
             }`}
           >
-            <span>Scroll to Deconstruct Hero & Open Services</span>
+            <span>Scroll to Inspect Architectural Profile</span>
             <ChevronDown
               className={`w-3.5 h-3.5 animate-bounce ${
                 isDark ? "text-[#dfc898]" : "text-[#854d0e]"
@@ -969,7 +922,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
               isDark ? "text-zinc-400" : "text-slate-500"
             }`}
           >
-            <span>Scroll Down to In-Depth Specifications</span>
+            <span>Scroll Down to Case Studies</span>
             <ChevronDown
               className={`w-3 h-3 animate-bounce ${
                 isDark ? "text-[#dfc898]" : "text-[#854d0e]"
