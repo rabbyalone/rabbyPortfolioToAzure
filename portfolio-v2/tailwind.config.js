@@ -31,7 +31,8 @@ export default {
       fontFamily: {
         heading: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
         body: ['Plus Jakarta Sans', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace']
+        mono: ['JetBrains Mono', 'monospace'],
+        serif: ['"Instrument Serif"', 'Georgia', 'serif']
       }
     },
   },

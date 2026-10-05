@@ -2,15 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
-  Terminal,
   Sparkles,
-  Download,
   ChevronDown,
-  Layers,
-  ExternalLink
+  Cpu,
+  Server,
+  Cloud,
+  Database,
+  Trophy,
+  Zap,
+  CheckCircle2,
+  Workflow,
+  Compass,
+  Bot
 } from "lucide-react";
 import { WordsPullUp } from "./prisma-hero";
-import { projectsData } from "../../data/portfolioData";
 
 export interface PortfolioPrismaHeroProps {
   name?: string;
@@ -29,10 +34,10 @@ export interface PortfolioPrismaHeroProps {
 }
 
 const defaultTypewriterPhrases = [
-  "Distributed .NET Microservices",
   "AI-Native Engineering & Agents",
-  "High-Throughput Performance Tuning",
-  "Legacy Monolith Modernization"
+  "SaaS & Distributed Microservices",
+  "Legacy Software Conversion",
+  "Performance Optimization & Tuning"
 ];
 
 /* ---------------- Minimal & Tactile Architectural Typewriter ---------------- */
@@ -161,198 +166,62 @@ function Typewriter({
   );
 }
 
-/* ---------------- 4 Featured Portfolio Thumbnails Deck ---------------- */
-function PortfolioThumbnailsDeck({
-  isDark,
-  onSelectProject
-}: {
-  isDark: boolean;
-  onSelectProject?: (project: any) => void;
-}) {
-  // Grab the 4 premier case studies
-  const featured = projectsData.slice(0, 4);
+/* ---------------- 4 AI SYSTEMS SERVICE TILES (each backed by one verified proof point) ---------------- */
+const serviceTiles = [
+  {
+    id: "ai-strategy",
+    icon: Compass,
+    category: "01 · Plan",
+    title: "AI Strategy",
+    proof: "AI-assisted delivery workflows at Ethos Risk (USA)",
+    tags: ["Use-Case Mapping", "Spec-Driven Dev", "Roadmaps"],
+    glowColor: "from-indigo-300 via-sky-200 to-blue-400",
+    borderHover: "hover:border-indigo-400/70",
+    targetSection: "architecture"
+  },
+  {
+    id: "process-automation",
+    icon: Workflow,
+    category: "02 · Automate",
+    title: "Process Automation",
+    proof: "−20% deployment cycle time via automated pipelines",
+    tags: ["Workflow Engines", "CI/CD", "Azure Functions"],
+    glowColor: "from-emerald-300 via-teal-200 to-cyan-400",
+    borderHover: "hover:border-emerald-400/70",
+    targetSection: "architecture"
+  },
+  {
+    id: "custom-agents",
+    icon: Bot,
+    category: "03 · Build",
+    title: "Custom Agents",
+    proof: "2nd Prize · company AI Hackathon for autonomous agents",
+    tags: ["Autonomous Agents", "Task Automation", ".NET 8"],
+    glowColor: "from-purple-300 via-fuchsia-200 to-indigo-400",
+    borderHover: "hover:border-purple-400/70",
+    targetSection: "case-studies"
+  },
+  {
+    id: "data-intelligence",
+    icon: Database,
+    category: "04 · Measure",
+    title: "Data Intelligence",
+    proof: "Real-time North Sea rig telemetry · GeologiQ (Norway)",
+    tags: ["Cosmos DB", "SQL Server", "Redis"],
+    glowColor: "from-cyan-300 via-sky-200 to-indigo-400",
+    borderHover: "hover:border-cyan-400/70",
+    targetSection: "case-studies"
+  }
+];
 
-  // Key architectural badges for each project
-  const projectBadges: Record<string, string> = {
-    "ethos-risk-management": "90% Downtime Drop",
-    "ey-taxation": "Enterprise gRPC & Bus",
-    "geologiq-oil-rig": "North Sea Telemetry",
-    "piql-connect": "1,000-Yr Cold Vault"
-  };
-
-  const handleViewAll = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById("case-studies");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
-      {/* Deck Header: Title, Subtitle + Prominent View All Button */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-5 sm:mb-6 border-b pb-4 sm:pb-5 transition-colors border-white/10 dark:border-white/10">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold tracking-wider uppercase mb-1.5 border backdrop-blur-md bg-[#dfc898]/10 border-[#dfc898]/30 text-[#dfc898]">
-            <Layers className="w-3.5 h-3.5" />
-            <span>Featured Case Studies</span>
-          </div>
-          <h2
-            className={`text-2xl sm:text-3xl font-extrabold tracking-tight font-heading ${
-              isDark ? "text-slate-100" : "text-slate-900"
-            }`}
-          >
-            Production Systems Architecture
-          </h2>
-          <p
-            className={`text-xs sm:text-sm mt-0.5 font-sans ${
-              isDark ? "text-slate-400" : "text-slate-600"
-            }`}
-          >
-            High-concurrency platforms, deep data vaults & distributed cloud microservices.
-          </p>
-        </div>
-
-        {/* View All Button */}
-        <div>
-          <a
-            href="#case-studies"
-            onClick={handleViewAll}
-            className={`group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 shadow-xl cursor-pointer ${
-              isDark
-                ? "bg-gradient-to-r from-[#dfc898] to-[#b89b5e] hover:from-[#f1e8d6] hover:to-[#dfc898] text-black shadow-[#dfc898]/20"
-                : "bg-slate-900 hover:bg-black text-[#dfc898] shadow-slate-900/25"
-            }`}
-          >
-            <span>View All Projects</span>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-black/80 transition-transform group-hover:translate-x-0.5">
-              <ArrowRight className="h-3.5 w-3.5 text-[#dfc898]" />
-            </span>
-          </a>
-        </div>
-      </div>
-
-      {/* 4 Thumbnails Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-        {featured.map((proj, idx) => (
-          <motion.div
-            key={proj.id}
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: idx * 0.08 }}
-            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            onClick={() => {
-              if (onSelectProject) {
-                onSelectProject(proj);
-              } else {
-                const el = document.getElementById("case-studies");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            className={`group relative rounded-2xl overflow-hidden border backdrop-blur-xl transition-all duration-300 shadow-2xl flex flex-col justify-between cursor-pointer ${
-              isDark
-                ? "bg-slate-950/80 border-white/10 hover:border-[#dfc898]/50 shadow-black/80"
-                : "bg-white/95 border-slate-200 hover:border-[#b89b5e]/60 shadow-slate-200/90"
-            }`}
-          >
-            <div>
-              {/* Visual Thumbnail Image Frame */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
-                <img
-                  src={proj.thumbnail}
-                  alt={proj.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                
-                {/* Gradient Shading for Text Legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
-
-                {/* Client Pill (Top-Left) */}
-                <div className="absolute top-2.5 left-2.5 z-10">
-                  <span className="inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-black/80 border border-white/15 text-[#dfc898] backdrop-blur-md shadow-md">
-                    {proj.client}
-                  </span>
-                </div>
-
-                {/* Key Metric Badge (Top-Right) */}
-                {projectBadges[proj.id] && (
-                  <div className="absolute top-2.5 right-2.5 z-10">
-                    <span className="inline-block text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 backdrop-blur-md">
-                      {projectBadges[proj.id]}
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              {/* Card Body */}
-              <div className="p-4 sm:p-4.5">
-                <h3
-                  className={`text-sm sm:text-base font-bold font-heading line-clamp-1 group-hover:text-[#dfc898] transition-colors ${
-                    isDark ? "text-slate-100" : "text-slate-900"
-                  }`}
-                >
-                  {proj.title}
-                </h3>
-
-                <p
-                  className={`text-[11px] sm:text-xs leading-relaxed font-sans line-clamp-2 mt-1.5 ${
-                    isDark ? "text-slate-400" : "text-slate-600"
-                  }`}
-                >
-                  {proj.summary}
-                </p>
-              </div>
-            </div>
-
-            {/* Card Footer: Tech Tags + Interactive Action */}
-            <div className="px-4 pb-4 sm:px-4.5 sm:pb-4.5 pt-0">
-              <div className="flex flex-wrap gap-1 mb-3">
-                {proj.tech.slice(0, 3).map((t, i) => (
-                  <span
-                    key={i}
-                    className={`text-[9px] font-mono px-1.5 py-0.5 rounded border ${
-                      isDark
-                        ? "bg-slate-900/80 border-slate-800 text-slate-300"
-                        : "bg-slate-100 border-slate-200 text-slate-700"
-                    }`}
-                  >
-                    {t}
-                  </span>
-                ))}
-                {proj.tech.length > 3 && (
-                  <span
-                    className={`text-[9px] font-mono px-1 py-0.5 rounded ${
-                      isDark ? "text-slate-500" : "text-slate-400"
-                    }`}
-                  >
-                    +{proj.tech.length - 3}
-                  </span>
-                )}
-              </div>
-
-              <div className="flex items-center justify-between text-[11px] font-mono font-semibold pt-2 border-t border-white/5 dark:border-white/5 text-[#dfc898] group-hover:text-[#f1e8d6]">
-                <span>Inspect Architecture</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">
-                  →
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ---------------- Main Scrollytelling Portfolio Hero ---------------- */
+/* ---------------- Main On-Scroll Break-Apart & Service Tiles Hero ---------------- */
 export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
   name = "MD RABBY",
   surname = "HASAN",
   tagline = "Lead Software Engineer & Systems Architect",
   typewriterPhrases = defaultTypewriterPhrases,
-  summary = "I’m a Lead Software Engineer and Systems Architect with 10+ years of experience building .NET applications, distributed systems, and cloud-based platforms. I enjoy solving complex engineering problems, improving existing systems, and using modern AI tools to make the way we build software faster, smarter, and more reliable.",
-  ctaText = "Explore Architectural Case Studies",
+  summary = "Designing resilient distributed microservices, high-throughput cloud infrastructure, and modern AI engineering workflows across international enterprise systems.",
+  ctaText = "Explore Selected Work",
   ctaAction,
   onOpenTerminal,
   onSelectProject,
@@ -363,53 +232,117 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
 }) => {
   const isDark = theme === "dark";
   const [videoLoaded, setVideoLoaded] = useState(false);
-
-  // Pinned Scrollytelling Container Target
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll Progress across 215vh pin sequence
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
-  /* ---------------- Scroll-Driven Animation Curves ---------------- */
-  // Phase 1 -> Phase 2: Displacement of original Hero content (0.0 to 0.40)
-  // The hero name lifts into an architectural watermark
-  const heroNameY = useTransform(scrollYProgress, [0, 0.35], [0, -50]);
-  const heroNameScale = useTransform(scrollYProgress, [0, 0.35], [1, 0.9]);
-  const heroNameOpacity = useTransform(scrollYProgress, [0, 0.25, 0.4], [1, 0.7, 0.08]);
+  // =========================================================================
+  // 1. KINETIC 3D BREAK-APART: NAME & HERO ELEMENTS DISPERSAL
+  // =========================================================================
+  // "MD": Fractures diagonally up-left with negative tilt and blur dissolve
+  const mdX = useTransform(scrollYProgress, [0.06, 0.36], [0, -170]);
+  const mdY = useTransform(scrollYProgress, [0.06, 0.36], [0, -90]);
+  const mdRotate = useTransform(scrollYProgress, [0.06, 0.36], [0, -14]);
+  const mdOpacity = useTransform(scrollYProgress, [0.06, 0.28], [1, 0]);
+  const mdBlurVal = useTransform(scrollYProgress, [0.06, 0.34], [0, 8]);
+  const mdBlur = useTransform(mdBlurVal, (b) => `blur(${b}px)`);
 
-  // Role badge and Typewriter shift & vanish
-  const heroMetaY = useTransform(scrollYProgress, [0, 0.32], [0, -35]);
-  const heroMetaOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  // "RABBY": Elevates upward, letter-spacing opens into grand architectural watermark
+  const rabbyY = useTransform(scrollYProgress, [0.06, 0.42], [0, -100]);
+  const rabbyScale = useTransform(scrollYProgress, [0.06, 0.45], [1, 1.2]);
+  const rabbyOpacity = useTransform(scrollYProgress, [0.06, 0.30, 0.50], [1, 0.25, 0.08]);
+  const rabbyTracking = useTransform(scrollYProgress, [0.06, 0.42], ["-0.065em", "0.2em"]);
 
-  // Right column (Bio + Buttons) displace downwards & blur-fade out
-  const heroBioY = useTransform(scrollYProgress, [0, 0.35], [0, 75]);
-  const heroBioOpacity = useTransform(scrollYProgress, [0, 0.28], [1, 0]);
-  const heroBioScale = useTransform(scrollYProgress, [0, 0.35], [1, 0.94]);
+  // "HASAN": Fractures diagonally down-right with positive tilt and blur dissolve
+  const hasanX = useTransform(scrollYProgress, [0.06, 0.36], [0, 180]);
+  const hasanY = useTransform(scrollYProgress, [0.06, 0.36], [0, 90]);
+  const hasanRotate = useTransform(scrollYProgress, [0.06, 0.36], [0, 14]);
+  const hasanOpacity = useTransform(scrollYProgress, [0.06, 0.28], [1, 0]);
+  const hasanBlurVal = useTransform(scrollYProgress, [0.06, 0.34], [0, 8]);
+  const hasanBlur = useTransform(hasanBlurVal, (b) => `blur(${b}px)`);
 
-  // Pointer events disabled when faded so it doesn't intercept thumbnail clicks
-  const heroInteractiveEvents = useTransform(scrollYProgress, (v) =>
-    v > 0.35 ? "none" : "auto"
-  );
+  // Role Badge: Peels off and spins into negative space
+  const roleX = useTransform(scrollYProgress, [0.06, 0.32], [0, -200]);
+  const roleRotate = useTransform(scrollYProgress, [0.06, 0.32], [0, -18]);
+  const roleScale = useTransform(scrollYProgress, [0.06, 0.32], [1, 0.75]);
+  const roleOpacity = useTransform(scrollYProgress, [0.06, 0.24], [1, 0]);
 
-  // Phase 2 -> Phase 3: Materialization of the 4 Portfolio Thumbnails Deck (0.35 to 0.88)
-  const deckOpacity = useTransform(scrollYProgress, [0.32, 0.48, 0.86, 0.98], [0, 1, 1, 0]);
-  const deckY = useTransform(scrollYProgress, [0.32, 0.48, 0.86, 0.98], [55, 0, 0, -45]);
-  const deckScale = useTransform(scrollYProgress, [0.32, 0.48, 0.86, 0.98], [0.94, 1, 1, 0.96]);
-  const deckPointerEvents = useTransform(scrollYProgress, (v) =>
-    v >= 0.35 && v <= 0.92 ? "auto" : "none"
-  );
+  // Typewriter Capsule: Slides down-left and dissolves
+  const typeX = useTransform(scrollYProgress, [0.06, 0.33], [0, -160]);
+  const typeY = useTransform(scrollYProgress, [0.06, 0.33], [0, 50]);
+  const typeOpacity = useTransform(scrollYProgress, [0.06, 0.24], [1, 0]);
+
+  // Bio Summary Card: 3D perspective shutter tilt and lateral dispersal
+  const bioRotateX = useTransform(scrollYProgress, [0.06, 0.34], [0, 20]);
+  const bioRotateY = useTransform(scrollYProgress, [0.06, 0.34], [0, -18]);
+  const bioX = useTransform(scrollYProgress, [0.06, 0.34], [0, 220]);
+  const bioY = useTransform(scrollYProgress, [0.06, 0.34], [0, -30]);
+  const bioOpacity = useTransform(scrollYProgress, [0.06, 0.26], [1, 0]);
+  const bioScale = useTransform(scrollYProgress, [0.06, 0.34], [1, 0.82]);
+
+  // Initial Action CTAs
+  const ctaX = useTransform(scrollYProgress, [0.06, 0.33], [0, 150]);
+  const ctaY = useTransform(scrollYProgress, [0.06, 0.33], [0, 60]);
+  const ctaOpacity = useTransform(scrollYProgress, [0.06, 0.24], [1, 0]);
+
+  // Pointer events toggling
+  const heroPointerEvents = useTransform(scrollYProgress, (v) => (v < 0.18 ? "auto" : "none"));
+  const vaultPointerEvents = useTransform(scrollYProgress, (v) => (v > 0.24 ? "auto" : "none"));
+
+  // =========================================================================
+  // 2. SERVICE TILES VAULT OPENING TRANSFORMS (3D APERTURE BLOOM)
+  // =========================================================================
+  const vaultOpacity = useTransform(scrollYProgress, [0.18, 0.40], [0, 1]);
+  const vaultScale = useTransform(scrollYProgress, [0.18, 0.46], [0.78, 1]);
+  const vaultY = useTransform(scrollYProgress, [0.18, 0.46], [90, 0]);
+  const vaultRotateX = useTransform(scrollYProgress, [0.18, 0.46], [16, 0]);
+
+  // Individual 4-Card Kinetic Fan-Out Trajectories
+  const card1X = useTransform(scrollYProgress, [0.20, 0.48], [-35, 0]);
+  const card1Rot = useTransform(scrollYProgress, [0.20, 0.48], [-2.5, 0]);
+
+  const card2Y = useTransform(scrollYProgress, [0.20, 0.48], [25, 0]);
+
+  const card3Y = useTransform(scrollYProgress, [0.20, 0.48], [25, 0]);
+
+  const card4X = useTransform(scrollYProgress, [0.20, 0.48], [35, 0]);
+  const card4Rot = useTransform(scrollYProgress, [0.20, 0.48], [2.5, 0]);
+
+  // Subtle Scroll Cues
+  const scrollCue1Opacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
+  const scrollCue2Opacity = useTransform(scrollYProgress, [0.42, 0.60, 0.88, 0.98], [0, 1, 1, 0]);
+
+  const handleScrollToTarget = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToProjects = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (ctaAction) {
+      ctaAction();
+    } else {
+      handleScrollToTarget("case-studies");
+    }
+  };
 
   return (
     <section
       ref={containerRef}
       id="home"
-      className={`relative h-[240vh] w-full transition-colors duration-500 ${
-        isDark ? "bg-[#07090e]" : "bg-[#f8fafc]"
-      }`}
+      className="relative h-[215vh] w-full"
     >
-      {/* Sticky Viewport Window */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-end">
+      {/* Pinned Viewport Container */}
+      <div
+        className={`sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden transition-colors duration-500 ${
+          isDark ? "bg-[#08090d]" : "bg-[#f8fafc]"
+        }`}
+        style={{ perspective: 1200 }}
+      >
         {/* 1. Cinematic Background Video */}
         <video
           autoPlay
@@ -421,79 +354,75 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 pointer-events-none ${
             videoLoaded
               ? isDark
-                ? "opacity-75"
-                : "opacity-65 filter contrast-110 saturate-125 brightness-105"
+                ? "opacity-60"
+                : "opacity-45 filter contrast-110 saturate-125 brightness-105"
               : "opacity-0"
           }`}
           src={videoSrc}
         />
 
-        {/* 2. Multi-Spectral Prismatic Refraction Aura */}
+        {/* 2. Prismatic Refraction Atmosphere */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div
-            className={`absolute -top-24 -left-20 w-[60vw] max-w-[850px] h-[60vw] max-h-[850px] rounded-full blur-[140px] transition-all duration-700 ${
+            className={`absolute -top-24 -left-20 w-[60vw] max-w-[850px] h-[60vw] max-h-[850px] rounded-full blur-[150px] transition-all duration-700 ${
               isDark
-                ? "bg-[#dfc898]/18"
-                : "bg-gradient-to-br from-amber-300/45 via-yellow-400/30 to-transparent"
+                ? "bg-[#dfc898]/12"
+                : "bg-gradient-to-br from-amber-300/35 via-yellow-400/25 to-transparent"
             }`}
           />
           <div
             className={`absolute top-1/4 right-0 w-[55vw] max-w-[800px] h-[55vw] max-h-[800px] rounded-full blur-[160px] transition-all duration-700 ${
               isDark
-                ? "bg-[#6366f1]/16"
-                : "bg-gradient-to-bl from-indigo-500/40 via-purple-400/30 to-transparent"
+                ? "bg-[#6366f1]/12"
+                : "bg-gradient-to-bl from-indigo-500/30 via-purple-400/20 to-transparent"
             }`}
           />
           <div
             className={`absolute bottom-1/4 left-1/4 w-[50vw] max-w-[700px] h-[50vw] max-h-[700px] rounded-full blur-[150px] transition-all duration-700 ${
               isDark
-                ? "bg-[#10b981]/14"
-                : "bg-gradient-to-tr from-emerald-400/40 via-teal-300/30 to-transparent"
-            }`}
-          />
-          <div
-            className={`absolute top-1/2 left-2/3 w-[40vw] max-w-[600px] h-[40vw] max-h-[600px] rounded-full blur-[140px] transition-all duration-700 ${
-              isDark
-                ? "bg-[#f43f5e]/10"
-                : "bg-gradient-to-tl from-rose-400/35 via-pink-300/25 to-transparent"
+                ? "bg-[#10b981]/10"
+                : "bg-gradient-to-tr from-emerald-400/30 via-teal-300/20 to-transparent"
             }`}
           />
         </div>
 
-        {/* 3. Film Noise Texture Overlay */}
-        <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-overlay" />
+        {/* 3. Noise Overlay */}
+        <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.25] mix-blend-overlay" />
 
-        {/* 4. Bottom Gradient Ramp */}
+        {/* 4. Cinematic Vignettes */}
         <div
           className={`pointer-events-none absolute inset-x-0 bottom-0 transition-all duration-500 ${
             isDark
-              ? "h-[65%] bg-gradient-to-t from-[#07090e] via-[#07090e]/60 to-transparent"
-              : "h-[50%] bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/70 to-transparent"
+              ? "h-[50%] bg-gradient-to-t from-[#08090d] via-[#08090d]/60 to-transparent"
+              : "h-[45%] bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/70 to-transparent"
           }`}
         />
         <div
           className={`pointer-events-none absolute inset-0 ${
             isDark
-              ? "bg-[radial-gradient(circle_at_center,transparent_0%,rgba(7,9,14,0.6)_100%)]"
+              ? "bg-[radial-gradient(circle_at_center,transparent_0%,rgba(8,9,13,0.55)_100%)]"
               : "bg-[radial-gradient(circle_at_center,transparent_30%,rgba(248,250,252,0.45)_100%)]"
           }`}
         />
 
-        {/* ---------------- INITIAL HERO CONTENT (Phase 1 -> Displaces on Scroll) ---------------- */}
+        {/* ========================================================================= */}
+        {/* STAGE 1: INITIAL HERO STAGE (PHYSICALLY SHATTERS & BREAKS APART ON SCROLL) */}
+        {/* ========================================================================= */}
         <motion.div
-          style={{
-            pointerEvents: heroInteractiveEvents
-          }}
-          className="relative z-20 w-full max-w-[1720px] mx-auto px-6 pb-12 sm:px-10 sm:pb-14 md:px-14 md:pb-16 lg:px-20 lg:pb-20"
+          style={{ pointerEvents: heroPointerEvents }}
+          className="relative z-20 w-full max-w-[1720px] mx-auto px-6 sm:px-10 md:px-14 lg:px-20 my-auto"
         >
           <div className="grid grid-cols-12 items-end gap-8 lg:gap-12">
-            {/* Left Column: Role Badge + Editorial Typography + Typewriter */}
-            <div className="col-span-12 lg:col-span-8 space-y-4">
-              {/* Leadership Role Pill */}
+            
+            {/* Left Column: Role Badge + Fractured Name + Typewriter */}
+            <div className="col-span-12 lg:col-span-8 space-y-4 sm:space-y-5">
+              {/* Leadership Role Pill - Spins & Peels away */}
               <motion.div
                 style={{
-                  y: heroMetaY,
-                  opacity: heroMetaOpacity
+                  x: roleX,
+                  rotate: roleRotate,
+                  scale: roleScale,
+                  opacity: roleOpacity
                 }}
                 className={`inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full backdrop-blur-xl border shadow-lg text-xs font-mono transition-colors ${
                   isDark
@@ -505,58 +434,105 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                 <span className="tracking-wide uppercase font-semibold">{tagline}</span>
               </motion.div>
 
-              {/* Giant Editorial Typography (Becomes architectural watermark during scroll) */}
-              <motion.h1
-                style={{
-                  y: heroNameY,
-                  scale: heroNameScale,
-                  opacity: heroNameOpacity
-                }}
-                className={`font-extrabold leading-[0.84] tracking-[-0.065em] text-[13vw] sm:text-[11vw] md:text-[9.5vw] lg:text-[7.8vw] xl:text-[7.2vw] font-heading select-none transition-colors duration-300 ${
+              {/* Giant Editorial Headline - Breaks into kinetic 3D shards */}
+              <h1
+                className={`font-extrabold leading-[0.85] tracking-[-0.065em] text-[13vw] sm:text-[11vw] md:text-[9.5vw] lg:text-[7.8vw] xl:text-[7.2vw] font-heading select-none transition-colors duration-300 flex flex-wrap items-center gap-x-[0.35em] ${
                   isDark
                     ? "text-[#E1E0CC] drop-shadow-[0_2px_25px_rgba(225,224,204,0.15)]"
                     : "text-slate-950 drop-shadow-[0_2px_16px_rgba(255,255,255,0.9)]"
                 }`}
               >
-                <WordsPullUp text={`${name} ${surname}`} showAsterisk={false} />
-              </motion.h1>
+                {/* "MD" Shard */}
+                <motion.span
+                  style={{
+                    x: mdX,
+                    y: mdY,
+                    rotate: mdRotate,
+                    opacity: mdOpacity,
+                    filter: mdBlur
+                  }}
+                  className="inline-block transform-gpu"
+                >
+                  MD
+                </motion.span>
 
-              {/* Typewriter Capsule */}
+                {/* "RABBY" Core - Elevates & expands into architectural watermark */}
+                <motion.span
+                  style={{
+                    y: rabbyY,
+                    scale: rabbyScale,
+                    opacity: rabbyOpacity,
+                    letterSpacing: rabbyTracking
+                  }}
+                  className="inline-block transform-gpu"
+                >
+                  RABBY
+                </motion.span>
+
+                {/* "HASAN" Shard */}
+                <motion.span
+                  style={{
+                    x: hasanX,
+                    y: hasanY,
+                    rotate: hasanRotate,
+                    opacity: hasanOpacity,
+                    filter: hasanBlur
+                  }}
+                  className="inline-block transform-gpu"
+                >
+                  HASAN
+                </motion.span>
+              </h1>
+
+              {/* Typewriter Capsule - Disperses down-left */}
               <motion.div
                 style={{
-                  y: heroMetaY,
-                  opacity: heroMetaOpacity
+                  x: typeX,
+                  y: typeY,
+                  opacity: typeOpacity
                 }}
-                className="pt-2 sm:pt-3"
+                className="pt-1 sm:pt-2"
               >
                 <Typewriter phrases={typewriterPhrases} theme={theme} />
               </motion.div>
             </div>
 
-            {/* Right Column: Bio Summary + Action CTAs (Displace & Blur-Fade on Scroll) */}
-            <motion.div
-              style={{
-                y: heroBioY,
-                opacity: heroBioOpacity,
-                scale: heroBioScale
-              }}
-              className="col-span-12 flex flex-col gap-6 lg:col-span-4 lg:pb-3"
-            >
-              <p
-                className={`text-xs sm:text-sm md:text-base font-sans leading-relaxed border-l-2 pl-4 py-3 rounded-r-2xl backdrop-blur-xl transition-colors shadow-xl ${
+            {/* Right Column: Bio Summary (3D Shutter Tilt) + CTAs */}
+            <div className="col-span-12 flex flex-col gap-6 lg:col-span-4 lg:pb-3">
+              {/* Bio Summary Card - Tilts & breaks outward */}
+              <motion.div
+                style={{
+                  x: bioX,
+                  y: bioY,
+                  rotateX: bioRotateX,
+                  rotateY: bioRotateY,
+                  scale: bioScale,
+                  opacity: bioOpacity,
+                  transformPerspective: 800
+                }}
+                className={`p-4 sm:p-5 rounded-2xl border backdrop-blur-xl transition-colors shadow-xl ${
                   isDark
-                    ? "text-slate-200 border-[#dfc898]/50 bg-black/60 shadow-black/50"
+                    ? "text-slate-200 border-[#dfc898]/40 bg-black/60 shadow-black/50"
                     : "text-slate-800 border-[#b89b5e] bg-white/90 shadow-slate-200/80 font-medium"
                 }`}
               >
-                {summary}
-              </p>
+                <p className="text-xs sm:text-sm font-sans leading-relaxed">
+                  {summary}
+                </p>
+              </motion.div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <motion.div
+                style={{
+                  x: ctaX,
+                  y: ctaY,
+                  opacity: ctaOpacity
+                }}
+                className="flex flex-wrap items-center gap-3 pt-1"
+              >
                 <a
                   href="#case-studies"
-                  onClick={ctaAction}
+                  onClick={handleScrollToProjects}
                   className={`group inline-flex items-center gap-2 rounded-full py-2.5 pl-6 pr-2.5 text-xs sm:text-sm font-bold transition-all hover:gap-3 cursor-pointer shadow-xl ${
                     isDark
                       ? "bg-gradient-to-r from-[#dfc898] to-[#b89b5e] hover:from-[#f1e8d6] hover:to-[#dfc898] text-black shadow-[#dfc898]/20"
@@ -568,80 +544,190 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                     <ArrowRight className="h-4 w-4 text-[#dfc898]" />
                   </span>
                 </a>
-
-                {resumeUrl && (
-                  <a
-                    href={resumeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-mono font-medium backdrop-blur-xl border transition-all shadow-md ${
-                      isDark
-                        ? "bg-black/60 hover:bg-white/10 border-white/20 text-white hover:border-[#dfc898]/50"
-                        : "bg-white/95 hover:bg-white border-slate-300 text-slate-800 hover:border-[#b89b5e] shadow-slate-200/60 font-semibold"
-                    }`}
-                  >
-                    <Download
-                      className={`h-3.5 w-3.5 ${isDark ? "text-[#dfc898]" : "text-[#854d0e]"}`}
-                    />
-                    <span>Resume PDF</span>
-                  </a>
-                )}
-
-                {onOpenTerminal && (
-                  <button
-                    onClick={onOpenTerminal}
-                    className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-xs font-mono backdrop-blur-xl border transition-all shadow-md ${
-                      isDark
-                        ? "bg-black/60 hover:bg-black/90 border-slate-700 text-[#dfc898] hover:border-[#dfc898]/50"
-                        : "bg-white/95 hover:bg-white border-slate-300 text-[#854d0e] hover:border-[#b89b5e] shadow-slate-200/60 font-semibold"
-                    }`}
-                    title="Launch CLI Mode"
-                  >
-                    <Terminal className="h-3.5 w-3.5" />
-                    <span>CLI</span>
-                  </button>
-                )}
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
 
-        {/* ---------------- REVEALED 4 PORTFOLIO THUMBNAILS DECK (Materializes on Scroll) ---------------- */}
+        {/* ========================================================================= */}
+        {/* STAGE 2: ARCHITECTURAL SERVICES TILES (PURE GEIST WITH ATTRACTIVE METRICS) */}
+        {/* ========================================================================= */}
         <motion.div
           style={{
-            opacity: deckOpacity,
-            y: deckY,
-            scale: deckScale,
-            pointerEvents: deckPointerEvents
+            opacity: vaultOpacity,
+            scale: vaultScale,
+            y: vaultY,
+            rotateX: vaultRotateX,
+            pointerEvents: vaultPointerEvents
           }}
-          className="absolute inset-x-0 bottom-10 sm:bottom-14 md:bottom-16 z-30 flex items-center justify-center pointer-events-auto"
+          className="absolute inset-x-0 z-30 flex items-center justify-center px-4 sm:px-8 lg:px-12 pointer-events-none"
         >
-          <PortfolioThumbnailsDeck
-            isDark={isDark}
-            onSelectProject={onSelectProject}
-          />
+          <div className="w-full max-w-[1720px] mx-auto space-y-4 pointer-events-auto">
+            
+            {/* Header: Pure Minimalist Geist Label */}
+            <div className="flex items-center justify-between pb-2 border-b border-white/10 dark:border-white/10">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#dfc898] font-bold">
+                  AI SYSTEMS
+                </span>
+              </div>
+              <span className="text-[10px] font-mono text-slate-400 hidden sm:inline">
+                Click any service tile to explore technical implementations
+              </span>
+            </div>
+
+            {/* 4 Pure Geist Service Consoles */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {serviceTiles.map((tile, idx) => {
+                const IconComponent = tile.icon;
+
+                let cardMotion = {};
+                if (idx === 0) cardMotion = { x: card1X, rotate: card1Rot };
+                else if (idx === 1) cardMotion = { y: card2Y };
+                else if (idx === 2) cardMotion = { y: card3Y };
+                else if (idx === 3) cardMotion = { x: card4X, rotate: card4Rot };
+
+                return (
+                  <motion.div
+                    key={tile.id}
+                    style={cardMotion}
+                    whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                    onClick={() => handleScrollToTarget(tile.targetSection)}
+                    className={`group relative rounded-3xl overflow-hidden border p-6 sm:p-7 cursor-pointer select-none flex flex-col justify-between transition-all duration-300 ${
+                      isDark
+                        ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${tile.borderHover} shadow-2xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
+                        : `bg-white/95 hover:bg-white border-slate-200/90 ${tile.borderHover} shadow-xl hover:shadow-2xl`
+                    } min-h-[280px] sm:min-h-[310px]`}
+                  >
+                    {/* Top Pill Row: Icon + Category + Badge */}
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-7 h-7 rounded-xl flex items-center justify-center border transition-colors ${
+                            isDark
+                              ? "bg-slate-900 border-white/10 text-[#dfc898] group-hover:border-[#dfc898]/40"
+                              : "bg-slate-100 border-slate-200 text-[#854d0e]"
+                          }`}
+                        >
+                          <IconComponent className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
+                          {tile.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Service Name (hero text) + One Verified Proof Line */}
+                    <div className="py-5">
+                      <div
+                        className={`text-3xl sm:text-4xl font-extrabold font-heading tracking-tight leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r ${tile.glowColor}`}
+                      >
+                        {tile.title}
+                      </div>
+
+                      <div className="flex items-start gap-1.5 text-[11px] font-mono text-slate-400 mt-3 leading-relaxed">
+                        <CheckCircle2 className="w-3.5 h-3.5 mt-px shrink-0 text-emerald-400" />
+                        <span>{tile.proof}</span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Tags & Action */}
+                    <div className="pt-3 border-t border-white/10 dark:border-white/10 space-y-2.5">
+                      <div className="flex flex-wrap gap-1">
+                        {tile.tags.map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
+                              isDark
+                                ? "bg-slate-900 border-slate-800 text-slate-300"
+                                : "bg-slate-100 border-slate-200 text-slate-700"
+                            }`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div
+                        className={`flex items-center justify-between text-xs font-mono font-bold transition-transform pt-0.5 ${
+                          isDark ? "text-[#dfc898]" : "text-[#854d0e]"
+                        }`}
+                      >
+                        <span>Explore Capabilities</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Bottom Direct CTA Strip to Case Studies Section */}
+            <div className="flex items-center justify-between pt-1">
+              <span className="text-[11px] font-mono text-slate-400">
+                Continue scrolling for complete architectural deep-dives & production case studies
+              </span>
+              <a
+                href="#case-studies"
+                onClick={handleScrollToProjects}
+                className={`inline-flex items-center gap-2 text-xs font-mono font-bold px-4 py-1.5 rounded-full border transition-colors cursor-pointer ${
+                  isDark
+                    ? "bg-slate-900 border-white/15 text-[#dfc898] hover:border-[#dfc898]"
+                    : "bg-white border-slate-300 text-[#854d0e] hover:border-[#b89b5e]"
+                }`}
+              >
+                <span>Case Studies</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+          </div>
         </motion.div>
 
-        {/* ---------------- SCROLL HINT INDICATOR ---------------- */}
+        {/* ========================================================================= */}
+        {/* SUBTLE SCROLL GUIDANCE CUES                                              */}
+        {/* ========================================================================= */}
+        {/* Phase 1 Scroll Cue */}
         <motion.div
-          style={{
-            opacity: useTransform(scrollYProgress, [0, 0.15], [1, 0])
-          }}
-          className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none hidden sm:flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
+          style={{ opacity: scrollCue1Opacity }}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-none hidden sm:flex flex-col items-center transition-opacity"
         >
-          <div
-            className={`flex flex-col items-center gap-1 text-[10px] font-mono tracking-widest uppercase transition-colors ${
+          <a
+            href="#case-studies"
+            onClick={handleScrollToProjects}
+            className={`pointer-events-auto flex flex-col items-center gap-1 text-[10px] font-mono tracking-widest uppercase transition-colors ${
               isDark ? "text-zinc-400 hover:text-[#dfc898]" : "text-slate-600 hover:text-[#854d0e]"
             }`}
           >
-            <span>Scroll to Explore Architecture</span>
+            <span>Scroll to Deconstruct Hero & Open Services</span>
             <ChevronDown
               className={`w-3.5 h-3.5 animate-bounce ${
                 isDark ? "text-[#dfc898]" : "text-[#854d0e]"
               }`}
             />
+          </a>
+        </motion.div>
+
+        {/* Phase 2 Scroll Cue */}
+        <motion.div
+          style={{ opacity: scrollCue2Opacity }}
+          className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none hidden sm:flex flex-col items-center transition-opacity"
+        >
+          <div
+            className={`flex flex-col items-center gap-0.5 text-[9px] font-mono tracking-widest uppercase transition-colors ${
+              isDark ? "text-zinc-400" : "text-slate-500"
+            }`}
+          >
+            <span>Scroll Down to In-Depth Specifications</span>
+            <ChevronDown
+              className={`w-3 h-3 animate-bounce ${
+                isDark ? "text-[#dfc898]" : "text-[#854d0e]"
+              }`}
+            />
           </div>
         </motion.div>
+
       </div>
     </section>
   );

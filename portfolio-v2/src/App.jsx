@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ParticleBackground from './components/ParticleBackground';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import { PortfolioPrismaHero } from './components/ui/portfolio-prisma-hero';
@@ -15,7 +14,18 @@ import ProjectModal from './components/ProjectModal';
 export default function App() {
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  
+  // Background atmosphere state ('matte-dark' | 'warm-gray' | 'studio-white')
+  const [currentBg, setCurrentBg] = useState(() => {
+    return localStorage.getItem('portfolio_bg') || 'matte-dark';
+  });
+
+  // Aesthetic color palette permanently locked to Brushed Titanium
+  const currentPalette = 'brushed-titanium';
+
   const [theme, setTheme] = useState(() => {
+    const savedBg = localStorage.getItem('portfolio_bg');
+    if (savedBg === 'warm-gray' || savedBg === 'studio-white') return 'light';
     return localStorage.getItem('theme') || 'dark';
   });
 
@@ -31,19 +41,66 @@ export default function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    localStorage.setItem('portfolio_palette', 'brushed-titanium');
+    document.documentElement.setAttribute('data-palette', 'brushed-titanium');
+    document.body.setAttribute('data-palette', 'brushed-titanium');
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('portfolio_bg', currentBg);
+    document.body.setAttribute('data-bg', currentBg);
+    if (currentBg === 'warm-gray' || currentBg === 'studio-white') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }, [currentBg]);
+
   const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    if (currentBg === 'matte-dark') {
+      setCurrentBg('warm-gray');
+    } else if (currentBg === 'warm-gray') {
+      setCurrentBg('studio-white');
+    } else {
+      setCurrentBg('matte-dark');
+    }
+  };
+
+  const getContainerBg = () => {
+    switch (currentBg) {
+      case 'warm-gray':
+        return 'bg-[#f5f4ef] text-stone-900';
+      case 'studio-white':
+        return 'bg-[#ffffff] text-slate-900';
+      case 'matte-dark':
+      default:
+        return 'bg-[#08090d] text-slate-100';
+    }
   };
 
   return (
-    <div className={`relative min-h-screen transition-colors duration-500 ${
-      theme === 'dark' ? 'bg-[#07090e] text-slate-100' : 'bg-[#f8fafc] text-slate-800'
-    }`}>
+    <div className={`relative min-h-screen transition-colors duration-500 ${getContainerBg()}`}>
       {/* Luxury Modern Preloader (Eliminates all loading/asset flashes) */}
       <Preloader theme={theme} />
 
-      {/* Ambient Spotlight & Constellation Mesh Background */}
-      <ParticleBackground theme={theme} />
+      {/* Subtle, calm dynamic top ceiling vignette for Matte Dark & Warm Gray */}
+      {currentBg === 'matte-dark' && (
+        <div
+          className="fixed inset-0 pointer-events-none z-0 transition-opacity duration-700"
+          style={{
+            background: 'radial-gradient(ellipse 75% 40% at 50% -8%, rgba(226, 232, 240, 0.12), transparent 70%)'
+          }}
+        />
+      )}
+      {currentBg === 'warm-gray' && (
+        <div
+          className="fixed inset-0 pointer-events-none z-0 transition-opacity duration-700"
+          style={{
+            background: 'radial-gradient(ellipse 75% 40% at 50% -8%, rgba(51, 65, 85, 0.05), transparent 70%)'
+          }}
+        />
+      )}
 
       {/* Transparent Floating Island Navbar */}
       <Navbar
@@ -61,10 +118,10 @@ export default function App() {
           tagline="Lead Software Engineer & Systems Architect"
           summary="I architect resilient distributed systems, high-concurrency .NET microservices, and AI-native engineering pipelines. Over the past decade, I have engineered systems spanning 1,000-year Arctic cold vaults, offshore sensor telemetry, and mission-critical enterprise platforms."
           typewriterPhrases={[
-            "Distributed .NET Microservices",
             "AI-Native Engineering & Agents",
-            "High-Throughput Performance Tuning",
-            "Legacy Monolith Modernization"
+            "SaaS & Distributed Microservices",
+            "Legacy Software Conversion",
+            "Performance Optimization & Tuning"
           ]}
           resumeUrl="./doc/rabby_hasan_9_years_full_stack_dot_net_dev.pdf"
           onOpenTerminal={() => setTerminalOpen(true)}
@@ -79,6 +136,8 @@ export default function App() {
 
       {/* Footer */}
       <Footer theme={theme} />
+
+
 
       {/* Developer CLI Terminal Modal */}
       <TerminalModal

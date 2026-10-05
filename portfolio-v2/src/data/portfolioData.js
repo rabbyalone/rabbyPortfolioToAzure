@@ -144,15 +144,26 @@ export const experiences = [
 
 export const architecturalCapabilities = [
   {
+    domain: "Modern AI & Engineering Workflows",
+    icon: "Cpu",
+    description: "End-to-end AI systems for businesses: strategy, automation, custom agents, and data intelligence.",
+    technologies: [
+      { name: "AI Strategy", yoe: "2+ Yrs", scope: "Plan", detail: "AI use-case mapping and spec-driven, AI-assisted delivery workflows (Ethos Risk, USA)" },
+      { name: "Process Automation", yoe: "3+ Yrs", scope: "Automate", detail: "Automated workflow engines and CI/CD pipelines, cutting deployment cycle time by 20%" },
+      { name: "Custom Agents", yoe: "2+ Yrs", scope: "2nd Prize Winner", detail: "Autonomous task-automation agents; 2nd Prize in the company-wide AI Hackathon" },
+      { name: "Data Intelligence", yoe: "4+ Yrs", scope: "Measure", detail: "Real-time telemetry pipelines and analytics on Cosmos DB, SQL Server & Redis" }
+    ]
+  },
+  {
     domain: "Distributed Core & Backend Architecture",
     icon: "Server",
     description: "Designing decoupled, resilient microservices, domain models, and high-throughput Web APIs.",
     technologies: [
-      { name: "C# / .NET 8 & .NET Core", scope: "Primary Stack • 10+ Yrs", detail: "Clean architecture, asynchronous runtimes & memory efficiency" },
-      { name: "Microservices & CQRS", scope: "Production Architecture", detail: "Decoupled domain handlers, MediatR & event-driven contracts" },
-      { name: "RESTful & gRPC Web APIs", scope: "High-Throughput", detail: "Contract-first APIs, protobuf serialization & HTTP/2 streaming" },
-      { name: "ASP.NET MVC & Razor", scope: "Enterprise Standard", detail: "Enterprise portals, server-rendered views & secure auth" },
-      { name: "SOLID & Design Patterns", scope: "Core Discipline", detail: "Repository patterns, dependency injection & extensible domain code" }
+      { name: "C# / .NET 8 & .NET Core", yoe: "10+ Yrs", scope: "Primary Stack", detail: "Clean architecture, asynchronous runtimes & memory efficiency" },
+      { name: "Microservices & CQRS", yoe: "5+ Yrs", scope: "Production Architecture", detail: "Decoupled domain handlers, MediatR & event-driven contracts" },
+      { name: "RESTful & gRPC Web APIs", yoe: "8+ Yrs", scope: "High-Throughput", detail: "Contract-first APIs, protobuf serialization & HTTP/2 streaming" },
+      { name: "ASP.NET Core & MVC", yoe: "10+ Yrs", scope: "Enterprise Standard", detail: "High-concurrency Web APIs, middleware pipelines & secure auth" },
+      { name: "SOLID & Design Patterns", yoe: "10+ Yrs", scope: "Core Discipline", detail: "Repository patterns, dependency injection & extensible domain code" }
     ]
   },
   {
@@ -160,11 +171,11 @@ export const architecturalCapabilities = [
     icon: "Cloud",
     description: "Multi-cloud architecture across Azure and AWS, containerization, and zero-downtime pipelines.",
     technologies: [
-      { name: "Azure Cloud Infrastructure", scope: "Primary Cloud", detail: "App Services, Functions, Key Vault, Virtual Networks" },
-      { name: "Azure Service Bus & Queues", scope: "Event Messaging", detail: "Asynchronous pub/sub, dead-lettering & reliable event distribution" },
-      { name: "Docker & Containerization", scope: "Standard Workflow", detail: "Multi-stage Dockerfiles, minimal base images & local orchestration" },
-      { name: "Kubernetes (AKS / ECS)", scope: "Production Deployment", detail: "Container orchestration, rolling deployments & autoscaling" },
-      { name: "CI/CD & DevOps Automation", scope: "Pipeline Engineering", detail: "GitHub Actions & Azure DevOps automated test/build/deploy" }
+      { name: "Azure Cloud Infrastructure", yoe: "6+ Yrs", scope: "Primary Cloud", detail: "App Services, Functions, Key Vault, Virtual Networks" },
+      { name: "Azure Service Bus & Queues", yoe: "5+ Yrs", scope: "Event Messaging", detail: "Asynchronous pub/sub, dead-lettering & reliable event distribution" },
+      { name: "Docker & Containerization", yoe: "6+ Yrs", scope: "Standard Workflow", detail: "Multi-stage Dockerfiles, minimal base images & local orchestration" },
+      { name: "Kubernetes (AKS / ECS)", yoe: "4+ Yrs", scope: "Production Deployment", detail: "Container orchestration, rolling deployments & autoscaling" },
+      { name: "CI/CD & DevOps Automation", yoe: "6+ Yrs", scope: "Pipeline Engineering", detail: "GitHub Actions & Azure DevOps automated test/build/deploy" }
     ]
   },
   {
@@ -172,11 +183,11 @@ export const architecturalCapabilities = [
     icon: "Database",
     description: "Relational modeling, indexing strategies, distributed caching, and NoSQL stores.",
     technologies: [
-      { name: "MS SQL Server & T-SQL", scope: "Core Relational DB", detail: "Query execution plan analysis, index tuning & stored procedures" },
-      { name: "Entity Framework Core 8", scope: "ORM & Data Access", detail: "Optimized LINQ expressions, compiled queries & migrations" },
-      { name: "Redis In-Memory Caching", scope: "Distributed Caching", detail: "Cache-aside patterns, session replication & latency reduction" },
-      { name: "Azure Cosmos DB", scope: "NoSQL Telemetry", detail: "Partition keys, spatial geo-indexing & high-write throughput" },
-      { name: "PostgreSQL & Oracle DB", scope: "Enterprise Data", detail: "ACID compliance, schema migration & transactional integrity" }
+      { name: "MS SQL Server & T-SQL", yoe: "10+ Yrs", scope: "Core Relational DB", detail: "Query execution plan analysis, index tuning & stored procedures" },
+      { name: "Entity Framework Core 8", yoe: "9+ Yrs", scope: "ORM & Data Access", detail: "Optimized LINQ expressions, compiled queries & migrations" },
+      { name: "Redis In-Memory Caching", yoe: "5+ Yrs", scope: "Distributed Caching", detail: "Cache-aside patterns, session replication & latency reduction" },
+      { name: "Azure Cosmos DB", yoe: "4+ Yrs", scope: "NoSQL Telemetry", detail: "Partition keys, spatial geo-indexing & high-write throughput" },
+      { name: "PostgreSQL & Oracle DB", yoe: "4+ Yrs", scope: "Enterprise Data", detail: "ACID compliance, schema migration & transactional integrity" }
     ]
   },
   {
@@ -184,20 +195,10 @@ export const architecturalCapabilities = [
     icon: "Layout",
     description: "Modern web user interfaces, ERP middleware, and cross-system data synchronization.",
     technologies: [
-      { name: "Angular (v8 - v16)", scope: "Enterprise UI", detail: "TypeScript, RxJS reactive state, modular feature routing" },
-      { name: "React & TypeScript", scope: "Modern Web", detail: "Functional components, custom hooks, performant state handling" },
-      { name: "SAP OData Integration", scope: "Middleware Sync", detail: "Bidirectional enterprise ERP data exchange & worker sync" },
-      { name: "Vue.js & Next.js / Vite", scope: "Component Systems", detail: "Modern reactive dashboards & optimized build pipelines" }
-    ]
-  },
-  {
-    domain: "Modern AI & Engineering Workflows",
-    icon: "Cpu",
-    description: "Practical AI-assisted engineering tools, spec-driven design, and developer automation.",
-    technologies: [
-      { name: "AI-Assisted Spec-Driven Dev", scope: "Workflow Innovation", detail: "Contract-first specifications, prompt engineering & scaffold validation" },
-      { name: "Autonomous Agent Engineering", scope: "Hackathon 2nd Prize", detail: "Multi-step automated developer workflows & task execution engines" },
-      { name: "Automated Code Review & QA", scope: "Quality Automation", detail: "Automated static analysis, edge-case generation & test scaffolding" }
+      { name: "Angular (v8 - v16)", yoe: "6+ Yrs", scope: "Enterprise UI", detail: "TypeScript, RxJS reactive state, modular feature routing" },
+      { name: "React & TypeScript", yoe: "4+ Yrs", scope: "Modern Web", detail: "Functional components, custom hooks, performant state handling" },
+      { name: "SAP OData Integration", yoe: "4+ Yrs", scope: "Middleware Sync", detail: "Bidirectional enterprise ERP data exchange & worker sync" },
+      { name: "Vue.js & Next.js / Vite", yoe: "3+ Yrs", scope: "Component Systems", detail: "Modern reactive dashboards & optimized build pipelines" }
     ]
   }
 ];

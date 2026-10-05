@@ -59,8 +59,8 @@ Bio: ${developerData.bioParagraphs[0]}`
       case 'skills':
         newHistory.push({
           type: 'output',
-          text: `Architectural Domains:
-${architecturalCapabilities.map(c => `  * ${c.domain}: ${c.technologies.map(s => s.name).slice(0, 3).join(', ')}`).join('\n')}`
+          text: `Architectural Domains & Verified Experience:
+${architecturalCapabilities.map(c => `  * ${c.domain}:\n${c.technologies.map(s => `      - ${s.name} [${s.yoe || '10+ Yrs'}]`).join('\n')}`).join('\n')}`
         });
         break;
 
