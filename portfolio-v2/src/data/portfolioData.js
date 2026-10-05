@@ -313,14 +313,14 @@ export const projectsData = [
     thumbnail: "./img/portfolio/smilecare.png",
     fullImage: "./img/portfolio/smilecare.png",
     liveUrl: "https://bdc.techyzz.com",
-    summary: "AI-accelerated multi-tenant clinical practice management SaaS with automated Rx generation, patient queue, and revenue analytics.",
-    description: "Architected and delivered SmileCare Chamber, an end-to-end clinical practice management platform and doctor chamber ERP. Built utilizing modern AI-native engineering workflows, the platform automates doctor appointments, real-time consultation queues, dynamic prescription (Rx) generation, fee billing, and operational throughput analytics. Engineered as an offline-capable, responsive Progressive Web App (PWA).",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "PWA", "REST APIs", "AI Prompt Engineering", "Financial Analytics"],
+    summary: "AI-accelerated doctor chamber ERP powered by C# ASP.NET Web API, PostgreSQL, Redis, and IndexedDB offline PWA architecture.",
+    description: "Architected and delivered SmileCare Chamber, an end-to-end clinical practice management platform and doctor chamber ERP. Built utilizing AI-native accelerated engineering workflows, the platform combines a robust C# ASP.NET Web API backend, PostgreSQL relational database, and Redis caching with a high-performance React PWA. Leverages browser-side IndexedDB for seamless offline doctor workflows, instant prescription (Rx) drafting, and automated queue synchronization upon reconnection.",
+    tech: ["C# ASP.NET Web API", "PostgreSQL", "Redis", "IndexedDB", "React", "Docker", "PWA", "Financial Analytics"],
     keyFeatures: [
-      "Engineered end-to-end utilizing AI-native developer workflows, dramatically accelerating time-to-market from architecture to live production.",
-      "Comprehensive clinical workflow automation: appointment booking, doctor queue management, patient medical directory, and dynamic Rx templates.",
-      "Embedded financial analytics dashboard: real-time revenue collection, actionable outstanding dues, and overdue risk tracking.",
-      "Mobile-first Progressive Web App (PWA) architecture with offline caching, fast cold-start performance, and doctor chamber usability."
+      "Engineered end-to-end utilizing AI-native developer workflows, drastically compressing time-to-market from schema architecture to live production.",
+      "High-throughput C# ASP.NET Web API backend containerized with Docker, backed by PostgreSQL and Redis caching for sub-50ms clinical lookups.",
+      "Offline-first client architecture using IndexedDB and React PWA, allowing doctors to draft prescriptions and queue patients without network drops.",
+      "Comprehensive clinical ERP capabilities: appointment booking, doctor directory, dynamic Rx templates, and real-time revenue collection dashboards."
     ]
   },
   {
@@ -332,14 +332,14 @@ export const projectsData = [
     thumbnail: "./img/portfolio/barqo.png",
     fullImage: "./img/portfolio/barqo.png",
     liveUrl: "https://barqo.bd",
-    summary: "Live commercial consumer e-commerce marketplace featuring flash deals, bKash & COD checkout, and automated logistics tracking.",
-    description: "Architected and built Barqo, an enterprise-grade consumer e-commerce marketplace in Bangladesh. Leveraged AI-augmented rapid software delivery to design high-conversion storefront UX, multi-category catalog indexing, dynamic flash sale engines, instant cart state management, and integrated payment flows (bKash & Cash on Delivery) with 24-hour express delivery tracking.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "PWA", "bKash Gateway", "Order Telemetry", "SEO Meta Engine"],
+    summary: "Live commercial e-commerce platform built on C# ASP.NET 10 microservices, Polly resilience, Rate Limiting, PostgreSQL, and Redis.",
+    description: "Architected Barqo, an enterprise-grade consumer e-commerce marketplace in Bangladesh. Engineered on a modern C# ASP.NET 10 Web API microservices backend containerized with Docker, backed by PostgreSQL and Redis for ultra-low latency product catalog indexing. Implemented Polly resilience policies (circuit breakers, retries, and fallback strategies) alongside sophisticated Rate Limiter middleware to safeguard flash sale checkout spikes against DDoS and bot exhaustion.",
+    tech: ["C# ASP.NET 10", "Microservices", "Polly Resilience", "Rate Limiter", "PostgreSQL", "Redis", "Docker", "React PWA"],
     keyFeatures: [
-      "Architected full-cycle retail platform using AI-assisted engineering methodologies for high-velocity prototyping and production hardening.",
-      "High-conversion storefront features: flash sale countdowns, multi-category browsing, real-time cart calculations, and product search.",
-      "Seamless checkout integration supporting local payment gateways (bKash) and Cash on Delivery (COD) with automated tracking.",
-      "Production PWA optimization with preconnect asset delivery, responsive mobile commerce UX, and Open Graph social sharing tags."
+      "Engineered full-cycle commercial platform utilizing AI-assisted rapid development for rapid data modeling and microservice orchestration.",
+      "Decoupled C# ASP.NET 10 microservices backend containerized via Docker with PostgreSQL transactional storage and Redis distributed caching.",
+      "Embedded Polly resilience policies (circuit breakers, exponential retries) and custom Rate Limiter middleware for high-concurrency flash deals.",
+      "High-conversion React PWA storefront with bKash/COD checkout, instant cart calculation, and real-time order telemetry."
     ]
   },
   {
