@@ -35,10 +35,20 @@ export default function SkillsRadar({ theme = 'dark' }) {
       <div className="max-w-6xl mx-auto space-y-10 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-slate-800/40">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b ${
+            isDark ? 'border-slate-800/40' : 'border-slate-200'
+          }`}
+        >
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono tracking-wider uppercase border transition-colors bg-slate-900/90 border-[#dfc898]/30 text-[#dfc898]">
-              <Cpu className="w-3.5 h-3.5" />
+            <div
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase border transition-all duration-200 shadow-sm ${
+                isDark
+                  ? 'bg-slate-900/90 border-[#dfc898]/30 text-[#dfc898]'
+                  : 'bg-white border-slate-300 text-slate-800 font-semibold'
+              }`}
+            >
+              <Cpu className={`w-3.5 h-3.5 ${isDark ? 'text-[#dfc898]' : 'text-slate-700'}`} />
               <span>Verified 10+ Yrs Production Experience • Core Stack</span>
             </div>
             
@@ -81,7 +91,7 @@ export default function SkillsRadar({ theme = 'dark' }) {
                 >
                   <div className="space-y-4">
                     {/* Clean Card Header (No Subheading) */}
-                    <div className="flex items-center justify-between gap-3 pb-3 border-b border-slate-800/60">
+                    <div className={`flex items-center justify-between gap-3 pb-3 border-b ${isDark ? 'border-slate-800/60' : 'border-slate-100'}`}>
                       <div className="flex items-center gap-3">
                         <div
                           className={`w-10 h-10 rounded-2xl border flex items-center justify-center shrink-0 ${
@@ -189,7 +199,7 @@ export default function SkillsRadar({ theme = 'dark' }) {
                 >
                   <div className="space-y-4">
                     {/* Clean Card Header (No Subheading) */}
-                    <div className="flex items-center justify-between gap-3 pb-3 border-b border-slate-800/60">
+                    <div className={`flex items-center justify-between gap-3 pb-3 border-b ${isDark ? 'border-slate-800/60' : 'border-slate-100'}`}>
                       <div className="flex items-center gap-3">
                         <div
                           className={`w-10 h-10 rounded-2xl border flex items-center justify-center shrink-0 ${
