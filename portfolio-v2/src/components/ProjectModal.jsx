@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Layers, Building2, Cpu } from 'lucide-react';
+import { X, CheckCircle2, Layers, Building2, Cpu, ExternalLink } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -107,10 +107,24 @@ export default function ProjectModal({ project, onClose }) {
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 sm:px-8 py-4 border-t border-slate-800 bg-[#0d1017] flex justify-end shrink-0">
+        <div className="px-6 sm:px-8 py-4 border-t border-slate-800 bg-[#0d1017] flex items-center justify-between gap-4 shrink-0">
+          <div>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20 group cursor-pointer"
+              >
+                <span className="w-2 h-2 rounded-full bg-slate-950 animate-pulse" />
+                <span>Launch Live Platform</span>
+                <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            )}
+          </div>
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-xl bg-[#dfc898] text-black font-extrabold text-xs uppercase tracking-wider hover:bg-white transition-colors"
+            className="px-6 py-2.5 rounded-xl bg-[#dfc898] text-black font-extrabold text-xs uppercase tracking-wider hover:bg-white transition-colors cursor-pointer"
           >
             Close Case Study
           </button>

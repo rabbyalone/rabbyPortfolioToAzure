@@ -10,7 +10,9 @@ import {
   ArrowRight,
   Archive,
   Cpu,
-  Database
+  Database,
+  ExternalLink,
+  Bot
 } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 
@@ -20,6 +22,8 @@ const projectMetrics = {
   "ey-taxation": "Enterprise gRPC & Bus",
   "geologiq-oil-rig": "North Sea Telemetry",
   "piql-connect": "1,000-Yr Cold Vault",
+  "smilecare-chamber": "Live Doctor SaaS",
+  "barqo-ecommerce": "Live E-Commerce",
   "expiry-control": "Zero Expiration Loss",
   "employee-mobility": "SAP ERP Middleware",
   "bcps-registration": "100k+ Concurrency",
@@ -29,8 +33,9 @@ const projectMetrics = {
 
 // Filter tabs
 const CATEGORIES = [
-  { id: "all", label: "Curated Showcase", count: 9 },
-  { id: "flagship", label: "Flagship Case Studies", count: 4 },
+  { id: "all", label: "Curated Showcase", count: 11 },
+  { id: "flagship", label: "Global Flagships", count: 4 },
+  { id: "ai-saas", label: "AI-Native & Live Products", count: 2 },
   { id: "enterprise", label: "Enterprise Systems Archive", count: 5 }
 ];
 
@@ -154,8 +159,21 @@ function BentoCard({
           </span>
         </div>
 
-        {/* Top-Right Highlight Metric Badge */}
-        <div className="absolute top-3 right-3 z-10">
+        {/* Top-Right Highlight Metric Badge & Optional Live Badge */}
+        <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-1 text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border backdrop-blur-md shadow-md bg-emerald-500/25 border-emerald-400/50 text-emerald-300 hover:bg-emerald-500/40 transition-colors cursor-pointer"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>LIVE</span>
+              <ExternalLink className="w-2.5 h-2.5" />
+            </a>
+          )}
           <span
             className={`inline-flex items-center gap-1 text-[9px] font-mono font-bold px-2.5 py-1 rounded-full border backdrop-blur-md shadow-md ${
               isDark
@@ -280,9 +298,24 @@ function BentoCard({
                 }`}
               />
             </span>
-            <span className="text-[10px] opacity-60 uppercase tracking-widest hidden sm:inline">
-              Full Specs Modal
-            </span>
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className={`inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-bold transition-colors cursor-pointer ${
+                  isDark ? 'text-emerald-400 hover:text-emerald-300' : 'text-emerald-700 hover:text-emerald-900'
+                }`}
+              >
+                <span>Launch Live</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            ) : (
+              <span className="text-[10px] opacity-60 uppercase tracking-widest hidden sm:inline">
+                Full Specs Modal
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -324,7 +357,12 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
     ["ethos-risk-management", "ey-taxation", "geologiq-oil-rig", "piql-connect"].includes(p.id)
   );
 
-  // 2. 5 Enterprise Systems & Production Middleware Platforms
+  // 2. AI-Native & SaaS Live Commercial Products
+  const aiSaasProjects = projectsData.filter((p) =>
+    ["smilecare-chamber", "barqo-ecommerce"].includes(p.id)
+  );
+
+  // 3. 5 Enterprise Systems & Production Middleware Platforms
   const enterpriseProjects = projectsData.filter((p) =>
     ["employee-mobility", "bcps-registration", "posm-distribution", "expiry-control", "idim-security"].includes(p.id)
   );
@@ -333,7 +371,7 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
     setActiveTab(tabId);
     if (tabId === "enterprise") {
       setShowArchive(true);
-    } else if (tabId === "flagship") {
+    } else {
       setShowArchive(false);
     }
   };
@@ -358,7 +396,7 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span>CURATED ARCHITECTURE • 4 FLAGSHIPS + 5 ENTERPRISE SYSTEMS</span>
+            <span>CURATED ARCHITECTURE • 4 FLAGSHIPS + 2 AI PRODUCTS + 5 ENTERPRISE SYSTEMS</span>
           </div>
 
           <h2
@@ -447,7 +485,33 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
           </motion.div>
         )}
 
-        {/* ---------------- 2. ENTERPRISE ARCHIVE SECTION (ACCORDION / TAB VIEW) ---------------- */}
+        {/* ---------------- 2. AI-NATIVE & LIVE PRODUCTS SPOTLIGHT ---------------- */}
+        {(activeTab === "all" || activeTab === "ai-saas") && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="space-y-4 pt-2 sm:pt-4"
+          >
+            <div className="flex items-center justify-between px-2 text-xs font-mono text-slate-400">
+              <span className="font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                // AI-Native Engineering & Live Products: Healthcare Operations ERP & Consumer E-Commerce
+              </span>
+              <span className="text-[11px] opacity-70 hidden sm:inline">
+                Live Production • PWA Enabled • Click to Inspect or Launch
+              </span>
+            </div>
+
+            <BentoRow
+              projects={aiSaasProjects}
+              onSelectProject={onSelectProject}
+              theme={theme}
+            />
+          </motion.div>
+        )}
+
+        {/* ---------------- 3. ENTERPRISE ARCHIVE SECTION (ACCORDION / TAB VIEW) ---------------- */}
         {activeTab === "all" && (
           <div className="pt-6 sm:pt-10">
             <div

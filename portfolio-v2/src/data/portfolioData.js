@@ -305,6 +305,44 @@ export const projectsData = [
     ]
   },
   {
+    id: "smilecare-chamber",
+    title: "SmileCare Chamber — Clinical Operations ERP",
+    client: "SmileCare Health / Techyzz",
+    category: "AI-Native & SaaS Platforms",
+    catSlug: "ai-saas",
+    thumbnail: "./img/portfolio/smilecare.png",
+    fullImage: "./img/portfolio/smilecare.png",
+    liveUrl: "https://bdc.techyzz.com",
+    summary: "AI-accelerated multi-tenant clinical practice management SaaS with automated Rx generation, patient queue, and revenue analytics.",
+    description: "Architected and delivered SmileCare Chamber, an end-to-end clinical practice management platform and doctor chamber ERP. Built utilizing modern AI-native engineering workflows, the platform automates doctor appointments, real-time consultation queues, dynamic prescription (Rx) generation, fee billing, and operational throughput analytics. Engineered as an offline-capable, responsive Progressive Web App (PWA).",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "PWA", "REST APIs", "AI Prompt Engineering", "Financial Analytics"],
+    keyFeatures: [
+      "Engineered end-to-end utilizing AI-native developer workflows, dramatically accelerating time-to-market from architecture to live production.",
+      "Comprehensive clinical workflow automation: appointment booking, doctor queue management, patient medical directory, and dynamic Rx templates.",
+      "Embedded financial analytics dashboard: real-time revenue collection, actionable outstanding dues, and overdue risk tracking.",
+      "Mobile-first Progressive Web App (PWA) architecture with offline caching, fast cold-start performance, and doctor chamber usability."
+    ]
+  },
+  {
+    id: "barqo-ecommerce",
+    title: "Barqo — High-Performance Retail & E-Commerce",
+    client: "Barqo Bangladesh",
+    category: "AI-Native & SaaS Platforms",
+    catSlug: "ai-saas",
+    thumbnail: "./img/portfolio/barqo.png",
+    fullImage: "./img/portfolio/barqo.png",
+    liveUrl: "https://barqo.bd",
+    summary: "Live commercial consumer e-commerce marketplace featuring flash deals, bKash & COD checkout, and automated logistics tracking.",
+    description: "Architected and built Barqo, an enterprise-grade consumer e-commerce marketplace in Bangladesh. Leveraged AI-augmented rapid software delivery to design high-conversion storefront UX, multi-category catalog indexing, dynamic flash sale engines, instant cart state management, and integrated payment flows (bKash & Cash on Delivery) with 24-hour express delivery tracking.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "PWA", "bKash Gateway", "Order Telemetry", "SEO Meta Engine"],
+    keyFeatures: [
+      "Architected full-cycle retail platform using AI-assisted engineering methodologies for high-velocity prototyping and production hardening.",
+      "High-conversion storefront features: flash sale countdowns, multi-category browsing, real-time cart calculations, and product search.",
+      "Seamless checkout integration supporting local payment gateways (bKash) and Cash on Delivery (COD) with automated tracking.",
+      "Production PWA optimization with preconnect asset delivery, responsive mobile commerce UX, and Open Graph social sharing tags."
+    ]
+  },
+  {
     id: "expiry-control",
     title: "Automated Expiry Control System",
     client: "Pharmaceutical Industry",
