@@ -337,3 +337,24 @@
 .light .bg-\[\#04060d\] {
   background-color: #f1f5f9;
 }
+
+/* Ambient Infinite Horizontal Marquee Track */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-track:hover {
+  animation-play-state: paused !important;
+}

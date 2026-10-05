@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
   Sparkles,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Pause,
+  Play,
   Cpu,
   Server,
   Cloud,
@@ -167,13 +171,54 @@ function Typewriter({
   );
 }
 
-/* ---------------- 4 AI SYSTEMS SERVICE TILES (MINIMAL & EFFECTIVE) ---------------- */
-const serviceTiles = [
+/* ---------------- 7 UNIFIED CAPABILITY & MILESTONE ITEMS ---------------- */
+export const allSpotlightItems = [
+  {
+    id: "milestone-systems",
+    type: "milestone" as const,
+    category: "01 · Systems",
+    title: "Enterprise Architecture",
+    badge: "10+ Years",
+    icon: ShieldCheck,
+    proof: "Distributed .NET microservices for Ethos Risk (US), EY & North Sea telemetry.",
+    tags: [".NET 8", "Microservices"],
+    glowColor: "from-blue-300 via-sky-200 to-indigo-400",
+    borderHover: "hover:border-blue-400/70",
+    targetSection: "case-studies"
+  },
+  {
+    id: "milestone-automation",
+    type: "milestone" as const,
+    category: "02 · AI Agents",
+    title: "Autonomous AI Agents",
+    badge: "Hackathon 2nd Prize",
+    icon: Bot,
+    proof: "Autonomous task engines & spec-driven AI agent workflows.",
+    tags: ["Custom Agents", "CI/CD"],
+    glowColor: "from-purple-300 via-fuchsia-200 to-indigo-400",
+    borderHover: "hover:border-purple-400/70",
+    targetSection: "architecture"
+  },
+  {
+    id: "milestone-resiliency",
+    type: "milestone" as const,
+    category: "03 · Performance",
+    title: "Scale & Resiliency",
+    badge: "90% Downtime Drop",
+    icon: Cpu,
+    proof: "Monolith decomposition, sub-50ms Redis caching & SQL tuning.",
+    tags: ["SQL Tuning", "Zero-Downtime"],
+    glowColor: "from-emerald-300 via-teal-200 to-cyan-400",
+    borderHover: "hover:border-emerald-400/70",
+    targetSection: "case-studies"
+  },
   {
     id: "ai-strategy",
+    type: "service" as const,
+    category: "04 · AI Strategy",
+    title: "AI Strategy & Roadmaps",
+    badge: "01 · Plan",
     icon: Compass,
-    category: "01 · Plan",
-    title: "AI Strategy",
     proof: "Spec-driven agent architectures & enterprise roadmaps.",
     tags: ["Roadmaps", "Workflows"],
     glowColor: "from-indigo-300 via-sky-200 to-blue-400",
@@ -182,9 +227,11 @@ const serviceTiles = [
   },
   {
     id: "process-automation",
-    icon: Workflow,
-    category: "02 · Automate",
+    type: "service" as const,
+    category: "05 · Automation",
     title: "Process Automation",
+    badge: "02 · Automate",
+    icon: Workflow,
     proof: "Autonomous CI/CD pipelines & task orchestrators.",
     tags: ["Pipelines", "Azure DevOps"],
     glowColor: "from-emerald-300 via-teal-200 to-cyan-400",
@@ -193,9 +240,11 @@ const serviceTiles = [
   },
   {
     id: "custom-agents",
+    type: "service" as const,
+    category: "06 · Agents",
+    title: "Custom Agent Engines",
+    badge: "03 · Build",
     icon: Bot,
-    category: "03 · Build",
-    title: "Custom Agents",
     proof: "Domain-specific autonomous agents in .NET & Python.",
     tags: [".NET 8", "Task Agents"],
     glowColor: "from-purple-300 via-fuchsia-200 to-indigo-400",
@@ -204,9 +253,11 @@ const serviceTiles = [
   },
   {
     id: "data-intelligence",
-    icon: Database,
-    category: "04 · Measure",
+    type: "service" as const,
+    category: "07 · Data",
     title: "Data Intelligence",
+    badge: "04 · Measure",
+    icon: Database,
     proof: "Real-time North Sea sensor telemetry & streaming.",
     tags: ["Cosmos DB", "Redis"],
     glowColor: "from-cyan-300 via-sky-200 to-indigo-400",
@@ -215,52 +266,26 @@ const serviceTiles = [
   }
 ];
 
-/* ---------------- 3 ARCHITECTURAL PROFILE MILESTONES (MINIMAL & HIGH-SIGNAL) ---------------- */
-const architecturalMilestones = [
-  {
-    id: "milestone-systems",
-    title: "Enterprise Architecture",
-    badge: "10+ Years",
-    icon: ShieldCheck,
-    proof: "Distributed .NET microservices for Ethos Risk (US), EY & North Sea telemetry.",
-    tags: [".NET 8", "Microservices"],
-    targetSection: "case-studies"
-  },
-  {
-    id: "milestone-automation",
-    title: "Autonomous AI Agents",
-    badge: "Hackathon 2nd Prize",
-    icon: Bot,
-    proof: "Autonomous task engines & spec-driven AI agent workflows.",
-    tags: ["Custom Agents", "CI/CD"],
-    targetSection: "architecture"
-  },
-  {
-    id: "milestone-resiliency",
-    title: "Scale & Resiliency",
-    badge: "90% Downtime Drop",
-    icon: Cpu,
-    proof: "Monolith decomposition, sub-50ms Redis caching & SQL tuning.",
-    tags: ["SQL Tuning", "Zero-Downtime"],
-    targetSection: "case-studies"
-  }
-];
+export const architecturalMilestones = allSpotlightItems.filter((i) => i.type === "milestone");
+export const serviceTiles = allSpotlightItems.filter((i) => i.type === "service");
 
-/* ---------------- Sleek & Minimal Geist Milestone Card (Mobile Ready, No Drag) ---------------- */
-function GeistMilestoneCard({
-  milestone,
-  motionStyle,
+/* ---------------- Unified Sleek Minimal Hero Card (Spotlight & Hover Glow) ---------------- */
+function UnifiedHeroCard({
+  item,
   isDark,
-  onSelect
+  onSelect,
+  className = "",
+  motionStyle
 }: {
-  milestone: typeof architecturalMilestones[0];
-  motionStyle: any;
+  item: typeof allSpotlightItems[0];
   isDark: boolean;
   onSelect: (target: string) => void;
+  className?: string;
+  motionStyle?: any;
 }) {
   const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
   const [isHovered, setIsHovered] = useState(false);
-  const IconComponent = milestone.icon;
+  const IconComponent = item.icon;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -274,12 +299,12 @@ function GeistMilestoneCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
-      onClick={() => onSelect(milestone.targetSection)}
+      onClick={() => onSelect(item.targetSection)}
       className={`group relative p-3.5 sm:p-4.5 rounded-2xl sm:rounded-3xl border text-left cursor-pointer transition-all duration-300 overflow-hidden select-none flex flex-col justify-between ${
         isDark
-          ? "bg-slate-950/85 hover:bg-slate-900/95 border-white/10 hover:border-white/30 shadow-xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]"
-          : "bg-white/95 hover:bg-white border-slate-200/90 hover:border-slate-400 shadow-md hover:shadow-xl"
-      } min-h-[145px] sm:min-h-[160px]`}
+          ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${item.borderHover} shadow-xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
+          : `bg-white/95 hover:bg-white border-slate-200/90 ${item.borderHover} shadow-md hover:shadow-xl`
+      } min-h-[145px] sm:min-h-[160px] ${className}`}
     >
       {/* Dynamic Hover Spotlight */}
       {isHovered && (
@@ -302,7 +327,7 @@ function GeistMilestoneCard({
               : "bg-slate-100 border-slate-200 text-slate-800"
           }`}
         >
-          {milestone.badge}
+          {item.badge}
         </span>
 
         <div
@@ -323,21 +348,21 @@ function GeistMilestoneCard({
             isDark ? "text-white" : "text-slate-900"
           }`}
         >
-          {milestone.title}
+          {item.title}
         </h3>
         <p
           className={`text-xs leading-relaxed line-clamp-2 ${
             isDark ? "text-slate-300" : "text-slate-600"
           }`}
         >
-          {milestone.proof}
+          {item.proof}
         </p>
       </div>
 
       {/* Bottom Tags & Action */}
       <div className="pt-2 border-t border-white/10 dark:border-white/10 flex items-center justify-between gap-2 relative z-20">
         <div className="flex flex-wrap gap-1">
-          {milestone.tags.map((tag, tIdx) => (
+          {item.tags.map((tag, tIdx) => (
             <span
               key={tIdx}
               className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
@@ -382,8 +407,62 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
 }) => {
   const isDark = theme === "dark";
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [stageView, setStageView] = useState<'milestones' | 'services'>('milestones');
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Carousel Testing Modes ('spotlight' | 'marquee' | 'autotabs')
+  const [carouselMode, setCarouselMode] = useState<'spotlight' | 'marquee' | 'autotabs'>('spotlight');
+
+  // Spotlight Auto-Carousel state
+  const [spotlightIdx, setSpotlightIdx] = useState(0);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const [carouselProgress, setCarouselProgress] = useState(0);
+
+  // Auto Tabs state
+  const [stageView, setStageView] = useState<'milestones' | 'services'>('milestones');
+  const [autoTabProgress, setAutoTabProgress] = useState(0);
+  const [isTabPaused, setIsTabPaused] = useState(false);
+
+  // Spotlight auto-advance interval (cycles every 4 seconds)
+  useEffect(() => {
+    if (carouselMode !== 'spotlight' || isCarouselPaused) return;
+
+    const interval = 50;
+    const totalDuration = 4000;
+    const step = (interval / totalDuration) * 100;
+
+    const timer = setInterval(() => {
+      setCarouselProgress((prev) => {
+        if (prev >= 100) {
+          setSpotlightIdx((s) => (s + 1) % allSpotlightItems.length);
+          return 0;
+        }
+        return prev + step;
+      });
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [carouselMode, isCarouselPaused]);
+
+  // Auto Tabs auto-advance interval (cycles every 5 seconds)
+  useEffect(() => {
+    if (carouselMode !== 'autotabs' || isTabPaused) return;
+
+    const interval = 50;
+    const totalDuration = 5000;
+    const step = (interval / totalDuration) * 100;
+
+    const timer = setInterval(() => {
+      setAutoTabProgress((prev) => {
+        if (prev >= 100) {
+          setStageView((v) => (v === 'milestones' ? 'services' : 'milestones'));
+          return 0;
+        }
+        return prev + step;
+      });
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [carouselMode, isTabPaused]);
 
   // Scroll Progress across 215vh pin sequence
   const { scrollYProgress } = useScroll({
@@ -715,7 +794,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
         >
           <div className="w-full max-w-[1720px] mx-auto space-y-3 sm:space-y-4 pointer-events-auto max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible py-2 sm:py-0 px-1 sm:px-0">
             
-            {/* Header: Pure Minimalist Geist Label */}
+            {/* Header: Pure Minimalist Geist Label + Mode Switcher */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 pb-2.5 border-b border-white/10 dark:border-white/10">
               <div className="space-y-1">
                 <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-wider uppercase border bg-white/5 border-white/15 text-slate-300">
@@ -724,145 +803,278 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                 </div>
                 
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight font-heading text-white">
-                  Engineering <span className="gold-gradient-text">Philosophy & Track Record</span>
+                  Engineering <span className="gold-gradient-text">Philosophy & Capabilities</span>
                 </h2>
               </div>
 
-              <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
-                <span className="text-[10px] font-mono text-slate-400 hidden xl:inline">
-                  Key Milestones & AI Capabilities
-                </span>
-
-                {/* View Switcher Pill */}
-                <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-900 border border-white/10 text-[10px] font-mono shrink-0">
+              {/* Mode Switcher Pill */}
+              <div className="flex items-center gap-2 flex-wrap justify-between sm:justify-end w-full sm:w-auto">
+                <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-900/90 border border-white/15 text-[10px] font-mono shrink-0 shadow-lg">
+                  <span className="px-2 text-slate-400 hidden sm:inline text-[9px] uppercase tracking-wider font-semibold">Carousel Mode:</span>
                   <button
-                    onClick={() => setStageView('milestones')}
+                    onClick={() => {
+                      setCarouselMode('spotlight');
+                      setSpotlightIdx(0);
+                      setCarouselProgress(0);
+                    }}
                     className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                      stageView === 'milestones'
-                        ? 'bg-white/15 text-white font-bold shadow-sm'
+                      carouselMode === 'spotlight'
+                        ? 'bg-white/20 text-white font-bold shadow-sm'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
-                    Milestones (3)
+                    Spotlight
                   </button>
                   <button
-                    onClick={() => setStageView('services')}
+                    onClick={() => setCarouselMode('marquee')}
                     className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                      stageView === 'services'
-                        ? 'bg-white/15 text-white font-bold shadow-sm'
+                      carouselMode === 'marquee'
+                        ? 'bg-white/20 text-white font-bold shadow-sm'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
-                    AI Systems (4)
+                    Marquee
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCarouselMode('autotabs');
+                      setAutoTabProgress(0);
+                    }}
+                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
+                      carouselMode === 'autotabs'
+                        ? 'bg-white/20 text-white font-bold shadow-sm'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    Auto Tabs
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Content: 3 Architectural Milestones Cards OR 4 AI Systems Consoles */}
-            {stageView === 'milestones' ? (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-                {architecturalMilestones.map((milestone, idx) => {
-                  let cardMotion = {};
-                  if (idx === 0) cardMotion = { x: card1X, rotate: card1Rot };
-                  else if (idx === 1) cardMotion = { y: card2Y };
-                  else if (idx === 2) cardMotion = { x: card4X, rotate: card4Rot };
+            {/* ========================================================================= */}
+            {/* CAROUSEL MODE 1: SPOTLIGHT AUTO-SLIDER (3-CARD DESKTOP / 1-CARD MOBILE)   */}
+            {/* ========================================================================= */}
+            {carouselMode === 'spotlight' && (
+              <div
+                className="space-y-3"
+                onMouseEnter={() => setIsCarouselPaused(true)}
+                onMouseLeave={() => setIsCarouselPaused(false)}
+              >
+                {/* Responsive Sliding Cards Window */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+                  {[0, 1, 2].map((offset) => {
+                    const itemIdx = (spotlightIdx + offset) % allSpotlightItems.length;
+                    const item = allSpotlightItems[itemIdx];
+                    return (
+                      <div
+                        key={`${item.id}-${offset}`}
+                        className={offset > 0 ? "hidden md:block" : "block"}
+                      >
+                        <UnifiedHeroCard
+                          item={item}
+                          isDark={isDark}
+                          onSelect={handleScrollToTarget}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
 
-                  return (
-                    <GeistMilestoneCard
-                      key={milestone.id}
-                      milestone={milestone}
-                      motionStyle={cardMotion}
-                      isDark={isDark}
-                      onSelect={(target) => handleScrollToTarget(target)}
-                    />
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                {serviceTiles.map((tile, idx) => {
-                  const IconComponent = tile.icon;
-
-                  let cardMotion = {};
-                  if (idx === 0) cardMotion = { x: card1X, rotate: card1Rot };
-                  else if (idx === 1) cardMotion = { y: card2Y };
-                  else if (idx === 2) cardMotion = { y: card3Y };
-                  else if (idx === 3) cardMotion = { x: card4X, rotate: card4Rot };
-
-                  return (
-                    <motion.div
-                      key={tile.id}
-                      style={cardMotion}
-                      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                      onClick={() => handleScrollToTarget(tile.targetSection)}
-                      className={`group relative rounded-2xl sm:rounded-3xl overflow-hidden border p-3.5 sm:p-4.5 cursor-pointer select-none flex flex-col justify-between transition-all duration-300 ${
-                        isDark
-                          ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${tile.borderHover} shadow-xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
-                          : `bg-white/95 hover:bg-white border-slate-200/90 ${tile.borderHover} shadow-md hover:shadow-xl`
-                      } min-h-[145px] sm:min-h-[160px]`}
+                {/* Tactile Control Bar */}
+                <div className="flex items-center justify-between gap-3 px-3 py-1.5 rounded-xl bg-slate-900/70 border border-white/10 text-xs font-mono">
+                  {/* Left: Auto-progress bar + Pause button */}
+                  <div className="flex items-center gap-2.5">
+                    <button
+                      onClick={() => setIsCarouselPaused((p) => !p)}
+                      title={isCarouselPaused ? "Resume auto-rotation" : "Pause auto-rotation"}
+                      className="p-1 rounded-lg hover:bg-white/10 text-slate-300 transition-colors cursor-pointer"
                     >
-                      {/* Top Pill Row: Icon + Category */}
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
-                          <div
-                            className={`w-6 h-6 sm:w-7 sm:h-7 rounded-xl flex items-center justify-center border transition-colors shrink-0 ${
-                              isDark
-                                ? "bg-slate-900 border-white/10 text-slate-200 group-hover:border-white/30"
-                                : "bg-slate-100 border-slate-200 text-slate-800"
-                            }`}
-                          >
-                            <IconComponent className="w-3.5 h-3.5" />
-                          </div>
-                          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
-                            {tile.category}
-                          </span>
-                        </div>
-                      </div>
+                      {isCarouselPaused ? (
+                        <Play className="w-3.5 h-3.5 text-emerald-400" />
+                      ) : (
+                        <Pause className="w-3.5 h-3.5 text-amber-300" />
+                      )}
+                    </button>
 
-                      {/* Service Title + Single Punchy Proof Line */}
-                      <div className="py-1.5 space-y-1">
+                    <div className="w-16 sm:w-28 h-1.5 rounded-full bg-white/10 overflow-hidden relative">
+                      <div
+                        className="h-full bg-gradient-to-r from-slate-200 to-white transition-all duration-75"
+                        style={{ width: `${carouselProgress}%` }}
+                      />
+                    </div>
+
+                    <span className="text-[10px] text-slate-400 hidden sm:inline">
+                      {spotlightIdx + 1}/{allSpotlightItems.length} · {allSpotlightItems[spotlightIdx].title}
+                    </span>
+                  </div>
+
+                  {/* Middle: 7 Direct Jump Dots */}
+                  <div className="flex items-center gap-1.5">
+                    {allSpotlightItems.map((_, dotIdx) => (
+                      <button
+                        key={dotIdx}
+                        onClick={() => {
+                          setSpotlightIdx(dotIdx);
+                          setCarouselProgress(0);
+                        }}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                          dotIdx === spotlightIdx
+                            ? "w-5 bg-white shadow-sm"
+                            : "w-1.5 bg-white/20 hover:bg-white/40"
+                        }`}
+                        title={`Jump to item ${dotIdx + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Right: Prev / Next Navigation Arrows */}
+                  <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => {
+                        setSpotlightIdx((s) => (s - 1 + allSpotlightItems.length) % allSpotlightItems.length);
+                        setCarouselProgress(0);
+                      }}
+                      className="p-1 rounded-lg hover:bg-white/10 text-slate-300 transition-colors cursor-pointer"
+                      title="Previous"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => {
+                        setSpotlightIdx((s) => (s + 1) % allSpotlightItems.length);
+                        setCarouselProgress(0);
+                      }}
+                      className="p-1 rounded-lg hover:bg-white/10 text-slate-300 transition-colors cursor-pointer"
+                      title="Next"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ========================================================================= */}
+            {/* CAROUSEL MODE 2: CONTINUOUS AMBIENT MARQUEE (INFINITE LOOP)               */}
+            {/* ========================================================================= */}
+            {carouselMode === 'marquee' && (
+              <div className="space-y-2">
+                <div
+                  className="relative w-full overflow-hidden py-1"
+                  style={{
+                    maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+                    WebkitMaskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)"
+                  }}
+                >
+                  <div className="animate-marquee-track gap-3 sm:gap-4 flex">
+                    {[...allSpotlightItems, ...allSpotlightItems].map((item, idx) => (
+                      <div
+                        key={`${item.id}-${idx}`}
+                        className="w-[280px] sm:w-[350px] shrink-0"
+                      >
+                        <UnifiedHeroCard
+                          item={item}
+                          isDark={isDark}
+                          onSelect={handleScrollToTarget}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 px-1">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Ambient continuous loop · Hover to pause
+                  </span>
+                  <span>7 verified capabilities</span>
+                </div>
+              </div>
+            )}
+
+            {/* ========================================================================= */}
+            {/* CAROUSEL MODE 3: AUTO-CYCLING TABS (MILESTONES & SERVICES ROTATION)      */}
+            {/* ========================================================================= */}
+            {carouselMode === 'autotabs' && (
+              <div
+                className="space-y-3"
+                onMouseEnter={() => setIsTabPaused(true)}
+                onMouseLeave={() => setIsTabPaused(false)}
+              >
+                {/* View Switcher with Countdown Progress */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-900 border border-white/10 text-[10px] font-mono shrink-0">
+                    <button
+                      onClick={() => {
+                        setStageView('milestones');
+                        setAutoTabProgress(0);
+                      }}
+                      className={`relative px-2.5 py-1 rounded-lg transition-all cursor-pointer overflow-hidden ${
+                        stageView === 'milestones'
+                          ? 'bg-white/15 text-white font-bold shadow-sm'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <span className="relative z-10">Milestones (3)</span>
+                      {stageView === 'milestones' && !isTabPaused && (
                         <div
-                          className={`text-base sm:text-lg font-bold font-heading tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r ${tile.glowColor}`}
-                        >
-                          {tile.title}
-                        </div>
-
-                        <div className="flex items-start gap-1.5 text-xs font-mono text-slate-300 leading-snug line-clamp-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-400" />
-                          <span>{tile.proof}</span>
-                        </div>
-                      </div>
-
-                      {/* Bottom Tags & Action */}
-                      <div className="pt-2 border-t border-white/10 dark:border-white/10 flex items-center justify-between gap-2">
-                        <div className="flex flex-wrap gap-1">
-                          {tile.tags.map((tag, tIdx) => (
-                            <span
-                              key={tIdx}
-                              className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
-                                isDark
-                                  ? "bg-slate-900 border-slate-800 text-slate-400"
-                                  : "bg-slate-100 border-slate-200 text-slate-600"
-                              }`}
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-
+                          className="absolute bottom-0 left-0 h-0.5 bg-emerald-400 transition-all duration-75"
+                          style={{ width: `${autoTabProgress}%` }}
+                        />
+                      )}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setStageView('services');
+                        setAutoTabProgress(0);
+                      }}
+                      className={`relative px-2.5 py-1 rounded-lg transition-all cursor-pointer overflow-hidden ${
+                        stageView === 'services'
+                          ? 'bg-white/15 text-white font-bold shadow-sm'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <span className="relative z-10">AI Systems (4)</span>
+                      {stageView === 'services' && !isTabPaused && (
                         <div
-                          className={`flex items-center gap-1 text-[11px] font-mono font-bold transition-transform shrink-0 ${
-                            isDark ? "text-slate-300" : "text-slate-700"
-                          }`}
-                        >
-                          <span>Explore</span>
-                          <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                          className="absolute bottom-0 left-0 h-0.5 bg-emerald-400 transition-all duration-75"
+                          style={{ width: `${autoTabProgress}%` }}
+                        />
+                      )}
+                    </button>
+                  </div>
+
+                  <span className="text-[10px] font-mono text-slate-400 hidden sm:inline">
+                    {isTabPaused
+                      ? "Rotation paused (hovering)"
+                      : `Auto-rotating in ${Math.max(1, Math.ceil((100 - autoTabProgress) * 0.05))}s`}
+                  </span>
+                </div>
+
+                {stageView === 'milestones' ? (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+                    {architecturalMilestones.map((milestone) => (
+                      <UnifiedHeroCard
+                        key={milestone.id}
+                        item={milestone}
+                        isDark={isDark}
+                        onSelect={handleScrollToTarget}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                    {serviceTiles.map((tile) => (
+                      <UnifiedHeroCard
+                        key={tile.id}
+                        item={tile}
+                        isDark={isDark}
+                        onSelect={handleScrollToTarget}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 
