@@ -13,7 +13,10 @@ import {
   CheckCircle2,
   Workflow,
   Compass,
-  Bot
+  Bot,
+  ShieldCheck,
+  Move,
+  Pin
 } from "lucide-react";
 import { WordsPullUp } from "./prisma-hero";
 
@@ -214,6 +217,200 @@ const serviceTiles = [
   }
 ];
 
+/* ---------------- 3 ARCHITECTURAL PROFILE MILESTONES ---------------- */
+const architecturalMilestones = [
+  {
+    id: "memo-systems-architecture",
+    title: "Systems Architecture",
+    badge: "10+ Years Track Record",
+    icon: ShieldCheck,
+    metric: "Distributed .NET & Microservices",
+    quote:
+      "Designing mission-critical enterprise systems and resilient microservices with clean domain architecture, asynchronous event handling, and high availability.",
+    highlight:
+      "Led architecture and full-lifecycle engineering across US Risk Management (Ethos Risk), Global Taxation (Ernst & Young), Arctic Data Archival (Piql Norway), and Offshore Telemetry (GeologiQ).",
+    tags: ["Ethos Risk (USA)", "Ernst & Young", "Piql Norway", "GeologiQ Rig Telemetry"],
+    targetSection: "case-studies"
+  },
+  {
+    id: "memo-modern-workflows",
+    title: "Engineering Automation",
+    badge: "Hackathon 2nd Prize Winner",
+    icon: Bot,
+    metric: "Autonomous Task Engines",
+    quote:
+      "Awarded 2nd Prize in company-wide internal AI Hackathon for designing autonomous task automation engines and developer agent workflows.",
+    highlight:
+      "Integrating modern AI-assisted engineering tools, spec-driven design, and developer automation pipelines to accelerate architecture, refactoring, and code quality.",
+    tags: ["Spec-Driven Design", "Autonomous Workflows", "Prompt Engineering", "Quality Pipelines"],
+    targetSection: "architecture"
+  },
+  {
+    id: "memo-performance-resiliency",
+    title: "Performance & Resiliency",
+    badge: "90% Downtime Drop",
+    icon: Cpu,
+    metric: "20% Throughput Boost",
+    quote:
+      "Decomposing legacy monolithic backends into decoupled .NET 8 microservices, achieving high query efficiency and fault-tolerant event streaming.",
+    highlight:
+      "Modernized legacy core components, tuned SQL query execution plans and Redis caching, cutting production downtime by 90% and improving throughput by 20%.",
+    tags: [".NET 8 Microservices", "CQRS Architecture", "Redis Caching", "Query Optimization"],
+    targetSection: "case-studies"
+  }
+];
+
+/* ---------------- Interactive Geist Milestone Card ---------------- */
+function GeistMilestoneCard({
+  milestone,
+  motionStyle,
+  isDark,
+  onSelect
+}: {
+  milestone: typeof architecturalMilestones[0];
+  motionStyle: any;
+  isDark: boolean;
+  onSelect: (target: string) => void;
+}) {
+  const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
+  const [isHovered, setIsHovered] = useState(false);
+  const IconComponent = milestone.icon;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  return (
+    <div className="relative pt-3">
+      {/* Sleek Metallic Titanium Pin */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+        <div className="w-7 h-7 rounded-full shadow-md border border-white/20 bg-gradient-to-tr from-slate-800 via-slate-600 to-slate-200 flex items-center justify-center text-slate-950 font-extrabold shadow-black/40">
+          <Pin className="w-3.5 h-3.5 fill-slate-950 text-slate-950" />
+        </div>
+      </div>
+
+      <motion.div
+        style={motionStyle}
+        drag
+        dragConstraints={{ left: -25, right: 25, top: -15, bottom: 15 }}
+        dragElastic={0.08}
+        whileDrag={{ scale: 1.03, zIndex: 40, cursor: "grabbing" }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onMouseMove={handleMouseMove}
+        onClick={() => onSelect(milestone.targetSection)}
+        className={`group relative p-6 sm:p-7 rounded-3xl border text-left cursor-grab transition-all duration-300 overflow-hidden transform-gpu select-none flex flex-col justify-between min-h-[350px] sm:min-h-[370px] ${
+          isDark
+            ? "bg-slate-950/85 hover:bg-slate-900/95 border-white/10 hover:border-white/30 shadow-2xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]"
+            : "bg-white/95 hover:bg-white border-slate-200/90 hover:border-slate-400 shadow-xl hover:shadow-2xl"
+        }`}
+      >
+        {/* Dynamic Hover Spotlight */}
+        {isHovered && (
+          <div
+            className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-10"
+            style={{
+              background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, ${
+                isDark ? "rgba(226, 232, 240, 0.12)" : "rgba(51, 65, 85, 0.08)"
+              }, transparent 80%)`
+            }}
+          />
+        )}
+
+        {/* Top Header Pill Row */}
+        <div className="flex items-center justify-between gap-3 pb-3 border-b border-white/10 dark:border-white/10 pt-1 relative z-20">
+          <span
+            className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider border ${
+              isDark
+                ? "bg-slate-900 border-white/15 text-slate-200"
+                : "bg-slate-100 border-slate-200 text-slate-800"
+            }`}
+          >
+            {milestone.badge}
+          </span>
+
+          <div className="flex items-center gap-1 text-[10px] font-mono text-slate-400 opacity-60">
+            <Move className="w-3 h-3" />
+            <span className="hidden sm:inline">Drag</span>
+          </div>
+        </div>
+
+        {/* Content Body */}
+        <div className="space-y-3 py-3 relative z-20">
+          <div className="flex items-start justify-between gap-3">
+            <div className="space-y-0.5">
+              <h3
+                className={`text-lg sm:text-xl font-bold font-heading leading-tight ${
+                  isDark ? "text-white" : "text-slate-900"
+                }`}
+              >
+                {milestone.title}
+              </h3>
+              <div className="text-xs font-mono font-bold gold-gradient-text">
+                {milestone.metric}
+              </div>
+            </div>
+
+            <div
+              className={`w-8 h-8 rounded-xl flex items-center justify-center border shrink-0 ${
+                isDark
+                  ? "bg-slate-900 border-white/10 text-slate-200"
+                  : "bg-slate-100 border-slate-200 text-slate-800"
+              }`}
+            >
+              <IconComponent className="w-4 h-4" />
+            </div>
+          </div>
+
+          <p
+            className={`text-xs sm:text-sm font-medium leading-relaxed italic ${
+              isDark ? "text-slate-300" : "text-slate-700"
+            }`}
+          >
+            "{milestone.quote}"
+          </p>
+
+          <p
+            className={`text-xs leading-relaxed ${
+              isDark ? "text-slate-400" : "text-slate-600"
+            }`}
+          >
+            {milestone.highlight}
+          </p>
+        </div>
+
+        {/* Bottom Tags & Action */}
+        <div className="pt-3 border-t border-white/10 dark:border-white/10 space-y-2.5 relative z-20">
+          <div className="flex flex-wrap gap-1">
+            {milestone.tags.map((tag, tIdx) => (
+              <span
+                key={tIdx}
+                className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
+                  isDark
+                    ? "bg-slate-900 border-slate-800 text-slate-300"
+                    : "bg-slate-100 border-slate-200 text-slate-700"
+                }`}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div
+            className={`flex items-center justify-between text-xs font-mono font-bold transition-transform pt-0.5 ${
+              isDark ? "text-slate-300 group-hover:text-white" : "text-slate-700 group-hover:text-slate-900"
+            }`}
+          >
+            <span>Inspect Technical Impact</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 text-slate-300" />
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 /* ---------------- Main On-Scroll Break-Apart & Service Tiles Hero ---------------- */
 export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
   name = "MD RABBY",
@@ -232,6 +429,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
 }) => {
   const isDark = theme === "dark";
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [stageView, setStageView] = useState<'milestones' | 'services'>('milestones');
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Scroll Progress across 215vh pin sequence
@@ -550,7 +748,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
         </motion.div>
 
         {/* ========================================================================= */}
-        {/* STAGE 2: ARCHITECTURAL SERVICES TILES (PURE GEIST WITH ATTRACTIVE METRICS) */}
+        {/* STAGE 2: ARCHITECTURAL PROFILE (PURE GEIST TITANIUM MILESTONES)          */}
         {/* ========================================================================= */}
         <motion.div
           style={{
@@ -565,103 +763,155 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
           <div className="w-full max-w-[1720px] mx-auto space-y-4 pointer-events-auto">
             
             {/* Header: Pure Minimalist Geist Label */}
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 dark:border-white/10">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#dfc898] font-bold">
-                  AI SYSTEMS
-                </span>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-white/10 dark:border-white/10">
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono tracking-wider uppercase border bg-white/5 border-white/15 text-slate-200">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>ARCHITECTURAL PROFILE</span>
+                </div>
+                
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight font-heading text-white">
+                  Engineering <span className="gold-gradient-text">Philosophy & Track Record</span>
+                </h2>
               </div>
-              <span className="text-[10px] font-mono text-slate-400 hidden sm:inline">
-                Click any service tile to explore technical implementations
-              </span>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-[11px] font-mono text-slate-400 hidden xl:inline">
+                  Key Architectural Milestones • Click, hover, or drag cards to inspect engineering impact
+                </span>
+
+                {/* View Switcher Pill */}
+                <div className="inline-flex items-center p-1 rounded-xl bg-slate-900 border border-white/10 text-[10px] font-mono">
+                  <button
+                    onClick={() => setStageView('milestones')}
+                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                      stageView === 'milestones'
+                        ? 'bg-white/15 text-white font-bold shadow-sm'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    Milestones (3)
+                  </button>
+                  <button
+                    onClick={() => setStageView('services')}
+                    className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                      stageView === 'services'
+                        ? 'bg-white/15 text-white font-bold shadow-sm'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    AI Systems (4)
+                  </button>
+                </div>
+              </div>
             </div>
 
-            {/* 4 Pure Geist Service Consoles */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              {serviceTiles.map((tile, idx) => {
-                const IconComponent = tile.icon;
+            {/* Content: 3 Architectural Milestones Cards OR 4 AI Systems Consoles */}
+            {stageView === 'milestones' ? (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+                {architecturalMilestones.map((milestone, idx) => {
+                  let cardMotion = {};
+                  if (idx === 0) cardMotion = { x: card1X, rotate: card1Rot };
+                  else if (idx === 1) cardMotion = { y: card2Y };
+                  else if (idx === 2) cardMotion = { x: card4X, rotate: card4Rot };
 
-                let cardMotion = {};
-                if (idx === 0) cardMotion = { x: card1X, rotate: card1Rot };
-                else if (idx === 1) cardMotion = { y: card2Y };
-                else if (idx === 2) cardMotion = { y: card3Y };
-                else if (idx === 3) cardMotion = { x: card4X, rotate: card4Rot };
+                  return (
+                    <GeistMilestoneCard
+                      key={milestone.id}
+                      milestone={milestone}
+                      motionStyle={cardMotion}
+                      isDark={isDark}
+                      onSelect={(target) => handleScrollToTarget(target)}
+                    />
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                {serviceTiles.map((tile, idx) => {
+                  const IconComponent = tile.icon;
 
-                return (
-                  <motion.div
-                    key={tile.id}
-                    style={cardMotion}
-                    whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                    onClick={() => handleScrollToTarget(tile.targetSection)}
-                    className={`group relative rounded-3xl overflow-hidden border p-6 sm:p-7 cursor-pointer select-none flex flex-col justify-between transition-all duration-300 ${
-                      isDark
-                        ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${tile.borderHover} shadow-2xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
-                        : `bg-white/95 hover:bg-white border-slate-200/90 ${tile.borderHover} shadow-xl hover:shadow-2xl`
-                    } min-h-[280px] sm:min-h-[310px]`}
-                  >
-                    {/* Top Pill Row: Icon + Category + Badge */}
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className={`w-7 h-7 rounded-xl flex items-center justify-center border transition-colors ${
-                            isDark
-                              ? "bg-slate-900 border-white/10 text-[#dfc898] group-hover:border-[#dfc898]/40"
-                              : "bg-slate-100 border-slate-200 text-[#854d0e]"
-                          }`}
-                        >
-                          <IconComponent className="w-3.5 h-3.5" />
-                        </div>
-                        <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
-                          {tile.category}
-                        </span>
-                      </div>
-                    </div>
+                  let cardMotion = {};
+                  if (idx === 0) cardMotion = { x: card1X, rotate: card1Rot };
+                  else if (idx === 1) cardMotion = { y: card2Y };
+                  else if (idx === 2) cardMotion = { y: card3Y };
+                  else if (idx === 3) cardMotion = { x: card4X, rotate: card4Rot };
 
-                    {/* Service Name (hero text) + One Verified Proof Line */}
-                    <div className="py-5">
-                      <div
-                        className={`text-3xl sm:text-4xl font-extrabold font-heading tracking-tight leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r ${tile.glowColor}`}
-                      >
-                        {tile.title}
-                      </div>
-
-                      <div className="flex items-start gap-1.5 text-[11px] font-mono text-slate-400 mt-3 leading-relaxed">
-                        <CheckCircle2 className="w-3.5 h-3.5 mt-px shrink-0 text-emerald-400" />
-                        <span>{tile.proof}</span>
-                      </div>
-                    </div>
-
-                    {/* Bottom Tags & Action */}
-                    <div className="pt-3 border-t border-white/10 dark:border-white/10 space-y-2.5">
-                      <div className="flex flex-wrap gap-1">
-                        {tile.tags.map((tag, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
+                  return (
+                    <motion.div
+                      key={tile.id}
+                      style={cardMotion}
+                      whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                      onClick={() => handleScrollToTarget(tile.targetSection)}
+                      className={`group relative rounded-3xl overflow-hidden border p-6 sm:p-7 cursor-pointer select-none flex flex-col justify-between transition-all duration-300 ${
+                        isDark
+                          ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${tile.borderHover} shadow-2xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
+                          : `bg-white/95 hover:bg-white border-slate-200/90 ${tile.borderHover} shadow-xl hover:shadow-2xl`
+                      } min-h-[280px] sm:min-h-[310px]`}
+                    >
+                      {/* Top Pill Row: Icon + Category + Badge */}
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <div
+                            className={`w-7 h-7 rounded-xl flex items-center justify-center border transition-colors ${
                               isDark
-                                ? "bg-slate-900 border-slate-800 text-slate-300"
-                                : "bg-slate-100 border-slate-200 text-slate-700"
+                                ? "bg-slate-900 border-white/10 text-slate-200 group-hover:border-white/30"
+                                : "bg-slate-100 border-slate-200 text-slate-800"
                             }`}
                           >
-                            {tag}
+                            <IconComponent className="w-3.5 h-3.5" />
+                          </div>
+                          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
+                            {tile.category}
                           </span>
-                        ))}
+                        </div>
                       </div>
 
-                      <div
-                        className={`flex items-center justify-between text-xs font-mono font-bold transition-transform pt-0.5 ${
-                          isDark ? "text-[#dfc898]" : "text-[#854d0e]"
-                        }`}
-                      >
-                        <span>Explore Capabilities</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      {/* Service Name (hero text) + One Verified Proof Line */}
+                      <div className="py-5">
+                        <div
+                          className={`text-3xl sm:text-4xl font-extrabold font-heading tracking-tight leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r ${tile.glowColor}`}
+                        >
+                          {tile.title}
+                        </div>
+
+                        <div className="flex items-start gap-1.5 text-[11px] font-mono text-slate-400 mt-3 leading-relaxed">
+                          <CheckCircle2 className="w-3.5 h-3.5 mt-px shrink-0 text-emerald-400" />
+                          <span>{tile.proof}</span>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+
+                      {/* Bottom Tags & Action */}
+                      <div className="pt-3 border-t border-white/10 dark:border-white/10 space-y-2.5">
+                        <div className="flex flex-wrap gap-1">
+                          {tile.tags.map((tag, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
+                                isDark
+                                  ? "bg-slate-900 border-slate-800 text-slate-300"
+                                  : "bg-slate-100 border-slate-200 text-slate-700"
+                              }`}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div
+                          className={`flex items-center justify-between text-xs font-mono font-bold transition-transform pt-0.5 ${
+                            isDark ? "text-slate-300" : "text-slate-700"
+                          }`}
+                        >
+                          <span>Explore Capabilities</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Bottom Direct CTA Strip to Case Studies Section */}
             <div className="flex items-center justify-between pt-1">
@@ -673,8 +923,8 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                 onClick={handleScrollToProjects}
                 className={`inline-flex items-center gap-2 text-xs font-mono font-bold px-4 py-1.5 rounded-full border transition-colors cursor-pointer ${
                   isDark
-                    ? "bg-slate-900 border-white/15 text-[#dfc898] hover:border-[#dfc898]"
-                    : "bg-white border-slate-300 text-[#854d0e] hover:border-[#b89b5e]"
+                    ? "bg-slate-900 border-white/15 text-slate-200 hover:border-white/40"
+                    : "bg-white border-slate-300 text-slate-800 hover:border-slate-500"
                 }`}
               >
                 <span>Case Studies</span>
