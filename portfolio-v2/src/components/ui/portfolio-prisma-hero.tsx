@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
   Sparkles,
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  Pause,
-  Play,
   Cpu,
   Server,
   Cloud,
@@ -409,61 +405,6 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
   const [videoLoaded, setVideoLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Carousel Testing Modes ('spotlight' | 'marquee' | 'autotabs')
-  const [carouselMode, setCarouselMode] = useState<'spotlight' | 'marquee' | 'autotabs'>('spotlight');
-
-  // Spotlight Auto-Carousel state
-  const [spotlightIdx, setSpotlightIdx] = useState(0);
-  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
-  const [carouselProgress, setCarouselProgress] = useState(0);
-
-  // Auto Tabs state
-  const [stageView, setStageView] = useState<'milestones' | 'services'>('milestones');
-  const [autoTabProgress, setAutoTabProgress] = useState(0);
-  const [isTabPaused, setIsTabPaused] = useState(false);
-
-  // Spotlight auto-advance interval (cycles every 4 seconds)
-  useEffect(() => {
-    if (carouselMode !== 'spotlight' || isCarouselPaused) return;
-
-    const interval = 50;
-    const totalDuration = 4000;
-    const step = (interval / totalDuration) * 100;
-
-    const timer = setInterval(() => {
-      setCarouselProgress((prev) => {
-        if (prev >= 100) {
-          setSpotlightIdx((s) => (s + 1) % allSpotlightItems.length);
-          return 0;
-        }
-        return prev + step;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [carouselMode, isCarouselPaused]);
-
-  // Auto Tabs auto-advance interval (cycles every 5 seconds)
-  useEffect(() => {
-    if (carouselMode !== 'autotabs' || isTabPaused) return;
-
-    const interval = 50;
-    const totalDuration = 5000;
-    const step = (interval / totalDuration) * 100;
-
-    const timer = setInterval(() => {
-      setAutoTabProgress((prev) => {
-        if (prev >= 100) {
-          setStageView((v) => (v === 'milestones' ? 'services' : 'milestones'));
-          return 0;
-        }
-        return prev + step;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [carouselMode, isTabPaused]);
-
   // Scroll Progress across 215vh pin sequence
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -794,289 +735,42 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
         >
           <div className="w-full max-w-[1720px] mx-auto space-y-3 sm:space-y-4 pointer-events-auto max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible py-2 sm:py-0 px-1 sm:px-0">
             
-            {/* Header: Pure Minimalist Geist Label + Mode Switcher */}
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 pb-2.5 border-b border-white/10 dark:border-white/10">
-              <div className="space-y-1">
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-wider uppercase border bg-white/5 border-white/15 text-slate-300">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>ARCHITECTURAL PROFILE</span>
-                </div>
-                
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight font-heading text-white">
-                  Engineering <span className="gold-gradient-text">Philosophy & Capabilities</span>
-                </h2>
-              </div>
-
-              {/* Mode Switcher Pill */}
-              <div className="flex items-center gap-2 flex-wrap justify-between sm:justify-end w-full sm:w-auto">
-                <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-900/90 border border-white/15 text-[10px] font-mono shrink-0 shadow-lg">
-                  <span className="px-2 text-slate-400 hidden sm:inline text-[9px] uppercase tracking-wider font-semibold">Carousel Mode:</span>
-                  <button
-                    onClick={() => {
-                      setCarouselMode('spotlight');
-                      setSpotlightIdx(0);
-                      setCarouselProgress(0);
-                    }}
-                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                      carouselMode === 'spotlight'
-                        ? 'bg-white/20 text-white font-bold shadow-sm'
-                        : 'text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    Spotlight
-                  </button>
-                  <button
-                    onClick={() => setCarouselMode('marquee')}
-                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                      carouselMode === 'marquee'
-                        ? 'bg-white/20 text-white font-bold shadow-sm'
-                        : 'text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    Marquee
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCarouselMode('autotabs');
-                      setAutoTabProgress(0);
-                    }}
-                    className={`px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                      carouselMode === 'autotabs'
-                        ? 'bg-white/20 text-white font-bold shadow-sm'
-                        : 'text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    Auto Tabs
-                  </button>
-                </div>
-              </div>
-            </div>
-
             {/* ========================================================================= */}
-            {/* CAROUSEL MODE 1: SPOTLIGHT AUTO-SLIDER (3-CARD DESKTOP / 1-CARD MOBILE)   */}
+            {/* CONTINUOUS AMBIENT MARQUEE (PURE MINIMALIST SHOWCASE)                     */}
             {/* ========================================================================= */}
-            {carouselMode === 'spotlight' && (
+            <div className="relative w-full overflow-hidden py-3">
               <div
-                className="space-y-3"
-                onMouseEnter={() => setIsCarouselPaused(true)}
-                onMouseLeave={() => setIsCarouselPaused(false)}
+                className="relative w-full overflow-hidden py-1"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)"
+                }}
               >
-                {/* Responsive Sliding Cards Window */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-                  {[0, 1, 2].map((offset) => {
-                    const itemIdx = (spotlightIdx + offset) % allSpotlightItems.length;
-                    const item = allSpotlightItems[itemIdx];
-                    return (
-                      <div
-                        key={`${item.id}-${offset}`}
-                        className={offset > 0 ? "hidden md:block" : "block"}
-                      >
-                        <UnifiedHeroCard
-                          item={item}
-                          isDark={isDark}
-                          onSelect={handleScrollToTarget}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Tactile Control Bar */}
-                <div className="flex items-center justify-between gap-3 px-3 py-1.5 rounded-xl bg-slate-900/70 border border-white/10 text-xs font-mono">
-                  {/* Left: Auto-progress bar + Pause button */}
-                  <div className="flex items-center gap-2.5">
-                    <button
-                      onClick={() => setIsCarouselPaused((p) => !p)}
-                      title={isCarouselPaused ? "Resume auto-rotation" : "Pause auto-rotation"}
-                      className="p-1 rounded-lg hover:bg-white/10 text-slate-300 transition-colors cursor-pointer"
+                <div className="animate-marquee-track gap-3.5 sm:gap-4 flex">
+                  {[...allSpotlightItems, ...allSpotlightItems].map((item, idx) => (
+                    <div
+                      key={`${item.id}-${idx}`}
+                      className="w-[280px] sm:w-[350px] shrink-0"
                     >
-                      {isCarouselPaused ? (
-                        <Play className="w-3.5 h-3.5 text-emerald-400" />
-                      ) : (
-                        <Pause className="w-3.5 h-3.5 text-amber-300" />
-                      )}
-                    </button>
-
-                    <div className="w-16 sm:w-28 h-1.5 rounded-full bg-white/10 overflow-hidden relative">
-                      <div
-                        className="h-full bg-gradient-to-r from-slate-200 to-white transition-all duration-75"
-                        style={{ width: `${carouselProgress}%` }}
+                      <UnifiedHeroCard
+                        item={item}
+                        isDark={isDark}
+                        onSelect={handleScrollToTarget}
                       />
                     </div>
-
-                    <span className="text-[10px] text-slate-400 hidden sm:inline">
-                      {spotlightIdx + 1}/{allSpotlightItems.length} · {allSpotlightItems[spotlightIdx].title}
-                    </span>
-                  </div>
-
-                  {/* Middle: 7 Direct Jump Dots */}
-                  <div className="flex items-center gap-1.5">
-                    {allSpotlightItems.map((_, dotIdx) => (
-                      <button
-                        key={dotIdx}
-                        onClick={() => {
-                          setSpotlightIdx(dotIdx);
-                          setCarouselProgress(0);
-                        }}
-                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                          dotIdx === spotlightIdx
-                            ? "w-5 bg-white shadow-sm"
-                            : "w-1.5 bg-white/20 hover:bg-white/40"
-                        }`}
-                        title={`Jump to item ${dotIdx + 1}`}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Right: Prev / Next Navigation Arrows */}
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => {
-                        setSpotlightIdx((s) => (s - 1 + allSpotlightItems.length) % allSpotlightItems.length);
-                        setCarouselProgress(0);
-                      }}
-                      className="p-1 rounded-lg hover:bg-white/10 text-slate-300 transition-colors cursor-pointer"
-                      title="Previous"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={() => {
-                        setSpotlightIdx((s) => (s + 1) % allSpotlightItems.length);
-                        setCarouselProgress(0);
-                      }}
-                      className="p-1 rounded-lg hover:bg-white/10 text-slate-300 transition-colors cursor-pointer"
-                      title="Next"
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
+                  ))}
                 </div>
               </div>
-            )}
 
-            {/* ========================================================================= */}
-            {/* CAROUSEL MODE 2: CONTINUOUS AMBIENT MARQUEE (INFINITE LOOP)               */}
-            {/* ========================================================================= */}
-            {carouselMode === 'marquee' && (
-              <div className="space-y-2">
-                <div
-                  className="relative w-full overflow-hidden py-1"
-                  style={{
-                    maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
-                    WebkitMaskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)"
-                  }}
-                >
-                  <div className="animate-marquee-track gap-3 sm:gap-4 flex">
-                    {[...allSpotlightItems, ...allSpotlightItems].map((item, idx) => (
-                      <div
-                        key={`${item.id}-${idx}`}
-                        className="w-[280px] sm:w-[350px] shrink-0"
-                      >
-                        <UnifiedHeroCard
-                          item={item}
-                          isDark={isDark}
-                          onSelect={handleScrollToTarget}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 px-1">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Ambient continuous loop · Hover to pause
-                  </span>
-                  <span>7 verified capabilities</span>
-                </div>
+              {/* Minimal Ambient Indicator */}
+              <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 px-2 pt-2">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Hover cards to pause · Continuous engineering track
+                </span>
+                <span className="hidden sm:inline">7 verified capabilities</span>
               </div>
-            )}
-
-            {/* ========================================================================= */}
-            {/* CAROUSEL MODE 3: AUTO-CYCLING TABS (MILESTONES & SERVICES ROTATION)      */}
-            {/* ========================================================================= */}
-            {carouselMode === 'autotabs' && (
-              <div
-                className="space-y-3"
-                onMouseEnter={() => setIsTabPaused(true)}
-                onMouseLeave={() => setIsTabPaused(false)}
-              >
-                {/* View Switcher with Countdown Progress */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-900 border border-white/10 text-[10px] font-mono shrink-0">
-                    <button
-                      onClick={() => {
-                        setStageView('milestones');
-                        setAutoTabProgress(0);
-                      }}
-                      className={`relative px-2.5 py-1 rounded-lg transition-all cursor-pointer overflow-hidden ${
-                        stageView === 'milestones'
-                          ? 'bg-white/15 text-white font-bold shadow-sm'
-                          : 'text-slate-400 hover:text-white'
-                      }`}
-                    >
-                      <span className="relative z-10">Milestones (3)</span>
-                      {stageView === 'milestones' && !isTabPaused && (
-                        <div
-                          className="absolute bottom-0 left-0 h-0.5 bg-emerald-400 transition-all duration-75"
-                          style={{ width: `${autoTabProgress}%` }}
-                        />
-                      )}
-                    </button>
-                    <button
-                      onClick={() => {
-                        setStageView('services');
-                        setAutoTabProgress(0);
-                      }}
-                      className={`relative px-2.5 py-1 rounded-lg transition-all cursor-pointer overflow-hidden ${
-                        stageView === 'services'
-                          ? 'bg-white/15 text-white font-bold shadow-sm'
-                          : 'text-slate-400 hover:text-white'
-                      }`}
-                    >
-                      <span className="relative z-10">AI Systems (4)</span>
-                      {stageView === 'services' && !isTabPaused && (
-                        <div
-                          className="absolute bottom-0 left-0 h-0.5 bg-emerald-400 transition-all duration-75"
-                          style={{ width: `${autoTabProgress}%` }}
-                        />
-                      )}
-                    </button>
-                  </div>
-
-                  <span className="text-[10px] font-mono text-slate-400 hidden sm:inline">
-                    {isTabPaused
-                      ? "Rotation paused (hovering)"
-                      : `Auto-rotating in ${Math.max(1, Math.ceil((100 - autoTabProgress) * 0.05))}s`}
-                  </span>
-                </div>
-
-                {stageView === 'milestones' ? (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-                    {architecturalMilestones.map((milestone) => (
-                      <UnifiedHeroCard
-                        key={milestone.id}
-                        item={milestone}
-                        isDark={isDark}
-                        onSelect={handleScrollToTarget}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                    {serviceTiles.map((tile) => (
-                      <UnifiedHeroCard
-                        key={tile.id}
-                        item={tile}
-                        isDark={isDark}
-                        onSelect={handleScrollToTarget}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
+            </div>
 
             {/* Bottom Direct CTA Strip to Case Studies Section */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1 text-center sm:text-left">
