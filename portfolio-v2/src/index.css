@@ -338,23 +338,27 @@
   background-color: #f1f5f9;
 }
 
-/* Ambient Infinite Horizontal Marquee Track */
+/* Ambient Infinite Horizontal Marquee Track (Butter-Smooth 60/120 FPS) */
 @keyframes marquee-scroll {
-  0% {
-    transform: translateX(0%);
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
 .animate-marquee-track {
   display: flex;
-  width: max-content;
-  animation: marquee-scroll 32s linear infinite;
+  flex-shrink: 0;
+  animation: marquee-scroll 45s linear infinite;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
+.marquee-group:hover .animate-marquee-track,
 .animate-marquee-track:hover {
   animation-play-state: paused !important;
 }

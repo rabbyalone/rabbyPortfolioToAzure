@@ -265,54 +265,38 @@ export const allSpotlightItems = [
 export const architecturalMilestones = allSpotlightItems.filter((i) => i.type === "milestone");
 export const serviceTiles = allSpotlightItems.filter((i) => i.type === "service");
 
-/* ---------------- Unified Sleek Minimal Hero Card (Spotlight & Hover Glow) ---------------- */
+/* ---------------- Unified Sleek Minimal Hero Card (GPU-Composited, Zero Jitter) ---------------- */
 function UnifiedHeroCard({
   item,
   isDark,
   onSelect,
-  className = "",
-  motionStyle
+  className = ""
 }: {
   item: typeof allSpotlightItems[0];
   isDark: boolean;
   onSelect: (target: string) => void;
   className?: string;
-  motionStyle?: any;
 }) {
-  const [mousePos, setMousePos] = useState({ x: -100, y: -100 });
-  const [isHovered, setIsHovered] = useState(false);
   const IconComponent = item.icon;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
   return (
-    <motion.div
-      style={motionStyle}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onMouseMove={handleMouseMove}
+    <div
       onClick={() => onSelect(item.targetSection)}
-      className={`group relative p-3.5 sm:p-4.5 rounded-2xl sm:rounded-3xl border text-left cursor-pointer transition-all duration-300 overflow-hidden select-none flex flex-col justify-between ${
+      className={`group relative p-3.5 sm:p-4.5 rounded-2xl sm:rounded-3xl border text-left cursor-pointer transition-transform duration-300 hover:-translate-y-1 overflow-hidden select-none flex flex-col justify-between ${
         isDark
-          ? `bg-slate-950/85 hover:bg-slate-900/95 border-white/10 ${item.borderHover} shadow-xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
+          ? `bg-slate-950/90 hover:bg-slate-900 border-white/10 ${item.borderHover} shadow-xl hover:shadow-[0_20px_45px_rgba(0,0,0,0.8)]`
           : `bg-white/95 hover:bg-white border-slate-200/90 ${item.borderHover} shadow-md hover:shadow-xl`
       } min-h-[145px] sm:min-h-[160px] ${className}`}
     >
-      {/* Dynamic Hover Spotlight */}
-      {isHovered && (
-        <div
-          className="pointer-events-none absolute -inset-px transition-opacity duration-300 z-10"
-          style={{
-            background: `radial-gradient(320px circle at ${mousePos.x}px ${mousePos.y}px, ${
-              isDark ? "rgba(226, 232, 240, 0.10)" : "rgba(51, 65, 85, 0.06)"
-            }, transparent 80%)`
-          }}
-        />
-      )}
+      {/* Subtle Ambient Hover Glow */}
+      <div
+        className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+        style={{
+          background: `radial-gradient(320px circle at center, ${
+            isDark ? "rgba(226, 232, 240, 0.08)" : "rgba(51, 65, 85, 0.05)"
+          }, transparent 75%)`
+        }}
+      />
 
       {/* Top Header Row: Category Badge + Icon */}
       <div className="flex items-center justify-between gap-2 relative z-20">
@@ -381,7 +365,7 @@ function UnifiedHeroCard({
           <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -736,20 +720,37 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
           <div className="w-full max-w-[1720px] mx-auto space-y-3 sm:space-y-4 pointer-events-auto max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible py-2 sm:py-0 px-1 sm:px-0">
             
             {/* ========================================================================= */}
-            {/* CONTINUOUS AMBIENT MARQUEE (PURE MINIMALIST SHOWCASE)                     */}
+            {/* CONTINUOUS AMBIENT MARQUEE (BUTTER-SMOOTH TWO-TRACK INFINITE GLIDE)      */}
             {/* ========================================================================= */}
-            <div className="relative w-full overflow-hidden py-3">
+            <div className="relative w-full overflow-hidden py-3 marquee-group">
               <div
-                className="relative w-full overflow-hidden py-1"
+                className="relative w-full overflow-hidden py-1 flex select-none"
                 style={{
                   maskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
                   WebkitMaskImage: "linear-gradient(to right, transparent, black 6%, black 94%, transparent)"
                 }}
               >
-                <div className="animate-marquee-track gap-3.5 sm:gap-4 flex">
-                  {[...allSpotlightItems, ...allSpotlightItems].map((item, idx) => (
+                {/* Track 1 */}
+                <div className="flex shrink-0 gap-3.5 sm:gap-4 pr-3.5 sm:pr-4 animate-marquee-track">
+                  {allSpotlightItems.map((item) => (
                     <div
-                      key={`${item.id}-${idx}`}
+                      key={`track1-${item.id}`}
+                      className="w-[280px] sm:w-[350px] shrink-0"
+                    >
+                      <UnifiedHeroCard
+                        item={item}
+                        isDark={isDark}
+                        onSelect={handleScrollToTarget}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Track 2 (Mathematically identical clone for 100% seamless, zero-jump loop) */}
+                <div className="flex shrink-0 gap-3.5 sm:gap-4 pr-3.5 sm:pr-4 animate-marquee-track" aria-hidden="true">
+                  {allSpotlightItems.map((item) => (
+                    <div
+                      key={`track2-${item.id}`}
                       className="w-[280px] sm:w-[350px] shrink-0"
                     >
                       <UnifiedHeroCard
