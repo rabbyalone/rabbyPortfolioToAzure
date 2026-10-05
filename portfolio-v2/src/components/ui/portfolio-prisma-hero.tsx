@@ -761,15 +761,6 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                   ))}
                 </div>
               </div>
-
-              {/* Minimal Ambient Indicator */}
-              <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 px-2 pt-2">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Hover cards to pause · Continuous engineering track
-                </span>
-                <span className="hidden sm:inline">7 verified capabilities</span>
-              </div>
             </div>
 
             {/* Bottom Direct CTA Strip to Case Studies Section */}
