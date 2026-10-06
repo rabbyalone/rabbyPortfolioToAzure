@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import {
   ArrowRight,
   Sparkles,
@@ -25,6 +25,7 @@ export interface PortfolioPrismaHeroProps {
   typewriterPhrases?: string[];
   summary?: string;
   ctaText?: string;
+  ctaTarget?: string;
   ctaAction?: () => void;
   onOpenTerminal?: () => void;
   onSelectProject?: (project: any) => void;
@@ -375,8 +376,9 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
   surname = "HASAN",
   tagline = "Lead Software Engineer & Systems Architect",
   typewriterPhrases = defaultTypewriterPhrases,
-  summary = "Designing resilient distributed microservices, high-throughput cloud infrastructure, and modern AI engineering workflows across international enterprise systems.",
-  ctaText = "Explore Selected Work",
+  summary = "For more than a decade, I’ve been designing and building software that solves real-world problems at scale. I work mainly with .NET, distributed systems, microservices, cloud platforms, and increasingly AI-driven development. My experience has taken me from Arctic cold-storage and offshore sensor systems to large, mission-critical enterprise platforms.",
+  ctaText = "Get in Touch",
+  ctaTarget = "contact",
   ctaAction,
   onOpenTerminal,
   onSelectProject,
@@ -389,107 +391,146 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
   const [videoLoaded, setVideoLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Scroll Progress across 215vh pin sequence
+  // Scroll Progress across pinned sequence with physics damping
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
 
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 28,
+    restDelta: 0.001
+  });
+
   // =========================================================================
-  // 1. KINETIC 3D BREAK-APART: NAME & HERO ELEMENTS DISPERSAL
+  // 1. KINETIC 3D BREAK-APART: NAME & HERO ELEMENTS DISPERSAL (0.02 -> 0.18)
   // =========================================================================
   // "MD": Fractures diagonally up-left with negative tilt and blur dissolve
-  const mdX = useTransform(scrollYProgress, [0.06, 0.36], [0, -170]);
-  const mdY = useTransform(scrollYProgress, [0.06, 0.36], [0, -90]);
-  const mdRotate = useTransform(scrollYProgress, [0.06, 0.36], [0, -14]);
-  const mdOpacity = useTransform(scrollYProgress, [0.06, 0.28], [1, 0]);
-  const mdBlurVal = useTransform(scrollYProgress, [0.06, 0.34], [0, 8]);
+  const mdX = useTransform(smoothProgress, [0.02, 0.18], [0, -170]);
+  const mdY = useTransform(smoothProgress, [0.02, 0.18], [0, -90]);
+  const mdRotate = useTransform(smoothProgress, [0.02, 0.18], [0, -14]);
+  const mdOpacity = useTransform(smoothProgress, [0.02, 0.14], [1, 0]);
+  const mdBlurVal = useTransform(smoothProgress, [0.02, 0.17], [0, 8]);
   const mdBlur = useTransform(mdBlurVal, (b) => `blur(${b}px)`);
 
   // "RABBY": Elevates upward, letter-spacing opens into grand architectural watermark
-  const rabbyY = useTransform(scrollYProgress, [0.06, 0.42], [0, -100]);
-  const rabbyScale = useTransform(scrollYProgress, [0.06, 0.45], [1, 1.2]);
-  const rabbyOpacity = useTransform(scrollYProgress, [0.06, 0.30, 0.50], [1, 0.25, 0.08]);
-  const rabbyTracking = useTransform(scrollYProgress, [0.06, 0.42], ["-0.065em", "0.2em"]);
+  const rabbyY = useTransform(smoothProgress, [0.02, 0.22], [0, -100]);
+  const rabbyScale = useTransform(smoothProgress, [0.02, 0.22], [1, 1.2]);
+  const rabbyOpacity = useTransform(smoothProgress, [0.02, 0.16, 0.35], [1, 0.25, 0.08]);
+  const rabbyTracking = useTransform(smoothProgress, [0.02, 0.22], ["-0.065em", "0.2em"]);
 
   // "HASAN": Fractures diagonally down-right with positive tilt and blur dissolve
-  const hasanX = useTransform(scrollYProgress, [0.06, 0.36], [0, 180]);
-  const hasanY = useTransform(scrollYProgress, [0.06, 0.36], [0, 90]);
-  const hasanRotate = useTransform(scrollYProgress, [0.06, 0.36], [0, 14]);
-  const hasanOpacity = useTransform(scrollYProgress, [0.06, 0.28], [1, 0]);
-  const hasanBlurVal = useTransform(scrollYProgress, [0.06, 0.34], [0, 8]);
+  const hasanX = useTransform(smoothProgress, [0.02, 0.18], [0, 180]);
+  const hasanY = useTransform(smoothProgress, [0.02, 0.18], [0, 90]);
+  const hasanRotate = useTransform(smoothProgress, [0.02, 0.18], [0, 14]);
+  const hasanOpacity = useTransform(smoothProgress, [0.02, 0.14], [1, 0]);
+  const hasanBlurVal = useTransform(smoothProgress, [0.02, 0.17], [0, 8]);
   const hasanBlur = useTransform(hasanBlurVal, (b) => `blur(${b}px)`);
 
   // Role Badge: Peels off and spins into negative space
-  const roleX = useTransform(scrollYProgress, [0.06, 0.32], [0, -200]);
-  const roleRotate = useTransform(scrollYProgress, [0.06, 0.32], [0, -18]);
-  const roleScale = useTransform(scrollYProgress, [0.06, 0.32], [1, 0.75]);
-  const roleOpacity = useTransform(scrollYProgress, [0.06, 0.24], [1, 0]);
+  const roleX = useTransform(smoothProgress, [0.02, 0.16], [0, -200]);
+  const roleRotate = useTransform(smoothProgress, [0.02, 0.16], [0, -18]);
+  const roleScale = useTransform(smoothProgress, [0.02, 0.16], [1, 0.75]);
+  const roleOpacity = useTransform(smoothProgress, [0.02, 0.13], [1, 0]);
 
   // Typewriter Capsule: Slides down-left and dissolves
-  const typeX = useTransform(scrollYProgress, [0.06, 0.33], [0, -160]);
-  const typeY = useTransform(scrollYProgress, [0.06, 0.33], [0, 50]);
-  const typeOpacity = useTransform(scrollYProgress, [0.06, 0.24], [1, 0]);
+  const typeX = useTransform(smoothProgress, [0.02, 0.16], [0, -160]);
+  const typeY = useTransform(smoothProgress, [0.02, 0.16], [0, 50]);
+  const typeOpacity = useTransform(smoothProgress, [0.02, 0.13], [1, 0]);
 
   // Bio Summary Card: 3D perspective shutter tilt and lateral dispersal
-  const bioRotateX = useTransform(scrollYProgress, [0.06, 0.34], [0, 20]);
-  const bioRotateY = useTransform(scrollYProgress, [0.06, 0.34], [0, -18]);
-  const bioX = useTransform(scrollYProgress, [0.06, 0.34], [0, 220]);
-  const bioY = useTransform(scrollYProgress, [0.06, 0.34], [0, -30]);
-  const bioOpacity = useTransform(scrollYProgress, [0.06, 0.26], [1, 0]);
-  const bioScale = useTransform(scrollYProgress, [0.06, 0.34], [1, 0.82]);
+  const bioRotateX = useTransform(smoothProgress, [0.02, 0.17], [0, 20]);
+  const bioRotateY = useTransform(smoothProgress, [0.02, 0.17], [0, -18]);
+  const bioX = useTransform(smoothProgress, [0.02, 0.17], [0, 220]);
+  const bioY = useTransform(smoothProgress, [0.02, 0.17], [0, -30]);
+  const bioOpacity = useTransform(smoothProgress, [0.02, 0.13], [1, 0]);
+  const bioScale = useTransform(smoothProgress, [0.02, 0.17], [1, 0.82]);
 
   // Initial Action CTAs
-  const ctaX = useTransform(scrollYProgress, [0.06, 0.33], [0, 150]);
-  const ctaY = useTransform(scrollYProgress, [0.06, 0.33], [0, 60]);
-  const ctaOpacity = useTransform(scrollYProgress, [0.06, 0.24], [1, 0]);
+  const ctaX = useTransform(smoothProgress, [0.02, 0.16], [0, 150]);
+  const ctaY = useTransform(smoothProgress, [0.02, 0.16], [0, 60]);
+  const ctaOpacity = useTransform(smoothProgress, [0.02, 0.13], [1, 0]);
 
-  // Pointer events toggling
-  const heroPointerEvents = useTransform(scrollYProgress, (v) => (v < 0.18 ? "auto" : "none"));
-  const vaultPointerEvents = useTransform(scrollYProgress, (v) => (v > 0.24 ? "auto" : "none"));
+  // Pointer events & z-index toggling (prevents Stage 2 from intercepting Stage 1 CTA clicks)
+  const heroPointerEvents = useTransform(smoothProgress, (v) => (v < 0.18 ? "auto" : "none"));
+  const vaultPointerEvents = useTransform(smoothProgress, (v) => (v > 0.18 && v < 0.94 ? "auto" : "none"));
+  const heroZIndex = useTransform(smoothProgress, (v) => (v < 0.18 ? 35 : 10));
+  const vaultZIndex = useTransform(smoothProgress, (v) => (v > 0.18 ? 35 : 10));
 
   // =========================================================================
-  // 2. SERVICE TILES VAULT OPENING TRANSFORMS (3D APERTURE BLOOM)
+  // 2. SERVICE TILES VAULT OPENING TRANSFORMS (RAPID APERTURE BLOOM & WIDE PLATEAU)
   // =========================================================================
-  const vaultOpacity = useTransform(scrollYProgress, [0.18, 0.40], [0, 1]);
-  const vaultScale = useTransform(scrollYProgress, [0.18, 0.46], [0.78, 1]);
-  const vaultY = useTransform(scrollYProgress, [0.18, 0.46], [90, 0]);
-  const vaultRotateX = useTransform(scrollYProgress, [0.18, 0.46], [16, 0]);
+  // Marquee reaches 100% opacity early by 0.22 and settles fully by 0.25
+  const vaultOpacity = useTransform(smoothProgress, [0.12, 0.22], [0, 1]);
+  const vaultScale = useTransform(smoothProgress, [0.12, 0.25], [0.82, 1]);
+  const vaultY = useTransform(smoothProgress, [0.12, 0.25], [60, 0]);
+  const vaultRotateX = useTransform(smoothProgress, [0.12, 0.25], [12, 0]);
 
   // Individual 4-Card Kinetic Fan-Out Trajectories
-  const card1X = useTransform(scrollYProgress, [0.20, 0.48], [-35, 0]);
-  const card1Rot = useTransform(scrollYProgress, [0.20, 0.48], [-2.5, 0]);
+  const card1X = useTransform(smoothProgress, [0.14, 0.26], [-35, 0]);
+  const card1Rot = useTransform(smoothProgress, [0.14, 0.26], [-2.5, 0]);
 
-  const card2Y = useTransform(scrollYProgress, [0.20, 0.48], [25, 0]);
+  const card2Y = useTransform(smoothProgress, [0.14, 0.26], [25, 0]);
 
-  const card3Y = useTransform(scrollYProgress, [0.20, 0.48], [25, 0]);
+  const card3Y = useTransform(smoothProgress, [0.14, 0.26], [25, 0]);
 
-  const card4X = useTransform(scrollYProgress, [0.20, 0.48], [35, 0]);
-  const card4Rot = useTransform(scrollYProgress, [0.20, 0.48], [2.5, 0]);
+  const card4X = useTransform(smoothProgress, [0.14, 0.26], [35, 0]);
+  const card4Rot = useTransform(smoothProgress, [0.14, 0.26], [2.5, 0]);
 
   // Subtle Scroll Cues
-  const scrollCue1Opacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
-  const scrollCue2Opacity = useTransform(scrollYProgress, [0.42, 0.60, 0.88, 0.98], [0, 1, 1, 0]);
+  const scrollCue1Opacity = useTransform(smoothProgress, [0, 0.05], [1, 0]);
+  const scrollCue2Opacity = useTransform(smoothProgress, [0.30, 0.45, 0.84, 0.94], [0, 1, 1, 0]);
 
   const handleScrollToTarget = (sectionId: string) => {
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      try {
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, "", "#home");
+        }
+      } catch (err) {}
+      return;
+    }
+
     const el = document.getElementById(sectionId);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      const navOffset = 70;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: "smooth"
+      });
+
+      try {
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, "", `#${sectionId}`);
+        }
+      } catch (err) {}
+    }
   };
 
-  const handleScrollToProjects = (e: React.MouseEvent) => {
+  const handleScrollToCTA = (e: React.MouseEvent) => {
     e.preventDefault();
     if (ctaAction) {
       ctaAction();
     } else {
-      handleScrollToTarget("case-studies");
+      handleScrollToTarget(ctaTarget || "contact");
     }
+  };
+
+  const handleScrollToProjects = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleScrollToTarget("case-studies");
   };
 
   return (
     <section
       ref={containerRef}
       id="home"
-      className="relative h-[215vh] w-full"
+      className="relative h-[185vh] w-full"
     >
       {/* Pinned Viewport Container */}
       <div
@@ -564,8 +605,11 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
         {/* STAGE 1: INITIAL HERO STAGE (PHYSICALLY SHATTERS & BREAKS APART ON SCROLL) */}
         {/* ========================================================================= */}
         <motion.div
-          style={{ pointerEvents: heroPointerEvents }}
-          className="relative z-20 w-full max-w-[1720px] mx-auto px-6 sm:px-10 md:px-14 lg:px-20 my-auto"
+          style={{
+            pointerEvents: heroPointerEvents,
+            zIndex: heroZIndex
+          }}
+          className="relative w-full max-w-[1720px] mx-auto px-6 sm:px-10 md:px-14 lg:px-20 my-auto"
         >
           <div className="grid grid-cols-12 items-end gap-8 lg:gap-12">
             
@@ -665,7 +709,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                   opacity: bioOpacity,
                   transformPerspective: 800
                 }}
-                className={`p-4 sm:p-5 rounded-2xl border backdrop-blur-xl transition-colors shadow-xl ${
+                className={`p-4 sm:p-5 rounded-2xl border backdrop-blur-xl transition-colors shadow-xl cursor-default select-text ${
                   isDark
                     ? "text-slate-200 border-[#dfc898]/40 bg-black/60 shadow-black/50"
                     : "text-slate-800 border-[#b89b5e] bg-white/90 shadow-slate-200/80 font-medium"
@@ -683,12 +727,12 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
                   y: ctaY,
                   opacity: ctaOpacity
                 }}
-                className="flex flex-wrap items-center gap-3 pt-1"
+                className="flex flex-wrap items-center gap-3 pt-1 relative z-50 pointer-events-auto"
               >
                 <a
-                  href="#case-studies"
-                  onClick={handleScrollToProjects}
-                  className={`group inline-flex items-center gap-2 rounded-full py-2.5 pl-6 pr-2.5 text-xs sm:text-sm font-bold transition-all hover:gap-3 cursor-pointer shadow-xl ${
+                  href={`#${ctaTarget || "contact"}`}
+                  onClick={handleScrollToCTA}
+                  className={`group inline-flex items-center gap-2 rounded-full py-2.5 pl-6 pr-2.5 text-xs sm:text-sm font-bold transition-all hover:gap-3 cursor-pointer shadow-xl relative z-50 ${
                     isDark
                       ? "bg-gradient-to-r from-[#dfc898] to-[#b89b5e] hover:from-[#f1e8d6] hover:to-[#dfc898] text-black shadow-[#dfc898]/20"
                       : "bg-slate-900 hover:bg-black text-[#dfc898] shadow-slate-900/25"
@@ -713,11 +757,12 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
             scale: vaultScale,
             y: vaultY,
             rotateX: vaultRotateX,
-            pointerEvents: vaultPointerEvents
+            pointerEvents: vaultPointerEvents,
+            zIndex: vaultZIndex
           }}
-          className="absolute inset-x-0 z-30 flex items-center justify-center px-3 sm:px-8 lg:px-12 pointer-events-none"
+          className="absolute inset-x-0 flex items-center justify-center px-3 sm:px-8 lg:px-12 pointer-events-none"
         >
-          <div className="w-full max-w-[1720px] mx-auto space-y-3 sm:space-y-4 pointer-events-auto max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible py-2 sm:py-0 px-1 sm:px-0">
+          <div className="w-full max-w-[1720px] mx-auto space-y-3 sm:space-y-4 max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible py-2 sm:py-0 px-1 sm:px-0">
             
             {/* ========================================================================= */}
             {/* CONTINUOUS AMBIENT MARQUEE (BUTTER-SMOOTH TWO-TRACK INFINITE GLIDE)      */}
@@ -801,7 +846,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
               isDark ? "text-zinc-400 hover:text-[#dfc898]" : "text-slate-600 hover:text-[#854d0e]"
             }`}
           >
-            <span>Scroll to Inspect Architectural Profile</span>
+            <span>Scroll</span>
             <ChevronDown
               className={`w-3.5 h-3.5 animate-bounce ${
                 isDark ? "text-[#dfc898]" : "text-[#854d0e]"

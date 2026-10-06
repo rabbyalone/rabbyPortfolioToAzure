@@ -1,18 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Layers,
-  CheckCircle2,
   Building2,
   ChevronDown,
   ChevronUp,
   Sparkles,
   ArrowRight,
   Archive,
-  Cpu,
-  Database,
-  ExternalLink,
-  Bot
+  ExternalLink
 } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 
@@ -33,15 +28,16 @@ const projectMetrics = {
 
 // Filter tabs
 const CATEGORIES = [
-  { id: "all", label: "Curated Showcase", count: 11 },
+  { id: "all", label: "All Case Studies", count: 11 },
   { id: "flagship", label: "Global Flagships", count: 4 },
-  { id: "ai-saas", label: "AI-Native & Live Products", count: 2 },
-  { id: "enterprise", label: "Enterprise Systems Archive", count: 5 }
+  { id: "ai-saas", label: "AI & Live Products", count: 2 },
+  { id: "enterprise", label: "Enterprise Systems", count: 5 }
 ];
 
 /* ---------------- Single Bento Card with Spotlight Cursor Aura ---------------- */
 function BentoCard({
   project,
+  index = 0,
   isHovered,
   isRowHovered,
   onHover,
@@ -68,18 +64,18 @@ function BentoCard({
   // Dynamic flex ratio based on number of items in the row
   const getFlexClass = () => {
     if (totalInRow >= 4) {
-      if (isHovered) return 'lg:flex-[2.6] shadow-2xl';
-      if (isRowHovered) return 'lg:flex-[0.8] opacity-75';
+      if (isHovered) return 'lg:flex-[1.8] shadow-2xl';
+      if (isRowHovered) return 'lg:flex-[0.85] opacity-80';
       return 'lg:flex-1';
     }
     if (totalInRow === 3) {
-      if (isHovered) return 'lg:flex-[1.9] shadow-2xl';
-      if (isRowHovered) return 'lg:flex-[0.85] opacity-75';
+      if (isHovered) return 'lg:flex-[1.5] shadow-2xl';
+      if (isRowHovered) return 'lg:flex-[0.88] opacity-80';
       return 'lg:flex-1';
     }
     // 2 items
-    if (isHovered) return 'lg:flex-[1.4] shadow-2xl';
-    if (isRowHovered) return 'lg:flex-[0.9] opacity-75';
+    if (isHovered) return 'lg:flex-[1.25] shadow-2xl';
+    if (isRowHovered) return 'lg:flex-[0.9] opacity-80';
     return 'lg:flex-1';
   };
 
@@ -90,10 +86,15 @@ function BentoCard({
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
       onClick={() => onSelectProject(project)}
+      initial={{ opacity: 0, y: 60, scale: 0.94 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.15 }}
       layout
       transition={{
-        duration: 0.5,
-        ease: [0.16, 1, 0.3, 1]
+        opacity: { duration: 0.7, delay: index * 0.14, ease: "easeOut" },
+        y: { duration: 0.75, delay: index * 0.14, ease: [0.22, 1, 0.36, 1] },
+        scale: { duration: 0.75, delay: index * 0.14, ease: [0.22, 1, 0.36, 1] },
+        layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
       }}
       className={`group relative rounded-3xl overflow-hidden border cursor-pointer select-none flex flex-col justify-between transition-all duration-500 transform-gpu ${getFlexClass()} ${
         isDark
@@ -103,7 +104,7 @@ function BentoCard({
           : isHovered
           ? 'bg-white border-[#b89b5e]/60 shadow-slate-300/80'
           : 'bg-white/80 border-slate-200/90 hover:border-slate-300'
-      } min-h-[420px] sm:min-h-[460px]`}
+      } min-h-[380px] sm:min-h-[420px]`}
     >
       {/* 1. Radial Cursor Spotlight Glow */}
       <div
@@ -117,11 +118,7 @@ function BentoCard({
       />
 
       {/* 2. Visual Thumbnail Frame with Smooth Desaturation to Full Color */}
-      <div
-        className={`relative w-full overflow-hidden bg-slate-950 shrink-0 transition-all duration-500 ${
-          isHovered ? 'h-36 sm:h-44' : 'h-44 sm:h-52'
-        }`}
-      >
+      <div className="relative w-full overflow-hidden bg-slate-950 shrink-0 h-44 sm:h-48">
         <img
           src={project.thumbnail}
           alt={project.title}
@@ -187,13 +184,13 @@ function BentoCard({
         </div>
       </div>
 
-      {/* 3. Card Body: Header, Summary, Key Deliverables on Expansion, Tech Pills */}
+      {/* 3. Card Body: Minimal, High-Signal, Outcome-Focused */}
       <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between relative z-10">
         <div className="space-y-2.5">
-          {/* Category Tag */}
+          {/* Industry Domain Tag */}
           <div
-            className={`text-[10px] font-mono uppercase tracking-widest ${
-              isDark ? 'text-slate-400' : 'text-slate-500'
+            className={`text-[10px] font-mono uppercase tracking-wider font-semibold ${
+              isDark ? 'text-[#dfc898]' : 'text-[#854d0e]'
             }`}
           >
             {project.category}
@@ -214,54 +211,20 @@ function BentoCard({
             {project.title}
           </h3>
 
-          {/* Dynamic Summary */}
+          {/* Minimal Outcome-Focused Summary */}
           <p
-            className={`text-xs leading-relaxed font-sans transition-all duration-300 ${
-              isHovered
-                ? isDark
-                  ? 'text-slate-200 font-normal'
-                  : 'text-slate-700 font-normal'
-                : isDark
-                ? 'text-slate-400 line-clamp-2'
-                : 'text-slate-600 line-clamp-2'
+            className={`text-xs leading-relaxed font-sans line-clamp-3 transition-colors ${
+              isDark ? 'text-slate-400' : 'text-slate-600'
             }`}
           >
             {project.summary}
           </p>
-
-          {/* Key Technical Deliverables - Revealed on Bento Card Expansion */}
-          {isHovered && project.keyFeatures && project.keyFeatures.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, delay: 0.05 }}
-              className="pt-2.5 mt-2 border-t border-white/10 dark:border-white/10 space-y-2"
-            >
-              <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider font-bold text-[#dfc898]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#dfc898] shrink-0" />
-                <span>Key Technical Deliverables</span>
-              </div>
-              <ul className="space-y-1.5">
-                {project.keyFeatures.slice(0, 3).map((feat, fIdx) => (
-                  <li
-                    key={fIdx}
-                    className={`text-[11px] leading-relaxed flex items-start gap-2 ${
-                      isDark ? 'text-slate-300' : 'text-slate-700'
-                    }`}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#dfc898] mt-1.5 shrink-0" />
-                    <span className="line-clamp-2">{feat}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
         </div>
 
         {/* Tech Stack Pills & CTA */}
         <div className="pt-3 mt-3 border-t border-white/5 dark:border-white/5 space-y-2.5">
           <div className="flex flex-wrap gap-1.5">
-            {project.tech.slice(0, isHovered ? 6 : 3).map((t, i) => (
+            {project.tech.slice(0, 3).map((t, i) => (
               <span
                 key={i}
                 className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors ${
@@ -273,7 +236,7 @@ function BentoCard({
                 {t}
               </span>
             ))}
-            {!isHovered && project.tech.length > 3 && (
+            {project.tech.length > 3 && (
               <span
                 className={`text-[9px] font-mono px-1.5 py-0.5 rounded ${
                   isDark ? 'text-slate-500' : 'text-slate-400'
@@ -291,7 +254,7 @@ function BentoCard({
             }`}
           >
             <span className="flex items-center gap-1.5">
-              <span>Inspect Architecture</span>
+              <span>View Case Study</span>
               <ArrowRight
                 className={`w-3.5 h-3.5 transition-transform duration-300 ${
                   isHovered ? 'translate-x-1' : ''
@@ -313,7 +276,7 @@ function BentoCard({
               </a>
             ) : (
               <span className="text-[10px] opacity-60 uppercase tracking-widest hidden sm:inline">
-                Full Specs Modal
+                Deep Dive Specs
               </span>
             )}
           </div>
@@ -329,10 +292,11 @@ function BentoRow({ projects, onSelectProject, theme }) {
 
   return (
     <div className="flex flex-col lg:flex-row gap-5 w-full">
-      {projects.map((proj) => (
+      {projects.map((proj, idx) => (
         <BentoCard
           key={proj.id}
           project={proj}
+          index={idx}
           isHovered={hoveredId === proj.id}
           isRowHovered={hoveredId !== null}
           onHover={() => setHoveredId(proj.id)}
@@ -377,49 +341,44 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
   };
 
   return (
-    <section id="case-studies" className="py-24 sm:py-32 px-4 sm:px-8 lg:px-12 relative z-10">
+    <section id="case-studies" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 relative z-10">
       <div className="max-w-[1720px] mx-auto space-y-12 sm:space-y-16">
         
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="text-center space-y-4 max-w-4xl mx-auto"
         >
-          <div
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-mono ${
-              isDark
-                ? 'bg-slate-900 border-[#dfc898]/30 text-[#dfc898]'
-                : 'bg-white border-[#b89b5e]/40 text-[#854d0e] shadow-sm'
-            }`}
-          >
-            <Layers className="w-3.5 h-3.5" />
-            <span>CURATED ARCHITECTURE • 4 FLAGSHIPS + 2 AI PRODUCTS + 5 ENTERPRISE SYSTEMS</span>
-          </div>
-
           <h2
             className={`text-3xl sm:text-5xl font-extrabold tracking-tight font-heading ${
               isDark ? 'text-white' : 'text-slate-900'
             }`}
           >
-            Architectural <span className="gold-gradient-text">Case Studies</span>
+            Case <span className="gold-gradient-text">Studies</span>
           </h2>
 
           <div className="w-16 h-1 bg-[#dfc898] mx-auto rounded-full" />
 
           <p
-            className={`text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed ${
+            className={`text-sm sm:text-base max-w-3xl mx-auto font-normal leading-relaxed ${
               isDark ? 'text-slate-400' : 'text-slate-600'
             }`}
           >
-            Spotlighting 4 high-impact global architectures across the USA, Norway, and Big-4 enterprise systems, with verified production metrics and zero fluff.
+            Production architectures delivered across key industry domains — mission-critical enterprise systems, Offshore Energy platforms, Big-4 Taxation, Healthcare AI, and E-Commerce. High-throughput platforms such as SAP ERP integration, national medical concurrency, supply chain logistics, and air-gapped security.
           </p>
         </motion.div>
 
         {/* Filter Navigation Tabs */}
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-center"
+        >
           <div
             className={`inline-flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-full border backdrop-blur-2xl shadow-xl transition-all ${
               isDark
@@ -458,62 +417,39 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* ---------------- 1. PRIMARY SPOTLIGHT: TOP 4 FLAGSHIPS ---------------- */}
         {(activeTab === "all" || activeTab === "flagship") && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-4"
-          >
-            <div className="flex items-center justify-between px-2 text-xs font-mono text-slate-400">
-              <span className="font-bold uppercase tracking-wider text-[#dfc898]/90">
-                // Premier Flagships: USA Modernization, Ernst & Young, Norway Telemetry & Svalbard Vault
-              </span>
-              <span className="text-[11px] opacity-70 hidden sm:inline">
-                Hover to expand deliverables
-              </span>
-            </div>
-
+          <div className="space-y-4">
             <BentoRow
               projects={flagshipProjects}
               onSelectProject={onSelectProject}
               theme={theme}
             />
-          </motion.div>
+          </div>
         )}
 
         {/* ---------------- 2. AI-NATIVE & LIVE PRODUCTS SPOTLIGHT ---------------- */}
         {(activeTab === "all" || activeTab === "ai-saas") && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-4 pt-2 sm:pt-4"
-          >
-            <div className="flex items-center justify-between px-2 text-xs font-mono text-slate-400">
-              <span className="font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                // AI-Native Engineering & Live Products: Healthcare Operations ERP & Consumer E-Commerce
-              </span>
-              <span className="text-[11px] opacity-70 hidden sm:inline">
-                Live Production • PWA Enabled • Click to Inspect or Launch
-              </span>
-            </div>
-
+          <div className="space-y-4 pt-2 sm:pt-4">
             <BentoRow
               projects={aiSaasProjects}
               onSelectProject={onSelectProject}
               theme={theme}
             />
-          </motion.div>
+          </div>
         )}
 
         {/* ---------------- 3. ENTERPRISE ARCHIVE SECTION (ACCORDION / TAB VIEW) ---------------- */}
         {activeTab === "all" && (
-          <div className="pt-6 sm:pt-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+            className="pt-6 sm:pt-10"
+          >
             <div
               className={`rounded-3xl border p-6 sm:p-8 transition-all ${
                 isDark
@@ -531,7 +467,7 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
                     </span>
                   </div>
                   <p className={`text-xs sm:text-sm font-sans ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                    Prior enterprise platforms spanning SAP ERP middleware, national medical concurrency, BAT logistics, pharmaceutical batch control, and air-gapped security.
+                    High-throughput platforms such as SAP ERP integration, national medical concurrency, supply chain logistics, and air-gapped security.
                   </p>
                 </div>
 
@@ -556,29 +492,28 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
                 </button>
               </div>
 
-              {/* Pill Preview of Clients When Collapsed */}
+              {/* Pill Preview of Industries When Collapsed */}
               {!showArchive && (
                 <div className="flex flex-wrap items-center gap-2 pt-4 mt-4 border-t border-white/5 dark:border-white/5">
                   <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-                    Featuring:
+                    Industries:
                   </span>
                   {[
-                    { client: "Berger Paints", tag: "SAP OData Middleware" },
-                    { client: "BAT", tag: "Nationwide Logistics" },
-                    { client: "BCPS", tag: "National Exam Concurrency" },
-                    { client: "Pharma", tag: "Automated Batch Expiry" },
-                    { client: "Security HQ", tag: "Air-Gapped RBAC" }
-                  ].map((item, idx) => (
+                    "Manufacturing (Berger Paints · SAP)",
+                    "FMCG Logistics (BAT)",
+                    "Public Sector (BCPS Fellowship)",
+                    "Pharma (Batch Expiry)",
+                    "Defense (Security HQ)"
+                  ].map((ind, idx) => (
                     <span
                       key={idx}
-                      className={`text-[10px] font-mono px-2.5 py-1 rounded-md border flex items-center gap-1.5 ${
+                      className={`text-[10px] font-mono px-2.5 py-1 rounded-md border ${
                         isDark
                           ? 'bg-slate-900/80 border-slate-800 text-slate-400'
                           : 'bg-slate-100 border-slate-200 text-slate-600'
                       }`}
                     >
-                      <span className="font-semibold text-slate-300">{item.client}</span>
-                      <span className="opacity-60">• {item.tag}</span>
+                      {ind}
                     </span>
                   ))}
                 </div>
@@ -592,32 +527,19 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                    className="overflow-hidden pt-6 mt-6 border-t border-white/10 dark:border-white/10 space-y-8"
+                    className="overflow-hidden pt-6 mt-6 border-t border-white/10 dark:border-white/10 space-y-6"
                   >
-                    <div className="space-y-8">
-                      {/* Sub-row 1: 3 Items */}
-                      <div className="space-y-3">
-                        <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
-                          // Enterprise Workflow & Middleware Systems (3)
-                        </div>
-                        <BentoRow
-                          projects={enterpriseProjects.slice(0, 3)}
-                          onSelectProject={onSelectProject}
-                          theme={theme}
-                        />
-                      </div>
-
-                      {/* Sub-row 2: 2 Items */}
-                      <div className="space-y-3">
-                        <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
-                          // Mission-Critical Logistics & Defense Systems (2)
-                        </div>
-                        <BentoRow
-                          projects={enterpriseProjects.slice(3, 5)}
-                          onSelectProject={onSelectProject}
-                          theme={theme}
-                        />
-                      </div>
+                    <div className="space-y-6">
+                      <BentoRow
+                        projects={enterpriseProjects.slice(0, 3)}
+                        onSelectProject={onSelectProject}
+                        theme={theme}
+                      />
+                      <BentoRow
+                        projects={enterpriseProjects.slice(3, 5)}
+                        onSelectProject={onSelectProject}
+                        theme={theme}
+                      />
                     </div>
 
                     <div className="flex justify-center pt-4">
@@ -641,39 +563,23 @@ export default function Projects({ theme = 'dark', onSelectProject }) {
                 )}
               </AnimatePresence>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* ---------------- 3. ENTERPRISE TAB VIEW ---------------- */}
         {activeTab === "enterprise" && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-8"
-          >
-            <div className="space-y-3">
-              <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
-                // Enterprise Workflow & Middleware Systems (3)
-              </div>
-              <BentoRow
-                projects={enterpriseProjects.slice(0, 3)}
-                onSelectProject={onSelectProject}
-                theme={theme}
-              />
-            </div>
-
-            <div className="space-y-3">
-              <div className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
-                // Mission-Critical Logistics & Defense Systems (2)
-              </div>
-              <BentoRow
-                projects={enterpriseProjects.slice(3, 5)}
-                onSelectProject={onSelectProject}
-                theme={theme}
-              />
-            </div>
-          </motion.div>
+          <div className="space-y-6">
+            <BentoRow
+              projects={enterpriseProjects.slice(0, 3)}
+              onSelectProject={onSelectProject}
+              theme={theme}
+            />
+            <BentoRow
+              projects={enterpriseProjects.slice(3, 5)}
+              onSelectProject={onSelectProject}
+              theme={theme}
+            />
+          </div>
         )}
 
         {/* Bottom Helper Note */}

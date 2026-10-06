@@ -81,8 +81,8 @@ export default function App() {
 
   return (
     <div className={`relative min-h-screen transition-colors duration-500 ${getContainerBg()}`}>
-      {/* Luxury Modern Preloader (Eliminates all loading/asset flashes) */}
-      <Preloader theme={theme} />
+      {/* Luxury Modern Preloader (Struxent Cinema Curtain Reveal) */}
+      <Preloader theme={theme} tagline="Building something that works." />
 
       {/* Subtle, calm dynamic top ceiling vignette for Matte Dark & Warm Gray */}
       {currentBg === 'matte-dark' && (
@@ -110,13 +110,34 @@ export default function App() {
       />
 
       {/* Main Streamlined Sections (Strict High-Signal, Minimalist Hierarchy) */}
-      <main className="space-y-24 sm:space-y-32">
+      <main>
         <PortfolioPrismaHero
           theme={theme}
           name="MD RABBY"
           surname="HASAN"
           tagline="Lead Software Engineer & Systems Architect"
-          summary="I architect resilient distributed systems, high-concurrency .NET microservices, and AI-native engineering pipelines. Over the past decade, I have engineered systems spanning 1,000-year Arctic cold vaults, offshore sensor telemetry, and mission-critical enterprise platforms."
+          summary="For more than a decade, I’ve been designing and building software that solves real-world problems at scale. I work mainly with .NET, distributed systems, microservices, cloud platforms, and increasingly AI-driven development. My experience has taken me from Arctic cold-storage and offshore sensor systems to large, mission-critical enterprise platforms."
+          ctaText="Get in Touch"
+          ctaTarget="contact"
+          ctaAction={() => {
+            const el = document.getElementById("contact");
+            if (el) {
+              const navOffset = 70;
+              const elementPosition = el.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+
+              window.scrollTo({
+                top: Math.max(0, offsetPosition),
+                behavior: "smooth"
+              });
+
+              try {
+                if (window.history && window.history.pushState) {
+                  window.history.pushState(null, "", "#contact");
+                }
+              } catch (e) {}
+            }
+          }}
           typewriterPhrases={[
             "AI-Native Engineering & Agents",
             "SaaS & Distributed Microservices",
@@ -127,11 +148,13 @@ export default function App() {
           onOpenTerminal={() => setTerminalOpen(true)}
           onSelectProject={setSelectedProject}
         />
-        <Projects theme={theme} onSelectProject={setSelectedProject} />
-        <SkillsRadar theme={theme} />
-        <ExperienceTimeline theme={theme} />
-        <Articles theme={theme} />
-        <Contact theme={theme} />
+        <div className="relative">
+          <Projects theme={theme} onSelectProject={setSelectedProject} />
+          <SkillsRadar theme={theme} />
+          <ExperienceTimeline theme={theme} />
+          <Articles theme={theme} />
+          <Contact theme={theme} />
+        </div>
       </main>
 
       {/* Footer */}

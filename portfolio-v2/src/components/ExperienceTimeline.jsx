@@ -36,14 +36,14 @@ export default function ExperienceTimeline({ theme = 'dark' }) {
   };
 
   return (
-    <section id="experience" className="py-32 px-6 sm:px-8 relative z-10">
-      <div className="max-w-6xl mx-auto space-y-20">
+    <section id="experience" className="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="text-center space-y-4 max-w-3xl mx-auto"
         >
           <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-mono ${
@@ -52,12 +52,12 @@ export default function ExperienceTimeline({ theme = 'dark' }) {
               : 'bg-white border-[#b89b5e]/40 text-[#854d0e] shadow-sm'
           }`}>
             <Briefcase className="w-3.5 h-3.5" />
-            <span>10+ YEARS CAREER TRAJECTORY</span>
+            <span>10+ YEARS EXPERIENCE</span>
           </div>
           <h2 className={`text-3xl sm:text-5xl font-extrabold tracking-tight font-heading ${
             theme === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Career <span className="gold-gradient-text">Trajectory & Milestones</span>
+            Professional <span className="gold-gradient-text">Experiences</span>
           </h2>
           <div className="w-16 h-1 bg-[#dfc898] mx-auto rounded-full" />
           <p className={`text-sm sm:text-base max-w-xl mx-auto font-normal leading-relaxed ${
@@ -208,7 +208,7 @@ export default function ExperienceTimeline({ theme = 'dark' }) {
                 : 'bg-white border-[#b89b5e]/40 text-[#854d0e] hover:bg-slate-50 shadow-sm'
             }`}
           >
-            <span>{expanded ? 'Collapse to Top 3 Roles' : 'View Full Career Trajectory (+5 Earlier Roles)'}</span>
+            <span>{expanded ? 'Collapse to Top 3 Roles' : 'View Full Experience History (+5 Earlier Roles)'}</span>
             {expanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </button>
         </motion.div>

@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     transition: background-color 0.4s ease, color 0.4s ease;
@@ -318,11 +322,11 @@
   border-color: #e2e8f0;
 }
 
-.light .bg-slate-900 {
+.light .bg-slate-900:not(button):not(a):not([role="button"]):not(input[type="submit"]) {
   background-color: #ffffff;
 }
 
-.light .bg-slate-950 {
+.light .bg-slate-950:not(button):not(a):not([role="button"]):not(input[type="submit"]) {
   background-color: #f8fafc;
 }
 

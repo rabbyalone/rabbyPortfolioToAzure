@@ -298,7 +298,7 @@ export default function Hero({ theme, onOpenTerminal }) {
                     : 'bg-slate-900 text-white hover:bg-black'
                 }`}
               >
-                <span>View Architectural Case Studies</span>
+                <span>View Case Studies</span>
                 <ArrowRight className="w-4 h-4" />
               </motion.a>
 

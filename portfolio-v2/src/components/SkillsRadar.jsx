@@ -22,7 +22,7 @@ export default function SkillsRadar({ theme = 'dark' }) {
   const isDark = theme === 'dark';
 
   return (
-    <section id="architecture" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
+    <section id="architecture" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
       {/* Ambient Radial Spotlight */}
       <div
         className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] rounded-full blur-[160px] pointer-events-none ${
@@ -32,43 +32,45 @@ export default function SkillsRadar({ theme = 'dark' }) {
         }`}
       />
 
-      <div className="max-w-6xl mx-auto space-y-10 relative z-10">
+      <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16 relative z-10">
         
-        {/* Section Header */}
-        <div
-          className={`flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b ${
-            isDark ? 'border-slate-800/40' : 'border-slate-200'
-          }`}
+        {/* Section Header (Centered Consistency) */}
+        <motion.div
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center space-y-4 max-w-3xl mx-auto"
         >
-          <div className="space-y-3">
-            <div
-              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase border transition-all duration-200 shadow-sm ${
-                isDark
-                  ? 'bg-slate-900/90 border-[#dfc898]/30 text-[#dfc898]'
-                  : 'bg-white border-slate-300 text-slate-800 font-semibold'
-              }`}
-            >
-              <Cpu className={`w-3.5 h-3.5 ${isDark ? 'text-[#dfc898]' : 'text-slate-700'}`} />
-              <span>Verified 10+ Yrs Production Experience • Core Stack</span>
-            </div>
-            
-            <h2
-              className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-heading ${
-                isDark ? 'text-white' : 'text-slate-900'
-              }`}
-            >
-              Technical Stack <span className="gold-gradient-text">& Architecture</span>
-            </h2>
-            
-            <p
-              className={`text-sm sm:text-base max-w-xl font-normal leading-relaxed ${
-                isDark ? 'text-slate-400' : 'text-slate-600'
-              }`}
-            >
-              Systems engineering disciplines, distributed runtimes, and multi-cloud platforms refined over a decade of production architecture.
-            </p>
+          <div
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase border transition-all duration-200 shadow-sm ${
+              isDark
+                ? 'bg-slate-900 border-[#dfc898]/30 text-[#dfc898]'
+                : 'bg-white border-[#b89b5e]/40 text-[#854d0e] shadow-sm'
+            }`}
+          >
+            <Cpu className="w-3.5 h-3.5" />
+            <span>VERIFIED 10+ YRS PRODUCTION EXPERIENCE • CORE STACK</span>
           </div>
-        </div>
+          
+          <h2
+            className={`text-3xl sm:text-5xl font-extrabold tracking-tight font-heading ${
+              isDark ? 'text-white' : 'text-slate-900'
+            }`}
+          >
+            Technical <span className="gold-gradient-text">Stack</span>
+          </h2>
+
+          <div className="w-16 h-1 bg-[#dfc898] mx-auto rounded-full" />
+          
+          <p
+            className={`text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed ${
+              isDark ? 'text-slate-400' : 'text-slate-600'
+            }`}
+          >
+            Systems engineering disciplines, distributed runtimes, and multi-cloud platforms refined over a decade of production architecture.
+          </p>
+        </motion.div>
 
         {/* ---------------- MINIMAL BENTO GRID ---------------- */}
         <div className="space-y-6">
@@ -80,9 +82,10 @@ export default function SkillsRadar({ theme = 'dark' }) {
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  initial={{ opacity: 0, y: 55, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.18 }}
+                  transition={{ duration: 0.75, delay: idx * 0.18, ease: [0.22, 1, 0.36, 1] }}
                   className={`p-6 sm:p-7 rounded-3xl border flex flex-col justify-between space-y-5 transition-all duration-300 hover:shadow-xl ${
                     isDark
                       ? 'bg-slate-900/70 border-slate-800/90 hover:border-[#dfc898]/50 hover:bg-slate-900/90 shadow-black/40'
@@ -188,9 +191,10 @@ export default function SkillsRadar({ theme = 'dark' }) {
               return (
                 <motion.div
                   key={realIdx}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2 + idx * 0.1 }}
+                  initial={{ opacity: 0, y: 55, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.18 }}
+                  transition={{ duration: 0.75, delay: idx * 0.14, ease: [0.22, 1, 0.36, 1] }}
                   className={`p-6 rounded-3xl border flex flex-col justify-between space-y-5 transition-all duration-300 hover:shadow-xl ${
                     isDark
                       ? 'bg-slate-900/70 border-slate-800/90 hover:border-[#dfc898]/50 hover:bg-slate-900/90 shadow-black/40'

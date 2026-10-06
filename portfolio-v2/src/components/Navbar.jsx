@@ -11,31 +11,77 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = ['home', 'case-studies', 'architecture', 'experience', 'articles', 'contact'];
-      const scrollPos = window.scrollY + 200;
+      // 1. If at top of document
+      if (window.scrollY < 120) {
+        setActiveSection('home');
+        return;
+      }
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
+      // 2. If scrolled near the bottom of document
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
+      if (isAtBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // 3. Absolute page section detection (immune to parent relative offsets)
+      const sections = ['home', 'case-studies', 'architecture', 'experience', 'articles', 'contact'];
+      const detectionOffset = 140;
+      let current = 'home';
+
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
         if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(section);
-            break;
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (window.scrollY >= top - detectionOffset) {
+            current = sectionId;
           }
         }
       }
+
+      setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    setActiveSection(targetId);
+
+    if (targetId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      try {
+        window.history.pushState(null, '', '#home');
+      } catch (err) {}
+      return;
+    }
+
+    const el = document.getElementById(targetId);
+    if (el) {
+      const navOffset = 70;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+      });
+
+      try {
+        window.history.pushState(null, '', `#${targetId}`);
+      } catch (err) {}
+    }
+  };
 
   const navLinks = [
     { name: 'Overview', href: '#home', id: 'home' },
     { name: 'Case Studies', href: '#case-studies', id: 'case-studies' },
-    { name: 'Architecture', href: '#architecture', id: 'architecture' },
-    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Technical Stack', href: '#architecture', id: 'architecture' },
+    { name: 'Experiences', href: '#experience', id: 'experience' },
     { name: 'Articles', href: '#articles', id: 'articles' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
@@ -49,7 +95,8 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
         {/* 1. Brand Logo Floating Island Capsule */}
         <a
           href="#home"
-          className={`pointer-events-auto group flex items-center gap-3 px-3.5 py-1.5 rounded-full border backdrop-blur-2xl shadow-xl transition-all duration-300 ${isDark
+          onClick={(e) => handleNavClick(e, 'home')}
+          className={`pointer-events-auto group flex items-center gap-3 px-3.5 py-1.5 rounded-full border backdrop-blur-2xl shadow-xl transition-all duration-300 cursor-pointer ${isDark
               ? 'bg-black/75 border-white/10 hover:border-[#dfc898]/50 shadow-black/50 hover:shadow-[0_0_20px_rgba(223,200,152,0.15)]'
               : 'bg-white/90 border-slate-200/90 hover:border-[#b89b5e]/50 shadow-slate-300/40 hover:shadow-[0_0_20px_rgba(184,155,94,0.15)]'
             }`}
@@ -99,7 +146,8 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
               <a
                 key={link.id}
                 href={link.href}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-medium font-mono transition-all ${isActive
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium font-mono transition-all cursor-pointer ${isActive
                     ? isDark
                       ? 'bg-[#dfc898] text-black font-bold shadow-md shadow-[#dfc898]/20'
                       : 'bg-[#b89b5e] text-white font-bold shadow-md shadow-[#b89b5e]/25'
@@ -195,8 +243,8 @@ export default function Navbar({ theme, onToggleTheme, onOpenTerminal }) {
               <a
                 key={link.id}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 rounded-xl text-sm font-medium font-mono transition-all ${activeSection === link.id
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`block px-4 py-2 rounded-xl text-sm font-medium font-mono transition-all cursor-pointer ${activeSection === link.id
                     ? isDark
                       ? 'bg-[#dfc898]/15 text-[#dfc898] border border-[#dfc898]/30 font-bold'
                       : 'bg-[#b89b5e]/15 text-[#854d0e] border border-[#b89b5e]/30 font-bold'

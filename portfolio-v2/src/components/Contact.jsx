@@ -76,8 +76,8 @@ export default function Contact({ theme }) {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 sm:px-8 relative z-10">
-      <div className="max-w-7xl mx-auto space-y-20">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -391,18 +391,19 @@ export default function Contact({ theme }) {
                     whileTap={{ scale: 0.97 }}
                     type="submit"
                     disabled={submitting}
-                    className={`w-full py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shrink-0 mt-2 ${
+                    className={`w-full py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shrink-0 mt-2 cursor-pointer ${
                       theme === 'dark'
-                        ? 'bg-gradient-to-r from-[#dfc898] to-[#b89b5e] text-black shadow-glow-gold'
-                        : 'bg-slate-900 text-white hover:bg-black'
+                        ? 'bg-gradient-to-r from-[#dfc898] to-[#b89b5e] text-black shadow-glow-gold hover:opacity-95'
+                        : 'bg-slate-900 hover:bg-black text-white shadow-lg border border-slate-800'
                     }`}
+                    style={theme !== 'dark' ? { backgroundColor: '#0f172a', color: '#ffffff' } : {}}
                   >
                     {submitting ? (
-                      <span>Dispatching Email...</span>
+                      <span className={theme === 'dark' ? 'text-black' : 'text-white'}>Dispatching Email...</span>
                     ) : (
                       <>
-                        <Send className="w-4 h-4" />
-                        <span>Send Correspondence</span>
+                        <Send className={`w-4 h-4 ${theme === 'dark' ? 'text-black' : 'text-white'}`} />
+                        <span className={theme === 'dark' ? 'text-black' : 'text-white'}>Send Correspondence</span>
                       </>
                     )}
                   </motion.button>

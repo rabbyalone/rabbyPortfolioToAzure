@@ -39,7 +39,7 @@ export default function TerminalModal({ isOpen, onClose }) {
   - bio        : Profile overview & stats
   - skills     : Architectural capabilities matrix
   - projects   : Featured case studies
-  - experience : Career trajectory summary
+  - experience : Professional experiences summary
   - contact    : Direct correspondence info
   - resume     : Open official PDF resume
   - clear      : Clear screen`

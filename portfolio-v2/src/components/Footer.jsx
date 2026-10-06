@@ -562,7 +562,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="w-full text-[#F2EEE3] pt-16 sm:pt-20 overflow-hidden select-none transition-colors duration-500"
+      className="w-full text-[#F2EEE3] pt-16 sm:pt-20 lg:pt-24 overflow-hidden select-none transition-colors duration-500"
       style={{ backgroundColor: 'rgb(18, 20, 17)' }}
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12">

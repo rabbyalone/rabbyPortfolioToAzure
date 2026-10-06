@@ -5,8 +5,8 @@ import { articlesData, developerData } from '../data/portfolioData';
 
 export default function Articles({ theme = 'dark' }) {
   return (
-    <section id="articles" className="py-32 px-6 sm:px-8 relative z-10">
-      <div className="max-w-7xl mx-auto space-y-20">
+    <section id="articles" className="py-16 sm:py-20 lg:py-24 px-6 sm:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
