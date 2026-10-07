@@ -52,7 +52,7 @@ export default function ProjectModal({ project, onClose }) {
           <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center max-h-96">
             <img
               src={project.fullImage}
-              alt={project.title}
+              alt={`${project.title} - Production Architecture Diagram by Md Rabby Hasan`}
               className="w-full h-auto object-contain max-h-96"
               onError={(e) => {
                 e.target.src = project.thumbnail;

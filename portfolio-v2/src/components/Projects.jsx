@@ -121,7 +121,7 @@ function BentoCard({
       <div className="relative w-full overflow-hidden bg-slate-950 shrink-0 h-44 sm:h-48">
         <img
           src={project.thumbnail}
-          alt={project.title}
+          alt={`${project.title} - Architectural Case Study by Md Rabby Hasan`}
           className={`w-full h-full object-cover transition-all duration-700 ${
             isHovered
               ? 'scale-105 filter-none opacity-100'

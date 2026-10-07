@@ -48,6 +48,8 @@ export default function Articles({ theme = 'dark' }) {
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
+              itemScope
+              itemType="https://schema.org/BlogPosting"
               className={`luxury-card group p-8 flex flex-col justify-between space-y-6 rounded-3xl border transition-all duration-300 transform-gpu backdrop-blur-xl ${
                 theme === 'dark'
                   ? 'bg-slate-900/85 border-slate-800/90 shadow-xl hover:border-[#dfc898]/40'
@@ -73,18 +75,24 @@ export default function Articles({ theme = 'dark' }) {
                 </div>
 
                 {/* Article Title */}
-                <h3 className={`text-xl font-bold font-heading transition-colors leading-snug ${
-                  theme === 'dark'
-                    ? 'text-white group-hover:text-[#dfc898]'
-                    : 'text-slate-900 group-hover:text-[#854d0e]'
-                }`}>
+                <h3
+                  itemProp="headline"
+                  className={`text-xl font-bold font-heading transition-colors leading-snug ${
+                    theme === 'dark'
+                      ? 'text-white group-hover:text-[#dfc898]'
+                      : 'text-slate-900 group-hover:text-[#854d0e]'
+                  }`}
+                >
                   {article.title}
                 </h3>
 
                 {/* Article Summary */}
-                <p className={`text-xs leading-relaxed ${
-                  theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
-                }`}>
+                <p
+                  itemProp="description"
+                  className={`text-xs leading-relaxed ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-slate-600'
+                  }`}
+                >
                   {article.summary}
                 </p>
               </div>

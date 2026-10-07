@@ -1,0 +1,35 @@
+# Robots.txt for Md Rabby Hasan Official Portfolio
+# https://rabbyhasan.com.bd
+
+User-agent: *
+Allow: /
+Allow: /doc/
+Allow: /img/
+
+# Sitemaps
+Sitemap: https://rabbyhasan.com.bd/sitemap.xml
+
+# AI & LLM Search Crawlers (Enables accurate citations on ChatGPT, Perplexity, Claude, Gemini, Apple Intelligence)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /

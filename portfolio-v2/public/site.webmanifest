@@ -1,0 +1,16 @@
+{
+  "name": "Md Rabby Hasan | Lead Software Engineer & Systems Architect",
+  "short_name": "Rabby Hasan",
+  "description": "Portfolio of Md Rabby Hasan - Lead Software Engineer & Systems Architect specializing in .NET 8, distributed systems, microservices, cloud platforms, and AI engineering.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#dfc898",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

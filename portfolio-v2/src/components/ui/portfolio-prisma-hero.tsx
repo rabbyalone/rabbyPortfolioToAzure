@@ -635,6 +635,7 @@ export const PortfolioPrismaHero: React.FC<PortfolioPrismaHeroProps> = ({
 
               {/* Giant Editorial Headline - Breaks into kinetic 3D shards */}
               <h1
+                aria-label="Md Rabby Hasan - Lead Software Engineer & Systems Architect"
                 className={`font-extrabold leading-[0.85] tracking-[-0.065em] text-[13vw] sm:text-[11vw] md:text-[9.5vw] lg:text-[7.8vw] xl:text-[7.2vw] font-heading select-none transition-colors duration-300 flex flex-wrap items-center gap-x-[0.35em] ${
                   isDark
                     ? "text-[#E1E0CC] drop-shadow-[0_2px_25px_rgba(225,224,204,0.15)]"
