@@ -7,7 +7,7 @@ Allow: /doc/
 Allow: /img/
 
 # Sitemaps
-Sitemap: https://rabbyhasan.com.bd/sitemap.xml
+Sitemap: https://www.rabbyhasan.com.bd/sitemap.xml
 
 # AI & LLM Search Crawlers (Enables accurate citations on ChatGPT, Perplexity, Claude, Gemini, Apple Intelligence)
 User-agent: GPTBot
