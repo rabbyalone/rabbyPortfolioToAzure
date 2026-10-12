@@ -1,7 +1,7 @@
 export const developerData = {
   name: "Md Rabby Hasan",
   title: "Lead Software Engineer & Systems Architect",
-  tagline: "Designing resilient distributed systems, enterprise .NET 8 microservices, high-throughput cloud infrastructure, and modern AI engineering workflows.",
+  tagline: "Designing high-availability distributed systems, enterprise .NET 8 microservices, high-throughput cloud infrastructure, and modern AI engineering workflows.",
   location: "Dhaka, Bangladesh · Remote USA",
   email: "rabbyalone@gmail.com",
   secondaryEmail: "hasan@rabbyhasan.com.bd",
@@ -10,7 +10,7 @@ export const developerData = {
   status: "Available for Architecture & Lead Consulting",
   stats: [
     { value: "10+ YOE", label: "Engineering Leadership", detail: "Lead & Systems Architect Roles" },
-    { value: "90%", label: "Downtime Reduction", detail: "Decoupled Microservice Resiliency" },
+    { value: "90%", label: "Downtime Reduction", detail: "Decoupled Microservice Architecture" },
     { value: "1,000 Yrs", label: "Arctic Archival Scope", detail: "Svalbard Arctic World Archive (Piql Norway)" },
     { value: "2nd Prize", label: "AI Hackathon Winner", detail: "Ethos Risk Autonomous Agent Engine" }
   ],
@@ -24,7 +24,7 @@ export const developerData = {
   bioNarrative: [
     "For over a decade, I have architected and delivered mission-critical software systems that operate under extreme constraints. My engineering journey spans high-security government archives in Svalbard (1,000-year cold storage), offshore North Sea oil rig telemetry, Big-4 global corporate taxation platforms, and high-concurrency commercial SaaS.",
     "Currently at Ethos Risk Services (USA, Remote), I lead the architectural transformation of legacy platforms into decoupled .NET 8 microservices, implement high-performance caching and query execution optimizations, and introduce spec-driven AI developer workflows.",
-    "I believe in ruthless simplicity, verifiable system resiliency, and measurable business outcomes over engineering vanity."
+    "I believe in ruthless simplicity, verifiable fault tolerance, and measurable business outcomes over engineering vanity."
   ]
 };
 
@@ -96,7 +96,7 @@ export const projectsData = [
     fullImage: "/img/portfolio/geologiq.jpg",
     summary: "Real-time North Sea offshore drilling telemetry ingestion and geospatial tracking on AKS and Cosmos DB.",
     challenge: "North Sea drilling operations emit high-velocity sensor data streams that must be parsed, geo-indexed, and displayed to offshore geological engineers with sub-second latency.",
-    solution: "Implemented resilient .NET Core background worker services, Cosmos DB geospatial coordinate partitioning, and containerized microservice clusters orchestrated on Azure Kubernetes Service (AKS).",
+    solution: "Implemented robust .NET Core background worker services, Cosmos DB geospatial coordinate partitioning, and containerized microservice clusters orchestrated on Azure Kubernetes Service (AKS).",
     outcome: "Delivered continuous zero-loss streaming telemetry visualization across live North Sea exploration rigs with automatic failover.",
     tech: [".NET Core", "Azure Kubernetes (AKS)", "Cosmos DB", "Angular", "Azure Service Bus", "Docker"],
     liveUrl: ""
@@ -130,11 +130,11 @@ export const projectsData = [
     categoryFilter: "saas",
     thumbnail: "/img/portfolio/barqo.png",
     fullImage: "/img/portfolio/barqo.png",
-    summary: "High-concurrency retail e-commerce platform built with .NET 10 microservices, Polly resilience, and rate limiting.",
+    summary: "High-concurrency retail e-commerce platform built with .NET 10 microservices, Polly circuit breakers, and rate limiting.",
     challenge: "Flash sale campaigns created extreme concurrency spikes that overloaded database connections, caused cart dropouts, and risked double-inventory checkout allocations.",
     solution: "Constructed decoupled C# ASP.NET 10 microservices with Polly circuit breakers, Redis distributed locking for cart operations, and custom token-bucket rate limiting middleware.",
     outcome: "Supported smooth flash sale surges with zero inventory concurrency anomalies and sub-100ms checkout response times.",
-    tech: [".NET 10 Microservices", "PostgreSQL", "Redis Locking", "Polly Resilience", "Rate Limiter", "React PWA"],
+    tech: [".NET 10 Microservices", "PostgreSQL", "Redis Locking", "Circuit Breakers (Polly)", "Rate Limiter", "React PWA"],
     liveUrl: "https://barqo.bd"
   },
   {
@@ -150,7 +150,7 @@ export const projectsData = [
     fullImage: "/img/portfolio/mobility.jpg",
     summary: "Field workforce automation and route telemetry integrated with corporate SAP ERP via OData.",
     challenge: "Over 1,000 field sales executives submitted daily nationwide purchase orders through legacy overnight batch jobs, causing 24-hour manufacturing lag.",
-    solution: "Engineered high-speed ASP.NET Core middleware interfacing directly with corporate SAP ERP via the OData protocol, backed by resilient retry queues and geolocation verification.",
+    solution: "Engineered high-speed ASP.NET Core middleware interfacing directly with corporate SAP ERP via the OData protocol, backed by fault-tolerant retry queues and geolocation verification.",
     outcome: "Cut order processing lag from 24-hour batch runs to near real-time synchronization, drastically speeding up warehouse dispatch.",
     tech: ["ASP.NET Core", "SAP OData API", "Angular", "Worker Services", "MSSQL", "Azure Web Apps"],
     liveUrl: ""
@@ -246,7 +246,7 @@ export const servicesData = [
     number: "02",
     title: "Distributed Core & Backend Architecture",
     headline: "High-availability .NET 8 microservices, CQRS, and contract-first Web APIs.",
-    description: "Architecting decoupled, resilient backends engineered for 99.99% uptime. Memory-efficient asynchronous runtimes, domain-driven boundaries, and robust event messaging.",
+    description: "Architecting decoupled, high-availability backends engineered for 99.99% uptime. Memory-efficient asynchronous runtimes, domain-driven boundaries, and reliable event messaging.",
     capabilities: [
       { name: "C# / .NET 8 & .NET Core", detail: "10+ years mastery of clean architecture, memory management, and asynchronous runtimes." },
       { name: "Microservices & CQRS", detail: "Decoupled domain handlers using MediatR, event-driven contracts, and outbox patterns." },
@@ -263,7 +263,7 @@ export const servicesData = [
       { name: "Azure Cloud Solutions", detail: "App Services, Functions, Key Vault, Virtual Networks, Service Bus topics & queues." },
       { name: "Docker & Kubernetes (AKS)", detail: "Multi-stage minimal Dockerfiles, pod orchestration, rolling updates, and health probes." },
       { name: "CI/CD Pipeline Automation", detail: "Azure DevOps & GitHub Actions automated testing, vulnerability scanning, and deployment." },
-      { name: "Resilience Policies", detail: "Polly circuit breakers, exponential backoff retries, and distributed rate limiting." }
+      { name: "Fault Tolerance Policies", detail: "Polly circuit breakers, exponential backoff retries, and distributed rate limiting." }
     ]
   },
   {
@@ -273,7 +273,7 @@ export const servicesData = [
     description: "Tuning data access layers for sub-50ms query latency under heavy concurrency. Strategic partitioning, cache-aside replication, and relational integrity.",
     capabilities: [
       { name: "MS SQL Server & T-SQL", detail: "10+ years deep query execution plan analysis, index tuning, and stored procedures." },
-      { name: "Entity Framework Core 8", detail: "Compiled queries, projection optimization, split queries, and resilient migrations." },
+      { name: "Entity Framework Core 8", detail: "Compiled queries, projection optimization, split queries, and idempotent migrations." },
       { name: "Redis In-Memory Caching", detail: "Distributed cache-aside patterns, session replication, and distributed locks." },
       { name: "Cosmos DB & PostgreSQL", detail: "Spatial geo-indexing, partition keys, ACID transactional compliance, and NoSQL stores." }
     ]
@@ -285,7 +285,7 @@ export const servicesData = [
     description: "Connecting enterprise cores with modern, responsive user interfaces and third-party systems. SAP OData enterprise adapters and offline-first progressive web apps.",
     capabilities: [
       { name: "Modern React & Angular", detail: "Component architecture, RxJS reactive state, custom hooks, and performant state trees." },
-      { name: "SAP OData Middleware", detail: "Bidirectional enterprise ERP data exchange with resilient background synchronization." },
+      { name: "SAP OData Middleware", detail: "Bidirectional enterprise ERP data exchange with reliable background synchronization." },
       { name: "Offline-First PWAs", detail: "IndexedDB client persistence allowing seamless operations across network drops." },
       { name: "Design Systems", detail: "Minimalist, accessibility-focused UI systems with fluid typography and micro-interactions." }
     ]
@@ -450,7 +450,7 @@ export const testimonialsData = [
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=face"
   },
   {
-    quote: "Very satisfied with the job done. Delivered high quality code on time and went above and beyond to ensure our deployment was completely resilient.",
+    quote: "Very satisfied with the job done. Delivered high quality code on time and went above and beyond to ensure our deployment was completely seamless and production-ready.",
     author: "Mike",
     role: "Tech Lead",
     company: "Cloud Systems",
@@ -463,7 +463,7 @@ export const articlesData = [
   {
     id: "engineering-journal",
     title: "Software Engineering & Enterprise Architecture Journal",
-    summary: "Production case studies and technical notes covering distributed architecture, resilient microservices, and software delivery.",
+    summary: "Production case studies and technical notes covering distributed architecture, high-availability microservices, and software delivery.",
     category: "Architecture Journal",
     readTime: "Live Engineering Blog",
     url: "https://blog.rabbyhasan.com.bd/",

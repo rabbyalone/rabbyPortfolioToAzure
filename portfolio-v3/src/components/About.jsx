@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import { developerData, experienceData } from '../data/portfolioData';
+import Reveal from './Reveal';
 
 export default function About() {
   const [expandedIndex, setExpandedIndex] = useState(0);
@@ -16,13 +17,7 @@ export default function About() {
         {/* Two-Column Studio Layout (Section 05 Pattern) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Eyebrow + Large H2 Name + Portrait + Bio + CTA (lg:col-span-5) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 58, mass: 1 }}
-            className="lg:col-span-5 space-y-8"
-          >
+          <Reveal className="lg:col-span-5 space-y-8" delay={0}>
             {/* Eyebrow: —— About Me with hairline rule */}
             <div className="flex items-center gap-3 pt-1">
               <span className="inline-block w-8 sm:w-10 h-[1px] bg-[var(--velora-neutral-08)] select-none"></span>
@@ -47,7 +42,7 @@ export default function About() {
 
             <div className="space-y-4">
               <p className="text-base font-sans text-[var(--velora-neutral-12)] leading-relaxed font-normal">
-                I specialize in architecting distributed systems and resilient microservices under extreme performance constraints. With over a decade of lead engineering experience across the USA, Norway, and international clients, I build software that solves real-world scale problems reliably.
+                I specialize in architecting distributed systems and enterprise microservices under extreme performance constraints. With over a decade of lead engineering experience across the USA, Norway, and international clients, I build software that solves real-world scale problems reliably.
               </p>
 
               <p className="text-base font-sans text-[var(--velora-neutral-10)] leading-relaxed font-normal">
@@ -64,16 +59,10 @@ export default function About() {
                 <span className="text-sm font-sans">↓</span>
               </a>
             </div>
-          </motion.div>
+          </Reveal>
 
           {/* Right Column: Experience Accordion (lg:col-span-7) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 58, mass: 1, delay: 0.1 }}
-            className="lg:col-span-7 space-y-8"
-          >
+          <Reveal className="lg:col-span-7 space-y-8" delay={120}>
             <div className="border-t border-[var(--velora-neutral-03)] divide-y divide-[var(--velora-neutral-03)]">
               {experienceData.slice(0, 5).map((exp, idx) => {
                 const isExpanded = expandedIndex === idx;
@@ -141,7 +130,7 @@ export default function About() {
                 Over 10 years of engineering leadership, helping enterprise platforms eliminate 90% of downtime and preserve humanity’s records for 1,000 years in the Arctic.
               </p>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>

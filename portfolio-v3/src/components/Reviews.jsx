@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { testimonialsData } from '../data/portfolioData';
+import Reveal from './Reveal';
 
 export default function Reviews() {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -39,7 +40,7 @@ export default function Reviews() {
         {/* Two-Column Layout matching Velora Reviews (Section 05) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Eyebrow + Subtitle (lg:col-span-5) */}
-          <div className="lg:col-span-5 space-y-4 pt-1">
+          <Reveal className="lg:col-span-5 space-y-4 pt-1" delay={0}>
             <div className="flex items-center gap-3">
               <span className="inline-block w-8 sm:w-10 h-[1px] bg-[var(--velora-neutral-08)] select-none"></span>
               <h2 className="velora-section-header">
@@ -50,10 +51,10 @@ export default function Reviews() {
             <p className="text-base font-sans text-[var(--velora-neutral-10)] max-w-md pt-2 leading-relaxed font-normal">
               Worked with enterprise platforms and international engineering teams, delivering high-availability microservices.
             </p>
-          </div>
+          </Reveal>
 
           {/* Right Column: Testimonial Carousel & Pagination (lg:col-span-7) */}
-          <div className="lg:col-span-7 space-y-6">
+          <Reveal className="lg:col-span-7 space-y-6" delay={120}>
             {/* Sliding Carousel Card Container with Drag/Swipe support */}
             <div
               className="relative overflow-hidden min-h-[320px] sm:min-h-[280px]"
@@ -147,7 +148,7 @@ export default function Reviews() {
                 <span className="text-sm font-sans">→</span>
               </button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

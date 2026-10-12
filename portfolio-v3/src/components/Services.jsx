@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Reveal from './Reveal';
 
 export default function Services() {
   const services = [
@@ -18,7 +19,7 @@ export default function Services() {
     {
       number: '03',
       title: 'Cloud-Native Infrastructure & DevOps',
-      description: 'Designing resilient cloud foundations across Azure and AWS with container orchestration and zero-downtime CI/CD pipelines.',
+      description: 'Designing scalable cloud foundations across Azure and AWS with container orchestration and zero-downtime CI/CD pipelines.',
       image: '/img/portfolio/geologiq.jpg'
     },
     {
@@ -33,13 +34,7 @@ export default function Services() {
     <section id="services" className="py-20 sm:py-28 border-b border-[var(--velora-neutral-03)]">
       <div className="velora-container space-y-16 sm:space-y-20">
         {/* Section Header with "—— Services" */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 58, mass: 1 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start"
-        >
+        <Reveal className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start" delay={0}>
           {/* Left: —— Services (Heading/Section Header with hairline rule) */}
           <div className="lg:col-span-5 flex items-center gap-3 pt-1">
             <span className="inline-block w-8 sm:w-10 h-[1px] bg-[var(--velora-neutral-08)] select-none"></span>
@@ -51,10 +46,10 @@ export default function Services() {
           {/* Right: Intro statement (Others/Section Intro) */}
           <div className="lg:col-span-7">
             <p className="velora-section-intro max-w-2xl">
-              From strategy to execution, I provide resilient backend systems, distributed cloud pipelines, and AI-native engineering.
+              From strategy to execution, I provide robust backend systems, distributed cloud pipelines, and AI-native engineering.
             </p>
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* Velora Sticky Collapsing Stack: Each card sticks and subsequent cards collapse upward over it */}
         <div className="relative">

@@ -1,20 +1,14 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { articlesData } from '../data/portfolioData';
+import Reveal from './Reveal';
 
 export default function Journal() {
   return (
     <section id="journal" className="py-20 sm:py-28 border-b border-[var(--velora-neutral-03)]">
       <div className="velora-container space-y-16 sm:space-y-20">
         {/* Section Header with "— Journal" */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 58, mass: 1 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start"
-        >
+        <Reveal className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start" delay={0}>
           {/* Left: —— Journal (Heading/Section Header with hairline rule) */}
           <div className="lg:col-span-5 flex items-center gap-3 pt-1">
             <span className="inline-block w-8 sm:w-10 h-[1px] bg-[var(--velora-neutral-08)] select-none"></span>
@@ -29,26 +23,18 @@ export default function Journal() {
               Case studies, runtime internals, and architecture notes published on my personal engineering blog.
             </p>
           </div>
-        </motion.div>
+        </Reveal>
 
-        {/* Articles Grid (3-Column Minimal Cards, Zero Shadows) */}
+        {/* Articles Grid (3-Column Minimal Cards with Staggered Hardware-Accelerated Reveal) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {articlesData.map((art, idx) => (
-            <motion.a
+            <Reveal
               key={art.id}
+              as="a"
               href={art.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                type: 'spring',
-                stiffness: 200,
-                damping: 58,
-                mass: 1,
-                delay: Math.min(idx * 0.1, 0.3)
-              }}
+              delay={idx * 100}
               className="velora-card flex flex-col justify-between space-y-6 group text-decoration-none hover:border-[var(--velora-main-02)] transition-colors duration-300"
             >
               <div className="space-y-3">
@@ -86,7 +72,7 @@ export default function Journal() {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
               </div>
-            </motion.a>
+            </Reveal>
           ))}
         </div>
       </div>

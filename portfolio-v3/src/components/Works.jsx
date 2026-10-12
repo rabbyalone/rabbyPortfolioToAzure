@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { projectsData } from '../data/portfolioData';
 import CaseStudyModal from './CaseStudyModal';
+import Reveal from './Reveal';
 
 export default function Works() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -14,13 +14,7 @@ export default function Works() {
     <section id="works" className="py-20 sm:py-28 border-b border-[var(--velora-neutral-03)]">
       <div className="velora-container space-y-16 sm:space-y-20">
         {/* Section Header with "— Selected Works" */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 58, mass: 1 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start"
-        >
+        <Reveal className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start" delay={0}>
           {/* Left: —— Selected Works (Heading/Section Header with hairline rule) */}
           <div className="lg:col-span-5 flex items-center gap-3 pt-1">
             <span className="inline-block w-8 sm:w-10 h-[1px] bg-[var(--velora-neutral-08)] select-none"></span>
@@ -35,15 +29,17 @@ export default function Works() {
               Discover curated works that inspire and deliver impact, showcasing creativity, functionality, and design excellence.
             </p>
           </div>
-        </motion.div>
+        </Reveal>
 
         {/* Works Grid — 2-Column Minimalist Layout (Section 05 & Section 08) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
-          {visibleProjects.map((project) => (
-            <article
+          {visibleProjects.map((project, idx) => (
+            <Reveal
               key={project.id}
+              as="article"
               onClick={() => setSelectedProject(project)}
               data-cursor="work"
+              delay={(idx % 2) * 120}
               className="group cursor-none flex flex-col space-y-4"
             >
               {/* Image Container with 4px radius, fill crop, and hover scrim */}
@@ -80,7 +76,7 @@ export default function Works() {
                   {project.category}
                 </p>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
 

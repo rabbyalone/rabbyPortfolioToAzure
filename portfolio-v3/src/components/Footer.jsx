@@ -41,7 +41,7 @@ export default function Footer() {
               {developerData.name}
             </h2>
             <p className="text-sm sm:text-base font-sans text-[#8E8E93] max-w-lg leading-relaxed">
-              Lead Software Engineer & Systems Architect specializing in resilient distributed systems and enterprise microservices.
+              Lead Software Engineer & Systems Architect specializing in distributed systems and enterprise microservices.
             </p>
           </div>
 

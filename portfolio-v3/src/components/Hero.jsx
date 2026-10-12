@@ -53,7 +53,7 @@ export default function Hero() {
 
               {/* Intro paragraph matching Velora size and leading */}
               <p className="text-base text-[var(--velora-neutral-10)] leading-[1.4] font-normal max-w-md m-0 p-0">
-                I architect resilient distributed systems, enterprise .NET 8 microservices, and AI-native engineering workflows that scale under extreme load. Let’s build something exceptional together.
+                I architect high-availability distributed systems, enterprise .NET 8 microservices, and AI-native engineering workflows that scale under extreme load. Let’s build something exceptional together.
               </p>
 
               {/* About me link with downward arrow */}
