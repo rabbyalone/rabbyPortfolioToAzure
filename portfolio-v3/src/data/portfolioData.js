@@ -1,7 +1,7 @@
 export const developerData = {
   name: "Md Rabby Hasan",
   title: "Lead Software Engineer & Systems Architect",
-  tagline: "Designing high-availability distributed systems, enterprise .NET 8 microservices, high-throughput cloud infrastructure, and modern AI engineering workflows.",
+  tagline: "Designing high-availability distributed systems, enterprise .NET ecosystem including microservices, high-throughput cloud infrastructure, and AI-native development.",
   location: "Dhaka, Bangladesh · Remote USA",
   email: "rabbyalone@gmail.com",
   secondaryEmail: "hasan@rabbyhasan.com.bd",

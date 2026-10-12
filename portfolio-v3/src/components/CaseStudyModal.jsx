@@ -1,46 +1,87 @@
-import React, { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import { X, ExternalLink, ArrowRight, CheckCircle2 } from 'lucide-react';
 
-export default function CaseStudyModal({ project, onClose, onSelectNext }) {
+export default function CaseStudyModal({ project: incomingProject, onClose, onSelectNext }) {
+  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = useState(false);
+  const [project, setProject] = useState(incomingProject);
+
+  useEffect(() => {
+    let timer;
+    let raf1;
+    let raf2;
+    if (incomingProject) {
+      setProject(incomingProject);
+      setMounted(true);
+      raf1 = requestAnimationFrame(() => {
+        raf2 = requestAnimationFrame(() => {
+          setActive(true);
+        });
+      });
+    } else {
+      setActive(false);
+      timer = setTimeout(() => {
+        setMounted(false);
+        setProject(null);
+      }, 250);
+    }
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+      clearTimeout(timer);
+    };
+  }, [incomingProject]);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
-    if (project) {
+    if (incomingProject) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
       window.addEventListener('keydown', handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [project, onClose]);
+  }, [incomingProject, onClose]);
 
-  if (!project) return null;
+  if (!mounted || !project) return null;
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
-        {/* Backdrop Scrim */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
-        />
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+      {/* Backdrop Scrim */}
+      <div
+        onClick={onClose}
+        style={{
+          opacity: active ? 1 : 0,
+          transition: 'opacity 220ms ease-out',
+        }}
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+      />
 
-        {/* Modal Window: Zero shadows, 6px radius, Neutral 00 surface, 1px Neutral 04 border */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.98 }}
-          transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[6px] bg-[var(--velora-neutral-00)] border border-[var(--velora-neutral-04)] z-10 text-[var(--velora-neutral-12)]"
-        >
-          {/* Sticky Header with Close */}
-          <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-[var(--velora-neutral-00)]/95 backdrop-blur-md border-b border-[var(--velora-neutral-03)]">
+      {/* Modal Window: Zero shadows, 6px radius, Neutral 00 surface, 1px Neutral 04 border */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="casestudy-modal-title"
+        style={{
+          opacity: active ? 1 : 0,
+          transform: active ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
+          transition: 'opacity 220ms cubic-bezier(0.16, 1, 0.3, 1), transform 220ms cubic-bezier(0.16, 1, 0.3, 1)',
+          willChange: 'opacity, transform',
+          backfaceVisibility: 'hidden',
+          WebkitBackfaceVisibility: 'hidden',
+        }}
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[6px] bg-[var(--velora-neutral-00)] border border-[var(--velora-neutral-04)] z-10 text-[var(--velora-neutral-12)]"
+      >
+        {/* Sticky Header with Close */}
+        <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-[var(--velora-neutral-00)]/95 backdrop-blur-md border-b border-[var(--velora-neutral-03)]">
             <div className="flex items-center gap-3">
               <span className="velora-chip">
                 {project.index} / {project.category}
@@ -189,8 +230,7 @@ export default function CaseStudyModal({ project, onClose, onSelectNext }) {
               </div>
             )}
           </div>
-        </motion.div>
+        </div>
       </div>
-    </AnimatePresence>
-  );
+    );
 }

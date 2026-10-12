@@ -4,6 +4,8 @@ import { X, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { developerData } from '../data/portfolioData';
 
 export default function ContactModal({ isOpen, onClose }) {
+  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,17 +16,47 @@ export default function ContactModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // Close on Escape key and prevent background scroll
+  // Manage mounting & transition state cleanly without transform: none layer snaps
+  useEffect(() => {
+    let timer;
+    let raf1;
+    let raf2;
+    if (isOpen) {
+      setMounted(true);
+      raf1 = requestAnimationFrame(() => {
+        raf2 = requestAnimationFrame(() => {
+          setActive(true);
+        });
+      });
+    } else {
+      setActive(false);
+      timer = setTimeout(() => {
+        setMounted(false);
+      }, 250);
+    }
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+      clearTimeout(timer);
+    };
+  }, [isOpen]);
+
+  // Close on Escape key and prevent background scroll without layout shift
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
     };
     if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
       window.addEventListener('keydown', handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -106,33 +138,37 @@ export default function ContactModal({ isOpen, onClose }) {
     setSubmitting(false);
   };
 
-  if (!isOpen) return null;
+  if (!mounted) return null;
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
-        {/* Backdrop Scrim with blur */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 bg-black/75 backdrop-blur-sm transition-opacity"
-        />
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
+      {/* Backdrop Scrim with blur */}
+      <div
+        onClick={onClose}
+        style={{
+          opacity: active ? 1 : 0,
+          transition: 'opacity 220ms ease-out',
+        }}
+        className="fixed inset-0 bg-black/75 backdrop-blur-sm"
+      />
 
-        {/* Modal Window matching Velora zero-shadow minimalism */}
-        <motion.div
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="contact-modal-title"
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.98 }}
-          transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-          className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-[8px] bg-[#141416] border border-[#2C2C32] z-10 text-white p-6 sm:p-9 space-y-6"
-        >
-          {/* Header */}
-          <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#222226]">
+      {/* Modal Window matching Velora zero-shadow minimalism with permanent translate3d */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
+        style={{
+          opacity: active ? 1 : 0,
+          transform: active ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
+          transition: 'opacity 220ms cubic-bezier(0.16, 1, 0.3, 1), transform 220ms cubic-bezier(0.16, 1, 0.3, 1)',
+          willChange: 'opacity, transform',
+          backfaceVisibility: 'hidden',
+          WebkitBackfaceVisibility: 'hidden',
+        }}
+        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-[8px] bg-[#141416] border border-[#2C2C32] z-10 text-white p-6 sm:p-9 space-y-6"
+      >
+        {/* Header */}
+        <div className="flex items-start justify-between gap-4 pb-4 border-b border-[#222226]">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <span className="inline-block w-6 h-[1px] bg-[var(--velora-main-01)] select-none"></span>
@@ -292,8 +328,7 @@ export default function ContactModal({ isOpen, onClose }) {
               </div>
             </form>
           )}
-        </motion.div>
+        </div>
       </div>
-    </AnimatePresence>
-  );
+    );
 }

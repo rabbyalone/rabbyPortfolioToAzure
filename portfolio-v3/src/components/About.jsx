@@ -64,7 +64,7 @@ export default function About() {
           {/* Right Column: Experience Accordion (lg:col-span-7) */}
           <Reveal className="lg:col-span-7 space-y-8" delay={120}>
             <div className="border-t border-[var(--velora-neutral-03)] divide-y divide-[var(--velora-neutral-03)]">
-              {experienceData.slice(0, 5).map((exp, idx) => {
+              {experienceData.map((exp, idx) => {
                 const isExpanded = expandedIndex === idx;
 
                 return (
@@ -75,11 +75,23 @@ export default function About() {
                       className="cursor-pointer flex items-baseline justify-between gap-4 select-none group"
                     >
                       <div className="space-y-1">
-                        <h3 className="text-lg sm:text-xl font-sans font-medium text-[var(--velora-neutral-12)] group-hover:text-[var(--velora-main-02)] transition-colors">
-                          {exp.company}
-                        </h3>
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-lg sm:text-xl font-sans font-medium text-[var(--velora-neutral-12)] group-hover:text-[var(--velora-main-02)] transition-colors">
+                            {exp.company}
+                          </h3>
+                          {exp.current && (
+                            <span className="px-1.5 py-0.5 rounded-[2px] text-[10px] font-sans font-medium uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                              Current
+                            </span>
+                          )}
+                        </div>
                         <p className="text-sm font-sans text-[var(--velora-neutral-10)]">
                           {exp.role}
+                          {exp.location && (
+                            <span className="text-xs text-[var(--velora-neutral-08)] ml-2">
+                              · {exp.location}
+                            </span>
+                          )}
                         </p>
                       </div>
 
@@ -101,20 +113,39 @@ export default function About() {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{
-                            duration: 0.4,
+                            duration: 0.35,
                             ease: [0.44, 0, 0.56, 1]
                           }}
                           className="overflow-hidden"
                         >
-                          <div className="pt-4 pb-2 space-y-2.5">
+                          <div className="pt-4 pb-2 space-y-3">
+                            {exp.summary && (
+                              <p className="text-sm font-sans text-[var(--velora-neutral-11)] leading-relaxed italic">
+                                {exp.summary}
+                              </p>
+                            )}
+
                             <ul className="space-y-2">
-                              {exp.highlights.slice(0, 2).map((h, hIdx) => (
+                              {exp.highlights.map((h, hIdx) => (
                                 <li key={hIdx} className="text-sm font-sans text-[var(--velora-neutral-10)] leading-relaxed flex items-start gap-2">
                                   <span className="w-1 h-1 rounded-full bg-[var(--velora-main-02)] mt-2 shrink-0" />
                                   <span>{h}</span>
                                 </li>
                               ))}
                             </ul>
+
+                            {exp.tech && exp.tech.length > 0 && (
+                              <div className="pt-2 flex flex-wrap gap-1.5">
+                                {exp.tech.map((t) => (
+                                  <span
+                                    key={t}
+                                    className="px-2 py-0.5 rounded-[2px] text-[11px] font-sans bg-[var(--velora-neutral-02)] text-[var(--velora-neutral-09)] border border-[var(--velora-neutral-04)]"
+                                  >
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         </motion.div>
                       )}
