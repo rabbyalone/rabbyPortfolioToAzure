@@ -1,0 +1,420 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   01 Color Guide — 17 Official Velora Color Tokens
+   ========================================================================== */
+:root {
+  --velora-main-01: #E3CAA6;       /* Warm sand accent. Button underline on hover, hairlines on dark */
+  --velora-main-02: #9E8867;       /* Deeper sand. Accent underline and small accent marks on light */
+  --velora-bg: #FAFAFA;            /* Page & navigation background. Default canvas */
+  --velora-overlay: rgba(0, 0, 0, 0.55); /* Scrim over imagery (55%). Work card hover overlay */
+  --velora-neutral-00: #FFFFFF;    /* Cards & panels lifting off page background */
+  --velora-neutral-01: #FAFAFA;    /* Alternate section background (same as BG) */
+  --velora-neutral-02: #F4F4F4;    /* Label chips, quiet fills, avatar ring */
+  --velora-neutral-03: #EEEEEE;    /* Dividers and hairlines between list rows */
+  --velora-neutral-04: #E6E6E6;    /* Card and input borders */
+  --velora-neutral-05: #DADADA;    /* Disabled surfaces and image placeholders */
+  --velora-neutral-06: #CCCCCC;    /* Disabled text on light fills and icon outlines */
+  --velora-neutral-07: #BDBDBD;    /* Placeholder text and inactive icons */
+  --velora-neutral-08: #AEAEAE;    /* Tertiary metadata on light backgrounds */
+  --velora-neutral-09: #999999;    /* Label and eyebrow text (Others/Label) */
+  --velora-neutral-10: #6D6D6D;    /* Secondary body copy, section headers, work content */
+  --velora-neutral-11: #212121;    /* Brand wordmark and near-black interface text */
+  --velora-neutral-12: #000000;    /* Primary text color for all headings and body copy */
+
+  /* Aliases for Tailwind mapping */
+  --velora-primary: var(--velora-neutral-12);
+  --velora-secondary: var(--velora-neutral-10);
+  --velora-label: var(--velora-neutral-09);
+  --velora-border: var(--velora-neutral-04);
+  --velora-divider: var(--velora-neutral-03);
+  --velora-fill: var(--velora-neutral-02);
+  --velora-card: var(--velora-neutral-00);
+  --velora-disabled: var(--velora-neutral-05);
+  --velora-muted: var(--velora-neutral-06);
+  --velora-nearblack: var(--velora-neutral-11);
+}
+
+.dark {
+  --velora-main-01: #E3CAA6;
+  --velora-main-02: #C4A57B;
+  --velora-bg: #0C0C0D;
+  --velora-overlay: rgba(0, 0, 0, 0.70);
+  --velora-neutral-00: #141416;
+  --velora-neutral-01: #0C0C0D;
+  --velora-neutral-02: #1A1A1E;
+  --velora-neutral-03: #222226;
+  --velora-neutral-04: #2C2C32;
+  --velora-neutral-05: #3F3F46;
+  --velora-neutral-06: #52525B;
+  --velora-neutral-07: #71717A;
+  --velora-neutral-08: #8E8E93;
+  --velora-neutral-09: #A1A1AA;
+  --velora-neutral-10: #C8C8CF;
+  --velora-neutral-11: #EAEAEA;
+  --velora-neutral-12: #FFFFFF;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    /* Section 03: Shadows: None. Not a single drop shadow is used anywhere on the site */
+    text-shadow: none !important;
+  }
+  
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--velora-neutral-00);
+    color: var(--velora-neutral-12);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--velora-neutral-00);
+    color: var(--velora-neutral-12);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* ==========================================================================
+   02 Typography Guide — Semantic Ladder & Fixed Negative Tracking
+   ========================================================================== */
+
+/* Heading/H1: Inter · 500 · -0.06em · 120% | 80px / 64px / 40px | h1 · Neutral 12 */
+h1, .velora-h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.2;
+  font-size: 40px;
+  color: var(--velora-neutral-12);
+}
+@media (min-width: 810px) {
+  h1, .velora-h1 { font-size: 64px; }
+}
+@media (min-width: 1200px) {
+  h1, .velora-h1 { font-size: 80px; }
+}
+
+/* Heading/H2: Inter · 500 · -0.06em · 120% | 64px / 58px / 36px | h2 · Neutral 12 */
+h2, .velora-h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.2;
+  font-size: 36px;
+  color: var(--velora-neutral-12);
+}
+@media (min-width: 810px) {
+  h2, .velora-h2 { font-size: 58px; }
+}
+@media (min-width: 1200px) {
+  h2, .velora-h2 { font-size: 64px; }
+}
+
+/* Heading/H3: Inter · 500 · -0.05em · 120% / 120% / 130% | 48px / 38px / 32px | h3 · Neutral 12 */
+h3, .velora-h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.3;
+  font-size: 32px;
+  color: var(--velora-neutral-12);
+}
+@media (min-width: 810px) {
+  h3, .velora-h3 { font-size: 38px; line-height: 1.2; }
+}
+@media (min-width: 1200px) {
+  h3, .velora-h3 { font-size: 48px; line-height: 1.2; }
+}
+
+/* Heading/H4: Inter · 500 · -0.05em · 140% / 140% / 130% | 32px / 26px / 22px | h4 · Neutral 12 */
+h4, .velora-h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.3;
+  font-size: 22px;
+  color: var(--velora-neutral-12);
+}
+@media (min-width: 810px) {
+  h4, .velora-h4 { font-size: 26px; line-height: 1.4; }
+}
+@media (min-width: 1200px) {
+  h4, .velora-h4 { font-size: 32px; line-height: 1.4; }
+}
+
+/* Heading/H5: Inter · 500 · -0.05em · 140% | 22px / 20px / 18px | h5 · Neutral 12 */
+h5, .velora-h5 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.4;
+  font-size: 18px;
+  color: var(--velora-neutral-12);
+}
+@media (min-width: 810px) {
+  h5, .velora-h5 { font-size: 20px; }
+}
+@media (min-width: 1200px) {
+  h5, .velora-h5 { font-size: 22px; }
+}
+
+/* Heading/H6: Inter · 500 · -0.05em · 140% | 18px / 18px / 18px | h6 · Neutral 12 */
+h6, .velora-h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.4;
+  font-size: 18px;
+  color: var(--velora-neutral-12);
+}
+
+/* Heading/Section Header: Inter · 500 · -0.05em · 130% | 26px / 22px / 18px | h2 · Neutral 10 */
+.velora-section-header {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.3;
+  font-size: 18px;
+  color: var(--velora-neutral-10);
+}
+@media (min-width: 810px) {
+  .velora-section-header { font-size: 22px; }
+}
+@media (min-width: 1200px) {
+  .velora-section-header { font-size: 26px; }
+}
+
+/* Others/Section Intro: Inter · 500 · -0.04em · 140% | 28px / 22px / 18px | Neutral 12 */
+.velora-section-intro {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  font-size: 18px;
+  color: var(--velora-neutral-12);
+}
+@media (min-width: 810px) {
+  .velora-section-intro { font-size: 22px; }
+}
+@media (min-width: 1200px) {
+  .velora-section-intro { font-size: 28px; }
+}
+
+/* Others/Nav: Inter · 400 · -0.04em · 140% | 16px / 16px / 24px */
+.velora-nav {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  font-size: 24px;
+  color: #666666;
+}
+@media (min-width: 810px) {
+  .velora-nav { font-size: 16px; }
+}
+
+/* Others/Brand: Inter · 600 · -0.04em · 140% | 18px | Neutral 11 */
+.velora-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  font-size: 18px;
+  color: var(--velora-neutral-11);
+}
+
+/* Others/Button Text: Inter · 500 · -0.04em · 140% | 16px | Neutral 12 */
+.velora-button-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  font-size: 16px;
+  color: var(--velora-neutral-12);
+}
+
+/* Others/Label: Inter · 500 · -0.03em · 140% · uppercase | 13px | Neutral 09 */
+.velora-label, .velora-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  padding: 4px 8px; /* Section 03: 4px 8px paired with 2px radius and Neutral 02 fill */
+  border-radius: 2px; /* Section 03: 2px radius */
+  background-color: var(--velora-neutral-02);
+  color: var(--velora-neutral-09);
+  border: 1px solid var(--velora-neutral-04);
+}
+
+/* Body/Body - Regular: Inter · 400 · -0.04em · 140% | 16px | Neutral 12 */
+.velora-body-regular, p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  font-size: 16px;
+  color: var(--velora-neutral-12);
+}
+
+/* Body/Body - Work Content: Inter · 400 · -0.04em · 140% | 16px | Neutral 10 */
+.velora-work-content {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  font-size: 16px;
+  color: var(--velora-neutral-10);
+}
+
+/* Body/Body - S: Inter · 400 · -0.04em · 140% | 14px | Neutral 12 */
+.velora-body-s {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+  font-size: 14px;
+  color: var(--velora-neutral-12);
+}
+
+/* ==========================================================================
+   03 & 04 Shape, Surface, Container and Layout
+   ========================================================================== */
+
+/* Full-bleed Section (Section 04): 1fr, height fit-content, padding 0px */
+.velora-section-wrapper {
+  width: 100%;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--velora-neutral-03);
+}
+@media (min-width: 810px) {
+  .velora-section-wrapper {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Container (Section 04): max width 1400px, padding 80px / 80px 40px / 64px 24px */
+.velora-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 810px) {
+  .velora-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .velora-container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* Container Gap (Section 04): 80px · 48px · 40px */
+.velora-container-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 810px) {
+  .velora-container-gap { gap: 48px; }
+}
+@media (min-width: 1200px) {
+  .velora-container-gap { gap: 80px; }
+}
+
+/* Card, panel or note (Section 03): 32px uniform padding, 4px radius, Neutral 00 */
+.velora-card {
+  padding: 32px;
+  border-radius: 4px;
+  background-color: var(--velora-neutral-00);
+  border: 1px solid var(--velora-neutral-04);
+  /* Section 03: Contrast alone creates the lift. Zero shadows. */
+  box-shadow: none !important;
+}
+
+/* Work card surface (Section 03): 6px radius */
+.velora-work-card {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   06 Motion and Effects — 1px Underline on Hover (No Shadows, No Scales)
+   ========================================================================== */
+.velora-button,
+.velora-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  font-size: 16px;
+  color: var(--velora-neutral-12);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.velora-button::after,
+.velora-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--velora-main-02);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s ease;
+}
+
+.velora-button:hover::after,
+.velora-link:hover::after,
+.velora-link.active::after {
+  width: 100%;
+}
+
+.dark .velora-button::after,
+.dark .velora-link::after {
+  background-color: var(--velora-main-01);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--velora-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--velora-neutral-04);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--velora-main-02);
+}
+
