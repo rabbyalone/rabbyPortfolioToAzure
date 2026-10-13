@@ -1,37 +1,324 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" prefix="og: https://ogp.me/ns# profile: https://ogp.me/ns/profile#">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Canonical URL (Eliminates Google Search Console duplicate canonical issues) -->
+    <link rel="canonical" href="https://www.rabbyhasan.com.bd/" />
+
+    <!-- Primary Title & High-Conversion Search Snippet -->
+    <title>Md Rabby Hasan — Lead Systems Architect &amp; Enterprise .NET Engineer | Available for Hire</title>
+    <meta name="title" content="Md Rabby Hasan — Lead Systems Architect &amp; Enterprise .NET Engineer | Available for Hire" />
+    <meta name="description" content="Senior Systems Architect &amp; Lead .NET Engineer with 10+ years architecting high-availability distributed systems, enterprise .NET ecosystem including microservices, and AI-native development under extreme scale. Available for enterprise consulting, technical leadership, and contract engineering." />
     
-    <!-- Primary Meta Tags -->
-    <title>Md Rabby Hasan — Lead Software Engineer & Systems Architect</title>
-    <meta name="title" content="Md Rabby Hasan — Lead Software Engineer & Systems Architect" />
-    <meta name="description" content="Minimalist architectural portfolio of Md Rabby Hasan. 10+ years designing mission-critical distributed systems, enterprise .NET ecosystem including microservices, high-throughput cloud infrastructure, and AI-native development." />
-    <meta name="keywords" content="Rabby Hasan, Software Architect, .NET, Microservices, Azure, Distributed Systems, Cloud Architecture, Ethos Risk Services, AI Development" />
+    <!-- Commercial Search Intent & Lead Gen Keywords -->
+    <meta name="keywords" content="Lead Software Engineer for Hire, Enterprise .NET Architect, Distributed Systems Consultant, .NET Microservices Specialist, Azure Cloud Solutions Architect, C# Systems Engineer, Senior Backend Architect, Fractional Systems Architect, AI-Native Software Engineering, High Concurrency Database Tuning, Ethos Risk Services, Svalbard Arctic World Archive, Piql Norway, Ernst &amp; Young Tax Platform" />
     <meta name="author" content="Md Rabby Hasan" />
+    <meta name="creator" content="Md Rabby Hasan" />
+    <meta name="publisher" content="Md Rabby Hasan" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rhasan.bd/" />
-    <meta property="og:title" content="Md Rabby Hasan — Lead Software Engineer & Systems Architect" />
-    <meta property="og:description" content="10+ years designing high-availability distributed systems, enterprise .NET ecosystem including microservices, cloud infrastructure, and AI-native development." />
-    <meta property="og:image" content="/img/og-preview.jpg" />
+    <!-- Indexing & AI Search Engine Directives (Google, Bing, ChatGPT, Claude, Perplexity, Gemini) -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://rhasan.bd/" />
-    <meta property="twitter:title" content="Md Rabby Hasan — Lead Software Engineer & Systems Architect" />
-    <meta property="twitter:description" content="10+ years designing high-availability distributed systems, enterprise .NET ecosystem including microservices, cloud infrastructure, and AI-native development." />
-    <meta property="twitter:image" content="/img/og-preview.jpg" />
+    <!-- Theme & Color Scheme -->
+    <meta name="theme-color" content="#0C0C0D" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Favicon & Web App Manifest -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / LinkedIn / WhatsApp / Facebook Preview -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://www.rabbyhasan.com.bd/" />
+    <meta property="og:title" content="Md Rabby Hasan — Lead Systems Architect &amp; Enterprise .NET Engineer" />
+    <meta property="og:description" content="10+ years architecting high-availability distributed systems, enterprise .NET ecosystem including microservices, and AI-native development. Available for consulting &amp; lead roles." />
+    <meta property="og:image" content="https://www.rabbyhasan.com.bd/img/og-preview.jpg" />
+    <meta property="og:image:secure_url" content="https://www.rabbyhasan.com.bd/img/og-preview.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta property="og:image:alt" content="Md Rabby Hasan - Lead Systems Architect &amp; Enterprise .NET Engineer Portfolio" />
+    <meta property="og:site_name" content="Md Rabby Hasan | Architecture &amp; Engineering Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Md Rabby" />
+    <meta property="profile:last_name" content="Hasan" />
+    <meta property="profile:username" content="rabbyalone" />
+
+    <!-- Twitter / X Cards Preview -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.rabbyhasan.com.bd/" />
+    <meta name="twitter:site" content="@rabbyalone" />
+    <meta name="twitter:creator" content="@rabbyalone" />
+    <meta name="twitter:title" content="Md Rabby Hasan — Lead Systems Architect &amp; Enterprise .NET Engineer" />
+    <meta name="twitter:description" content="Architecting high-availability distributed systems, enterprise .NET ecosystem including microservices, and AI-native development under extreme scale." />
+    <meta name="twitter:image" content="https://www.rabbyhasan.com.bd/img/og-preview.jpg" />
+    <meta name="twitter:image:alt" content="Md Rabby Hasan - Lead Systems Architect &amp; Enterprise .NET Engineer" />
+
+    <!-- Schema.org JSON-LD Structured Data Graph for Search Rich Snippets & AI Lead Generation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://www.rabbyhasan.com.bd/#person",
+          "name": "Md Rabby Hasan",
+          "alternateName": ["Rabby Hasan", "Md Rabby", "rabbyalone"],
+          "jobTitle": "Lead Software Engineer & Systems Architect",
+          "description": "Lead Software Engineer and Systems Architect with 10+ years of production experience architecting high-availability distributed systems, enterprise .NET ecosystem including microservices, high-throughput cloud platforms, and AI-native engineering workflows spanning Arctic cold-storage, offshore sensor telemetry, and US risk management platforms.",
+          "url": "https://www.rabbyhasan.com.bd/",
+          "image": "https://www.rabbyhasan.com.bd/img/rabby-hasan.jpg",
+          "email": "mailto:rabbyalone@gmail.com",
+          "telephone": "+880-1767478013",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dhaka",
+            "addressCountry": "Bangladesh"
+          },
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Ethos Risk Services",
+            "location": "USA (Remote)"
+          },
+          "alumniOf": [
+            {
+              "@type": "EducationalOrganization",
+              "name": "Jahangirnagar University",
+              "program": "Master of Science in Computer Science (M.Sc CS)"
+            },
+            {
+              "@type": "EducationalOrganization",
+              "name": "Daffodil Institute of IT (DIIT / IDB-BISEW)",
+              "program": "Enterprise System Analysis & Design Using C#"
+            }
+          ],
+          "sameAs": [
+            "https://rhasan.bd",
+            "https://github.com/rabbyalone",
+            "https://stackoverflow.com/users/4238524/rabby-hasan",
+            "https://twitter.com/rabbyalone",
+            "https://facebook.com/rabbyalone",
+            "https://blog.rabbyhasan.com.bd/"
+          ],
+          "knowsAbout": [
+            ".NET 8",
+            ".NET 9",
+            ".NET 10 Microservices",
+            "C#",
+            "Distributed Systems Architecture",
+            "Microservices Modernization",
+            "High Concurrency & Load Balancing",
+            "Azure Cloud Architecture & DevOps",
+            "AI-Native Software Engineering & LLM Agents",
+            "Event-Driven Architecture (EDA)",
+            "Domain-Driven Design (DDD)",
+            "CQRS & MediatR Patterns",
+            "Redis Distributed Caching & Locking",
+            "SQL Server Query Plan Tuning",
+            "PostgreSQL & Cosmos DB",
+            "Docker & Azure Kubernetes Service (AKS)",
+            "gRPC Inter-Service Communication",
+            "Azure Service Bus Messaging",
+            "Svalbard Arctic World Archive Preservation",
+            "Offshore North Sea Oil Rig Telemetry Streaming"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Systems Architect",
+            "occupationalCategory": "15-1252.00 - Software Developers",
+            "skills": "Distributed Systems, Enterprise .NET Microservices, Cloud Architecture, High Concurrency, AI Engineering"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.rabbyhasan.com.bd/#consulting-services",
+          "name": "Md Rabby Hasan — Software Architecture & Systems Consulting",
+          "description": "High-end software architecture consulting, enterprise .NET microservices migration, high-concurrency database tuning, cloud solutions architecture, and AI-native engineering workflows for enterprise clients and scaling tech startups worldwide.",
+          "url": "https://www.rabbyhasan.com.bd/",
+          "provider": {
+            "@id": "https://www.rabbyhasan.com.bd/#person"
+          },
+          "areaServed": [
+            "United States",
+            "United Kingdom",
+            "Norway",
+            "European Union",
+            "Worldwide Remote"
+          ],
+          "availableLanguage": ["English", "Bengali"],
+          "priceRange": "$$$$",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Software Engineering & Architecture Offerings",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Enterprise Microservices Migration & Downtime Reduction",
+                  "description": "Decomposing brittle monolithic backends into decoupled, high-availability .NET microservices with CQRS, reducing downtime by up to 90%."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "High-Availability Distributed Systems Architecture",
+                  "description": "Architecting mission-critical distributed systems and contract-first Web APIs engineered for 99.99% uptime under extreme load."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "High-Concurrency Performance & Database Tuning",
+                  "description": "Sub-50ms data paths via SQL Server query optimization, Redis caching strategies, and distributed locking for flash sale / high-traffic workloads."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cloud-Native Infrastructure & Azure DevOps CI/CD",
+                  "description": "Designing scalable cloud foundations across Azure and AWS with container orchestration, zero-downtime pipelines, and IaC."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI-Native Engineering Workflows & Autonomous Agents",
+                  "description": "Spec-driven development, custom LLM task automation agents, and developer workflow acceleration."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Lead Software Engineering & Fractional Architecture Consulting",
+                  "description": "Senior technical leadership, architecture reviews, codebase health audits, and hands-on guidance for engineering teams."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.rabbyhasan.com.bd/#website",
+          "url": "https://www.rabbyhasan.com.bd/",
+          "name": "Md Rabby Hasan — Official Architecture Portfolio",
+          "description": "Official architectural portfolio and consulting portal of Md Rabby Hasan, Lead Software Engineer & Systems Architect.",
+          "publisher": {
+            "@id": "https://www.rabbyhasan.com.bd/#person"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://www.rabbyhasan.com.bd/#webpage",
+          "url": "https://www.rabbyhasan.com.bd/",
+          "name": "Md Rabby Hasan — Lead Systems Architect & Enterprise .NET Engineer",
+          "isPartOf": {
+            "@id": "https://www.rabbyhasan.com.bd/#website"
+          },
+          "about": {
+            "@id": "https://www.rabbyhasan.com.bd/#person"
+          },
+          "mainEntity": {
+            "@id": "https://www.rabbyhasan.com.bd/#person"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.rabbyhasan.com.bd/#featured-projects",
+          "name": "Flagship Architecture & Systems Case Studies",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Enterprise Risk Management & Modernization",
+                "description": "Modernized core insurance risk platforms into decoupled .NET 8 microservices, eliminating 90% of production downtime at Ethos Risk Services (USA).",
+                "applicationCategory": "InsurTech · Enterprise Microservices",
+                "operatingSystem": "Cloud (Azure)"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Piql Svalbard Arctic World Archive Vault",
+                "description": "High-integrity 1,000-year deep data archival system engineered for offline storage in Svalbard, Norway.",
+                "applicationCategory": "Deep Data Storage & Security",
+                "operatingSystem": "Linux / Windows / Custom Hardware"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Ernst & Young (EY) Global Corporate Tax Platform",
+                "description": "High-throughput gRPC & Azure Service Bus tax calculation engine managing international corporate compliance.",
+                "applicationCategory": "FinTech & Big-4 Compliance",
+                "operatingSystem": "Azure Cloud"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "GeologiQ North Sea Rig Telemetry IoT System",
+                "description": "Real-time North Sea offshore drilling telemetry ingestion and geospatial tracking on AKS and Cosmos DB.",
+                "applicationCategory": "Energy · Real-Time Telemetry",
+                "operatingSystem": "Azure Kubernetes Service (AKS)"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Barqo — High-Performance E-Commerce Engine",
+                "description": "High-concurrency retail e-commerce platform built with .NET 10 microservices, Polly circuit breakers, and rate limiting.",
+                "applicationCategory": "Retail · High-Concurrency Marketplace",
+                "operatingSystem": "Cloud (PostgreSQL / Redis)"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "SmileCare Chamber — Clinical Operations ERP",
+                "description": "Doctor practice ERP featuring offline-first React PWA, IndexedDB synchronization, and ASP.NET Web API.",
+                "applicationCategory": "Healthcare · Clinical ERP",
+                "operatingSystem": "Web / Mobile PWA"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts: Inter, Inter Tight, Fragment Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-Dho8mqx5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CHJyZdxC.css">
+    <script type="module" crossorigin src="/assets/index-CksdY8Cx.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dn4CPuzL.css">
   </head>
   <body class="bg-velora-bg text-velora-primary antialiased selection:bg-velora-sand1 selection:text-black">
     <div id="root"></div>

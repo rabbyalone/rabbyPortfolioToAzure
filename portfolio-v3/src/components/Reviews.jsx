@@ -57,11 +57,11 @@ export default function Reviews() {
           <Reveal className="lg:col-span-7 space-y-6" delay={120}>
             {/* Sliding Carousel Card Container with Drag/Swipe support */}
             <div
-              className="relative overflow-hidden min-h-[320px] sm:min-h-[280px]"
+              className="relative overflow-hidden min-h-[360px] sm:min-h-[300px]"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              <AnimatePresence mode="wait" custom={direction}>
+              <AnimatePresence mode="popLayout" custom={direction}>
                 <motion.div
                   key={activeIdx}
                   custom={direction}
@@ -80,7 +80,7 @@ export default function Reviews() {
                       prevSlide();
                     }
                   }}
-                  className="bg-[var(--velora-neutral-02)] border border-[var(--velora-neutral-04)] rounded-[8px] p-8 sm:p-10 flex flex-col justify-between space-y-6 cursor-grab active:cursor-grabbing select-none"
+                  className="bg-[var(--velora-neutral-02)] border border-[var(--velora-neutral-04)] rounded-[8px] p-8 sm:p-10 flex flex-col justify-between space-y-6 cursor-grab active:cursor-grabbing select-none w-full min-h-[360px] sm:min-h-[300px]"
                 >
                   {/* Decorative Quote Mark in Main 01 sand accent */}
                   <div className="text-4xl text-[var(--velora-main-01)] font-serif leading-none select-none">

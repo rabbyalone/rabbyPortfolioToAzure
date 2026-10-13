@@ -52,7 +52,7 @@ export const projectsData = [
     index: "02",
     title: "Global Client & Engagement Tax Platform",
     client: "Ernst & Young (EY)",
-    year: "2021 – 2022",
+    year: "2022 – 2023",
     role: "Senior Systems Engineer",
     category: "FinTech & Big-4 Compliance",
     categoryFilter: "enterprise",
@@ -299,7 +299,6 @@ export const experienceData = [
     location: "USA (Remote)",
     period: "March 2024 – Present",
     current: true,
-    summary: "Architecting core enterprise risk management systems across distributed .NET 8 backends and cloud environments.",
     highlights: [
       "Modernized legacy monolithic services into decoupled .NET 8 microservices, reducing production downtime by 90% and elevating system maintainability.",
       "Engineered backend query optimizations and Redis caching strategies, improving application throughput by 20%.",
@@ -328,13 +327,13 @@ export const experienceData = [
     location: "USA (Remote)",
     period: "August 2022 – June 2023",
     current: false,
-    summary: "Enterprise microservices engineering using .NET 6, Angular 14, and MS SQL Server following strict TDD standards.",
+    summary: "Architected enterprise microservices and contract-first APIs for Ernst & Young (EY CEM Taxation) using .NET 6, Angular 14, and MS SQL Server adhering to strict TDD standards.",
     highlights: [
-      "Engineered enterprise microservices adhering to strict Test-Driven Development (TDD) guidelines.",
-      "Participated in Agile Scrum ceremonies and mentored mid-level engineers in clean architecture.",
-      "Enforced Information Security standards and conducted technical code reviews across distributed endpoints."
+      "Engineered enterprise microservices and contract-first Web APIs for Ernst & Young (EY CEM Taxation platform) adhering to strict Test-Driven Development (TDD) guidelines.",
+      "Implemented gRPC inter-service protocols and Azure Service Bus messaging for cross-system event choreography with guaranteed transactional consistency.",
+      "Enforced Information Security standards, participated in Agile Scrum ceremonies, and conducted technical code reviews across distributed endpoints."
     ],
-    tech: [".NET 6", "Angular 14", "Microservices", "TDD", "MS SQL Server", "Azure", "Docker"]
+    tech: [".NET 6", "Angular 14", "gRPC", "Azure Service Bus", "Microservices", "TDD", "MS SQL Server", "Azure", "Docker"]
   },
   {
     company: "Brainstation-23 Ltd.",
@@ -342,11 +341,11 @@ export const experienceData = [
     location: "Dhaka, Bangladesh",
     period: "January 2020 – August 2022",
     current: false,
-    summary: "Architected backend microservices and Web APIs for global enterprise clients including Ernst & Young and Piql Norway.",
+    summary: "Architected backend microservices, real-time telemetry systems, and Web APIs for global enterprise clients including Piql Norway and GeologiQ Norway.",
     highlights: [
-      "Architected backend microservices and Web APIs for global enterprise clients: EY CEM Taxation and Piql Connect (Norway).",
+      "Architected backend microservices and cryptographic ingestion pipelines for Piql Connect (Norway) preserving mission-critical records for 1,000 years in the Svalbard Arctic World Archive.",
       "Engineered real-time background worker services for offshore North Sea oil rig telemetry mapping in GeologiQ (Norway).",
-      "Integrated Azure Service Bus event messaging, Cosmos DB spatial telemetry storage, and automated CI/CD pipelines."
+      "Integrated Azure Service Bus event messaging, Cosmos DB spatial telemetry storage, and automated CI/CD deployment pipelines."
     ],
     tech: [".NET Core", "Vue 3", "Angular", "Docker", "Cosmos DB", "Azure Service Bus", "Azure DevOps"]
   },

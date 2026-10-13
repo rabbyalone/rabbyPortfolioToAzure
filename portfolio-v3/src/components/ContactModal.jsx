@@ -303,11 +303,7 @@ export default function ContactModal({ isOpen, onClose }) {
               </div>
 
               {/* Submit Button */}
-              <div className="pt-2 flex items-center justify-between gap-4">
-                <div className="text-xs font-sans text-[#71717A]">
-                  Direct delivery to <span className="text-[#A1A1AA]">{developerData.email}</span>
-                </div>
-
+              <div className="pt-2 flex items-center justify-end">
                 <button
                   type="submit"
                   disabled={submitting}

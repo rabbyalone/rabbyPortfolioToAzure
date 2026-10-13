@@ -25,16 +25,14 @@ export default function Journal() {
           </div>
         </Reveal>
 
-        {/* Articles Grid (3-Column Minimal Cards with Staggered Hardware-Accelerated Reveal) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {articlesData.map((art, idx) => (
-            <Reveal
+        {/* Articles Grid (3-Column Minimal Cards with Unified Smooth Reveal) */}
+        <Reveal delay={120} className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {articlesData.map((art) => (
+            <a
               key={art.id}
-              as="a"
               href={art.url}
               target="_blank"
               rel="noopener noreferrer"
-              delay={idx * 100}
               className="velora-card flex flex-col justify-between space-y-6 group text-decoration-none hover:border-[var(--velora-main-02)] transition-colors duration-300"
             >
               <div className="space-y-3">
@@ -72,9 +70,9 @@ export default function Journal() {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
               </div>
-            </Reveal>
+            </a>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
